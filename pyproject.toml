@@ -1,0 +1,24 @@
+[project]
+name = "kandji-openapi"
+version = "0.1.0"
+description = "Creates an OpenAPI 3.1 compatible specification based on Kandji's Postman Collection."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "openapi-spec-validator>=0.7.1",
+    "ruamel-yaml>=0.18.7",
+]
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.pyright]
+exclude = [".venv"]
+pythonVersion = "3.13"
+venvPath = "."
+venv = ".venv"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.391",
+]
