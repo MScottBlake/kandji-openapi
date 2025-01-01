@@ -1,0 +1,9 @@
+strictSpec: True
+useTags: True
+enablePostProcessFile: True
+gitHost: github.com
+gitUserId: MScottBlake
+gitRepoId: kandji-bash-sdk
+scriptName: kandji_sdk
+generateBashCompletion: True
+generateZshCompletion: True

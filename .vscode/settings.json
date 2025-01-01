@@ -9,5 +9,9 @@
     "editor.rulers": [
       88
     ]
-  }
+  },
+  "python.autoComplete.extraPaths": [
+    "src"
+  ],
+  "python.analysis.typeCheckingMode": "basic"
 }

@@ -1,0 +1,7 @@
+strictSpec: True
+useTags: True
+enablePostProcessFile: True
+gitHost: github.com
+gitUserId: MScottBlake
+gitRepoId: kandji-go-sdk
+packageName: kandji_sdk

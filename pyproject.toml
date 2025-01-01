@@ -9,7 +9,13 @@ dependencies = [
     "ruamel-yaml>=0.18.7",
 ]
 
+[dependency-groups]
+dev = [
+    "pyright>=1.1.391",
+]
+
 [tool.ruff]
+line-length = 88
 target-version = "py313"
 
 [tool.pyright]
@@ -17,8 +23,3 @@ exclude = [".venv"]
 pythonVersion = "3.13"
 venvPath = "."
 venv = ".venv"
-
-[dependency-groups]
-dev = [
-    "pyright>=1.1.391",
-]

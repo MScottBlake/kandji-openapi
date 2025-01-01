@@ -1,0 +1,11 @@
+strictSpec: True
+useTags: True
+enablePostProcessFile: True
+gitHost: github.com
+gitUserId: MScottBlake
+gitRepoId: kandji-swift5-sdk
+packageName: kandji_sdk
+projectName: kandji_sdk
+swiftPackagePath: KandjiSDK/Classes/KandjiAPIs
+swiftUseApiNamespace: True
+objcCompatible: True

@@ -1,0 +1,159 @@
+name: Create OpenAPI Definition Files
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+  pull_request:
+    types: [closed]
+    paths-ignore:
+      - openapi.json
+      - openapi.yaml
+  push:
+    paths-ignore:
+      - openapi.json
+      - openapi.yaml
+
+env:
+  COLLECTION_URL: "https://api-docs.kandji.io/api/collections/15284493/TzCTZkBe?segregateAuth=true&versionTag=latest"
+  COLLECTION_FILE: "kandji_postman_collection.json"
+  VERSION: ""
+
+jobs:
+  create-openapi-definition:
+    name: Create an OpenAPI 3.x definition
+    runs-on: ubuntu-latest
+    outputs:
+      VERSION: ${{ steps.version.outputs.VERSION }}
+
+    steps:
+      - name: Set VERSION Variable
+        id: version
+        run: |
+          version="v$(date +'%Y.%m.%d.%H%M%S')"
+          echo "VERSION=$version" >> $GITHUB_ENV
+          echo "VERSION=$version" >> $GITHUB_OUTPUT
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download the latest Postman Collection file from Kandji
+        run: |
+          curl -s "${{ env.COLLECTION_URL }}" -o "${{ env.COLLECTION_FILE }}"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          uv venv
+
+      - name: Convert Postman Collection to OpenAPI
+        env:
+          PYTHONPATH: src
+        run: |
+          uv run src/kandji_openapi/main.py --collection "${{ env.COLLECTION_FILE }}" --output-json openapi.json --output-yaml openapi.yaml
+
+      - name: Commit all changed files back to the repository
+        id: commit-def
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: |
+            openapi.*
+            ${{ env.COLLECTION_FILE }}
+          commit_message: "[auto] Update openapi files"
+          tagging_message: ${{ env.VERSION }}
+
+      - name: Create a Github Release
+        if: steps.commit-def.outputs.changes_detected == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.VERSION }}
+          files: |
+            openapi.json
+            openapi.yaml
+          fail_on_unmatched_files: true
+          prerelease: ${{ github.ref_name != 'main' }}
+          generate_release_notes: true
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi_files
+          path: |
+            openapi.json
+            openapi.yaml
+
+  generate-sdks:
+    name: Generate updated SDKs
+    needs: create-openapi-definition
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language:
+          - bash
+          - go
+          - python
+          - swift5
+
+    env:
+      language: ${{ matrix.language }}
+
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
+
+      - name: Checkout remote repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.language }}-client
+          repository: Kandji-Community-SDKs/kandji-${{ env.language }}-sdk
+          token: ${{ secrets.SDK_PAT }}
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi_files
+
+      - name: Delete Previously Generated Files
+        run: |
+          if [[ -f "${{ env.language }}-client/.openapi-generator/FILES" ]]; then
+            while IFS= read -r file; do
+                # Handle each file listed in .openapi-generator/FILES
+                if [[ -e "$file" ]]; then
+                    rm -rf "$file"
+                else
+                    echo "Warning: '$file' does not exist."
+                fi
+            done < ${{ env.language }}-client/.openapi-generator/FILES
+          else
+            echo "Directory .openapi-generator/FILES does not exist, skipping."
+          fi
+
+      - name: Generate Client
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          config-file: generator_configs/${{ env.language }}.yaml
+          generator: ${{ env.language }}
+          generator-tag: latest-release
+
+      - name: Commit all changed files back to the repository
+        id: commit-sdk
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          repository: ${{ env.language }}-client
+          commit_message: "[auto] Updated Kandji SDK"
+          tagging_message: ${{ needs.create-openapi-definition.outputs.VERSION }}
+
+      - name: Create a Github Release
+        if: steps.commit-sdk.outputs.changes_detected == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          repository: Kandji-Community-SDKs/kandji-${{ env.language }}-sdk
+          tag_name: ${{ needs.create-openapi-definition.outputs.VERSION }}
+          prerelease: ${{ github.ref_name != 'main' }}
+          generate_release_notes: true
+          token: ${{ secrets.SDK_PAT }}
+
