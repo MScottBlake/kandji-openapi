@@ -46,6 +46,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Setup UV
+        uses: ./.github/actions/setup
+
       - name: Install dependencies
         run: |
           uv venv
