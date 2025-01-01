@@ -12,7 +12,7 @@ externalDocs:
 info:
   contact:
     name: Kandji MacAdmin Community
-    url: https://github.com/Kandji-Community-SDKs/kandji-openapi-spec
+    url: https://github.com/MScottBlake/kandji-openapi
   description: "<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome
     to the Kandji API Documentation</h1>\n<p>You can find your API URL in Settings
     &gt; Access. The API URL will follow the below formats.</p>\n<ul>\n<li><p>US -
