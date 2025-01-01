@@ -112,7 +112,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: ${{ env.language }}-client
-          repository: Kandji-Community-SDKs/kandji-${{ env.language }}-sdk
+          repository: MScottBlake/kandji-${{ env.language }}-sdk
           token: ${{ secrets.SDK_PAT }}
 
       - name: Download Artifacts
@@ -154,7 +154,7 @@ jobs:
         if: steps.commit-sdk.outputs.changes_detected == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          repository: Kandji-Community-SDKs/kandji-${{ env.language }}-sdk
+          repository: MScottBlake/kandji-${{ env.language }}-sdk
           tag_name: ${{ needs.create-openapi-definition.outputs.VERSION }}
           prerelease: ${{ github.ref_name != 'main' }}
           generate_release_notes: true

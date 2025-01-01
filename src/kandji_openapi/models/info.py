@@ -22,7 +22,7 @@ class Info:
     def from_data(cls, data: dict[str, Any]) -> "Info":
         contact: ContactObject = {
             "name": "Kandji MacAdmin Community",
-            "url": "https://github.com/Kandji-Community-SDKs/kandji-openapi-spec",
+            "url": "https://github.com/MScottBlake/kandji-openapi",
         }
 
         license: LicenseObject = {"name": "MIT License", "identifier": "MIT"}
