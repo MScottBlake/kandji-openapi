@@ -2,27 +2,24 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from openapi_pydantic import ExternalDocumentation, Server, ServerVariable, Tag
+
 from kandji_openapi.configurations import KANDJI_API_DOCS_URL
 from kandji_openapi.models.auth import Auth
-from kandji_openapi.models.info import Info
+from kandji_openapi.models.info import PostmanInfo
 from kandji_openapi.models.item import Item
-from kandji_openapi.openapi_types import (
-    ServerObject,
-    ServerVariableObject,
-    TagObject,
-)
 
 
 @dataclass
 class PostmanCollection:
-    info: Info
+    info: PostmanInfo
     items: list[Item] = field(default_factory=list)
     auth: Optional[Auth] = None
 
     @classmethod
     def from_data(cls, data: dict[str, Any]) -> "PostmanCollection":
         return cls(
-            info=Info.from_data(data.get("info", {})),
+            info=PostmanInfo.from_data(data.get("info", {})),
             auth=Auth.from_data(data.get("auth", {})),
             items=cls._process_items(data.get("item", [])),
         )
@@ -44,7 +41,7 @@ class PostmanCollection:
 
         return processed_items
 
-    def _hosts_to_openapi(self) -> list[ServerObject]:
+    def _hosts_to_openapi(self) -> list[Server]:
         """Extract unique hosts from all items' requests."""
         hosts: set[str] = set()
         for item in self.items:
@@ -59,14 +56,14 @@ class PostmanCollection:
 
         output = []
         for host in hosts:
-            variables: dict[str, ServerVariableObject] = {}
+            variables: dict[str, ServerVariable] = {}
             for match in variable_pattern.finditer(host):
                 var_name = match.group(1)
-                variables[var_name] = {"default": f"<{var_name}>"}
+                variables[var_name] = ServerVariable(default=f"<{var_name}>")
 
-            host_dict: ServerObject = {"url": host}
+            host_dict = Server(url=host)
             if variables:
-                host_dict["variables"] = variables
+                host_dict.variables = variables
 
             output.append(host_dict)
         return output
@@ -87,20 +84,20 @@ class PostmanCollection:
             output.update(self._paths_to_openapi(item.get_items()))
         return output
 
-    def _tags_to_openapi(self, items: Optional[list[Item]] = None) -> list[TagObject]:
+    def _tags_to_openapi(self, items: Optional[list[Item]] = None) -> list[Tag]:
         """List of tags from all items' requests."""
-        all_tags: list[TagObject] = []
+        all_tags: list[Tag] = []
         if items is None:
             items = self.items
 
         for item in items:
             if item.is_folder():
-                tag_dict: TagObject = {"name": item.name}
+                tag_dict = Tag(name=item.name)
 
                 if description := item.get_description():
-                    tag_dict["description"] = description
+                    tag_dict.description = description
                 if url := item.get_url():
-                    tag_dict["externalDocs"] = {"url": url}
+                    tag_dict.externalDocs = ExternalDocumentation(url=url)
 
                 all_tags.append(tag_dict)
 
