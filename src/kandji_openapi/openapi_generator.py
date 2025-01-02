@@ -8,6 +8,7 @@ from openapi_spec_validator import validate
 from openapi_spec_validator.readers import read_from_filename
 from openapi_spec_validator.validation.exceptions import OpenAPIValidationError
 from openapi_spec_validator.versions.shortcuts import get_spec_version
+from ruamel.yaml import YAML
 
 
 class OpenAPIGenerator:
@@ -16,11 +17,19 @@ class OpenAPIGenerator:
         self.openapi_spec = self._generate_spec()
 
     def _generate_spec(self) -> OpenAPIv3:
+    def _generate_spec(self) -> OpenAPIv3:
         """Generate OpenAPI specification from Postman collection"""
+        return parse_obj(data=self.collection.to_openapi())
         return parse_obj(data=self.collection.to_openapi())
 
     def _write_json_file(self, file_path: Path) -> None:
         with open(file_path, "w") as temp:
+            json.dump(
+                self.openapi_spec.model_dump_json(
+                    by_alias=True, exclude_none=True, indent=2
+                ),
+                temp,
+            )
             json.dump(
                 self.openapi_spec.model_dump_json(
                     by_alias=True, exclude_none=True, indent=2
@@ -35,10 +44,10 @@ class OpenAPIGenerator:
     #     yaml.explicit_start = True
     #     yaml.preserve_quotes = True
 
-    #     with open(file_path, "w") as _:
-    #         yaml_model = self.openapi_spec.model_dump(by_alias=True, exclude_none=True)
-    #         print(yaml_model)
-    #         # yaml.dump(yaml_model, temp)
+        with open(file_path, "w") as temp:
+            yaml.dump(
+                self.openapi_spec.model_dump(by_alias=True, exclude_none=True), temp
+            )
 
     def validate_spec(self) -> bool:
         """Validate the generated OpenAPI spec, providing detailed feedback if invalid."""
