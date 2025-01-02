@@ -40,9 +40,8 @@ class OpenAPIGenerator:
         yaml.preserve_quotes = True
 
         with open(file_path, "w") as temp:
-            yaml.dump(
-                self.openapi_spec.model_dump(by_alias=True, exclude_none=True), temp
-            )
+            yaml_model = self.openapi_spec.model_dump(by_alias=True, exclude_none=True)
+            yaml.dump(yaml_model, temp)
 
     def validate_spec(self) -> bool:
         """Validate the generated OpenAPI spec, providing detailed feedback if invalid."""
