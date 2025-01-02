@@ -65,7 +65,7 @@ jobs:
         with:
           file_pattern: |
             openapi.*
-            ${{ env.COLLECTION_FILE }}
+            kandji_postman_collection.json
           commit_message: "[auto] Update openapi files"
           tagging_message: ${{ env.VERSION }}
 
