@@ -11,7 +11,8 @@ externalDocs:
   url: https://api-docs.kandji.io
 info:
   contact:
-    name: Kandji MacAdmin Community
+    email: mitchelsblake@gmail.com
+    name: Scott Blake
     url: https://github.com/MScottBlake/kandji-openapi
   description: "<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome
     to the Kandji API Documentation</h1>\n<p>You can find your API URL in Settings
