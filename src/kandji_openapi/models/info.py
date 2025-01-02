@@ -21,7 +21,8 @@ class Info:
     @classmethod
     def from_data(cls, data: dict[str, Any]) -> "Info":
         contact: ContactObject = {
-            "name": "Kandji MacAdmin Community",
+            "name": "Scott Blake",
+            "email": "mitchelsblake@gmail.com",
             "url": "https://github.com/MScottBlake/kandji-openapi",
         }
 
