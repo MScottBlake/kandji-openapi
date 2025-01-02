@@ -63,9 +63,7 @@ jobs:
         id: commit-def
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: |
-            openapi.*
-            ${{ env.COLLECTION_FILE }}
+          file_pattern: openapi.* ${{ env.COLLECTION_FILE }}
           commit_message: "[auto] Update openapi files"
           tagging_message: ${{ env.VERSION }}
 
