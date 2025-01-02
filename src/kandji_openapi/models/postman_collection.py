@@ -2,7 +2,13 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from openapi_pydantic import ExternalDocumentation, Server, ServerVariable, Tag
+from openapi_pydantic import (
+    ExternalDocumentation,
+    SecurityScheme,
+    Server,
+    ServerVariable,
+    Tag,
+)
 
 from kandji_openapi.configurations import KANDJI_API_DOCS_URL
 from kandji_openapi.models.auth import Auth
@@ -104,7 +110,7 @@ class PostmanCollection:
             all_tags.extend(self._tags_to_openapi(item.get_items()))
         return all_tags
 
-    def get_security_schemes(self) -> dict[str, dict[str, Any]]:
+    def get_security_schemes(self) -> dict[str, SecurityScheme]:
         """Compile all unique security schemes"""
         schemes = {}
 
@@ -143,6 +149,6 @@ class PostmanCollection:
             openapi["components"]["securitySchemes"] = security_schemes
 
         if KANDJI_API_DOCS_URL:
-            openapi["externalDocs"] = {"url": KANDJI_API_DOCS_URL}
+            openapi["externalDocs"] = ExternalDocumentation(url=KANDJI_API_DOCS_URL)
 
         return openapi

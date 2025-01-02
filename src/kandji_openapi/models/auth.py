@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Any, Optional
 
+from openapi_pydantic import SecurityScheme
+
 
 class AuthType(Enum):
     NOAUTH = "noauth"
@@ -29,32 +31,31 @@ class Auth:
     def get_type(self) -> str:
         return self.type.value
 
-    def to_openapi(self) -> dict[str, Any]:
+    def to_openapi(self) -> dict[str, Optional[SecurityScheme]]:
         """Convert Postman auth to OpenAPI security scheme"""
         if self.type == AuthType.NOAUTH:
             return {}
 
-        security_scheme: dict[str, Any] = {
-            "type": "",
-            "description": "Authentication information",
-        }
-
-        # if self.type == AuthType.APIKEY:
-        #     # Not tested
-        #     security_scheme.update(
-        #         {
-        #             "type": "apiKey",
-        #             "in": self.data.get("in", "header"),
-        #             "name": self.data.get("name", "X-API-Key"),
-        #         }
-        #     )
-        # elif self.type == AuthType.BASIC:
-        #     # Not tested
-        #     security_scheme.update({"type": "http", "scheme": "basic"})
-        # elif self.type == AuthType.BEARER:
-        if self.type == AuthType.BEARER:
-            security_scheme.update(
-                {"type": "http", "scheme": "bearer", "bearerFormat": "API Token"}
+        security_scheme = None
+        if self.type == AuthType.APIKEY:
+            security_scheme = SecurityScheme(
+                type="apiKey",
+                description="Authentication information",
+                security_scheme_in=self.data.get("in", "header"),  # type: ignore
+                name=self.data.get("name", "X-API-Key"),
+            )
+        elif self.type == AuthType.BASIC:
+            security_scheme = SecurityScheme(
+                type="http",
+                description="Authentication information",
+                scheme="basic",
+            )
+        elif self.type == AuthType.BEARER:
+            security_scheme = SecurityScheme(
+                type="http",
+                description="Authentication information",
+                scheme="bearer",
+                bearerFormat="API Token",
             )
 
         return {self.type.value: security_scheme}

@@ -2,8 +2,9 @@ import json
 import os
 import tempfile
 from pathlib import Path
-from typing import Any
 
+from openapi_pydantic import parse_obj
+from openapi_pydantic.v3.parser import OpenAPIv3
 from openapi_spec_validator import validate
 from openapi_spec_validator.readers import read_from_filename
 from openapi_spec_validator.validation.exceptions import OpenAPIValidationError
@@ -11,22 +12,25 @@ from openapi_spec_validator.versions.shortcuts import get_spec_version
 from ruamel.yaml import YAML
 
 from kandji_openapi.models.postman_collection import PostmanCollection
-from kandji_openapi.reference_resolver import ReferenceResolver
 
 
 class OpenAPIGenerator:
     def __init__(self, collection: PostmanCollection) -> None:
         self.collection = collection
         self.openapi_spec = self._generate_spec()
-        self.ref_resolver = ReferenceResolver(self.openapi_spec)
 
-    def _generate_spec(self) -> dict[str, Any]:
+    def _generate_spec(self) -> OpenAPIv3:
         """Generate OpenAPI specification from Postman collection"""
-        return self.collection.to_openapi()
+        return parse_obj(data=self.collection.to_openapi())
 
     def _write_json_file(self, file_path: Path) -> None:
         with open(file_path, "w") as temp:
-            json.dump(self.openapi_spec, temp)
+            json.dump(
+                self.openapi_spec.model_dump_json(
+                    by_alias=True, exclude_none=True, indent=2
+                ),
+                temp,
+            )
 
     def _write_yaml_file(self, file_path: Path) -> None:
         yaml = YAML(typ="safe", pure=True)
@@ -36,11 +40,9 @@ class OpenAPIGenerator:
         yaml.preserve_quotes = True
 
         with open(file_path, "w") as temp:
-            yaml.dump(self.openapi_spec, temp)
-
-    def resolve_references(self) -> None:
-        """Resolve and optimize schema references"""
-        self.ref_resolver.resolve_references()
+            yaml.dump(
+                self.openapi_spec.model_dump(by_alias=True, exclude_none=True), temp
+            )
 
     def validate_spec(self) -> bool:
         """Validate the generated OpenAPI spec, providing detailed feedback if invalid."""
