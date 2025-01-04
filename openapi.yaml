@@ -7830,8 +7830,8 @@ paths:
                     runs_on_ipad: true
                     runs_on_iphone: true
                     runs_on_mac: false
-                    runs_on_reality_device: false
                     runs_on_tv: false
+                    runs_on_vision: false
                     updated_at: '2023-03-10T20:06:28.622392Z'
                   - active: false
                     created_at: '2024-01-28T12:12:40.716224Z'
@@ -7842,8 +7842,8 @@ paths:
                     runs_on_ipad: true
                     runs_on_iphone: true
                     runs_on_mac: false
-                    runs_on_reality_device: false
                     runs_on_tv: false
+                    runs_on_vision: false
                     updated_at: '2024-01-28T12:19:47.897192Z'
                 type: object
           description: OK
@@ -8243,8 +8243,8 @@ paths:
                   runs_on_ipad: true
                   runs_on_iphone: true
                   runs_on_mac: false
-                  runs_on_reality_device: false
                   runs_on_tv: false
+                  runs_on_vision: false
                   updated_at: '2023-03-10T20:06:28.622392Z'
                 type: object
           description: OK
