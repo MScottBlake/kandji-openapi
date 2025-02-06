@@ -40,7 +40,16 @@ class URL:
     def get_path_parameters(self) -> list[dict[str, Any]]:
         path_params = []
         for path_var in self.path:
-            if path_var.startswith("{") and path_var.endswith("}"):
+            if path_var.startswith(":"):
+                path_params.append(
+                    {
+                        "name": path_var.strip(":"),
+                        "in": "path",
+                        "required": True,
+                        "schema": {"type": "string"},
+                    }
+                )
+            elif path_var.startswith("{") and path_var.endswith("}"):
                 path_params.append(
                     {
                         "name": path_var.strip("{}"),
