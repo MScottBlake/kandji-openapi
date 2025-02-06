@@ -1,3 +1,4 @@
+import re
 from dataclasses import dataclass, field
 from typing import Any, Iterable, Optional, Sequence
 
@@ -63,6 +64,7 @@ class URL:
     def get_path_string(self) -> str:
         """Convert path components to OpenAPI path string with parameters"""
         path = "/" + "/".join(self.path)
+        path = re.sub(r":([^\/\n]+)", "{\\1}", path)
         return path.replace("{{", "{").replace("}}", "}")
 
     def get_base_url(self) -> str:
