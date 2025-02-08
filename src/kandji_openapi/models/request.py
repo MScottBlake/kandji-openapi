@@ -126,7 +126,7 @@ class Request:
         request_obj: dict[str, dict[str, Any]] = {
             method: {
                 "summary": self.summary,
-                "operationId": self._to_camel_case(f"{self.get_tag()}_{self.summary}"),
+                "operationId": f"{self.get_tag()}_{self._to_camel_case(self.summary)}",
             }
         }
         if tag := self.get_tag():
