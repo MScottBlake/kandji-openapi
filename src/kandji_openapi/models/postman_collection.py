@@ -2,15 +2,11 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from kandji_openapi.configurations import KANDJI_API_DOCS_URL
-from kandji_openapi.models.auth import Auth
-from kandji_openapi.models.info import Info
-from kandji_openapi.models.item import Item
-from kandji_openapi.openapi_types import (
-    ServerObject,
-    ServerVariableObject,
-    TagObject,
-)
+from configurations import KANDJI_API_DOCS_URL
+from models.auth import Auth
+from models.info import Info
+from models.item import Item
+from openapi_types import ServerObject, ServerVariableObject, TagObject
 
 
 @dataclass

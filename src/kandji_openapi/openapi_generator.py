@@ -4,14 +4,13 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+from models.postman_collection import PostmanCollection
 from openapi_spec_validator import validate
 from openapi_spec_validator.readers import read_from_filename
 from openapi_spec_validator.validation.exceptions import OpenAPIValidationError
 from openapi_spec_validator.versions.shortcuts import get_spec_version
+from reference_resolver import ReferenceResolver
 from ruamel.yaml import YAML
-
-from kandji_openapi.models.postman_collection import PostmanCollection
-from kandji_openapi.reference_resolver import ReferenceResolver
 
 
 class OpenAPIGenerator:

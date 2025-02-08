@@ -4,6 +4,6 @@ enablePostProcessFile: True
 gitHost: github.com
 gitUserId: MScottBlake
 gitRepoId: kandji-bash-sdk
-scriptName: kandji_sdk
+scriptName: kandji
 generateBashCompletion: True
 generateZshCompletion: True

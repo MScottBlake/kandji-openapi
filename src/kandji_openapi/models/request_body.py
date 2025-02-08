@@ -3,7 +3,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from kandji_openapi.strings import string_formatting
+from strings import string_formatting
 
 
 @dataclass
