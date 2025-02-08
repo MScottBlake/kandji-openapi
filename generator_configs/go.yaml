@@ -6,3 +6,4 @@ gitUserId: MScottBlake
 gitRepoId: kandji-go-sdk
 packageName: kandji
 removeOperationIdPrefix: True
+generateInterfaces: True
