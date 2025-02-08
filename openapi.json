@@ -152,7 +152,7 @@
         "/api/v1/integrations/apple/ade/public_key/": {
             "get": {
                 "summary": "Download ADE public key",
-                "operationId": "downloadAdePublicKey",
+                "operationId": "Automated Device Enrollment integrations_downloadAdePublicKey",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -275,7 +275,7 @@
         "/api/v1/integrations/apple/ade/": {
             "post": {
                 "summary": "Create ADE integration",
-                "operationId": "createAdeIntegration",
+                "operationId": "Automated Device Enrollment integrations_createAdeIntegration",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -456,7 +456,7 @@
         "/api/v1/integrations/apple/ade/{ade_token_id}/renew": {
             "post": {
                 "summary": "Renew ADE integration",
-                "operationId": "renewAdeIntegration",
+                "operationId": "Automated Device Enrollment integrations_renewAdeIntegration",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -523,7 +523,7 @@
         "/api/v1/integrations/apple/ade/{ade_token_id}": {
             "patch": {
                 "summary": "Update ADE integration",
-                "operationId": "updateAdeIntegration",
+                "operationId": "Automated Device Enrollment integrations_updateAdeIntegration",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -568,7 +568,7 @@
             },
             "get": {
                 "summary": "Get ADE integration",
-                "operationId": "getAdeIntegration",
+                "operationId": "Automated Device Enrollment integrations_getAdeIntegration",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -599,7 +599,7 @@
             },
             "delete": {
                 "summary": "Delete ADE integration",
-                "operationId": "deleteAdeIntegration",
+                "operationId": "Automated Device Enrollment integrations_deleteAdeIntegration",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -722,7 +722,7 @@
         "/api/v1/integrations/apple/ade": {
             "get": {
                 "summary": "List ADE integrations",
-                "operationId": "listAdeIntegrations",
+                "operationId": "Automated Device Enrollment integrations_listAdeIntegrations",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -745,7 +745,7 @@
         "/api/v1/integrations/apple/ade/{ade_token_id}/devices": {
             "get": {
                 "summary": "List devices associated to ADE token",
-                "operationId": "listDevicesAssociatedToAdeToken",
+                "operationId": "Automated Device Enrollment integrations_listDevicesAssociatedToAdeToken",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -1644,7 +1644,7 @@
         "/api/v1/integrations/apple/ade/devices": {
             "get": {
                 "summary": "List ADE devices",
-                "operationId": "listAdeDevices",
+                "operationId": "Automated Device Enrollment integrations_listAdeDevices",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -1839,7 +1839,7 @@
         "/api/v1/integrations/apple/ade/devices/{device_id}": {
             "get": {
                 "summary": "Get ADE device",
-                "operationId": "getAdeDevice",
+                "operationId": "Automated Device Enrollment integrations_getAdeDevice",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -1920,7 +1920,7 @@
             },
             "patch": {
                 "summary": "Update ADE device",
-                "operationId": "updateAdeDevice",
+                "operationId": "Automated Device Enrollment integrations_updateAdeDevice",
                 "tags": [
                     "Automated Device Enrollment integrations"
                 ],
@@ -2017,7 +2017,7 @@
         "/api/v1/blueprints": {
             "get": {
                 "summary": "List Blueprints",
-                "operationId": "listBlueprints",
+                "operationId": "Blueprints_listBlueprints",
                 "tags": [
                     "Blueprints"
                 ],
@@ -2218,7 +2218,7 @@
             },
             "post": {
                 "summary": "Create Blueprint",
-                "operationId": "createBlueprint",
+                "operationId": "Blueprints_createBlueprint",
                 "tags": [
                     "Blueprints"
                 ],
@@ -2339,7 +2339,7 @@
         "/api/v1/blueprints/{blueprint_id}": {
             "get": {
                 "summary": "Get Blueprint",
-                "operationId": "getBlueprint",
+                "operationId": "Blueprints_getBlueprint",
                 "tags": [
                     "Blueprints"
                 ],
@@ -2456,7 +2456,7 @@
             },
             "patch": {
                 "summary": "Update Blueprint",
-                "operationId": "updateBlueprint",
+                "operationId": "Blueprints_updateBlueprint",
                 "tags": [
                     "Blueprints"
                 ],
@@ -2631,7 +2631,7 @@
             },
             "delete": {
                 "summary": "Delete Blueprint",
-                "operationId": "deleteBlueprint",
+                "operationId": "Blueprints_deleteBlueprint",
                 "tags": [
                     "Blueprints"
                 ],
@@ -2664,7 +2664,7 @@
         "/api/v1/blueprints/{blueprint_id}/ota-enrollment-profile": {
             "get": {
                 "summary": "Get Manual Enrollment Profile",
-                "operationId": "getManualEnrollmentProfile",
+                "operationId": "Blueprints_getManualEnrollmentProfile",
                 "tags": [
                     "Blueprints"
                 ],
@@ -2909,7 +2909,7 @@
         "/api/v1/blueprints/{blueprint_id}/list-library-items": {
             "get": {
                 "summary": "List Library Items",
-                "operationId": "listLibraryItems",
+                "operationId": "Blueprints_listLibraryItems",
                 "tags": [
                     "Blueprints"
                 ],
@@ -3168,7 +3168,7 @@
         "/api/v1/blueprints/{blueprint_id}/assign-library-item": {
             "post": {
                 "summary": "Assign Library Item",
-                "operationId": "assignLibraryItem",
+                "operationId": "Blueprints_assignLibraryItem",
                 "tags": [
                     "Blueprints"
                 ],
@@ -3301,7 +3301,7 @@
         "/api/v1/blueprints/{blueprint_id}/remove-library-item": {
             "post": {
                 "summary": "Remove Library Item",
-                "operationId": "removeLibraryItem",
+                "operationId": "Blueprints_removeLibraryItem",
                 "tags": [
                     "Blueprints"
                 ],
@@ -3433,7 +3433,7 @@
         "/api/v1/blueprints/templates/": {
             "get": {
                 "summary": "Get Blueprint Templates",
-                "operationId": "getBlueprintTemplates",
+                "operationId": "Blueprints_getBlueprintTemplates",
                 "tags": [
                     "Blueprints"
                 ],
@@ -3477,7 +3477,7 @@
         "/api/v1/devices/{device_id}/notes": {
             "get": {
                 "summary": "Get Device Notes",
-                "operationId": "getDeviceNotes",
+                "operationId": "Notes_getDeviceNotes",
                 "tags": [
                     "Notes"
                 ],
@@ -3628,7 +3628,7 @@
             },
             "post": {
                 "summary": "Create Device Note",
-                "operationId": "createDeviceNote",
+                "operationId": "Notes_createDeviceNote",
                 "tags": [
                     "Notes"
                 ],
@@ -3773,7 +3773,7 @@
         "/api/v1/devices/{device_id}/notes/{note_id}": {
             "get": {
                 "summary": "Retrieve Device Note",
-                "operationId": "retrieveDeviceNote",
+                "operationId": "Notes_retrieveDeviceNote",
                 "tags": [
                     "Notes"
                 ],
@@ -3912,7 +3912,7 @@
             },
             "patch": {
                 "summary": "Update Device Note",
-                "operationId": "updateDeviceNote",
+                "operationId": "Notes_updateDeviceNote",
                 "tags": [
                     "Notes"
                 ],
@@ -4063,7 +4063,7 @@
             },
             "delete": {
                 "summary": "Delete Device Note",
-                "operationId": "deleteDeviceNote",
+                "operationId": "Notes_deleteDeviceNote",
                 "tags": [
                     "Notes"
                 ],
@@ -4201,7 +4201,7 @@
         "/api/v1/devices": {
             "get": {
                 "summary": "List Devices",
-                "operationId": "listDevices",
+                "operationId": "Device Information_listDevices",
                 "tags": [
                     "Device Information"
                 ],
@@ -4477,7 +4477,7 @@
         "/api/v1/devices/{device_id}": {
             "delete": {
                 "summary": "Delete Device",
-                "operationId": "deleteDevice",
+                "operationId": "Device Actions_deleteDevice",
                 "tags": [
                     "Device Actions"
                 ],
@@ -4510,7 +4510,7 @@
         "/api/v1/devices/{device_id}/details": {
             "get": {
                 "summary": "Get Device Details",
-                "operationId": "getDeviceDetails",
+                "operationId": "Device Information_getDeviceDetails",
                 "tags": [
                     "Device Information"
                 ],
@@ -4678,7 +4678,7 @@
         "/api/v1/devices/{device_id}/details/lostmode": {
             "get": {
                 "summary": "Get Device Lost Mode details",
-                "operationId": "getDeviceLostModeDetails",
+                "operationId": "Device Information_getDeviceLostModeDetails",
                 "tags": [
                     "Device Information"
                 ],
@@ -4750,7 +4750,7 @@
             },
             "delete": {
                 "summary": "Cancel Lost Mode",
-                "operationId": "cancelLostMode",
+                "operationId": "Device Information_cancelLostMode",
                 "tags": [
                     "Device Information"
                 ],
@@ -4783,7 +4783,7 @@
         "/api/v1/devices/{device_id}/activity": {
             "get": {
                 "summary": "Get Device Activity",
-                "operationId": "getDeviceActivity",
+                "operationId": "Device Information_getDeviceActivity",
                 "tags": [
                     "Device Information"
                 ],
@@ -6478,7 +6478,7 @@
         "/api/v1/devices/{device_id}/apps": {
             "get": {
                 "summary": "Get Device Apps",
-                "operationId": "getDeviceApps",
+                "operationId": "Device Information_getDeviceApps",
                 "tags": [
                     "Device Information"
                 ],
@@ -6642,7 +6642,7 @@
         "/api/v1/devices/{device_id}/library-items": {
             "get": {
                 "summary": "Get Device Library Items",
-                "operationId": "getDeviceLibraryItems",
+                "operationId": "Device Information_getDeviceLibraryItems",
                 "tags": [
                     "Device Information"
                 ],
@@ -6803,7 +6803,7 @@
         "/api/v1/devices/{device_id}/parameters": {
             "get": {
                 "summary": "Get Device Parameters",
-                "operationId": "getDeviceParameters",
+                "operationId": "Device Information_getDeviceParameters",
                 "tags": [
                     "Device Information"
                 ],
@@ -6941,7 +6941,7 @@
         "/api/v1/devices/{device_id}/status": {
             "get": {
                 "summary": "Get Device Status",
-                "operationId": "getDeviceStatus",
+                "operationId": "Device Information_getDeviceStatus",
                 "tags": [
                     "Device Information"
                 ],
@@ -7161,7 +7161,7 @@
         "/api/v1/devices/{device_id}/action/enablelostmode": {
             "post": {
                 "summary": "Enable Lost Mode",
-                "operationId": "enableLostMode",
+                "operationId": "Lost Mode_enableLostMode",
                 "tags": [
                     "Lost Mode"
                 ],
@@ -7208,7 +7208,7 @@
         "/api/v1/devices/{device_id}/action/disablelostmode": {
             "post": {
                 "summary": "Disable Lost Mode",
-                "operationId": "disableLostMode",
+                "operationId": "Lost Mode_disableLostMode",
                 "tags": [
                     "Lost Mode"
                 ],
@@ -7241,7 +7241,7 @@
         "/api/v1/devices/{device_id}/action/playlostmodesound": {
             "post": {
                 "summary": "Play Lost Mode Sound",
-                "operationId": "playLostModeSound",
+                "operationId": "Lost Mode_playLostModeSound",
                 "tags": [
                     "Lost Mode"
                 ],
@@ -7274,7 +7274,7 @@
         "/api/v1/devices/{device_id}/action/updatelocation": {
             "post": {
                 "summary": "Update Location",
-                "operationId": "updateLocation",
+                "operationId": "Lost Mode_updateLocation",
                 "tags": [
                     "Lost Mode"
                 ],
@@ -7307,7 +7307,7 @@
         "/api/v1/devices/{device_id}/action/clearpasscode": {
             "post": {
                 "summary": "Clear Passcode",
-                "operationId": "clearPasscode",
+                "operationId": "Device Actions_clearPasscode",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7420,7 +7420,7 @@
         "/api/v1/devices/{device_id}/action/deleteuser": {
             "post": {
                 "summary": "Delete User",
-                "operationId": "deleteUser",
+                "operationId": "Device Actions_deleteUser",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7467,7 +7467,7 @@
         "/api/v1/devices/{device_id}/action/erase": {
             "post": {
                 "summary": "Erase Device",
-                "operationId": "eraseDevice",
+                "operationId": "Device Actions_eraseDevice",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7537,7 +7537,7 @@
         "/api/v1/devices/{device_id}/commands": {
             "get": {
                 "summary": "Get Device Commands",
-                "operationId": "getDeviceCommands",
+                "operationId": "Device Actions_getDeviceCommands",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7598,7 +7598,7 @@
         "/api/v1/devices/{device_id}/action/lock": {
             "post": {
                 "summary": "Lock Device",
-                "operationId": "lockDevice",
+                "operationId": "Device Actions_lockDevice",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7837,7 +7837,7 @@
         "/api/v1/devices/{device_id}/action/reinstallagent": {
             "post": {
                 "summary": "Reinstall Agent",
-                "operationId": "reinstallAgent",
+                "operationId": "Device Actions_reinstallAgent",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7950,7 +7950,7 @@
         "/api/v1/devices/{device_id}/action/remotedesktop": {
             "post": {
                 "summary": "Remote Desktop",
-                "operationId": "remoteDesktop",
+                "operationId": "Device Actions_remoteDesktop",
                 "tags": [
                     "Device Actions"
                 ],
@@ -7995,7 +7995,7 @@
         "/api/v1/devices/{device_id}/action/renewmdmprofile": {
             "post": {
                 "summary": "Renew MDM Profile",
-                "operationId": "renewMdmProfile",
+                "operationId": "Device Actions_renewMdmProfile",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8028,7 +8028,7 @@
         "/api/v1/devices/{device_id}/action/restart": {
             "post": {
                 "summary": "Restart Device",
-                "operationId": "restartDevice",
+                "operationId": "Device Actions_restartDevice",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8154,7 +8154,7 @@
         "/api/v1/devices/{device_id}/action/blankpush": {
             "post": {
                 "summary": "Send Blankpush",
-                "operationId": "sendBlankpush",
+                "operationId": "Device Actions_sendBlankpush",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8267,7 +8267,7 @@
         "/api/v1/devices/{device_id}/action/setname": {
             "post": {
                 "summary": "Set Name",
-                "operationId": "setName",
+                "operationId": "Device Actions_setName",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8392,7 +8392,7 @@
         "/api/v1/devices/{device_id}/action/shutdown": {
             "post": {
                 "summary": "Shutdown",
-                "operationId": "shutdown",
+                "operationId": "Device Actions_shutdown",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8505,7 +8505,7 @@
         "/api/v1/devices/{device_id}/action/updateinventory": {
             "post": {
                 "summary": "Update Inventory",
-                "operationId": "updateInventory",
+                "operationId": "Device Actions_updateInventory",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8618,7 +8618,7 @@
         "/api/v1/devices/{device_id}/action/unlockaccount": {
             "post": {
                 "summary": "Unlock Account",
-                "operationId": "unlockAccount",
+                "operationId": "Device Actions_unlockAccount",
                 "tags": [
                     "Device Actions"
                 ],
@@ -8743,7 +8743,7 @@
         "/api/v1/devices/{device_id}/secrets/bypasscode": {
             "get": {
                 "summary": "Get Activation Lock Bypass Code",
-                "operationId": "getActivationLockBypassCode",
+                "operationId": "Device Secrets_getActivationLockBypassCode",
                 "tags": [
                     "Device Secrets"
                 ],
@@ -8873,7 +8873,7 @@
         "/api/v1/devices/{device_id}/secrets/filevaultkey": {
             "get": {
                 "summary": "Get FileVault Recovery Key",
-                "operationId": "getFilevaultRecoveryKey",
+                "operationId": "Device Secrets_getFilevaultRecoveryKey",
                 "tags": [
                     "Device Secrets"
                 ],
@@ -9002,7 +9002,7 @@
         "/api/v1/devices/{device_id}/secrets/unlockpin": {
             "get": {
                 "summary": "Get Unlock Pin",
-                "operationId": "getUnlockPin",
+                "operationId": "Device Secrets_getUnlockPin",
                 "tags": [
                     "Device Secrets"
                 ],
@@ -9131,7 +9131,7 @@
         "/api/v1/devices/{device_id}/secrets/recoverypassword": {
             "get": {
                 "summary": "Get Recovery Lock Password",
-                "operationId": "getRecoveryLockPassword",
+                "operationId": "Device Secrets_getRecoveryLockPassword",
                 "tags": [
                     "Device Secrets"
                 ],
@@ -9260,7 +9260,7 @@
         "/api/v1/library/custom-apps": {
             "get": {
                 "summary": "List Custom Apps",
-                "operationId": "listCustomApps",
+                "operationId": "Custom Apps_listCustomApps",
                 "tags": [
                     "Custom Apps"
                 ],
@@ -9400,7 +9400,7 @@
             },
             "post": {
                 "summary": "Create Custom App",
-                "operationId": "createCustomApp",
+                "operationId": "Custom Apps_createCustomApp",
                 "tags": [
                     "Custom Apps"
                 ],
@@ -9581,7 +9581,7 @@
         "/api/v1/library/custom-apps/{library_item_id}": {
             "get": {
                 "summary": "Get Custom App",
-                "operationId": "getCustomApp",
+                "operationId": "Custom Apps_getCustomApp",
                 "tags": [
                     "Custom Apps"
                 ],
@@ -9712,7 +9712,7 @@
             },
             "patch": {
                 "summary": "Update Custom App",
-                "operationId": "updateCustomApp",
+                "operationId": "Custom Apps_updateCustomApp",
                 "tags": [
                     "Custom Apps"
                 ],
@@ -9871,7 +9871,7 @@
             },
             "delete": {
                 "summary": "Delete Custom App",
-                "operationId": "deleteCustomApp",
+                "operationId": "Custom Apps_deleteCustomApp",
                 "tags": [
                     "Custom Apps"
                 ],
@@ -10165,7 +10165,7 @@
         "/api/v1/library/custom-apps/upload": {
             "post": {
                 "summary": "Upload Custom App",
-                "operationId": "uploadCustomApp",
+                "operationId": "Custom Apps_uploadCustomApp",
                 "tags": [
                     "Custom Apps"
                 ],
@@ -10274,7 +10274,7 @@
         "/api/v1/library/ipa-apps": {
             "get": {
                 "summary": "List In-House Apps",
-                "operationId": "listInhouseApps",
+                "operationId": "In-House Apps_listInhouseApps",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -10387,7 +10387,7 @@
             },
             "post": {
                 "summary": "Create In-House App",
-                "operationId": "createInhouseApp",
+                "operationId": "In-House Apps_createInhouseApp",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -10439,7 +10439,7 @@
         "/api/v1/library/ipa-apps/{library_item_id}": {
             "get": {
                 "summary": "Get In-House App",
-                "operationId": "getInhouseApp",
+                "operationId": "In-House Apps_getInhouseApp",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -10700,7 +10700,7 @@
             },
             "patch": {
                 "summary": "Update In-House App",
-                "operationId": "updateInhouseApp",
+                "operationId": "In-House Apps_updateInhouseApp",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -10751,7 +10751,7 @@
             },
             "delete": {
                 "summary": "Delete In-House App",
-                "operationId": "deleteInhouseApp",
+                "operationId": "In-House Apps_deleteInhouseApp",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -10787,7 +10787,7 @@
         "/api/v1/library/ipa-apps/upload": {
             "post": {
                 "summary": "Upload In-House App",
-                "operationId": "uploadInhouseApp",
+                "operationId": "In-House Apps_uploadInhouseApp",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -11046,7 +11046,7 @@
         "/api/v1/library/ipa-apps/upload/{pending_upload_id}/status": {
             "get": {
                 "summary": "Upload In-House App Status",
-                "operationId": "uploadInhouseAppStatus",
+                "operationId": "In-House Apps_uploadInhouseAppStatus",
                 "tags": [
                     "In-House Apps"
                 ],
@@ -11099,7 +11099,7 @@
         "/api/v1/library/custom-profiles": {
             "get": {
                 "summary": "List Custom Profiles",
-                "operationId": "listCustomProfiles",
+                "operationId": "Custom Profiles_listCustomProfiles",
                 "tags": [
                     "Custom Profiles"
                 ],
@@ -11248,7 +11248,7 @@
             },
             "post": {
                 "summary": "Create Custom Profile",
-                "operationId": "createCustomProfile",
+                "operationId": "Custom Profiles_createCustomProfile",
                 "tags": [
                     "Custom Profiles"
                 ],
@@ -11392,7 +11392,7 @@
         "/api/v1/library/custom-profiles/{library_item_id}": {
             "get": {
                 "summary": "Get Custom Profile",
-                "operationId": "getCustomProfile",
+                "operationId": "Custom Profiles_getCustomProfile",
                 "tags": [
                     "Custom Profiles"
                 ],
@@ -11518,7 +11518,7 @@
             },
             "patch": {
                 "summary": "Update Custom Profile",
-                "operationId": "updateCustomProfile",
+                "operationId": "Custom Profiles_updateCustomProfile",
                 "tags": [
                     "Custom Profiles"
                 ],
@@ -11649,7 +11649,7 @@
             },
             "delete": {
                 "summary": "Delete Custom Profile",
-                "operationId": "deleteCustomProfile",
+                "operationId": "Custom Profiles_deleteCustomProfile",
                 "tags": [
                     "Custom Profiles"
                 ],
@@ -11943,7 +11943,7 @@
         "/api/v1/library/custom-scripts": {
             "get": {
                 "summary": "List Custom Scripts",
-                "operationId": "listCustomScripts",
+                "operationId": "Custom Scripts_listCustomScripts",
                 "tags": [
                     "Custom Scripts"
                 ],
@@ -12200,7 +12200,7 @@
             },
             "post": {
                 "summary": "Create Custom Script",
-                "operationId": "createCustomScript",
+                "operationId": "Custom Scripts_createCustomScript",
                 "tags": [
                     "Custom Scripts"
                 ],
@@ -12333,7 +12333,7 @@
         "/api/v1/library/custom-scripts/{library_item_id}": {
             "get": {
                 "summary": "Get Custom Script",
-                "operationId": "getCustomScript",
+                "operationId": "Custom Scripts_getCustomScript",
                 "tags": [
                     "Custom Scripts"
                 ],
@@ -12456,7 +12456,7 @@
             },
             "patch": {
                 "summary": "Update Custom Script",
-                "operationId": "updateCustomScript",
+                "operationId": "Custom Scripts_updateCustomScript",
                 "tags": [
                     "Custom Scripts"
                 ],
@@ -12711,7 +12711,7 @@
             },
             "delete": {
                 "summary": "Delete Custom Script",
-                "operationId": "deleteCustomScript",
+                "operationId": "Custom Scripts_deleteCustomScript",
                 "tags": [
                     "Custom Scripts"
                 ],
@@ -13005,7 +13005,7 @@
         "/api/v1/self-service/categories": {
             "get": {
                 "summary": "List Self Service Categories",
-                "operationId": "listSelfServiceCategories",
+                "operationId": "Self Service_listSelfServiceCategories",
                 "tags": [
                     "Self Service"
                 ],
@@ -13127,7 +13127,7 @@
         "/api/v1/library/library-items/{library_item_id}/activity": {
             "get": {
                 "summary": "Get Library Item Activity",
-                "operationId": "getLibraryItemActivity",
+                "operationId": "Library items_getLibraryItemActivity",
                 "tags": [
                     "Library items"
                 ],
@@ -13478,7 +13478,7 @@
         "/api/v1/library/library-items/{library_item_id}/status": {
             "get": {
                 "summary": "Get Library Item Statuses",
-                "operationId": "getLibraryItemStatuses",
+                "operationId": "Library items_getLibraryItemStatuses",
                 "tags": [
                     "Library items"
                 ],
@@ -13810,7 +13810,7 @@
         "/api/v1/prism/activation_lock": {
             "get": {
                 "summary": "Activation lock",
-                "operationId": "activationLock",
+                "operationId": "Prism_activationLock",
                 "tags": [
                     "Prism"
                 ],
@@ -14035,7 +14035,7 @@
         "/api/v1/prism/apps": {
             "get": {
                 "summary": "Applications",
-                "operationId": "applications",
+                "operationId": "Prism_applications",
                 "tags": [
                     "Prism"
                 ],
@@ -14327,7 +14327,7 @@
         "/api/v1/prism/application_firewall": {
             "get": {
                 "summary": "Application firewall",
-                "operationId": "applicationFirewall",
+                "operationId": "Prism_applicationFirewall",
                 "tags": [
                     "Prism"
                 ],
@@ -14579,7 +14579,7 @@
         "/api/v1/prism/certificates": {
             "get": {
                 "summary": "Certificates",
-                "operationId": "certificates",
+                "operationId": "Prism_certificates",
                 "tags": [
                     "Prism"
                 ],
@@ -14836,7 +14836,7 @@
         "/api/v1/prism/desktop_and_screensaver": {
             "get": {
                 "summary": "Desktop and Screensaver",
-                "operationId": "desktopAndScreensaver",
+                "operationId": "Prism_desktopAndScreensaver",
                 "tags": [
                     "Prism"
                 ],
@@ -15127,7 +15127,7 @@
         "/api/v1/prism/device_information": {
             "get": {
                 "summary": "Device information",
-                "operationId": "deviceInformation",
+                "operationId": "Prism_deviceInformation",
                 "tags": [
                     "Prism"
                 ],
@@ -15413,7 +15413,7 @@
         "/api/v1/prism/filevault": {
             "get": {
                 "summary": "FileVault",
-                "operationId": "filevault",
+                "operationId": "Prism_filevault",
                 "tags": [
                     "Prism"
                 ],
@@ -15635,7 +15635,7 @@
         "/api/v1/prism/gatekeeper_and_xprotect": {
             "get": {
                 "summary": "Gatekeeper and XProtect",
-                "operationId": "gatekeeperAndXprotect",
+                "operationId": "Prism_gatekeeperAndXprotect",
                 "tags": [
                     "Prism"
                 ],
@@ -15877,7 +15877,7 @@
         "/api/v1/prism/installed_profiles": {
             "get": {
                 "summary": "Installed profiles",
-                "operationId": "installedProfiles",
+                "operationId": "Prism_installedProfiles",
                 "tags": [
                     "Prism"
                 ],
@@ -16909,7 +16909,7 @@
         "/api/v1/prism/kernel_extensions": {
             "get": {
                 "summary": "Kernel Extensions",
-                "operationId": "kernelExtensions",
+                "operationId": "Prism_kernelExtensions",
                 "tags": [
                     "Prism"
                 ],
@@ -17112,7 +17112,7 @@
         "/api/v1/prism/launch_agents_and_daemons": {
             "get": {
                 "summary": "Launch Agents and Daemons",
-                "operationId": "launchAgentsAndDaemons",
+                "operationId": "Prism_launchAgentsAndDaemons",
                 "tags": [
                     "Prism"
                 ],
@@ -17708,7 +17708,7 @@
         "/api/v1/prism/local_users": {
             "get": {
                 "summary": "Local users",
-                "operationId": "localUsers",
+                "operationId": "Prism_localUsers",
                 "tags": [
                     "Prism"
                 ],
@@ -17948,7 +17948,7 @@
         "/api/v1/prism/startup_settings": {
             "get": {
                 "summary": "Startup settings",
-                "operationId": "startupSettings",
+                "operationId": "Prism_startupSettings",
                 "tags": [
                     "Prism"
                 ],
@@ -18206,7 +18206,7 @@
         "/api/v1/prism/system_extensions": {
             "get": {
                 "summary": "System Extensions",
-                "operationId": "systemExtensions",
+                "operationId": "Prism_systemExtensions",
                 "tags": [
                     "Prism"
                 ],
@@ -18464,7 +18464,7 @@
         "/api/v1/prism/transparency_database": {
             "get": {
                 "summary": "Transparency database",
-                "operationId": "transparencyDatabase",
+                "operationId": "Prism_transparencyDatabase",
                 "tags": [
                     "Prism"
                 ],
@@ -18708,7 +18708,7 @@
         "/api/v1/prism/export": {
             "post": {
                 "summary": "Request category export",
-                "operationId": "requestCategoryExport",
+                "operationId": "Prism_requestCategoryExport",
                 "tags": [
                     "Prism"
                 ],
@@ -18994,7 +18994,7 @@
         "/api/v1/prism/export/{export_id}": {
             "get": {
                 "summary": "Get category export",
-                "operationId": "getCategoryExport",
+                "operationId": "Prism_getCategoryExport",
                 "tags": [
                     "Prism"
                 ],
@@ -19155,7 +19155,7 @@
         "/api/v1/prism/count": {
             "get": {
                 "summary": "Count",
-                "operationId": "count",
+                "operationId": "Prism_count",
                 "tags": [
                     "Prism"
                 ],
@@ -19305,7 +19305,7 @@
         "/api/v1/tags": {
             "get": {
                 "summary": "Get Tags",
-                "operationId": "getTags",
+                "operationId": "Tags_getTags",
                 "tags": [
                     "Tags"
                 ],
@@ -19368,7 +19368,7 @@
             },
             "post": {
                 "summary": "Create Tag",
-                "operationId": "createTag",
+                "operationId": "Tags_createTag",
                 "tags": [
                     "Tags"
                 ],
@@ -19422,7 +19422,7 @@
         "/api/v1/tags/{tag_id}": {
             "patch": {
                 "summary": "Update Tag",
-                "operationId": "updateTag",
+                "operationId": "Tags_updateTag",
                 "tags": [
                     "Tags"
                 ],
@@ -19484,7 +19484,7 @@
             },
             "delete": {
                 "summary": "Delete Tag",
-                "operationId": "deleteTag",
+                "operationId": "Tags_deleteTag",
                 "tags": [
                     "Tags"
                 ],
@@ -19517,7 +19517,7 @@
         "/api/v1/threat-details": {
             "get": {
                 "summary": "Get Threat Details",
-                "operationId": "getThreatDetails",
+                "operationId": "Threats_getThreatDetails",
                 "tags": [
                     "Threats"
                 ],
@@ -19670,7 +19670,7 @@
         "/api/v1/users": {
             "get": {
                 "summary": "List Users",
-                "operationId": "listUsers",
+                "operationId": "Users_listUsers",
                 "tags": [
                     "Users"
                 ],
@@ -19794,11 +19794,11 @@
         "/api/v1/users/{user_id}": {
             "get": {
                 "summary": "Get User",
-                "operationId": "getUser",
+                "operationId": "Users_getUser",
                 "tags": [
                     "Users"
                 ],
-                "description": "<p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p>user_id (path parameter): The unique identifier of the user directory integration user.</p>",
+                "description": "This endpoint makes a request to retrieve a specified user directory integration user by id.",
                 "parameters": [
                     {
                         "name": "user_id",
@@ -19856,12 +19856,72 @@
                         }
                     }
                 }
+            },
+            "delete": {
+                "summary": "Delete User",
+                "operationId": "Users_deleteUser",
+                "tags": [
+                    "Users"
+                ],
+                "description": "<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>\n<h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>\n<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;\n}\n\n</code></pre>",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://api-docs.kandji.io/#6bca946f-07be-4dd4-a00a-7081e8d2fbfb"
+                },
+                "responses": {
+                    "204": {
+                        "description": "No Content",
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "application/json"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "example": {
+                                        "detail": "User still assigned to one or more devices."
+                                    }
+                                }
+                            }
+                        },
+                        "headers": {
+                            "Content-Type": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "example": "application/json"
+                            }
+                        }
+                    }
+                }
             }
         },
         "/api/v1/settings/licensing": {
             "get": {
                 "summary": "Licensing",
-                "operationId": "licensing",
+                "operationId": "Settings_licensing",
                 "tags": [
                     "Settings"
                 ],
