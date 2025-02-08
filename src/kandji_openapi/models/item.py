@@ -2,11 +2,11 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from kandji_openapi.configurations import KANDJI_API_DOCS_URL
-from kandji_openapi.models.auth import Auth
-from kandji_openapi.models.request import Request
-from kandji_openapi.models.response import Response
-from kandji_openapi.strings import string_formatting
+from configurations import KANDJI_API_DOCS_URL
+from models.auth import Auth
+from models.request import Request
+from models.response import Response
+from strings import string_formatting
 
 
 @dataclass

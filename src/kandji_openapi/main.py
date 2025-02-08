@@ -1,9 +1,9 @@
 import argparse
 from pathlib import Path
 
-from kandji_openapi.models.postman_collection import PostmanCollection
-from kandji_openapi.openapi_generator import OpenAPIGenerator
-from kandji_openapi.parser import PostmanParser
+from models.postman_collection import PostmanCollection
+from openapi_generator import OpenAPIGenerator
+from parser import PostmanParser
 
 
 def parse_postman_collection(collection_path: Path) -> PostmanCollection:

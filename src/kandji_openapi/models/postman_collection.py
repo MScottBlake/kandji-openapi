@@ -2,6 +2,9 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from configurations import KANDJI_API_DOCS_URL
+from models.auth import Auth
+from models.item import Item
 from openapi_pydantic import (
     ExternalDocumentation,
     SecurityScheme,
@@ -9,11 +12,6 @@ from openapi_pydantic import (
     ServerVariable,
     Tag,
 )
-
-from kandji_openapi.configurations import KANDJI_API_DOCS_URL
-from kandji_openapi.models.auth import Auth
-from kandji_openapi.models.info import PostmanInfo
-from kandji_openapi.models.item import Item
 
 
 @dataclass

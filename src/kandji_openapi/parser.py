@@ -2,7 +2,7 @@ import json
 import os
 from typing import Any
 
-from kandji_openapi.models.postman_collection import PostmanCollection
+from models.postman_collection import PostmanCollection
 
 
 class PostmanParser:

@@ -3,15 +3,11 @@ import os
 import tempfile
 from pathlib import Path
 
-from openapi_pydantic import parse_obj
-from openapi_pydantic.v3.parser import OpenAPIv3
+from models.postman_collection import PostmanCollection
 from openapi_spec_validator import validate
 from openapi_spec_validator.readers import read_from_filename
 from openapi_spec_validator.validation.exceptions import OpenAPIValidationError
 from openapi_spec_validator.versions.shortcuts import get_spec_version
-
-# from ruamel.yaml import YAML
-from kandji_openapi.models.postman_collection import PostmanCollection
 
 
 class OpenAPIGenerator:
