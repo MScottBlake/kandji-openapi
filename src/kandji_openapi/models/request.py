@@ -123,10 +123,13 @@ class Request:
         """Convert to OpenAPI request object"""
         method = self.method.lower()
 
+        tag_camel_case = self._to_camel_case(self.get_tag())
+        summary_camel_case = self._to_camel_case(self.summary)
+
         request_obj: dict[str, dict[str, Any]] = {
             method: {
                 "summary": self.summary,
-                "operationId": f"{self.get_tag()}_{self._to_camel_case(self.summary)}",
+                "operationId": f"{tag_camel_case}_{summary_camel_case}",
             }
         }
         if tag := self.get_tag():
