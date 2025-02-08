@@ -4,8 +4,9 @@ enablePostProcessFile: True
 gitHost: github.com
 gitUserId: MScottBlake
 gitRepoId: kandji-swift5-sdk
-packageName: kandji_sdk
+packageName: kandji
 projectName: kandji_sdk
-swiftPackagePath: KandjiSDK/Classes/KandjiAPIs
+swiftPackagePath: Kandji/Classes/KandjiAPIs
 swiftUseApiNamespace: True
 objcCompatible: True
+removeOperationIdPrefix: True
