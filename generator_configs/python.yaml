@@ -6,3 +6,4 @@ gitUserId: MScottBlake
 gitRepoId: kandji-python-sdk
 packageName: kandji
 removeOperationIdPrefix: True
+disallowAdditionalPropertiesIfNotPresent: False

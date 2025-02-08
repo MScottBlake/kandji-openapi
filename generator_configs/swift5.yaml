@@ -10,3 +10,4 @@ swiftPackagePath: Kandji/Classes/KandjiAPIs
 swiftUseApiNamespace: True
 objcCompatible: True
 removeOperationIdPrefix: True
+disallowAdditionalPropertiesIfNotPresent: False
