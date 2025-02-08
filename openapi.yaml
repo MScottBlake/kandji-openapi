@@ -69,7 +69,7 @@ paths:
         tenant. Optional query parameters can be specified to filter the results.
       externalDocs:
         url: https://api-docs.kandji.io/#44d3765c-ef17-4226-9104-47e5cef1d370
-      operationId: blueprintsListBlueprints
+      operationId: blueprints_listBlueprints
       parameters:
       - description: Look up a specific Blueprint by its ID
         example: 97e4e175-1631-43f6-a02b-33fd1c748ab8
@@ -219,7 +219,7 @@ paths:
         `blueprint`.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#8ee421a2-c1f8-41ba-9285-8db1b33e092d
-      operationId: blueprintsCreateBlueprint
+      operationId: blueprints_createBlueprint
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -310,7 +310,7 @@ paths:
     get:
       externalDocs:
         url: https://api-docs.kandji.io/#da812fd4-278f-4eca-b400-94dfbba91099
-      operationId: blueprintsGetBlueprintTemplates
+      operationId: blueprints_getBlueprintTemplates
       parameters:
       - description: Number of results to return per page.
         example: '100'
@@ -343,7 +343,7 @@ paths:
         identifier of the blueprint.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#c47ff0fd-82f3-4326-ace8-f8e8bcc16d39
-      operationId: blueprintsDeleteBlueprint
+      operationId: blueprints_deleteBlueprint
       parameters:
       - in: path
         name: blueprint_id
@@ -365,7 +365,7 @@ paths:
         identifier of the blueprint.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#c0383706-3a41-445c-998f-37a2c1c7ba4a
-      operationId: blueprintsGetBlueprint
+      operationId: blueprints_getBlueprint
       parameters:
       - in: path
         name: blueprint_id
@@ -447,7 +447,7 @@ paths:
         (path parameter): The unique identifier of the blueprint.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#4820ba50-291a-4857-b622-77a9ab9cc9e3
-      operationId: blueprintsUpdateBlueprint
+      operationId: blueprints_updateBlueprint
       parameters:
       - in: path
         name: blueprint_id
@@ -589,7 +589,7 @@ paths:
         Map Blueprint&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#683ac930-5754-4203-b066-59cdb8ced781
-      operationId: blueprintsAssignLibraryItem
+      operationId: blueprints_assignLibraryItem
       parameters:
       - in: path
         name: blueprint_id
@@ -692,7 +692,7 @@ paths:
         library item.</p>\n</li>\n</ul>\n</li>\n</ul>"
       externalDocs:
         url: https://api-docs.kandji.io/#34af40a5-7273-425c-9ea5-2c8a5dbbe29f
-      operationId: blueprintsListLibraryItems
+      operationId: blueprints_listLibraryItems
       parameters:
       - in: path
         name: blueprint_id
@@ -874,7 +874,7 @@ paths:
         identifier of the blueprint.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#525b0cae-7ec9-4dc9-9679-fcf47df02cb0
-      operationId: blueprintsGetManualEnrollmentProfile
+      operationId: blueprints_getManualEnrollmentProfile
       parameters:
       - in: path
         name: blueprint_id
@@ -1058,7 +1058,7 @@ paths:
         Node&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#0d968198-fd6c-44ef-a3e0-a75e0a0adf71
-      operationId: blueprintsRemoveLibraryItem
+      operationId: blueprints_removeLibraryItem
       parameters:
       - in: path
         name: blueprint_id
@@ -1151,7 +1151,7 @@ paths:
         <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#78209960-31a7-4e3b-a2c0-95c7e65bb5f9
-      operationId: deviceInformationListDevices
+      operationId: deviceInformation_listDevices
       parameters:
       - description: ''
         example: '23245'
@@ -1371,7 +1371,7 @@ paths:
         at the next agent checkin.
       externalDocs:
         url: https://api-docs.kandji.io/#97deb582-d86c-444a-aa3b-3528b9a8478f
-      operationId: deviceActionsDeleteDevice
+      operationId: deviceActions_deleteDevice
       parameters:
       - in: path
         name: device_id
@@ -1393,7 +1393,7 @@ paths:
         the Blank Push command</a></p>"
       externalDocs:
         url: https://api-docs.kandji.io/#cfe0481e-1c02-4682-b4bc-cdcd409f99b4
-      operationId: deviceActionsSendBlankpush
+      operationId: deviceActions_sendBlankpush
       parameters:
       - in: path
         name: device_id
@@ -1470,7 +1470,7 @@ paths:
         Available for iPhone and iPad.
       externalDocs:
         url: https://api-docs.kandji.io/#e22f371e-c6e6-433d-8bc3-ada2e3b4f03d
-      operationId: deviceActionsClearPasscode
+      operationId: deviceActions_clearPasscode
       parameters:
       - in: path
         name: device_id
@@ -1550,7 +1550,7 @@ paths:
         - <code>boolean</code></p>\n<p><code>UserName</code> - <code>string</code></p>"
       externalDocs:
         url: https://api-docs.kandji.io/#844300db-4a80-4526-a846-71e7a42a7b89
-      operationId: deviceActionsDeleteUser
+      operationId: deviceActions_deleteUser
       parameters:
       - in: path
         name: device_id
@@ -1581,7 +1581,7 @@ paths:
         lost mode is already pending for this device.</em>&quot; will be in the response.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#9931de43-41f0-41ed-b5cb-6749fb2a79df
-      operationId: lostModeDisableLostMode
+      operationId: lostMode_disableLostMode
       parameters:
       - in: path
         name: device_id
@@ -1604,7 +1604,7 @@ paths:
         device.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#daee2351-6856-441c-894f-1b8143d4edbe
-      operationId: lostModeEnableLostMode
+      operationId: lostMode_enableLostMode
       parameters:
       - in: path
         name: device_id
@@ -1663,7 +1663,7 @@ paths:
         device doesn’t have ethernet access.</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#149ae2cc-fb7f-42ce-8379-187878685303
-      operationId: deviceActionsEraseDevice
+      operationId: deviceActions_eraseDevice
       parameters:
       - in: path
         name: device_id
@@ -1720,7 +1720,7 @@ paths:
         a Mac.</td>\n<td>String</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#f2fc0e99-c758-4eb8-bb3d-0ea72d0c0213
-      operationId: deviceActionsLockDevice
+      operationId: deviceActions_lockDevice
       parameters:
       - in: path
         name: device_id
@@ -1884,7 +1884,7 @@ paths:
         device can silence the sound by pressing any of its side buttons.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#be0a10f4-222c-4984-b451-1e42b46efe43
-      operationId: lostModePlayLostModeSound
+      operationId: lostMode_playLostModeSound
       parameters:
       - in: path
         name: device_id
@@ -1905,7 +1905,7 @@ paths:
         Available for macOS devices.
       externalDocs:
         url: https://api-docs.kandji.io/#63848e72-0fc2-4cb1-b17f-4249eb981cf5
-      operationId: deviceActionsReinstallAgent
+      operationId: deviceActions_reinstallAgent
       parameters:
       - in: path
         name: device_id
@@ -1985,7 +1985,7 @@ paths:
         <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>"
       externalDocs:
         url: https://api-docs.kandji.io/#a1e822df-8ee0-41ba-961a-9a75b4ef487e
-      operationId: deviceActionsRemoteDesktop
+      operationId: deviceActions_remoteDesktop
       parameters:
       - in: path
         name: device_id
@@ -2014,7 +2014,7 @@ paths:
         configurations, apps, or profiles.
       externalDocs:
         url: https://api-docs.kandji.io/#b8e073ab-bd4e-42e1-b63a-fb982b01b799
-      operationId: deviceActionsRenewMdmProfile
+      operationId: deviceActions_renewMdmProfile
       parameters:
       - in: path
         name: device_id
@@ -2044,7 +2044,7 @@ paths:
         in macOS 11.3 and later. Default: false</p>\n</li>\n</ul>"
       externalDocs:
         url: https://api-docs.kandji.io/#38c26673-97d2-42d5-bd74-7a2b7843bb94
-      operationId: deviceActionsRestartDevice
+      operationId: deviceActions_restartDevice
       parameters:
       - in: path
         name: device_id
@@ -2130,7 +2130,7 @@ paths:
         <p><code>DeviceName</code> - <code>string</code></p>"
       externalDocs:
         url: https://api-docs.kandji.io/#df855247-b2d3-4054-a1d0-01d26372d79b
-      operationId: deviceActionsSetName
+      operationId: deviceActions_setName
       parameters:
       - in: path
         name: device_id
@@ -2213,7 +2213,7 @@ paths:
       description: This endpoint sends an MDM command to shutdown a device.
       externalDocs:
         url: https://api-docs.kandji.io/#69663b17-6c9c-487b-9d84-a7727b2cbe5d
-      operationId: deviceActionsShutdown
+      operationId: deviceActions_shutdown
       parameters:
       - in: path
         name: device_id
@@ -2292,7 +2292,7 @@ paths:
         <hr />\n<p><code>UserName</code> - <code>string</code></p>"
       externalDocs:
         url: https://api-docs.kandji.io/#beb682a7-fc73-4ab3-a0e1-25bee748467e
-      operationId: deviceActionsUnlockAccount
+      operationId: deviceActions_unlockAccount
       parameters:
       - in: path
         name: device_id
@@ -2376,7 +2376,7 @@ paths:
         initiating the daily MDM commands and MDM logic.
       externalDocs:
         url: https://api-docs.kandji.io/#7c66d410-2b2e-4c25-88b6-1385de73a7e5
-      operationId: deviceActionsUpdateInventory
+      operationId: deviceActions_updateInventory
       parameters:
       - in: path
         name: device_id
@@ -2453,7 +2453,7 @@ paths:
         on iOS and iPadOS.
       externalDocs:
         url: https://api-docs.kandji.io/#6159f4fb-622d-46f5-bcb5-4879dd8f0b9b
-      operationId: lostModeUpdateLocation
+      operationId: lostMode_updateLocation
       parameters:
       - in: path
         name: device_id
@@ -2474,7 +2474,7 @@ paths:
         ID.
       externalDocs:
         url: https://api-docs.kandji.io/#80710108-fbdb-4dfd-af84-50adf15c5a23
-      operationId: deviceInformationGetDeviceActivity
+      operationId: deviceInformation_getDeviceActivity
       parameters:
       - in: path
         name: device_id
@@ -3909,7 +3909,7 @@ paths:
         reported.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#f8cd9733-89b6-40f0-a7ca-76829c6974df
-      operationId: deviceInformationGetDeviceApps
+      operationId: deviceInformation_getDeviceApps
       parameters:
       - in: path
         name: device_id
@@ -4025,7 +4025,7 @@ paths:
         <li>5 : Command received &quot;Not Now&quot; response</li>\n</ul>"
       externalDocs:
         url: https://api-docs.kandji.io/#740d515c-218d-48db-b452-959c3c73aaeb
-      operationId: deviceActionsGetDeviceCommands
+      operationId: deviceActions_getDeviceCommands
       parameters:
       - in: path
         name: device_id
@@ -4068,7 +4068,7 @@ paths:
         ID.
       externalDocs:
         url: https://api-docs.kandji.io/#efa2170d-e5f7-4b97-8f4c-da6f84ba58b5
-      operationId: deviceInformationGetDeviceDetails
+      operationId: deviceInformation_getDeviceDetails
       parameters:
       - in: path
         name: device_id
@@ -4201,7 +4201,7 @@ paths:
         Mode is in an error state for a given iOS or iPadOS device.
       externalDocs:
         url: https://api-docs.kandji.io/#5ba14bc0-65de-432b-8339-fadb7065ce59
-      operationId: deviceInformationCancelLostMode
+      operationId: deviceInformation_cancelLostMode
       parameters:
       - in: path
         name: device_id
@@ -4223,7 +4223,7 @@ paths:
         support artilcle</a>.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#e1f5550e-3c6c-43fa-a1d0-dccc1635bae6
-      operationId: deviceInformationGetDeviceLostModeDetails
+      operationId: deviceInformation_getDeviceLostModeDetails
       parameters:
       - in: path
         name: device_id
@@ -4297,7 +4297,7 @@ paths:
         </tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#005bf79f-3458-4834-9c2f-4e0c792069f4
-      operationId: deviceInformationGetDeviceLibraryItems
+      operationId: deviceInformation_getDeviceLibraryItems
       parameters:
       - in: path
         name: device_id
@@ -4410,7 +4410,7 @@ paths:
       description: This request gets all notes for the specified Device ID.
       externalDocs:
         url: https://api-docs.kandji.io/#f64c1749-c5df-4f85-993a-48176959f427
-      operationId: notesGetDeviceNotes
+      operationId: notes_getDeviceNotes
       parameters:
       - in: path
         name: device_id
@@ -4511,7 +4511,7 @@ paths:
       description: This request creates a note for the specified device ID.
       externalDocs:
         url: https://api-docs.kandji.io/#fc3a2a64-b772-4145-a216-0b7ba8e0ff90
-      operationId: notesCreateDeviceNote
+      operationId: notes_createDeviceNote
       parameters:
       - in: path
         name: device_id
@@ -4609,7 +4609,7 @@ paths:
         Device ID.
       externalDocs:
         url: https://api-docs.kandji.io/#9e2f3d1f-3e88-4ae2-86c8-830fd11d06cd
-      operationId: notesDeleteDeviceNote
+      operationId: notes_deleteDeviceNote
       parameters:
       - in: path
         name: device_id
@@ -4701,7 +4701,7 @@ paths:
         Device ID.
       externalDocs:
         url: https://api-docs.kandji.io/#a65afa95-e244-40ea-ae2f-448fd385ff5b
-      operationId: notesRetrieveDeviceNote
+      operationId: notes_retrieveDeviceNote
       parameters:
       - in: path
         name: device_id
@@ -4796,7 +4796,7 @@ paths:
         Device ID.
       externalDocs:
         url: https://api-docs.kandji.io/#e2039bb2-26bc-49e4-bd36-309b00218368
-      operationId: notesUpdateDeviceNote
+      operationId: notes_updateDeviceNote
       parameters:
       - in: path
         name: device_id
@@ -4911,7 +4911,7 @@ paths:
         <td>string</td>\n<td>Muted alert</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#8ca8c0e9-654e-40c1-8d8c-c9a8a6e262c6
-      operationId: deviceInformationGetDeviceParameters
+      operationId: deviceInformation_getDeviceParameters
       parameters:
       - in: path
         name: device_id
@@ -5009,7 +5009,7 @@ paths:
         of the device.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#f593744e-eedc-4d4d-ac0d-45d54860bbc5
-      operationId: deviceSecretsGetActivationLockBypassCode
+      operationId: deviceSecrets_getActivationLockBypassCode
       parameters:
       - in: path
         name: device_id
@@ -5099,7 +5099,7 @@ paths:
         of the device.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#1577d0da-7b69-4c2b-a322-32bf1cfffee2
-      operationId: deviceSecretsGetFilevaultRecoveryKey
+      operationId: deviceSecrets_getFilevaultRecoveryKey
       parameters:
       - in: path
         name: device_id
@@ -5190,7 +5190,7 @@ paths:
         <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#a0c3f9a9-485b-46ec-922c-fc5f0e9a48d9
-      operationId: deviceSecretsGetRecoveryLockPassword
+      operationId: deviceSecrets_getRecoveryLockPassword
       parameters:
       - in: path
         name: device_id
@@ -5278,7 +5278,7 @@ paths:
         <p><code>device_id</code> (path parameter): The unique identifier of the device.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#437a27bf-5245-486f-91b5-dc4c9b5f7973
-      operationId: deviceSecretsGetUnlockPin
+      operationId: deviceSecrets_getUnlockPin
       parameters:
       - in: path
         name: device_id
@@ -5392,7 +5392,7 @@ paths:
         <td>string</td>\n<td>Muted alert</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#93f2cf60-cd3b-47ff-8388-2377fbff3c6e
-      operationId: deviceInformationGetDeviceStatus
+      operationId: deviceInformation_getDeviceStatus
       parameters:
       - in: path
         name: device_id
@@ -5570,7 +5570,7 @@ paths:
       description: This request returns a list of configured ADE integrations.
       externalDocs:
         url: https://api-docs.kandji.io/#c9497b45-94ab-43fa-b40b-cd1caa8bf4db
-      operationId: automatedDeviceEnrollmentIntegrationsListAdeIntegrations
+      operationId: automatedDeviceEnrollmentIntegrations_listAdeIntegrations
       responses:
         '200':
           description: OK
@@ -5587,7 +5587,7 @@ paths:
         and must be sent in the request.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#fc2f0c91-d891-44f1-b6a1-b67d76c21010
-      operationId: automatedDeviceEnrollmentIntegrationsCreateAdeIntegration
+      operationId: automatedDeviceEnrollmentIntegrations_createAdeIntegration
       requestBody:
         content:
           multipart/form-data:
@@ -5717,7 +5717,7 @@ paths:
       description: Get a list of Automated Device Enrollment devices.
       externalDocs:
         url: https://api-docs.kandji.io/#c5dfa94c-d75d-46de-918e-44249bd40134
-      operationId: automatedDeviceEnrollmentIntegrationsListAdeDevices
+      operationId: automatedDeviceEnrollmentIntegrations_listAdeDevices
       parameters:
       - description: Return results &quot;containing&quot; the specified blueprint
           id
@@ -5864,7 +5864,7 @@ paths:
       description: Get information about a specific Automated Device Enrollment device.
       externalDocs:
         url: https://api-docs.kandji.io/#e77e952f-5138-4175-821d-820eaacd66ce
-      operationId: automatedDeviceEnrollmentIntegrationsGetAdeDevice
+      operationId: automatedDeviceEnrollmentIntegrations_getAdeDevice
       parameters:
       - in: path
         name: device_id
@@ -5927,7 +5927,7 @@ paths:
         of the device.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#a85042fd-f5d1-4b10-a312-0cccbcdea8d0
-      operationId: automatedDeviceEnrollmentIntegrationsUpdateAdeDevice
+      operationId: automatedDeviceEnrollmentIntegrations_updateAdeDevice
       parameters:
       - in: path
         name: device_id
@@ -6000,7 +6000,7 @@ paths:
         to ABM.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#73083412-967b-4a97-a97c-ddf8cb4d0405
-      operationId: automatedDeviceEnrollmentIntegrationsDownloadAdePublicKey
+      operationId: automatedDeviceEnrollmentIntegrations_downloadAdePublicKey
       responses:
         '200':
           content:
@@ -6101,7 +6101,7 @@ paths:
         be sure to reassign the device records in ABM.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#53084811-3e1c-4e71-aa59-71472468c26b
-      operationId: automatedDeviceEnrollmentIntegrationsDeleteAdeIntegration
+      operationId: automatedDeviceEnrollmentIntegrations_deleteAdeIntegration
       parameters:
       - in: path
         name: ade_token_id
@@ -6185,7 +6185,7 @@ paths:
         passed.
       externalDocs:
         url: https://api-docs.kandji.io/#da9a056c-6ac4-4740-8bbb-391bc8a729b6
-      operationId: automatedDeviceEnrollmentIntegrationsGetAdeIntegration
+      operationId: automatedDeviceEnrollmentIntegrations_getAdeIntegration
       parameters:
       - in: path
         name: ade_token_id
@@ -6207,7 +6207,7 @@ paths:
         the request.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#30eafa91-5589-4e44-9d5a-1683f7e0b3ed
-      operationId: automatedDeviceEnrollmentIntegrationsUpdateAdeIntegration
+      operationId: automatedDeviceEnrollmentIntegrations_updateAdeIntegration
       parameters:
       - in: path
         name: ade_token_id
@@ -6241,7 +6241,7 @@ paths:
         the <code>device_id</code> as the ID of the enrolled device record.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#3e2d4aaf-7cc5-44b0-9ca8-4d26a4d63b78
-      operationId: automatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken
+      operationId: automatedDeviceEnrollmentIntegrations_listDevicesAssociatedToAdeToken
       parameters:
       - in: path
         name: ade_token_id
@@ -7002,7 +7002,7 @@ paths:
         in ABM are required and must be sent in the request.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#8b34294c-fb94-462b-9711-5164d998e25f
-      operationId: automatedDeviceEnrollmentIntegrationsRenewAdeIntegration
+      operationId: automatedDeviceEnrollmentIntegrations_renewAdeIntegration
       parameters:
       - in: path
         name: ade_token_id
@@ -7048,7 +7048,7 @@ paths:
         from the Kandji library.
       externalDocs:
         url: https://api-docs.kandji.io/#86a74b19-c528-490b-817f-31cf9e9c1826
-      operationId: customAppsListCustomApps
+      operationId: customApps_listCustomApps
       parameters:
       - description: Optional page number. Used when results exceed pagination threshold.
           A hard upper <code>limit</code> is set at 300 device records returned per
@@ -7154,7 +7154,7 @@ paths:
         to the <code>Upload to S3</code> example.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#144a1858-d8f0-4a3e-9d35-e9395e51bcff
-      operationId: customAppsCreateCustomApp
+      operationId: customApps_createCustomApp
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -7301,7 +7301,7 @@ paths:
         from the <code>Upload Custom App</code> response.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#f5b29c86-e066-4d13-ab22-46b93790d7e3
-      operationId: customAppsUploadCustomApp
+      operationId: customApps_uploadCustomApp
       requestBody:
         content:
           application/json:
@@ -7378,7 +7378,7 @@ paths:
         (path parameter): The unique identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#865bfd6c-bbd8-4d1e-8e1a-06ceed4fe6d7
-      operationId: customAppsDeleteCustomApp
+      operationId: customApps_deleteCustomApp
       parameters:
       - in: path
         name: library_item_id
@@ -7583,7 +7583,7 @@ paths:
         identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#484fc554-9c1e-447a-b76b-907e0b501a5a
-      operationId: customAppsGetCustomApp
+      operationId: customApps_getCustomApp
       parameters:
       - in: path
         name: library_item_id
@@ -7683,7 +7683,7 @@ paths:
         identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#c8c69dfd-7749-4958-b550-16c98aa6aa90
-      operationId: customAppsUpdateCustomApp
+      operationId: customApps_updateCustomApp
       parameters:
       - in: path
         name: library_item_id
@@ -7801,7 +7801,7 @@ paths:
         from the Kandji library.
       externalDocs:
         url: https://api-docs.kandji.io/#6ab7e166-e758-454f-b43e-200537097a92
-      operationId: customProfilesListCustomProfiles
+      operationId: customProfiles_listCustomProfiles
       parameters:
       - description: Optional page number. Used when results exceed pagination threshold.
           A hard upper limit is set at 300 device records returned per request.
@@ -7910,7 +7910,7 @@ paths:
         library.
       externalDocs:
         url: https://api-docs.kandji.io/#622db5fa-33f1-4ba3-9b70-3ac6befe7239
-      operationId: customProfilesCreateCustomProfile
+      operationId: customProfiles_createCustomProfile
       requestBody:
         content:
           multipart/form-data:
@@ -8016,7 +8016,7 @@ paths:
         (path parameter): The unique identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#30379637-30be-4aab-89e2-481329354f3e
-      operationId: customProfilesDeleteCustomProfile
+      operationId: customProfiles_deleteCustomProfile
       parameters:
       - in: path
         name: library_item_id
@@ -8221,7 +8221,7 @@ paths:
         identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#0bad08d1-6a46-40b8-941b-d106fba6851a
-      operationId: customProfilesGetCustomProfile
+      operationId: customProfiles_getCustomProfile
       parameters:
       - in: path
         name: library_item_id
@@ -8313,7 +8313,7 @@ paths:
         the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#57cf8ffc-d8b9-4ac0-b6a9-0a792bb661df
-      operationId: customProfilesUpdateCustomProfile
+      operationId: customProfiles_updateCustomProfile
       parameters:
       - in: path
         name: library_item_id
@@ -8405,7 +8405,7 @@ paths:
         from the Kandji library.
       externalDocs:
         url: https://api-docs.kandji.io/#6c8acf81-96fd-4859-a508-e191d632ce64
-      operationId: customScriptsListCustomScripts
+      operationId: customScripts_listCustomScripts
       parameters:
       - description: Optional page number. Used when results exceed pagination threshold.
           A hard upper limit is set at 300 device records returned per request.
@@ -8584,7 +8584,7 @@ paths:
         library.
       externalDocs:
         url: https://api-docs.kandji.io/#a5d0c211-d971-4698-a5ac-42e90e296b59
-      operationId: customScriptsCreateCustomScript
+      operationId: customScripts_createCustomScript
       requestBody:
         content:
           application/json:
@@ -8681,7 +8681,7 @@ paths:
         (path parameter): The unique identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#4eb17317-d1cb-4c77-babe-80e27867711f
-      operationId: customScriptsDeleteCustomScript
+      operationId: customScripts_deleteCustomScript
       parameters:
       - in: path
         name: library_item_id
@@ -8886,7 +8886,7 @@ paths:
         identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#68fc55c7-847d-440e-9870-9fd421d20f4f
-      operationId: customScriptsGetCustomScript
+      operationId: customScripts_getCustomScript
       parameters:
       - in: path
         name: library_item_id
@@ -8973,7 +8973,7 @@ paths:
         library.
       externalDocs:
         url: https://api-docs.kandji.io/#f807c43a-209d-4c8a-b6ce-22ccecd3a683
-      operationId: customScriptsUpdateCustomScript
+      operationId: customScripts_updateCustomScript
       parameters:
       - in: path
         name: library_item_id
@@ -9150,7 +9150,7 @@ paths:
         from the Kandji library.
       externalDocs:
         url: https://api-docs.kandji.io/#5be58841-6337-4d4f-a053-ea4e65e8801f
-      operationId: inhouseAppsListInhouseApps
+      operationId: inhouseApps_listInhouseApps
       parameters:
       - description: Optional page number. Used when results exceed pagination threshold.
           A hard upper <code>limit</code> is set at 300 app records returned per request.
@@ -9251,7 +9251,7 @@ paths:
         in Kandji</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#8757d233-94ea-4e20-9e33-d1669f085ddb
-      operationId: inhouseAppsCreateInhouseApp
+      operationId: inhouseApps_createInhouseApp
       parameters:
       - description: ''
         example: application/json
@@ -9294,7 +9294,7 @@ paths:
         <code>Upload In-House App to S3</code> endpoint.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#0b0d3e75-c175-40b6-a2a7-5440ba1fd684
-      operationId: inhouseAppsUploadInhouseApp
+      operationId: inhouseApps_uploadInhouseApp
       parameters:
       - description: ''
         example: application/json
@@ -9482,7 +9482,7 @@ paths:
         API response</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#0d836d7c-2f46-48db-a4d4-11e2ff427720
-      operationId: inhouseAppsUploadInhouseAppStatus
+      operationId: inhouseApps_uploadInhouseAppStatus
       parameters:
       - in: path
         name: pending_upload_id
@@ -9518,7 +9518,7 @@ paths:
         (path parameter): The unique identifier of the Library Item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#16bf4b1f-07ad-4125-936d-9d42715d762f
-      operationId: inhouseAppsDeleteInhouseApp
+      operationId: inhouseApps_deleteInhouseApp
       parameters:
       - in: path
         name: library_item_id
@@ -9542,7 +9542,7 @@ paths:
         identifier of the Library Item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#c669c84e-86b0-4476-a9b9-d2685a1cfddb
-      operationId: inhouseAppsGetInhouseApp
+      operationId: inhouseApps_getInhouseApp
       parameters:
       - in: path
         name: library_item_id
@@ -9733,7 +9733,7 @@ paths:
         (path parameter): The unique identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#353bea5d-f4c9-4a56-a68d-63948e756cc5
-      operationId: inhouseAppsUpdateInhouseApp
+      operationId: inhouseApps_updateInhouseApp
       parameters:
       - in: path
         name: library_item_id
@@ -9775,7 +9775,7 @@ paths:
         identifier of the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#c2bb2f1a-b904-4fc0-9256-d188fd9eb191
-      operationId: libraryItemsGetLibraryItemActivity
+      operationId: libraryItems_getLibraryItemActivity
       parameters:
       - in: path
         name: library_item_id
@@ -10024,7 +10024,7 @@ paths:
         the library item.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#478764c4-638c-416c-b44c-3685a2f7b441
-      operationId: libraryItemsGetLibraryItemStatuses
+      operationId: libraryItems_getLibraryItemStatuses
       parameters:
       - in: path
         name: library_item_id
@@ -10261,7 +10261,7 @@ paths:
       description: Get activation lock attributes for devices.
       externalDocs:
         url: https://api-docs.kandji.io/#d64b40ce-8332-4b4a-a1f9-3db800502df4
-      operationId: prismActivationLock
+      operationId: prism_activationLock
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -10417,7 +10417,7 @@ paths:
       description: Get Application Firewall details for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#0d3abc6c-a5a5-4fe6-b7d4-19b1287eaf91
-      operationId: prismApplicationFirewall
+      operationId: prism_applicationFirewall
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -10604,7 +10604,7 @@ paths:
         devices.
       externalDocs:
         url: https://api-docs.kandji.io/#0de36993-c9d8-4d58-8dce-a2616bc2e743
-      operationId: prismApplications
+      operationId: prism_applications
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -10822,7 +10822,7 @@ paths:
       description: Get certificate details.
       externalDocs:
         url: https://api-docs.kandji.io/#a9716bc7-c267-476c-b777-239c81f1a6ba
-      operationId: prismCertificates
+      operationId: prism_certificates
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -11006,7 +11006,7 @@ paths:
         becomes <code>device_information</code>.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#ae4770e4-bbcd-478c-a13a-4d2a3b1978d1
-      operationId: prismCount
+      operationId: prism_count
       parameters:
       - description: "<p>Return the count of records for the specified category. \n
           If a category contains spaces substitute the spaces for underscores (&quot;_&quot;)
@@ -11107,7 +11107,7 @@ paths:
       description: Get Desktop and Screensaver details for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#7f6f6813-6522-4249-9f6a-3d0c479e2bbe
-      operationId: prismDesktopAndScreensaver
+      operationId: prism_desktopAndScreensaver
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -11330,7 +11330,7 @@ paths:
       description: Get attributes about devices.
       externalDocs:
         url: https://api-docs.kandji.io/#f72f4d84-5750-494d-94fa-108ed04e85ec
-      operationId: prismDeviceInformation
+      operationId: prism_deviceInformation
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: 14afabf2-7599-47af-a942-bf7f0b8fedf8
@@ -11575,7 +11575,7 @@ paths:
         </table>\n</div>"
       externalDocs:
         url: https://api-docs.kandji.io/#4d485b71-34fb-443a-a8a4-4c1ec8886b88
-      operationId: prismRequestCategoryExport
+      operationId: prism_requestCategoryExport
       requestBody:
         content:
           application/json:
@@ -11770,7 +11770,7 @@ paths:
         the export job.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#4cd8f1ae-3b5a-498f-9078-f4be656c424d
-      operationId: prismGetCategoryExport
+      operationId: prism_getCategoryExport
       parameters:
       - in: path
         name: export_id
@@ -11880,7 +11880,7 @@ paths:
       description: Get FileVault information for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#0f71e08c-a72c-44e0-a21d-a3e424652d95
-      operationId: prismFilevault
+      operationId: prism_filevault
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -12038,7 +12038,7 @@ paths:
       description: Get Gatekeeper and XProtect attributes for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#64bc8ff5-3c32-47c1-a47b-bfa89799ab74
-      operationId: prismGatekeeperAndXprotect
+      operationId: prism_gatekeeperAndXprotect
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -12215,7 +12215,7 @@ paths:
       description: Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
       externalDocs:
         url: https://api-docs.kandji.io/#4010f47a-c4fa-4d3c-bb98-e9e02f41c620
-      operationId: prismInstalledProfiles
+      operationId: prism_installedProfiles
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -13059,7 +13059,7 @@ paths:
       description: Get Kernel Extension attributes for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#95c1efd6-2a5f-4a05-89b8-0f9d3eb7efdc
-      operationId: prismKernelExtensions
+      operationId: prism_kernelExtensions
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -13201,7 +13201,7 @@ paths:
       description: Get Launch Agents and Daemons installed on macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#0093e44b-eeed-4ad0-b3d1-38719b1d2352
-      operationId: prismLaunchAgentsAndDaemons
+      operationId: prism_launchAgentsAndDaemons
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -13693,7 +13693,7 @@ paths:
       description: Get Local Users detials for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#9942d2f9-7df3-4ef9-97cc-60a5bbcf6180
-      operationId: prismLocalUsers
+      operationId: prism_localUsers
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -13869,7 +13869,7 @@ paths:
       description: Get Startup settings for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#64ad6959-c381-4487-9b91-3f1e465d7160
-      operationId: prismStartupSettings
+      operationId: prism_startupSettings
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -14061,7 +14061,7 @@ paths:
       description: Get System Extension attributes for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#2c0fb5db-3864-4875-a2b1-c925e19d7888
-      operationId: prismSystemExtensions
+      operationId: prism_systemExtensions
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -14253,7 +14253,7 @@ paths:
       description: Get Transparency Database (TCC) attributes for macOS.
       externalDocs:
         url: https://api-docs.kandji.io/#872afbd8-25b5-4c63-af17-a8ac61507449
-      operationId: prismTransparencyDatabase
+      operationId: prism_transparencyDatabase
       parameters:
       - description: Filter results by one or more blueprint IDs separated by commas.
         example: blueprint_id, blueprint_id,blueprint_id
@@ -14435,7 +14435,7 @@ paths:
         item via the Kandji API.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#e724fe2a-3a3d-46f3-8443-70786ab3b61a
-      operationId: selfServiceListSelfServiceCategories
+      operationId: selfService_listSelfServiceCategories
       responses:
         '200':
           content:
@@ -14515,7 +14515,7 @@ paths:
       description: Returns Kandji tenant licensing and utilization information.
       externalDocs:
         url: https://api-docs.kandji.io/#34c35449-8d94-4741-8395-8965c0316fec
-      operationId: settingsLicensing
+      operationId: settings_licensing
       responses:
         '200':
           content:
@@ -14552,7 +14552,7 @@ paths:
       description: Return configured tags.
       externalDocs:
         url: https://api-docs.kandji.io/#9e4feff9-bc65-4625-b2ca-5a30328c6b7e
-      operationId: tagsGetTags
+      operationId: tags_getTags
       parameters:
       - description: Return resultes containing a given tag search string.
         example: accuhive
@@ -14591,7 +14591,7 @@ paths:
       description: Create a tag. Can only create one tag per request.
       externalDocs:
         url: https://api-docs.kandji.io/#f9270517-98cb-4078-99b3-cbcd1acc2fca
-      operationId: tagsCreateTag
+      operationId: tags_createTag
       requestBody:
         content:
           application/json:
@@ -14626,7 +14626,7 @@ paths:
         of the tag.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#03724be3-06c9-4424-9e35-82795bdcfc68
-      operationId: tagsDeleteTag
+      operationId: tags_deleteTag
       parameters:
       - in: path
         name: tag_id
@@ -14647,7 +14647,7 @@ paths:
         of the tag.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#9ab6d414-42da-4628-9261-e58ce2e61465
-      operationId: tagsUpdateTag
+      operationId: tags_updateTag
       parameters:
       - in: path
         name: tag_id
@@ -14686,7 +14686,7 @@ paths:
       description: Get threat details.
       externalDocs:
         url: https://api-docs.kandji.io/#d041043a-ea47-47d5-b6f1-234ef422494d
-      operationId: threatsGetThreatDetails
+      operationId: threats_getThreatDetails
       parameters:
       - description: 'Return all records matching a specified classification. The
           following classification options are available: <code>malware</code> and
@@ -14819,7 +14819,7 @@ paths:
         there are no more results available, the respective key will be <code>null</code>.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f
-      operationId: usersListUsers
+      operationId: users_listUsers
       parameters:
       - description: Returns users with email addresses containing the provided string.
         example: test_user_01@accuhive.io
@@ -14917,7 +14917,7 @@ paths:
         }\n\n</code></pre>"
       externalDocs:
         url: https://api-docs.kandji.io/#6bca946f-07be-4dd4-a00a-7081e8d2fbfb
-      operationId: usersDeleteUser
+      operationId: users_deleteUser
       parameters:
       - in: path
         name: user_id
@@ -14955,7 +14955,7 @@ paths:
         integration user by id.
       externalDocs:
         url: https://api-docs.kandji.io/#9f2a96e0-25c2-4a99-a2e1-7d7a95e75ae6
-      operationId: usersGetUser
+      operationId: users_getUser
       parameters:
       - in: path
         name: user_id
