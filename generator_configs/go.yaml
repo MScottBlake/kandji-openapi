@@ -7,3 +7,22 @@ gitRepoId: kandji-go-sdk
 packageName: kandji
 removeOperationIdPrefix: True
 generateInterfaces: True
+returnErrIfEmpty: True
+modelPropertyNaming: PascalCase
+apiPackage: api
+modelPackage: models
+
+# Go-Specific Options
+disallowAdditionalPropertiesIfNotPresent: False
+enumClassPrefix: False
+generateMarshalJSON: True
+generateUnmarshalJSON: True
+hideGenerationTimestamp: True
+isGoSubmodule: False
+prependFormOrBodyParameters: False
+structPrefix: False
+useDefaultValuesForRequiredVars: False
+useOneOfDiscriminatorLookup: False
+withAWSV4Signature: False
+withGoMod: True
+withXml: False
