@@ -1,12 +1,8 @@
 from dataclasses import dataclass
 from typing import Any, Optional, cast
 
-from kandji_openapi.openapi_types import (
-    ContactObject,
-    InfoObject,
-    LicenseObject,
-)
-from kandji_openapi.strings import string_formatting
+from openapi_types import ContactObject, InfoObject, LicenseObject
+from strings import string_formatting
 
 
 @dataclass
