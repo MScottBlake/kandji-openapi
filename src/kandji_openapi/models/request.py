@@ -141,7 +141,7 @@ class PostmanRequest:
             responses.update(response.to_openapi())
 
         if not responses:
-            responses = {"200": Response(description="OK")}
+            responses = {"204": Response(description="No Content")}
 
         return responses
 
@@ -158,6 +158,7 @@ class PostmanRequest:
         operation = Operation(
             summary=self.summary,
             operationId=f"{tag_camel_case}_{summary_camel_case}",
+            responses=self.get_responses(),
         )
 
         if tag := self.get_tag():
@@ -173,8 +174,5 @@ class PostmanRequest:
 
         if self.url:
             operation.externalDocs = ExternalDocumentation(url=self.external_docs)
-
-        if self.responses:
-            operation.responses = self.get_responses()
 
         return {method: operation}
