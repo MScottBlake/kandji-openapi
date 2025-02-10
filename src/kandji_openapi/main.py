@@ -11,22 +11,23 @@ def parse_postman_collection(collection_path: Path) -> PostmanCollection:
     return PostmanParser.from_file(str(collection_path)).parse()
 
 
-def generate_openapi_spec(collection: PostmanCollection, output_json: Path) -> None:
+def generate_openapi_spec(
+    collection: PostmanCollection, output_json: Path, output_yaml: Path
+) -> None:
     """Generate OpenAPI specification from the parsed collection."""
     generator = OpenAPIGenerator(collection)
-    if generator.validate_spec():
-        generator.to_json(output_json)
-        # generator.to_yaml(output_yaml)
-        print(
-            f"Successfully converted {collection} to OpenAPI specification.\n\n"
-            f"JSON file created: {output_json}\n"
-            # f"YAML file created: {output_yaml}"
-        )
+    generator.to_json(output_json)
+    generator.to_yaml(output_yaml)
+    print(
+        f"Successfully converted to OpenAPI specification.\n\n"
+        f"JSON file created: {output_json}\n"
+        f"YAML file created: {output_yaml}"
+    )
 
 
-def main(collection_path: Path, output_json: Path) -> None:
+def main(collection_path: Path, output_json: Path, output_yaml: Path) -> None:
     collection = parse_postman_collection(collection_path)
-    generate_openapi_spec(collection, output_json)
+    generate_openapi_spec(collection, output_json, output_yaml)
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -45,15 +46,15 @@ def parse_arguments() -> argparse.Namespace:
         help="Path to the output OpenAPI JSON file",
         default="openapi.json",
     )
-    # arg_parser.add_argument(
-    #     "--output-yaml",
-    #     type=str,
-    #     help="Path to the output OpenAPI YAML file",
-    #     default="openapi.yaml",
-    # )
+    arg_parser.add_argument(
+        "--output-yaml",
+        type=str,
+        help="Path to the output OpenAPI YAML file",
+        default="openapi.yaml",
+    )
     return arg_parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_arguments()
-    main(Path(args.collection), Path(args.output_json))
+    main(Path(args.collection), Path(args.output_json), Path(args.output_yaml))

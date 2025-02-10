@@ -1,13 +1,23 @@
 import json
+import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any, Optional
 
+from openapi_pydantic import (
+    DataType,
+    Example,
+    Header,
+    MediaType,
+    Response,
+    Responses,
+    Schema,
+)
 from strings import string_formatting
 
 
 @dataclass
-class Response:
+class PostmanResponse:
     id: Optional[str]
     name: Optional[str]
     status_code: int
@@ -19,7 +29,7 @@ class Response:
     timestamp: Optional[datetime] = None
 
     @classmethod
-    def from_data(cls, data: dict[str, Any]) -> "Response":
+    def from_data(cls, data: dict[str, Any]) -> "PostmanResponse":
         headers = data.get("header", [])
         if headers is None:
             headers = []
@@ -51,39 +61,62 @@ class Response:
                 return header.get("value") or None
         return None
 
-    def to_openapi(self) -> dict[str, Any]:
+    def to_openapi(self) -> Responses:
         """Convert response to OpenAPI response object"""
-        response: dict[str, Any] = {"description": self.status_text}
+        response = Response(description=self.status_text)
 
         content_type = self.get_content_type()
         if content_type and self.body:
-            try:
-                if "json" in content_type.lower():
-                    schema_type = "object"
-                    example = json.loads(self.body)
-                else:
-                    schema_type = "string"
-                    example = string_formatting(self.body)
+            if "json" in content_type.lower():
+                modified_body = self.body
 
-                response["content"] = {
-                    content_type: {"schema": {"type": schema_type, "example": example}}
-                }
-            except json.JSONDecodeError:
-                pass  # If JSON parsing fails, skip body schema
+                # Remove escaped newline characters
+                modified_body = re.sub(r"[\n\t]|\.{3}", "", modified_body)
 
-        headers: dict[str, dict[str, str | dict[str, str]]] = {}
+                # Replace smart quotes with regular quotes
+                modified_body = re.sub(r"[“”‘’]", "'", modified_body)
+
+                # Remove comments
+                modified_body = re.sub(r"// [^\n}]*", "", modified_body)
+
+                # Remove trailing commas
+                modified_body = re.sub(r",\s*}", "}", modified_body)
+                modified_body = re.sub(r",\s*]", "]", modified_body)
+
+                # Remove extraneous characters like ",s"
+                modified_body = re.sub(r",s", ",", modified_body)
+
+                try:
+                    body = json.loads(modified_body)
+                except json.JSONDecodeError:
+                    body = modified_body
+
+                schema_type = "object"
+                example = Example(value=body)
+            else:
+                schema_type = "string"
+                example = Example(value=string_formatting(self.body))
+
+            response.content = {
+                content_type: MediaType(
+                    example=example,
+                    schema=Schema(type=DataType(value=schema_type)),
+                )
+            }
+
+        headers = {}
         for header in self.headers:
             if not header:
                 continue
             if key := header.get("key"):
-                headers[key] = {"schema": {"type": "string"}}
+                headers[key] = Header(schema=Schema(type=DataType(value="string")))
 
                 if description := header.get("description"):
-                    headers[key]["description"] = string_formatting(description)
+                    headers[key].description = string_formatting(description)
                 if value := header.get("value"):
-                    headers[key]["example"] = value
+                    headers[key].example = Example(value=value)
 
         if headers:
-            response["headers"] = headers
+            response.headers = headers
 
         return {str(self.status_code): response}

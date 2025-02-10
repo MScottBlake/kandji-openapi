@@ -4,25 +4,24 @@ from typing import Any, Optional
 
 from configurations import KANDJI_API_DOCS_URL
 from models.auth import Auth
-from models.request import Request
-from models.response import Response
+from models.request import PostmanRequest
+from openapi_pydantic import Operation
 from strings import string_formatting
 
 
 @dataclass
-class Item:
+class PostmanItem:
     name: str
     id: str
-    request: Optional[Request] = None
+    request: Optional[PostmanRequest] = None
     description: Optional[str] = None
     url: str = ""
-    responses: list[Response] = field(default_factory=list)
     auth: Optional[Auth] = None
     proxy_config: Optional[dict[str, Any]] = None
-    items: list["Item"] = field(default_factory=list)
+    items: list["PostmanItem"] = field(default_factory=list)
 
     @classmethod
-    def from_data(cls, data: dict[str, Any], tag: str = "") -> Optional["Item"]:
+    def from_data(cls, data: dict[str, Any], tag: str = "") -> Optional["PostmanItem"]:
         """Create an Item from dictionary data"""
         url = ""
         if "id" in data:
@@ -41,10 +40,13 @@ class Item:
             name=data.get("name", ""),
             id=data.get("id", ""),
             description=string_formatting(data.get("description", "")),
-            request=Request.from_data(
-                data.get("request", {}), data.get("name", ""), tag, url
+            request=PostmanRequest.from_data(
+                data=data.get("request", {}),
+                name=data.get("name", ""),
+                responses=data.get("response", []),
+                tag=tag,
+                url=url,
             ),
-            responses=[Response.from_data(r) for r in data.get("response", [])],
             auth=Auth.from_data(data.get("auth", {})),
             proxy_config=data.get("protocolProfileBehavior"),
             url=url,
@@ -63,7 +65,7 @@ class Item:
             return self.request.get_host()
         return ""
 
-    def get_items(self) -> list["Item"]:
+    def get_items(self) -> list["PostmanItem"]:
         return self.items
 
     def get_path(self) -> str:
@@ -78,7 +80,7 @@ class Item:
             return self.request.get_method()
         return "get"
 
-    def get_request(self) -> Optional[Request]:
+    def get_request(self) -> Optional[PostmanRequest]:
         return self.request if self.request else None
 
     def get_tag(self) -> str:
@@ -90,36 +92,8 @@ class Item:
         return self.url
 
     def is_folder(self) -> bool:
-        return not isinstance(self.request, Request)
+        return not isinstance(self.request, PostmanRequest)
 
-    def to_openapi(self) -> dict[str, dict[str, Any]]:
+    def to_openapi(self) -> dict[str, Operation]:
         """Convert to OpenAPI path object"""
-        if self.is_folder():
-            output: dict[str, dict[str, Any]] = {}
-            for item in self.items:
-                path = item.get_path()
-                item_dict = item.to_openapi()
-
-                if path not in output:
-                    output[path] = {}
-                output[path].update(item_dict[path])
-            return output
-
-        path = self.get_path()
-        method = self.get_method().lower()
-
-        path_obj: dict[str, dict[str, Any]] = {}
-        path_obj[path] = self.request.to_openapi() if self.request else {}
-
-        if self.auth:
-            path_obj[path]["security"] = [{self.auth.get_type(): []}]
-
-        if self.responses:
-            for response in self.responses:
-                if "responses" not in path_obj[path][method]:
-                    path_obj[path][method]["responses"] = {}
-                path_obj[path][method]["responses"].update(response.to_openapi())
-        else:
-            path_obj[path][method]["responses"] = {"200": {"description": "OK"}}
-
-        return path_obj
+        return self.request.to_openapi() if self.request else {}

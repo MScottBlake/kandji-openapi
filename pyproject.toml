@@ -1,12 +1,11 @@
 [project]
 name = "kandji-openapi"
-version = "0.1.0"
+version = "1.0.0"
 description = "Creates an OpenAPI 3.1 compatible specification based on Kandji's Postman Collection."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "openapi-pydantic>=0.5.0",
-    "openapi-spec-validator>=0.7.1",
     "ruamel-yaml>=0.18.7",
 ]
 
