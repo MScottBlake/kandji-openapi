@@ -3,29 +3,47 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from models.auth import Auth
-from models.request_body import RequestBody
+from models.request_body import PostmanRequestBody
+from models.response import PostmanResponse
 from models.url import URL
+from openapi_pydantic import (
+    DataType,
+    ExternalDocumentation,
+    Operation,
+    Parameter,
+    ParameterLocation,
+    Reference,
+    Response,
+    Responses,
+    Schema,
+)
 from strings import string_formatting
 
 
 @dataclass
-class Request:
+class PostmanRequest:
     method: str
     url: URL
     summary: str = ""
     headers: list[dict[str, Any]] = field(default_factory=list)
-    body: Optional[RequestBody] = None
+    body: Optional[PostmanRequestBody] = None
     description: Optional[str] = None
     auth: Optional[Auth] = None
     proxy: Optional[dict[str, Any]] = None
     certificate: Optional[dict[str, Any]] = None
     tag: str = ""
     external_docs: str = ""
+    responses: list[PostmanResponse] = field(default_factory=list)
 
     @classmethod
     def from_data(
-        cls, data: dict[str, Any], name: str, tag: str = "", url: str = ""
-    ) -> Optional["Request"]:
+        cls,
+        data: dict[str, Any],
+        name: str,
+        responses: list[dict[str, Any]],
+        tag: str = "",
+        url: str = "",
+    ) -> Optional["PostmanRequest"]:
         if not data:
             return None
 
@@ -41,13 +59,14 @@ class Request:
             url=URL.from_data(url_data),
             summary=name,
             headers=data.get("header", []),
-            body=RequestBody.from_data(data.get("body", {})),
+            body=PostmanRequestBody.from_data(data.get("body", {})),
             description=string_formatting(data.get("description", "")),
             auth=Auth.from_data(data.get("auth", {})),
             proxy=data.get("proxy"),
             certificate=data.get("certificate"),
             tag=tag,
             external_docs=url,
+            responses=[PostmanResponse.from_data(r) for r in responses],
         )
 
     def _to_camel_case(self, input_string: str) -> str:
@@ -72,9 +91,9 @@ class Request:
     def get_method(self) -> str:
         return self.method
 
-    def get_parameters(self) -> list[dict[str, Any]]:
+    def get_parameters(self) -> Optional[list[Parameter | Reference]]:
         """Extract all parameters from request"""
-        parameters = []
+        parameters: list[Parameter | Reference] = []
 
         # Path parameters
         parameters.extend(self.url.get_path_parameters())
@@ -84,31 +103,31 @@ class Request:
             description = string_formatting(
                 query.get("description", {}).get("content", "")
             )
-            parameters.append(
-                {
-                    "name": query.get("key", ""),
-                    "in": "query",
-                    "required": not query.get("disabled", False),
-                    "schema": {"type": "string"},
-                    "description": string_formatting(description),
-                    "example": query.get("value"),
-                }
-            )
 
+            parameters.append(
+                Parameter(
+                    name=query.get("key", ""),
+                    param_in=ParameterLocation.QUERY,  # type: ignore
+                    schema=Schema(type=DataType("string")),
+                    required=not query.get("disabled", False),
+                    description=string_formatting(description),
+                    example=query.get("value"),
+                )
+            )
         # Header parameters
         for header in self.headers:
             if header.get("disabled", False):
                 continue
 
             parameters.append(
-                {
-                    "name": header.get("key", ""),
-                    "in": "header",
-                    "schema": {"type": "string"},
-                    "required": True,
-                    "description": string_formatting(header.get("description", "")),
-                    "example": header.get("value"),
-                }
+                Parameter(
+                    name=header.get("key", ""),
+                    param_in=ParameterLocation.HEADER,  # type: ignore
+                    schema=Schema(type=DataType("string")),
+                    required=True,
+                    description=string_formatting(header.get("description", "")),
+                    example=header.get("value"),
+                )
             )
 
         return parameters
@@ -116,34 +135,46 @@ class Request:
     def get_path(self) -> str:
         return self.url.get_path_string()
 
+    def get_responses(self) -> Responses:
+        responses: Responses = {}
+        for response in self.responses:
+            responses.update(response.to_openapi())
+
+        if not responses:
+            responses = {"200": Response(description="OK")}
+
+        return responses
+
     def get_tag(self) -> str:
         return self.tag
 
-    def to_openapi(self) -> dict[str, dict[str, Any]]:
+    def to_openapi(self) -> dict[str, Operation]:
         """Convert to OpenAPI request object"""
         method = self.method.lower()
 
         tag_camel_case = self._to_camel_case(self.get_tag())
         summary_camel_case = self._to_camel_case(self.summary)
 
-        request_obj: dict[str, dict[str, Any]] = {
-            method: {
-                "summary": self.summary,
-                "operationId": f"{tag_camel_case}_{summary_camel_case}",
-            }
-        }
+        operation = Operation(
+            summary=self.summary,
+            operationId=f"{tag_camel_case}_{summary_camel_case}",
+        )
+
         if tag := self.get_tag():
-            request_obj[method]["tags"] = [tag]
+            operation.tags = [tag]
         if self.description:
-            request_obj[method]["description"] = self.description
+            operation.description = self.description
         if parameters := self.get_parameters():
-            request_obj[method]["parameters"] = parameters
+            operation.parameters = parameters
         if self.body:
-            request_obj[method]["requestBody"] = self.body.to_openapi()
+            operation.requestBody = self.body.to_openapi()
         if self.auth:
-            request_obj[method]["security"] = [{self.auth.get_type(): []}]
+            operation.security = [{self.auth.get_type(): []}]
 
         if self.url:
-            request_obj[method]["externalDocs"] = {"url": self.external_docs}
+            operation.externalDocs = ExternalDocumentation(url=self.external_docs)
 
-        return request_obj
+        if self.responses:
+            operation.responses = self.get_responses()
+
+        return {method: operation}

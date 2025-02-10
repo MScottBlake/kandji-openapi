@@ -1,46 +1,59 @@
 import re
+from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from configurations import KANDJI_API_DOCS_URL
 from models.auth import Auth
-from models.info import Info
-from models.item import Item
-from openapi_types import ServerObject, ServerVariableObject, TagObject
+from models.info import PostmanInfo
+from models.item import PostmanItem
+from openapi_pydantic import (
+    Components,
+    ExternalDocumentation,
+    OpenAPI,
+    Operation,
+    PathItem,
+    Paths,
+    Reference,
+    SecurityScheme,
+    Server,
+    ServerVariable,
+    Tag,
+)
 
 
 @dataclass
 class PostmanCollection:
-    info: Info
-    items: list[Item] = field(default_factory=list)
+    info: PostmanInfo
+    items: list[PostmanItem] = field(default_factory=list)
     auth: Optional[Auth] = None
 
     @classmethod
     def from_data(cls, data: dict[str, Any]) -> "PostmanCollection":
         return cls(
-            info=Info.from_data(data.get("info", {})),
+            info=PostmanInfo.from_data(data.get("info", {})),
             auth=Auth.from_data(data.get("auth", {})),
             items=cls._process_items(data.get("item", [])),
         )
 
     @classmethod
     def _process_items(
-        cls, items_data: list[dict[str, Any]], parent: Optional[Item] = None
-    ) -> list[Item]:
+        cls, items_data: list[dict[str, Any]], parent: Optional[PostmanItem] = None
+    ) -> list[PostmanItem]:
         """Process collection items recursively"""
-        processed_items: list[Item] = []
+        processed_items: list[PostmanItem] = []
 
         tag = ""
         if parent and parent.is_folder():
             tag = parent.name
 
         for item_data in items_data:
-            if item := Item.from_data(item_data, tag):
+            if item := PostmanItem.from_data(item_data, tag):
                 processed_items.append(item)
 
         return processed_items
 
-    def _hosts_to_openapi(self) -> list[ServerObject]:
+    def _hosts_to_openapi(self) -> list[Server]:
         """Extract unique hosts from all items' requests."""
         hosts: set[str] = set()
         for item in self.items:
@@ -55,55 +68,68 @@ class PostmanCollection:
 
         output = []
         for host in hosts:
-            variables: dict[str, ServerVariableObject] = {}
+            variables: dict[str, ServerVariable] = {}
+            variables: dict[str, ServerVariable] = {}
             for match in variable_pattern.finditer(host):
                 var_name = match.group(1)
-                variables[var_name] = {"default": f"<{var_name}>"}
+                variables[var_name] = ServerVariable(default=f"<{var_name}>")
+                variables[var_name] = ServerVariable(default=f"<{var_name}>")
 
-            host_dict: ServerObject = {"url": host}
+            host_dict = Server(url=host)
+            host_dict = Server(url=host)
             if variables:
-                host_dict["variables"] = variables
+                host_dict.variables = variables
+                host_dict.variables = variables
 
             output.append(host_dict)
         return output
 
-    def _paths_to_openapi(self, items: Optional[list[Item]] = None) -> dict[str, Any]:
-        output: dict[str, dict[str, Any]] = {}
+    def _paths_to_openapi(self, items: Optional[list[PostmanItem]] = None) -> Paths:
+        paths: dict[str, dict[str, Operation]] = defaultdict(dict)
         if items is None:
             items = self.items
 
         for item in items:
             if path := item.get_path():
-                item_dict = item.to_openapi()
+                paths[path].update(item.to_openapi())
 
-                if path not in output:
-                    output[path] = {}
-                output[path].update(item_dict[path])
+            if sub_items := item.get_items():
+                for sub_item in sub_items:
+                    if path := sub_item.get_path():
+                        paths[path].update(sub_item.to_openapi())
 
-            output.update(self._paths_to_openapi(item.get_items()))
+        output: dict[str, PathItem] = {}
+        for path, item in paths.items():
+            output[path] = PathItem()
+            for method, operation in item.items():
+                output[path].__setattr__(method, operation)
         return output
 
-    def _tags_to_openapi(self, items: Optional[list[Item]] = None) -> list[TagObject]:
+    def _tags_to_openapi(self, items: Optional[list[PostmanItem]] = None) -> list[Tag]:
         """List of tags from all items' requests."""
-        all_tags: list[TagObject] = []
+        all_tags: list[Tag] = []
+        all_tags: list[Tag] = []
         if items is None:
             items = self.items
 
         for item in items:
             if item.is_folder():
-                tag_dict: TagObject = {"name": item.name}
+                tag_dict = Tag(name=item.name)
+                tag_dict = Tag(name=item.name)
 
                 if description := item.get_description():
-                    tag_dict["description"] = description
+                    tag_dict.description = description
+                    tag_dict.description = description
                 if url := item.get_url():
-                    tag_dict["externalDocs"] = {"url": url}
+                    tag_dict.externalDocs = ExternalDocumentation(url=url)
+                    tag_dict.externalDocs = ExternalDocumentation(url=url)
 
                 all_tags.append(tag_dict)
 
             all_tags.extend(self._tags_to_openapi(item.get_items()))
         return all_tags
 
-    def get_security_schemes(self) -> dict[str, dict[str, Any]]:
+    def get_security_schemes(self) -> dict[str, SecurityScheme | Reference]:
         """Compile all unique security schemes"""
         schemes = {}
 
@@ -122,26 +148,24 @@ class PostmanCollection:
 
         return schemes
 
-    def to_openapi(self) -> dict[str, Any]:
+    def to_openapi(self) -> OpenAPI:
         """Convert the collection to an OpenAPI specification"""
-        openapi: dict[str, Any] = {
-            "openapi": "3.1.0",
-            "info": self.info.to_openapi(),
-            "servers": self._hosts_to_openapi(),
-            "tags": self._tags_to_openapi(),
-            "paths": self._paths_to_openapi(),
-        }
+        openapi = OpenAPI(
+            openapi="3.1.0",
+            info=self.info.to_openapi(),
+            servers=self._hosts_to_openapi(),
+            tags=self._tags_to_openapi(),
+            paths=self._paths_to_openapi(),
+        )
 
         if self.auth:
-            openapi["security"] = [{self.auth.get_type(): []}]
+            openapi.security = [{self.auth.get_type(): []}]
 
         # Add security schemes if present
         if security_schemes := self.get_security_schemes():
-            if "components" not in openapi:
-                openapi["components"] = {}
-            openapi["components"]["securitySchemes"] = security_schemes
+            openapi.components = Components(securitySchemes=security_schemes)
 
         if KANDJI_API_DOCS_URL:
-            openapi["externalDocs"] = {"url": KANDJI_API_DOCS_URL}
+            openapi.externalDocs = ExternalDocumentation(url=KANDJI_API_DOCS_URL)
 
         return openapi

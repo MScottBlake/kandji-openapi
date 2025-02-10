@@ -1,28 +1,28 @@
 from dataclasses import dataclass
-from typing import Any, Optional, cast
+from typing import Any, Optional
 
-from openapi_types import ContactObject, InfoObject, LicenseObject
+from openapi_pydantic import Contact, Info, License
 from strings import string_formatting
 
 
 @dataclass
-class Info:
+class PostmanInfo:
     name: str
     version: str
     description: Optional[str] = None
     schema: Optional[str] = None
-    contact: Optional[ContactObject] = None
-    license: Optional[LicenseObject] = None
+    contact: Optional[Contact] = None
+    license: Optional[License] = None
 
     @classmethod
-    def from_data(cls, data: dict[str, Any]) -> "Info":
-        contact: ContactObject = {
-            "name": "Scott Blake",
-            "email": "mitchelsblake@gmail.com",
-            "url": "https://github.com/MScottBlake/kandji-openapi",
-        }
+    def from_data(cls, data: dict[str, Any]) -> "PostmanInfo":
+        contact = Contact(
+            name="Scott Blake",
+            email="mitchelsblake@gmail.com",
+            url="https://github.com/MScottBlake/kandji-openapi",
+        )
 
-        license: LicenseObject = {"name": "MIT License", "identifier": "MIT"}
+        license = License(name="MIT License", identifier="MIT")
 
         return cls(
             name=data.get("name", "API"),
@@ -33,13 +33,13 @@ class Info:
             license=license,
         )
 
-    def to_openapi(self) -> InfoObject:
+    def to_openapi(self) -> Info:
         """Convert to OpenAPI info object"""
-        info: InfoObject = {"title": self.name, "version": self.version or "1.0.0"}
+        info = Info(title=self.name, version=self.version or "1.0.0")
         if self.description:
-            info["description"] = string_formatting(self.description)
+            info.description = string_formatting(self.description)
         if self.contact:
-            info["contact"] = cast(ContactObject, self.contact)
+            info.contact = self.contact
         if self.license:
-            info["license"] = cast(LicenseObject, self.license)
+            info.license = self.license
         return info

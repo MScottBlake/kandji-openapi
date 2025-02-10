@@ -16,14 +16,13 @@ def generate_openapi_spec(
 ) -> None:
     """Generate OpenAPI specification from the parsed collection."""
     generator = OpenAPIGenerator(collection)
-    if generator.validate_spec():
-        generator.to_json(output_json)
-        generator.to_yaml(output_yaml)
-        print(
-            f"Successfully converted {collection} to OpenAPI specification.\n\n"
-            f"JSON file created: {output_json}\n"
-            f"YAML file created: {output_yaml}"
-        )
+    generator.to_json(output_json)
+    generator.to_yaml(output_yaml)
+    print(
+        f"Successfully converted to OpenAPI specification.\n\n"
+        f"JSON file created: {output_json}\n"
+        f"YAML file created: {output_yaml}"
+    )
 
 
 def main(collection_path: Path, output_json: Path, output_yaml: Path) -> None:

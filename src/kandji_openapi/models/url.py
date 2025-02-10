@@ -2,6 +2,8 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Iterable, Optional, Sequence
 
+from openapi_pydantic import DataType, Parameter, ParameterLocation, Schema
+
 
 @dataclass
 class URL:
@@ -38,28 +40,28 @@ class URL:
             hash=data.get("hash"),
         )
 
-    def get_path_parameters(self) -> list[dict[str, Any]]:
-        path_params = []
+    def get_path_parameters(self) -> list[Parameter]:
+        parameters: list[Parameter] = []
         for path_var in self.path:
             if path_var.startswith(":"):
-                path_params.append(
-                    {
-                        "name": path_var.strip(":"),
-                        "in": "path",
-                        "required": True,
-                        "schema": {"type": "string"},
-                    }
+                parameters.append(
+                    Parameter(
+                        name=path_var.strip(":"),
+                        param_in=ParameterLocation.PATH,  # type: ignore
+                        schema=Schema(type=DataType("string")),
+                        required=True,
+                    )
                 )
             elif path_var.startswith("{") and path_var.endswith("}"):
-                path_params.append(
-                    {
-                        "name": path_var.strip("{}"),
-                        "in": "path",
-                        "required": True,
-                        "schema": {"type": "string"},
-                    }
+                parameters.append(
+                    Parameter(
+                        name=path_var.strip("{}"),
+                        param_in=ParameterLocation.PATH,  # type: ignore
+                        schema=Schema(type=DataType("string")),
+                        required=True,
+                    )
                 )
-        return path_params
+        return parameters
 
     def get_path_string(self) -> str:
         """Convert path components to OpenAPI path string with parameters"""

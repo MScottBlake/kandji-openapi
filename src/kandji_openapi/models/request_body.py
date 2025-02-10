@@ -3,11 +3,12 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from openapi_pydantic import DataType, MediaType, RequestBody, Schema
 from strings import string_formatting
 
 
 @dataclass
-class RequestBody:
+class PostmanRequestBody:
     mode: str
     raw: Optional[str] = None
     formdata: list[dict[str, Any]] = field(default_factory=list)
@@ -18,7 +19,7 @@ class RequestBody:
     graphql: Optional[dict[str, Any]] = None
 
     @classmethod
-    def from_data(cls, data: dict[str, Any]) -> Optional["RequestBody"]:
+    def from_data(cls, data: dict[str, Any]) -> Optional["PostmanRequestBody"]:
         if not data:
             return None
 
@@ -61,7 +62,7 @@ class RequestBody:
             )
         return "application/octet-stream"
 
-    def to_openapi(self) -> dict[str, Any]:
+    def to_openapi(self) -> Optional[RequestBody]:
         """Convert body to OpenAPI schema"""
         content_type = self.get_content_type()
 
@@ -73,11 +74,14 @@ class RequestBody:
                 except json.JSONDecodeError:
                     pass
 
-            return {
-                "content": {
-                    content_type: {"schema": {"type": "string", "example": example}}
+            return RequestBody(
+                content={
+                    content_type: MediaType(
+                        example=example,
+                        schema=Schema(type=DataType(value="string")),
+                    )
                 }
-            }
+            )
 
         elif self.mode in ["formdata", "urlencoded"]:
             properties = {}
@@ -99,33 +103,33 @@ class RequestBody:
 
                     required.append(key)
 
-            schema = {"type": "object", "properties": properties}
+            schema = Schema(type=DataType(value="object"), properties=properties)
             if required:
-                schema["required"] = required
+                schema.required = required
 
-            return {"content": {content_type: {"schema": schema}}}
+            return RequestBody(content={content_type: MediaType(schema=schema)})
 
         elif self.mode == "graphql":
             if self.graphql:
-                return {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "query": {
-                                        "type": "string",
-                                        "example": self.graphql.get("query", ""),
-                                    },
-                                    "variables": {
-                                        "type": "object",
-                                        "example": self.graphql.get("variables", {}),
-                                    },
+                return RequestBody(
+                    content={
+                        "application/json": MediaType(
+                            schema=Schema(
+                                type=DataType(value="object"),
+                                properties={
+                                    "query": Schema(
+                                        type=DataType(value="string"),
+                                        example=self.graphql.get("query", ""),
+                                    ),
+                                    "variables": Schema(
+                                        type=DataType(value="object"),
+                                        example=self.graphql.get("variables", {}),
+                                    ),
                                 },
-                                "required": ["query"],
-                            }
-                        }
+                                required=["query"],
+                            ),
+                        )
                     }
-                }
+                )
 
-        return {}
+        return None
