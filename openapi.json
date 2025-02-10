@@ -5280,6 +5280,11 @@
             "allowReserved": false
           }
         ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
         "deprecated": false,
         "security": [
           {

@@ -5605,6 +5605,9 @@ paths:
         required: true
         schema:
           type: string
+      responses:
+        '204':
+          description: No Content
       security:
       - bearer: []
       summary: Cancel Lost Mode
