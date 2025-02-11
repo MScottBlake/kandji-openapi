@@ -61,9 +61,36 @@ class PostmanResponse:
                 return header.get("value") or None
         return None
 
+    def generate_properties_from_example(self, example: dict) -> dict:
+        """Generates a properties dictionary for an OpenAPI schema from an example."""
+        properties = {}
+        for key, value in example.items():
+            properties[key] = self.infer_schema_from_value(value)
+        return properties
+
+    def infer_schema_from_value(self, value: Any) -> Schema:
+        """Infers the schema for a single value."""
+        if isinstance(value, str):
+            return Schema(type=DataType(value="string"))
+        elif isinstance(value, int):
+            return Schema(type=DataType(value="integer"))
+        elif isinstance(value, float):
+            return Schema(type=DataType(value="number"))
+        elif isinstance(value, bool):
+            return Schema(type=DataType(value="boolean"))
+        elif isinstance(value, dict):
+            return Schema(
+                type=DataType(value="object"),
+                properties=self.generate_properties_from_example(value),
+            )
+        else:
+            # Handle other types or return a default schema
+            return Schema()  # Generic schema
+
     def to_openapi(self) -> Responses:
         """Convert response to OpenAPI response object"""
         response = Response(description=self.status_text)
+        properties = {}
 
         content_type = self.get_content_type()
         if content_type and self.body:
@@ -88,21 +115,20 @@ class PostmanResponse:
 
                 try:
                     body = json.loads(modified_body)
+                    if isinstance(body, dict):
+                        properties = self.generate_properties_from_example(body)
                 except json.JSONDecodeError:
                     body = modified_body
 
-                schema_type = "object"
                 example = Example(value=body)
+                schema = Schema(type=DataType(value="object"))
+                if properties:
+                    schema.properties = properties
             else:
-                schema_type = "string"
                 example = Example(value=string_formatting(self.body))
+                schema = Schema(type=DataType(value="string"))
 
-            response.content = {
-                content_type: MediaType(
-                    example=example,
-                    schema=Schema(type=DataType(value=schema_type)),
-                )
-            }
+            response.content = {content_type: MediaType(example=example, schema=schema)}
 
         headers = {}
         for header in self.headers:
