@@ -13,7 +13,7 @@ from openapi_pydantic import (
     Responses,
     Schema,
 )
-from strings import string_formatting
+from strings import string_formatting, to_camel_case
 
 
 @dataclass
@@ -91,6 +91,9 @@ class PostmanResponse:
         """Convert response to OpenAPI response object"""
         response = Response(description=self.status_text)
         properties = {}
+        title = "_".join(
+            [to_camel_case(str(self.name)), str(self.status_code), "Response"]
+        )
 
         content_type = self.get_content_type()
         if content_type and self.body:
@@ -121,12 +124,12 @@ class PostmanResponse:
                     body = modified_body
 
                 example = Example(value=body)
-                schema = Schema(type=DataType(value="object"))
+                schema = Schema(title=title, type=DataType(value="object"))
                 if properties:
                     schema.properties = properties
             else:
                 example = Example(value=string_formatting(self.body))
-                schema = Schema(type=DataType(value="string"))
+                schema = Schema(title=title, type=DataType(value="string"))
 
             response.content = {content_type: MediaType(example=example, schema=schema)}
 

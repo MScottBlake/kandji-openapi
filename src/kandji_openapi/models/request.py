@@ -1,4 +1,3 @@
-import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
@@ -17,7 +16,7 @@ from openapi_pydantic import (
     Responses,
     Schema,
 )
-from strings import string_formatting
+from strings import string_formatting, to_camel_case
 
 
 @dataclass
@@ -68,16 +67,6 @@ class PostmanRequest:
             external_docs=url,
             responses=[PostmanResponse.from_data(r) for r in responses],
         )
-
-    def _to_camel_case(self, input_string: str) -> str:
-        # Remove any non-alphanumeric characters (optional based on needs)
-        input_string = re.sub(r"[^a-zA-Z0-9\s_]", "", input_string)
-
-        # Split the string by spaces or underscores
-        words = re.split(r"[_\s]+", input_string)
-
-        # Capitalize each word except the first one, and join them together
-        return words[0].lower() + "".join(word.capitalize() for word in words[1:])
 
     def get_auth(self) -> Optional[Auth]:
         return self.auth
@@ -152,8 +141,8 @@ class PostmanRequest:
         """Convert to OpenAPI request object"""
         method = self.method.lower()
 
-        tag_camel_case = self._to_camel_case(self.get_tag())
-        summary_camel_case = self._to_camel_case(self.summary)
+        tag_camel_case = to_camel_case(self.get_tag())
+        summary_camel_case = to_camel_case(self.summary)
 
         operation = Operation(
             summary=self.summary,

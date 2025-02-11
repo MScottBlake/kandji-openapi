@@ -13,3 +13,14 @@ def string_formatting(string: str) -> str:
             string = inner_string
 
     return string
+
+
+def to_camel_case(input_string: str) -> str:
+    # Remove any non-alphanumeric characters (optional based on needs)
+    input_string = re.sub(r"[^a-zA-Z0-9\s_]", "", input_string)
+
+    # Split the string by spaces or underscores
+    words = re.split(r"[_\s]+", input_string)
+
+    # Capitalize each word except the first one, and join them together
+    return words[0].lower() + "".join(word.capitalize() for word in words[1:])
