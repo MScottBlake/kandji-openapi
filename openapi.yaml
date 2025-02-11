@@ -157,6 +157,12 @@ paths:
                     params: {}
                     type: map
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -342,6 +348,29 @@ paths:
                   params: {}
                   type: map
               schema:
+                properties:
+                  color:
+                    type: string
+                  description:
+                    type: string
+                  enrollment_code:
+                    properties:
+                      code:
+                        type: string
+                      is_active:
+                        type: integer
+                    type: object
+                  icon:
+                    type: string
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  params:
+                    properties: {}
+                    type: object
+                  type:
+                    type: string
                 type: object
           description: Created
           headers:
@@ -473,6 +502,31 @@ paths:
                   params: {}
                   type: classic
               schema:
+                properties:
+                  color:
+                    type: string
+                  computers_count:
+                    type: integer
+                  description:
+                    type: string
+                  enrollment_code:
+                    properties:
+                      code:
+                        type: string
+                      is_active:
+                        type: integer
+                    type: object
+                  icon:
+                    type: string
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  params:
+                    properties: {}
+                    type: object
+                  type:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -647,6 +701,31 @@ paths:
                   name: Default Blueprint
                   params: {}
               schema:
+                properties:
+                  color:
+                    type: string
+                  computers_count:
+                    type: integer
+                  description:
+                    type: string
+                  enrollment_code:
+                    properties:
+                      code:
+                        type: string
+                      is_active:
+                        type: integer
+                    type: object
+                  icon:
+                    type: string
+                  id:
+                    type: string
+                  missing_computers_count:
+                    type: integer
+                  name:
+                    type: string
+                  params:
+                    properties: {}
+                    type: object
                 type: object
           description: OK
           headers:
@@ -958,6 +1037,12 @@ paths:
                   - id: 994dbaf3-839a-4c11-8f80-3e0b6daee473
                     name: agent_debug_logging
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -1983,6 +2068,57 @@ paths:
                     is_archived: false
                     name: acchuhive admin
               schema:
+                properties:
+                  agent_installed:
+                    type: integer
+                  agent_version:
+                    type: string
+                  asset_tag:
+                    type: string
+                  blueprint_id:
+                    type: string
+                  blueprint_name:
+                    type: string
+                  device_id:
+                    type: string
+                  device_name:
+                    type: string
+                  first_enrollment:
+                    type: string
+                  is_missing:
+                    type: integer
+                  is_removed:
+                    type: integer
+                  last_check_in:
+                    type: string
+                  last_enrollment:
+                    type: string
+                  mdm_enabled:
+                    type: integer
+                  model:
+                    type: string
+                  os_version:
+                    type: string
+                  platform:
+                    type: string
+                  serial_number:
+                    type: string
+                  supplemental_build_version:
+                    type: string
+                  supplemental_os_version_extra:
+                    type: string
+                  tags: {}
+                  user:
+                    properties:
+                      email:
+                        type: string
+                      id:
+                        type: string
+                      is_archived:
+                        type: integer
+                      name:
+                        type: string
+                    type: object
                 type: object
           description: OK
           headers:
@@ -2179,6 +2315,46 @@ paths:
                   tags: []
                   user: ''
               schema:
+                properties:
+                  agent_installed:
+                    type: integer
+                  agent_version:
+                    type: string
+                  asset_tag:
+                    type: string
+                  blueprint_id:
+                    type: string
+                  blueprint_name:
+                    type: string
+                  device_id:
+                    type: string
+                  device_name:
+                    type: string
+                  first_enrollment:
+                    type: string
+                  is_missing:
+                    type: integer
+                  is_removed:
+                    type: integer
+                  last_check_in:
+                    type: string
+                  last_enrollment:
+                    type: string
+                  lost_mode_status:
+                    type: string
+                  mdm_enabled:
+                    type: integer
+                  model:
+                    type: string
+                  os_version:
+                    type: string
+                  platform:
+                    type: string
+                  serial_number:
+                    type: string
+                  tags: {}
+                  user:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -2602,6 +2778,9 @@ paths:
                 value:
                   PIN: '496406'
               schema:
+                properties:
+                  PIN:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -5017,6 +5196,17 @@ paths:
                       user: null
                   device_id: 9d6eda80-6058-40bb-94f0-3c7ba4a63eb6
               schema:
+                properties:
+                  activity:
+                    properties:
+                      count:
+                        type: integer
+                      next: {}
+                      previous: {}
+                      results: {}
+                    type: object
+                  device_id:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -5166,6 +5356,10 @@ paths:
                     version: '47'
                   device_id: 4820db3b-dec7-40b2-9c8f-eb771ac1a250
               schema:
+                properties:
+                  apps: {}
+                  device_id:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -5432,6 +5626,17 @@ paths:
                     - {}
                   device_id: 0bc8f610-5b88-49a6-b9ef-a68bf04e1e59
               schema:
+                properties:
+                  commands:
+                    properties:
+                      count:
+                        type: integer
+                      next: {}
+                      previous: {}
+                      results: {}
+                    type: object
+                  device_id:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -5573,6 +5778,200 @@ paths:
                     name: ''
                     percent_used: 8%
               schema:
+                properties:
+                  activation_lock:
+                    properties:
+                      activation_lock_allowed_while_supervised:
+                        type: integer
+                      activation_lock_supported:
+                        type: integer
+                      bypass_code_failed:
+                        type: integer
+                      device_activation_lock_enabled:
+                        type: integer
+                      user_activation_lock_enabled:
+                        type: integer
+                    type: object
+                  apple_business_manager:
+                    properties:
+                      color:
+                        type: string
+                      description:
+                        type: string
+                      device_assigned_by:
+                        type: string
+                      device_assigned_date:
+                        type: string
+                      device_family:
+                        type: string
+                      model:
+                        type: string
+                      os:
+                        type: string
+                      serial_number:
+                        type: string
+                    type: object
+                  automated_device_enrollment:
+                    properties:
+                      auto_enroll_eligible:
+                        type: integer
+                      auto_enrolled:
+                        type: integer
+                    type: object
+                  cellular:
+                    properties:
+                      cellular_technology:
+                        type: integer
+                      data_roaming:
+                        type: integer
+                      subscriptions: {}
+                      voice_roaming:
+                        type: integer
+                    type: object
+                  filevault:
+                    properties:
+                      filevault_enabled: {}
+                      filevault_next_rotation:
+                        type: string
+                      filevault_prk_escrowed:
+                        type: integer
+                      filevault_recoverykey_type:
+                        type: string
+                      filevault_regen_required:
+                        type: integer
+                    type: object
+                  general:
+                    properties:
+                      asset_tag:
+                        type: string
+                      assigned_user:
+                        type: string
+                      blueprint_name:
+                        type: string
+                      blueprint_uuid:
+                        type: string
+                      boot_volume:
+                        type: string
+                      device_id:
+                        type: string
+                      device_name:
+                        type: string
+                      first_enrollment:
+                        type: string
+                      last_enrollment:
+                        type: string
+                      last_user:
+                        type: string
+                      model:
+                        type: string
+                      os_version:
+                        type: string
+                      platform:
+                        type: string
+                      supplemental_build_version:
+                        type: string
+                      supplemental_os_version_extra:
+                        type: string
+                      system_version:
+                        type: string
+                      time_since_boot:
+                        type: string
+                    type: object
+                  hardware_overview:
+                    properties:
+                      model_identifier:
+                        type: string
+                      serial_number:
+                        type: string
+                      uuid:
+                        type: string
+                    type: object
+                  installed_profiles: {}
+                  kandji_agent:
+                    properties:
+                      agent_installed:
+                        type: string
+                      agent_version:
+                        type: string
+                      install_date:
+                        type: string
+                      last_check_in:
+                        type: string
+                    type: object
+                  lost_mode:
+                    properties:
+                      disable_status:
+                        type: string
+                      disable_status_at:
+                        type: string
+                      disabled_by:
+                        type: string
+                      enable_status_at:
+                        type: string
+                      enabled_by:
+                        type: string
+                      last_location:
+                        properties:
+                          latitude:
+                            type: string
+                          longitude:
+                            type: string
+                        type: object
+                      last_location_at:
+                        type: string
+                      last_location_status:
+                        type: string
+                      last_location_status_at:
+                        type: string
+                      lock_screen_footnote:
+                        type: string
+                      lock_screen_message:
+                        type: string
+                      lock_screen_phone_number:
+                        type: string
+                      lost_mode_status:
+                        type: string
+                      sound_status:
+                        type: string
+                      sound_status_at:
+                        type: string
+                    type: object
+                  mdm:
+                    properties:
+                      install_date:
+                        type: string
+                      last_check_in:
+                        type: string
+                      mdm_enabled:
+                        type: string
+                      mdm_enabled_user: {}
+                      supervised:
+                        type: string
+                    type: object
+                  network:
+                    properties: {}
+                    type: object
+                  recovery_information:
+                    properties:
+                      firmware_password_exist:
+                        type: integer
+                      firmware_password_pending:
+                        type: integer
+                      password_rotation_scheduled: {}
+                      recovery_lock_enabled:
+                        type: integer
+                    type: object
+                  security_information:
+                    properties:
+                      remote_desktop_enabled: {}
+                    type: object
+                  tags: {}
+                  users:
+                    properties:
+                      regular_users: {}
+                      system_users: {}
+                    type: object
+                  volumes: {}
                 type: object
           description: OK
           headers:
@@ -5658,6 +6057,47 @@ paths:
                     sound_status: SUCCESS
                     sound_status_at: '2022-12-13T20:21:38.992261Z'
               schema:
+                properties:
+                  device_id:
+                    type: string
+                  lost_mode:
+                    properties:
+                      disable_status:
+                        type: string
+                      disable_status_at:
+                        type: string
+                      disabled_by:
+                        type: string
+                      enable_status_at:
+                        type: string
+                      enabled_by:
+                        type: string
+                      last_location:
+                        properties:
+                          latitude:
+                            type: string
+                          longitude:
+                            type: string
+                        type: object
+                      last_location_at:
+                        type: string
+                      last_location_status:
+                        type: string
+                      last_location_status_at:
+                        type: string
+                      lock_screen_footnote:
+                        type: string
+                      lock_screen_message:
+                        type: string
+                      lock_screen_phone_number:
+                        type: string
+                      lost_mode_status:
+                        type: string
+                      sound_status:
+                        type: string
+                      sound_status_at:
+                        type: string
+                    type: object
                 type: object
           description: OK
           headers:
@@ -5748,6 +6188,10 @@ paths:
                     status: PENDING
                     type: threat-security-policy
               schema:
+                properties:
+                  device_id:
+                    type: string
+                  library_items: {}
                 type: object
           description: OK
           headers:
@@ -5900,6 +6344,10 @@ paths:
                     status: PASS
                     subcategory: User Accounts
               schema:
+                properties:
+                  device_id:
+                    type: string
+                  parameters: {}
                 type: object
           description: OK
           headers:
@@ -6040,6 +6488,11 @@ paths:
                   device_based_albc: A00M6-04XTY-YDMG-JNTE-EMZ3-FTJ5
                   user_based_albc: A00M6-04XTY-YDMG-JNTE-EMZ3-FTJ5
               schema:
+                properties:
+                  device_based_albc:
+                    type: string
+                  user_based_albc:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -6176,6 +6629,9 @@ paths:
                 value:
                   key: 9A2U-CDK6-P6NH-FAB3-LTUH-2MYP
               schema:
+                properties:
+                  key:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -6314,6 +6770,9 @@ paths:
                 value:
                   recovery_password: AAAAA-BBBBB-CCCC-1111-2222-3333
               schema:
+                properties:
+                  recovery_password:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -6449,6 +6908,9 @@ paths:
                 value:
                   pin: '192746'
               schema:
+                properties:
+                  pin:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -6702,6 +7164,11 @@ paths:
                     status: PASS
                     subcategory: User Accounts
               schema:
+                properties:
+                  device_id:
+                    type: string
+                  library_items: {}
+                  parameters: {}
                 type: object
           description: OK
           headers:
@@ -6895,6 +7362,59 @@ paths:
                   status_received_at: null
                   stoken_file_name: stage 2_Token_2022-06-15T00-06-08Z_smime.p7m
               schema:
+                properties:
+                  access_token_expiry:
+                    type: string
+                  admin_id:
+                    type: string
+                  blueprint:
+                    properties:
+                      color:
+                        type: string
+                      icon:
+                        type: string
+                      id:
+                        type: string
+                      name:
+                        type: string
+                    type: object
+                  days_left:
+                    type: integer
+                  defaults:
+                    properties:
+                      email:
+                        type: string
+                      phone:
+                        type: string
+                    type: object
+                  device_counts:
+                    properties:
+                      total:
+                        type: integer
+                    type: object
+                  id:
+                    type: string
+                  last_device_sync: {}
+                  org_address:
+                    type: string
+                  org_email:
+                    type: string
+                  org_name:
+                    type: string
+                  org_phone:
+                    type: string
+                  org_type:
+                    type: string
+                  server_name:
+                    type: string
+                  server_uuid:
+                    type: string
+                  status:
+                    type: string
+                  status_reason: {}
+                  status_received_at: {}
+                  stoken_file_name:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -7154,6 +7674,12 @@ paths:
                     user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
                     user_id: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -7172,6 +7698,8 @@ paths:
                   dep_account:
                   - Enter a valid UUID.
               schema:
+                properties:
+                  dep_account: {}
                 type: object
           description: Bad Request
           headers:
@@ -7241,6 +7769,71 @@ paths:
                   user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
                   user_id: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
+                properties:
+                  asset_tag:
+                    type: string
+                  assignment_status_received_at:
+                    type: string
+                  blueprint:
+                    type: string
+                  blueprint_id:
+                    type: string
+                  color:
+                    type: string
+                  dep_account:
+                    properties:
+                      id:
+                        type: string
+                      server_name:
+                        type: string
+                    type: object
+                  description:
+                    type: string
+                  device_assigned_by:
+                    type: string
+                  device_assigned_date:
+                    type: string
+                  device_family:
+                    type: string
+                  failed_assignment_attempts:
+                    type: integer
+                  id:
+                    type: string
+                  last_assignment_status:
+                    type: string
+                  mdm_device:
+                    properties:
+                      deferred_install:
+                        type: integer
+                      enrolled_at:
+                        type: string
+                      enrollment_status:
+                        type: integer
+                      id:
+                        type: string
+                      is_missing:
+                        type: integer
+                      is_removed:
+                        type: integer
+                      name:
+                        type: string
+                    type: object
+                  model:
+                    type: string
+                  os:
+                    type: string
+                  profile_assign_time:
+                    type: string
+                  profile_push_time:
+                    type: string
+                  profile_status:
+                    type: string
+                  serial_number:
+                    type: string
+                  user:
+                    type: string
+                  user_id:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -7322,6 +7915,71 @@ paths:
                   user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
                   user_id: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
+                properties:
+                  asset_tag:
+                    type: string
+                  assignment_status_received_at:
+                    type: string
+                  blueprint:
+                    type: string
+                  blueprint_id:
+                    type: string
+                  color:
+                    type: string
+                  dep_account:
+                    properties:
+                      id:
+                        type: string
+                      server_name:
+                        type: string
+                    type: object
+                  description:
+                    type: string
+                  device_assigned_by:
+                    type: string
+                  device_assigned_date:
+                    type: string
+                  device_family:
+                    type: string
+                  failed_assignment_attempts:
+                    type: integer
+                  id:
+                    type: string
+                  last_assignment_status:
+                    type: string
+                  mdm_device:
+                    properties:
+                      deferred_install:
+                        type: integer
+                      enrolled_at:
+                        type: string
+                      enrollment_status:
+                        type: integer
+                      id:
+                        type: string
+                      is_missing:
+                        type: integer
+                      is_removed:
+                        type: integer
+                      name:
+                        type: string
+                    type: object
+                  model:
+                    type: string
+                  os:
+                    type: string
+                  profile_assign_time:
+                    type: string
+                  profile_push_time:
+                    type: string
+                  profile_status:
+                    type: string
+                  serial_number:
+                    type: string
+                  user:
+                    type: string
+                  user_id:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -8374,6 +9032,13 @@ paths:
                     serial_number: M6A8ZWAX93MG
                     user: null
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -8681,6 +9346,12 @@ paths:
                     user_email: accuhive@kandji.io`
                     user_id: 4b9b080b-f82b-41e9-814b-a5668fdd8a3e
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -9028,6 +9699,12 @@ paths:
                     status: PENDING
                     type: threat-security-policy
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -9385,6 +10062,14 @@ paths:
                   offset: null
                   total: 10
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -9684,6 +10369,14 @@ paths:
                   offset: null
                   total: 2
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -9950,6 +10643,15 @@ paths:
                   offset: null
                   total: 165
               schema:
+                properties:
+                  cursor:
+                    type: string
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -10220,6 +10922,14 @@ paths:
                   offset: null
                   total: 1
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -10422,6 +11132,11 @@ paths:
                   approximate: false
                   count: 3
               schema:
+                properties:
+                  approximate:
+                    type: integer
+                  count:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -10716,6 +11431,14 @@ paths:
                   offset: null
                   total: 3
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -11006,6 +11729,15 @@ paths:
                   offset: 0
                   total: 2
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -11205,6 +11937,31 @@ paths:
                   status: pending
                   updated_at: '2023-09-15T17:26:33.578350+00:00'
               schema:
+                properties:
+                  args:
+                    properties:
+                      blueprint_ids: {}
+                      columns: {}
+                      device_families: {}
+                      filter:
+                        properties: {}
+                        type: object
+                      sort_by:
+                        type: string
+                    type: object
+                  category:
+                    type: string
+                  created_at:
+                    type: string
+                  error_msg: {}
+                  id:
+                    type: string
+                  path: {}
+                  signed_url: {}
+                  status:
+                    type: string
+                  updated_at:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -11334,6 +12091,9 @@ paths:
                 value:
                   detail: 'Invalid category: application_firewal'
               schema:
+                properties:
+                  detail:
+                    type: string
                 type: object
           description: Bad Request
           headers:
@@ -11497,6 +12257,33 @@ paths:
                   status: success
                   updated_at: '2023-09-14T20:58:00.341603+00:00'
               schema:
+                properties:
+                  args:
+                    properties:
+                      blueprint_ids: {}
+                      columns: {}
+                      device_families: {}
+                      filter:
+                        properties: {}
+                        type: object
+                      sort_by:
+                        type: string
+                    type: object
+                  category:
+                    type: string
+                  created_at:
+                    type: string
+                  error_msg: {}
+                  id:
+                    type: string
+                  path:
+                    type: string
+                  signed_url:
+                    type: string
+                  status:
+                    type: string
+                  updated_at:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -11726,6 +12513,15 @@ paths:
                   offset: 0
                   total: 1
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -11974,6 +12770,14 @@ paths:
                   offset: null
                   total: 2
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -12889,6 +13693,14 @@ paths:
                   offset: null
                   total: 17
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -13102,6 +13914,14 @@ paths:
                   offset: null
                   total: 0
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -13665,6 +14485,14 @@ paths:
                   offset: null
                   total: 10
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -13912,6 +14740,16 @@ paths:
                   offset: 0
                   total: 117
               schema:
+                properties:
+                  cursor:
+                    type: string
+                  data: {}
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -14175,6 +15013,14 @@ paths:
                   offset: null
                   total: 9
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -14438,6 +15284,14 @@ paths:
                   offset: null
                   total: 9
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -14687,6 +15541,14 @@ paths:
                   offset: null
                   total: 8
               schema:
+                properties:
+                  cursor: {}
+                  data: {}
+                  limit:
+                    type: integer
+                  offset: {}
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -14841,6 +15703,36 @@ paths:
                     plan_type: single_limit
                   tenantOverLicenseLimit: false
               schema:
+                properties:
+                  counts:
+                    properties:
+                      computers_count:
+                        type: integer
+                      ios_count:
+                        type: integer
+                      ipados_count:
+                        type: integer
+                      macos_count:
+                        type: integer
+                      tvos_count:
+                        type: integer
+                    type: object
+                  limits:
+                    properties:
+                      max_devices:
+                        type: integer
+                      max_devices_per_platform:
+                        properties:
+                          ios_ipados:
+                            type: integer
+                          macos:
+                            type: integer
+                        type: object
+                      plan_type:
+                        type: string
+                    type: object
+                  tenantOverLicenseLimit:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -14889,6 +15781,12 @@ paths:
                   - id: 4fe23c39-7a9a-435c-bab3-d2e9fd1974c6
                     name: accuhive_02
               schema:
+                properties:
+                  count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -14927,6 +15825,11 @@ paths:
                   id: 1467cc35-39e3-435d-8816-34c849c15bc3
                   name: accuhive_01
               schema:
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
                 type: object
           description: Created
           headers:
@@ -15002,6 +15905,11 @@ paths:
                   id: 4fe23c39-7a9a-435c-bab3-d2e9fd1974c6
                   name: accuhive_02
               schema:
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
                 type: object
           description: OK
           headers:
@@ -15160,6 +16068,16 @@ paths:
                     status: QUARANTINED
                     threat_name: malware_5
               schema:
+                properties:
+                  count:
+                    type: integer
+                  malware_count:
+                    type: integer
+                  next: {}
+                  previous: {}
+                  pup_count:
+                    type: integer
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -15271,6 +16189,11 @@ paths:
                     name: test_user_02
                     updated_at: '2024-09-06T17:00:04.503814Z'
               schema:
+                properties:
+                  next:
+                    type: string
+                  previous: {}
+                  results: {}
                 type: object
           description: OK
           headers:
@@ -15328,6 +16251,9 @@ paths:
                 value:
                   detail: User still assigned to one or more devices.
               schema:
+                properties:
+                  detail:
+                    type: string
                 type: object
           description: Bad Request
           headers:
@@ -15382,6 +16308,38 @@ paths:
                   name: test_user_01
                   updated_at: '2024-09-06T21:00:04.304280Z'
               schema:
+                properties:
+                  active:
+                    type: integer
+                  archived:
+                    type: integer
+                  created_at:
+                    type: string
+                  department: {}
+                  deprecated_user_id:
+                    type: string
+                  device_count:
+                    type: integer
+                  email:
+                    type: string
+                  id:
+                    type: string
+                  integration:
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      type:
+                        type: string
+                      uuid:
+                        type: string
+                    type: object
+                  job_title: {}
+                  name:
+                    type: string
+                  updated_at:
+                    type: string
                 type: object
           description: OK
           headers:

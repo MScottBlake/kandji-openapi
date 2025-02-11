@@ -405,6 +405,86 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "blueprint": {
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "icon": {
+                          "type": "string"
+                        },
+                        "color": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "access_token_expiry": {
+                      "type": "string"
+                    },
+                    "server_name": {
+                      "type": "string"
+                    },
+                    "server_uuid": {
+                      "type": "string"
+                    },
+                    "admin_id": {
+                      "type": "string"
+                    },
+                    "org_name": {
+                      "type": "string"
+                    },
+                    "org_email": {
+                      "type": "string"
+                    },
+                    "org_phone": {
+                      "type": "string"
+                    },
+                    "org_address": {
+                      "type": "string"
+                    },
+                    "org_type": {
+                      "type": "string"
+                    },
+                    "stoken_file_name": {
+                      "type": "string"
+                    },
+                    "last_device_sync": {},
+                    "defaults": {
+                      "properties": {
+                        "email": {
+                          "type": "string"
+                        },
+                        "phone": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "days_left": {
+                      "type": "integer"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "status_reason": {},
+                    "status_received_at": {},
+                    "device_counts": {
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -1008,6 +1088,16 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -1929,6 +2019,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -1995,6 +2093,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "dep_account": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -2058,6 +2159,105 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "blueprint_id": {
+                      "type": "string"
+                    },
+                    "mdm_device": {
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "enrolled_at": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "enrollment_status": {
+                          "type": "integer"
+                        },
+                        "deferred_install": {
+                          "type": "integer"
+                        },
+                        "is_missing": {
+                          "type": "integer"
+                        },
+                        "is_removed": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "dep_account": {
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "server_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "asset_tag": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "device_assigned_by": {
+                      "type": "string"
+                    },
+                    "device_assigned_date": {
+                      "type": "string"
+                    },
+                    "device_family": {
+                      "type": "string"
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "os": {
+                      "type": "string"
+                    },
+                    "profile_assign_time": {
+                      "type": "string"
+                    },
+                    "profile_push_time": {
+                      "type": "string"
+                    },
+                    "profile_status": {
+                      "type": "string"
+                    },
+                    "serial_number": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "last_assignment_status": {
+                      "type": "string"
+                    },
+                    "failed_assignment_attempts": {
+                      "type": "integer"
+                    },
+                    "assignment_status_received_at": {
+                      "type": "string"
+                    },
+                    "blueprint": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -2164,6 +2364,105 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "blueprint_id": {
+                      "type": "string"
+                    },
+                    "mdm_device": {
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "enrolled_at": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "enrollment_status": {
+                          "type": "integer"
+                        },
+                        "deferred_install": {
+                          "type": "integer"
+                        },
+                        "is_missing": {
+                          "type": "integer"
+                        },
+                        "is_removed": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "dep_account": {
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "server_name": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "asset_tag": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "device_assigned_by": {
+                      "type": "string"
+                    },
+                    "device_assigned_date": {
+                      "type": "string"
+                    },
+                    "device_family": {
+                      "type": "string"
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "os": {
+                      "type": "string"
+                    },
+                    "profile_assign_time": {
+                      "type": "string"
+                    },
+                    "profile_push_time": {
+                      "type": "string"
+                    },
+                    "profile_status": {
+                      "type": "string"
+                    },
+                    "serial_number": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "last_assignment_status": {
+                      "type": "string"
+                    },
+                    "failed_assignment_attempts": {
+                      "type": "integer"
+                    },
+                    "assignment_status_received_at": {
+                      "type": "string"
+                    },
+                    "blueprint": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -2441,6 +2740,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -2569,6 +2876,41 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "params": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "enrollment_code": {
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "is_active": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -2797,6 +3139,44 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "params": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "computers_count": {
+                      "type": "integer"
+                    },
+                    "enrollment_code": {
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "is_active": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -3070,6 +3450,44 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "icon": {
+                      "type": "string"
+                    },
+                    "color": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "params": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "computers_count": {
+                      "type": "integer"
+                    },
+                    "missing_computers_count": {
+                      "type": "integer"
+                    },
+                    "enrollment_code": {
+                      "properties": {
+                        "code": {
+                          "type": "string"
+                        },
+                        "is_active": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -3824,6 +4242,14 @@
             "content": {
               "application/json; charset=utf-8": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -4815,6 +5241,83 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "device_name": {
+                      "type": "string"
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "serial_number": {
+                      "type": "string"
+                    },
+                    "platform": {
+                      "type": "string"
+                    },
+                    "os_version": {
+                      "type": "string"
+                    },
+                    "supplemental_build_version": {
+                      "type": "string"
+                    },
+                    "supplemental_os_version_extra": {
+                      "type": "string"
+                    },
+                    "last_check_in": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "properties": {
+                        "email": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "is_archived": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "asset_tag": {
+                      "type": "string"
+                    },
+                    "blueprint_id": {
+                      "type": "string"
+                    },
+                    "mdm_enabled": {
+                      "type": "integer"
+                    },
+                    "agent_installed": {
+                      "type": "integer"
+                    },
+                    "is_missing": {
+                      "type": "integer"
+                    },
+                    "is_removed": {
+                      "type": "integer"
+                    },
+                    "agent_version": {
+                      "type": "string"
+                    },
+                    "first_enrollment": {
+                      "type": "string"
+                    },
+                    "last_enrollment": {
+                      "type": "string"
+                    },
+                    "blueprint_name": {
+                      "type": "string"
+                    },
+                    "tags": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -4958,6 +5461,66 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "device_name": {
+                      "type": "string"
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "serial_number": {
+                      "type": "string"
+                    },
+                    "platform": {
+                      "type": "string"
+                    },
+                    "os_version": {
+                      "type": "string"
+                    },
+                    "last_check_in": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "string"
+                    },
+                    "asset_tag": {
+                      "type": "string"
+                    },
+                    "blueprint_id": {
+                      "type": "string"
+                    },
+                    "mdm_enabled": {
+                      "type": "integer"
+                    },
+                    "agent_installed": {
+                      "type": "integer"
+                    },
+                    "is_missing": {
+                      "type": "integer"
+                    },
+                    "is_removed": {
+                      "type": "integer"
+                    },
+                    "agent_version": {
+                      "type": "string"
+                    },
+                    "first_enrollment": {
+                      "type": "string"
+                    },
+                    "last_enrollment": {
+                      "type": "string"
+                    },
+                    "blueprint_name": {
+                      "type": "string"
+                    },
+                    "lost_mode_status": {
+                      "type": "string"
+                    },
+                    "tags": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -5038,6 +5601,299 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "general": {
+                      "properties": {
+                        "device_id": {
+                          "type": "string"
+                        },
+                        "device_name": {
+                          "type": "string"
+                        },
+                        "last_enrollment": {
+                          "type": "string"
+                        },
+                        "first_enrollment": {
+                          "type": "string"
+                        },
+                        "model": {
+                          "type": "string"
+                        },
+                        "platform": {
+                          "type": "string"
+                        },
+                        "os_version": {
+                          "type": "string"
+                        },
+                        "supplemental_build_version": {
+                          "type": "string"
+                        },
+                        "supplemental_os_version_extra": {
+                          "type": "string"
+                        },
+                        "system_version": {
+                          "type": "string"
+                        },
+                        "boot_volume": {
+                          "type": "string"
+                        },
+                        "time_since_boot": {
+                          "type": "string"
+                        },
+                        "last_user": {
+                          "type": "string"
+                        },
+                        "asset_tag": {
+                          "type": "string"
+                        },
+                        "assigned_user": {
+                          "type": "string"
+                        },
+                        "blueprint_name": {
+                          "type": "string"
+                        },
+                        "blueprint_uuid": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "mdm": {
+                      "properties": {
+                        "mdm_enabled": {
+                          "type": "string"
+                        },
+                        "supervised": {
+                          "type": "string"
+                        },
+                        "install_date": {
+                          "type": "string"
+                        },
+                        "last_check_in": {
+                          "type": "string"
+                        },
+                        "mdm_enabled_user": {}
+                      },
+                      "type": "object"
+                    },
+                    "activation_lock": {
+                      "properties": {
+                        "bypass_code_failed": {
+                          "type": "integer"
+                        },
+                        "user_activation_lock_enabled": {
+                          "type": "integer"
+                        },
+                        "device_activation_lock_enabled": {
+                          "type": "integer"
+                        },
+                        "activation_lock_allowed_while_supervised": {
+                          "type": "integer"
+                        },
+                        "activation_lock_supported": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "filevault": {
+                      "properties": {
+                        "filevault_enabled": {},
+                        "filevault_recoverykey_type": {
+                          "type": "string"
+                        },
+                        "filevault_prk_escrowed": {
+                          "type": "integer"
+                        },
+                        "filevault_next_rotation": {
+                          "type": "string"
+                        },
+                        "filevault_regen_required": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "lost_mode": {
+                      "properties": {
+                        "lost_mode_status": {
+                          "type": "string"
+                        },
+                        "enabled_by": {
+                          "type": "string"
+                        },
+                        "enable_status_at": {
+                          "type": "string"
+                        },
+                        "lock_screen_message": {
+                          "type": "string"
+                        },
+                        "lock_screen_phone_number": {
+                          "type": "string"
+                        },
+                        "lock_screen_footnote": {
+                          "type": "string"
+                        },
+                        "disable_status": {
+                          "type": "string"
+                        },
+                        "disabled_by": {
+                          "type": "string"
+                        },
+                        "disable_status_at": {
+                          "type": "string"
+                        },
+                        "last_location_status": {
+                          "type": "string"
+                        },
+                        "last_location_status_at": {
+                          "type": "string"
+                        },
+                        "last_location": {
+                          "properties": {
+                            "latitude": {
+                              "type": "string"
+                            },
+                            "longitude": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "last_location_at": {
+                          "type": "string"
+                        },
+                        "sound_status": {
+                          "type": "string"
+                        },
+                        "sound_status_at": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "automated_device_enrollment": {
+                      "properties": {
+                        "auto_enroll_eligible": {
+                          "type": "integer"
+                        },
+                        "auto_enrolled": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "kandji_agent": {
+                      "properties": {
+                        "agent_installed": {
+                          "type": "string"
+                        },
+                        "install_date": {
+                          "type": "string"
+                        },
+                        "last_check_in": {
+                          "type": "string"
+                        },
+                        "agent_version": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "hardware_overview": {
+                      "properties": {
+                        "uuid": {
+                          "type": "string"
+                        },
+                        "serial_number": {
+                          "type": "string"
+                        },
+                        "model_identifier": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "volumes": {},
+                    "network": {
+                      "properties": {},
+                      "type": "object"
+                    },
+                    "recovery_information": {
+                      "properties": {
+                        "recovery_lock_enabled": {
+                          "type": "integer"
+                        },
+                        "firmware_password_exist": {
+                          "type": "integer"
+                        },
+                        "firmware_password_pending": {
+                          "type": "integer"
+                        },
+                        "password_rotation_scheduled": {}
+                      },
+                      "type": "object"
+                    },
+                    "users": {
+                      "properties": {
+                        "regular_users": {},
+                        "system_users": {}
+                      },
+                      "type": "object"
+                    },
+                    "installed_profiles": {},
+                    "apple_business_manager": {
+                      "properties": {
+                        "model": {
+                          "type": "string"
+                        },
+                        "color": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "serial_number": {
+                          "type": "string"
+                        },
+                        "device_family": {
+                          "type": "string"
+                        },
+                        "os": {
+                          "type": "string"
+                        },
+                        "device_assigned_date": {
+                          "type": "string"
+                        },
+                        "device_assigned_by": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "security_information": {
+                      "properties": {
+                        "remote_desktop_enabled": {}
+                      },
+                      "type": "object"
+                    },
+                    "cellular": {
+                      "properties": {
+                        "voice_roaming": {
+                          "type": "integer"
+                        },
+                        "data_roaming": {
+                          "type": "integer"
+                        },
+                        "cellular_technology": {
+                          "type": "integer"
+                        },
+                        "subscriptions": {}
+                      },
+                      "type": "object"
+                    },
+                    "tags": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -5216,6 +6072,69 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "lost_mode": {
+                      "properties": {
+                        "lost_mode_status": {
+                          "type": "string"
+                        },
+                        "enabled_by": {
+                          "type": "string"
+                        },
+                        "enable_status_at": {
+                          "type": "string"
+                        },
+                        "lock_screen_message": {
+                          "type": "string"
+                        },
+                        "lock_screen_phone_number": {
+                          "type": "string"
+                        },
+                        "lock_screen_footnote": {
+                          "type": "string"
+                        },
+                        "disable_status": {
+                          "type": "string"
+                        },
+                        "disabled_by": {
+                          "type": "string"
+                        },
+                        "disable_status_at": {
+                          "type": "string"
+                        },
+                        "last_location_status": {
+                          "type": "string"
+                        },
+                        "last_location_status_at": {
+                          "type": "string"
+                        },
+                        "last_location": {
+                          "properties": {
+                            "latitude": {
+                              "type": "string"
+                            },
+                            "longitude": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "last_location_at": {
+                          "type": "string"
+                        },
+                        "sound_status": {
+                          "type": "string"
+                        },
+                        "sound_status_at": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -5491,6 +6410,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "activity": {
+                      "properties": {
+                        "count": {
+                          "type": "integer"
+                        },
+                        "next": {},
+                        "previous": {},
+                        "results": {}
+                      },
+                      "type": "object"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -7258,6 +8193,12 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "apps": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -7466,6 +8407,12 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "library_items": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -7689,6 +8636,12 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "parameters": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -7889,6 +8842,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "library_items": {},
+                    "parameters": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -8368,6 +9328,22 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "commands": {
+                      "properties": {
+                        "count": {
+                          "type": "integer"
+                        },
+                        "next": {},
+                        "previous": {},
+                        "results": {}
+                      },
+                      "type": "object"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -8675,6 +9651,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "PIN": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -10331,6 +11312,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "user_based_albc": {
+                      "type": "string"
+                    },
+                    "device_based_albc": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -10523,6 +11512,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "key": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -10714,6 +11708,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "pin": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -10905,6 +11904,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "recovery_password": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -11331,6 +12335,14 @@
             "content": {
               "application/json; charset=utf-8": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -11801,6 +12813,14 @@
             "content": {
               "application/json; charset=utf-8": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -12220,6 +13240,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -12619,6 +13650,19 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -12964,6 +14008,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -13365,6 +14420,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -13675,6 +14741,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -14066,6 +15143,19 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -14431,6 +15521,19 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -14742,6 +15845,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -15073,6 +16187,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -16194,6 +17319,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -16486,6 +17622,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -17171,6 +18318,21 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {
+                      "type": "integer"
+                    },
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -17500,6 +18662,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -17847,6 +19020,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -18194,6 +19378,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "offset": {},
+                    "limit": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "data": {},
+                    "cursor": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -18470,6 +19665,41 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "args": {
+                      "properties": {
+                        "filter": {
+                          "properties": {},
+                          "type": "object"
+                        },
+                        "columns": {},
+                        "sort_by": {
+                          "type": "string"
+                        },
+                        "blueprint_ids": {},
+                        "device_families": {}
+                      },
+                      "type": "object"
+                    },
+                    "error_msg": {},
+                    "path": {},
+                    "signed_url": {},
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -18663,6 +19893,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -18884,6 +20119,45 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "args": {
+                      "properties": {
+                        "filter": {
+                          "properties": {},
+                          "type": "object"
+                        },
+                        "columns": {},
+                        "sort_by": {
+                          "type": "string"
+                        },
+                        "blueprint_ids": {},
+                        "device_families": {}
+                      },
+                      "type": "object"
+                    },
+                    "error_msg": {},
+                    "path": {
+                      "type": "string"
+                    },
+                    "signed_url": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19121,6 +20395,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "approximate": {
+                      "type": "integer"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19185,6 +20467,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19256,6 +20546,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19366,6 +20664,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19521,6 +20827,20 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "malware_count": {
+                      "type": "integer"
+                    },
+                    "pup_count": {
+                      "type": "integer"
+                    },
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19653,6 +20973,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "next": {
+                      "type": "string"
+                    },
+                    "previous": {},
+                    "results": {}
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19755,6 +21082,54 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "active": {
+                      "type": "integer"
+                    },
+                    "archived": {
+                      "type": "integer"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "department": {},
+                    "deprecated_user_id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "integration": {
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "uuid": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "job_title": {},
+                    "name": {
+                      "type": "string"
+                    },
+                    "device_count": {
+                      "type": "integer"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19845,6 +21220,11 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
@@ -19893,6 +21273,53 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "properties": {
+                    "counts": {
+                      "properties": {
+                        "computers_count": {
+                          "type": "integer"
+                        },
+                        "ios_count": {
+                          "type": "integer"
+                        },
+                        "ipados_count": {
+                          "type": "integer"
+                        },
+                        "macos_count": {
+                          "type": "integer"
+                        },
+                        "tvos_count": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "limits": {
+                      "properties": {
+                        "plan_type": {
+                          "type": "string"
+                        },
+                        "max_devices": {
+                          "type": "integer"
+                        },
+                        "max_devices_per_platform": {
+                          "properties": {
+                            "macos": {
+                              "type": "integer"
+                            },
+                            "ios_ipados": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "tenantOverLicenseLimit": {
+                      "type": "integer"
+                    }
+                  },
                   "type": "object"
                 },
                 "example": {
