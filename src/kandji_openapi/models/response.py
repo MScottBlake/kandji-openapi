@@ -91,7 +91,7 @@ class PostmanResponse:
         """Convert response to OpenAPI response object"""
         response = Response(description=self.status_text)
         properties = {}
-        title = "_".join(
+        title = "".join(
             [to_camel_case(str(self.name)), str(self.status_code), "Response"]
         )
 
