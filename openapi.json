@@ -194,8 +194,7 @@
             "content": {
               "application/x-x509-ca-cert": {
                 "schema": {
-                  "type": "string",
-                  "title": "downloadPublicKey200Response"
+                  "type": "string"
                 },
                 "example": {
                   "value": "-----BEGIN CERTIFICATE-----\nMIIC7TCCAdWgAwIBAgICANIwDQYJKoZIhvcNAQELBQAwLjEQMA4GA1UEAwwHU0NF\nUC1DQTELMAkGA1UEBhMCRVUxDTALBgNVBAoMBERUTkIwHhcNMjEwMjI2MTk1MTM1\nWhcNMzEwMjI0MTk1MTM1WjAxMRMwEQYDVQQDDApLQU5ESkktREVQMQswCQYDVQQG\nEwJFVTENMAsGA1UECgwERFROQjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC\nggEBANsWli9JUD5Q32Gny5G8nfVACBwoYOd0WymsI96xrnguhMKS/zzrlkn4HUCt\n...\n...\n...\nCSqGSIb3DQEBCwUAA4IBAQBAq91ds1eQxzxUE/vyRUd1D4Sq4kEHLtyumfbAdhxq\noFVeQNCcHh4EAdH+D5kCV1KSbhap0WGm10c6rLidMSfcdCmr0IkIcFKCdtW3sAIB\nbqsM5pF1LULqnYZM25aDFRcy1d+t9en1jsL2ig2lDuIVCLd9Shj88R5NWELwHrar\nq0Ix5jA1qhQKrFzROXITAJUZOuf7WbOG7foM9Z12rQrfv1yTgLllr4S4qDCQUpGy\n3Q12WhkYltkdsG6GeoSbwNPxMUwNiDNE1Z3z51dMfzFud/vtB2wv29AIjRMBT4mW\nHA2a80rO+vlrUn8GR31yTlpazvalccuSuTpIO9VLxweB\n-----END CERTIFICATE-----"
@@ -486,8 +485,7 @@
                       "type": "object"
                     }
                   },
-                  "type": "object",
-                  "title": "createIntegration200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -1100,8 +1098,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "listAssociatedDevicesNullMdmDevice200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2030,8 +2027,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2100,8 +2096,7 @@
                   "properties": {
                     "dep_account": {}
                   },
-                  "type": "object",
-                  "title": "invalidUuid400Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2263,8 +2258,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2469,8 +2463,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "updateUserAssignment200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2755,8 +2748,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2919,8 +2911,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success201Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -2957,8 +2948,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "title": "400TypeDoesNotMatchSourceidBlueprintType400Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": [
@@ -3187,8 +3177,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -3499,8 +3488,7 @@
                       "type": "object"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -3895,8 +3883,7 @@
             "content": {
               "application/x-apple-aspen-config": {
                 "schema": {
-                  "type": "string",
-                  "title": "getManualEnrollmentProfile200Response"
+                  "type": "string"
                 },
                 "example": {
                   "value": "<Raw Manual Enrollment .mobileconfig file>"
@@ -4263,8 +4250,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -4477,8 +4463,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "title": "successClassic200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": [
@@ -4666,8 +4651,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "title": "successClassic200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": [
@@ -5043,8 +5027,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "title": "listIpadOnly200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": [
@@ -5335,8 +5318,7 @@
                     },
                     "tags": {}
                   },
-                  "type": "object",
-                  "title": "getIpad200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -5539,8 +5521,7 @@
                     },
                     "tags": {}
                   },
-                  "type": "object",
-                  "title": "clearAllTags200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -5913,8 +5894,7 @@
                     },
                     "tags": {}
                   },
-                  "type": "object",
-                  "title": "iphoneOrIpadInLostMode200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -6155,8 +6135,7 @@
                       "type": "object"
                     }
                   },
-                  "type": "object",
-                  "title": "getDeviceLostModeDetails200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -6447,8 +6426,7 @@
                       "type": "object"
                     }
                   },
-                  "type": "object",
-                  "title": "getDeviceActivity200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -8221,8 +8199,7 @@
                     },
                     "apps": {}
                   },
-                  "type": "object",
-                  "title": "ipadApps200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -8436,8 +8413,7 @@
                     },
                     "library_items": {}
                   },
-                  "type": "object",
-                  "title": "edrStatus200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -8666,8 +8642,7 @@
                     },
                     "parameters": {}
                   },
-                  "type": "object",
-                  "title": "getDeviceParameters200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -8874,8 +8849,7 @@
                     "library_items": {},
                     "parameters": {}
                   },
-                  "type": "object",
-                  "title": "getDeviceStatus200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -9270,8 +9244,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "title": "rtsProfileNotInScope400Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": "The specified profile is not in scope for the device"
@@ -9371,8 +9344,7 @@
                       "type": "object"
                     }
                   },
-                  "type": "object",
-                  "title": "getDeviceCommands200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -9684,8 +9656,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -9842,8 +9813,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "title": "deviceAlreadyLocked400Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": "This device is already locked."
@@ -11350,8 +11320,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -11548,8 +11517,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -11745,8 +11713,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -11942,8 +11909,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -12377,8 +12343,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -12856,8 +12821,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "edrStatus200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -13287,8 +13251,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -13700,8 +13663,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -14057,8 +14019,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -14470,8 +14431,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -14792,8 +14752,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -15197,8 +15156,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "getDevicesInABlueprintSortedBySerialNumber200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -15576,8 +15534,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -15899,8 +15856,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -16242,8 +16198,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -17375,8 +17330,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "successNoKernelExtensions200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -17679,8 +17633,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -18380,8 +18333,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -18721,8 +18673,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "startupSettings200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -19080,8 +19031,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "systemExtensions200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -19439,8 +19389,7 @@
                     "data": {},
                     "cursor": {}
                   },
-                  "type": "object",
-                  "title": "transparencyDatabase200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -19751,8 +19700,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "deviceInfoForAllIpads200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -19950,8 +19898,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "badCategoryRequest400Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -20211,8 +20158,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "exampleExportStatusCheck200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -20457,8 +20403,7 @@
                       "type": "integer"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -20530,8 +20475,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -20610,8 +20554,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success201Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -20729,8 +20672,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -20899,8 +20841,7 @@
                     },
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "usingTermParam200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -21039,8 +20980,7 @@
                     "previous": {},
                     "results": {}
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -21190,8 +21130,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -21286,8 +21225,7 @@
                       "type": "string"
                     }
                   },
-                  "type": "object",
-                  "title": "userAssignedToDevice400Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
@@ -21382,8 +21320,7 @@
                       "type": "integer"
                     }
                   },
-                  "type": "object",
-                  "title": "success200Response"
+                  "type": "object"
                 },
                 "example": {
                   "value": {
