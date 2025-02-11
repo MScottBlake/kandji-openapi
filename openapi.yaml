@@ -163,7 +163,7 @@ paths:
                   next: {}
                   previous: {}
                   results: {}
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -372,7 +372,7 @@ paths:
                     type: object
                   type:
                     type: string
-                title: success_201_Response
+                title: success201Response
                 type: object
           description: Created
           headers:
@@ -390,7 +390,7 @@ paths:
                 value:
                 - Blueprint type does not match the source blueprint type
               schema:
-                title: 400TypeDoesNotMatchSourceidBlueprintType_400_Response
+                title: 400TypeDoesNotMatchSourceidBlueprintType400Response
                 type: object
           description: Bad Request
           headers:
@@ -530,7 +530,7 @@ paths:
                     type: object
                   type:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -730,7 +730,7 @@ paths:
                   params:
                     properties: {}
                     type: object
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -894,7 +894,7 @@ paths:
                 - e3d94912-d8bd-474b-9b90-c32288f84f99
                 - 0563461d-de5d-4218-9350-43e624f607ee
               schema:
-                title: successClassic_200_Response
+                title: successClassic200Response
                 type: object
           description: OK
           headers:
@@ -1049,7 +1049,7 @@ paths:
                   next: {}
                   previous: {}
                   results: {}
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -1328,7 +1328,7 @@ paths:
               example:
                 value: <Raw Manual Enrollment .mobileconfig file>
               schema:
-                title: getManualEnrollmentProfile_200_Response
+                title: getManualEnrollmentProfile200Response
                 type: string
           description: OK
           headers:
@@ -1615,7 +1615,7 @@ paths:
                 - a6063468-48aa-4e52-a098-fd9c7902201e
                 - e3d94912-d8bd-474b-9b90-c32288f84f99
               schema:
-                title: successClassic_200_Response
+                title: successClassic200Response
                 type: object
           description: OK
           headers:
@@ -1986,7 +1986,7 @@ paths:
                   tags: []
                   user: ''
               schema:
-                title: listIpadOnly_200_Response
+                title: listIpadOnly200Response
                 type: object
           description: OK
           headers:
@@ -2129,7 +2129,7 @@ paths:
                       name:
                         type: string
                     type: object
-                title: getIpad_200_Response
+                title: getIpad200Response
                 type: object
           description: OK
           headers:
@@ -2366,7 +2366,7 @@ paths:
                   tags: {}
                   user:
                     type: string
-                title: clearAllTags_200_Response
+                title: clearAllTags200Response
                 type: object
           description: OK
           headers:
@@ -2729,7 +2729,7 @@ paths:
               example:
                 value: The specified profile is not in scope for the device
               schema:
-                title: rtsProfileNotInScope_400_Response
+                title: rtsProfileNotInScope400Response
                 type: object
           description: Bad Request
           headers:
@@ -2794,7 +2794,7 @@ paths:
                 properties:
                   PIN:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -2905,7 +2905,7 @@ paths:
               example:
                 value: This device is already locked.
               schema:
-                title: deviceAlreadyLocked_400_Response
+                title: deviceAlreadyLocked400Response
                 type: object
           description: Bad Request
           headers:
@@ -5222,7 +5222,7 @@ paths:
                     type: object
                   device_id:
                     type: string
-                title: getDeviceActivity_200_Response
+                title: getDeviceActivity200Response
                 type: object
           description: OK
           headers:
@@ -5376,7 +5376,7 @@ paths:
                   apps: {}
                   device_id:
                     type: string
-                title: ipadApps_200_Response
+                title: ipadApps200Response
                 type: object
           description: OK
           headers:
@@ -5654,7 +5654,7 @@ paths:
                     type: object
                   device_id:
                     type: string
-                title: getDeviceCommands_200_Response
+                title: getDeviceCommands200Response
                 type: object
           description: OK
           headers:
@@ -5990,7 +5990,7 @@ paths:
                       system_users: {}
                     type: object
                   volumes: {}
-                title: iphoneOrIpadInLostMode_200_Response
+                title: iphoneOrIpadInLostMode200Response
                 type: object
           description: OK
           headers:
@@ -6117,7 +6117,7 @@ paths:
                       sound_status_at:
                         type: string
                     type: object
-                title: getDeviceLostModeDetails_200_Response
+                title: getDeviceLostModeDetails200Response
                 type: object
           description: OK
           headers:
@@ -6212,7 +6212,7 @@ paths:
                   device_id:
                     type: string
                   library_items: {}
-                title: edrStatus_200_Response
+                title: edrStatus200Response
                 type: object
           description: OK
           headers:
@@ -6369,7 +6369,7 @@ paths:
                   device_id:
                     type: string
                   parameters: {}
-                title: getDeviceParameters_200_Response
+                title: getDeviceParameters200Response
                 type: object
           description: OK
           headers:
@@ -6515,7 +6515,7 @@ paths:
                     type: string
                   user_based_albc:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -6655,7 +6655,7 @@ paths:
                 properties:
                   key:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -6797,7 +6797,7 @@ paths:
                 properties:
                   recovery_password:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -6936,7 +6936,7 @@ paths:
                 properties:
                   pin:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -7195,7 +7195,7 @@ paths:
                     type: string
                   library_items: {}
                   parameters: {}
-                title: getDeviceStatus_200_Response
+                title: getDeviceStatus200Response
                 type: object
           description: OK
           headers:
@@ -7442,7 +7442,7 @@ paths:
                   status_received_at: {}
                   stoken_file_name:
                     type: string
-                title: createIntegration_200_Response
+                title: createIntegration200Response
                 type: object
           description: OK
           headers:
@@ -7708,7 +7708,7 @@ paths:
                   next: {}
                   previous: {}
                   results: {}
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -7729,7 +7729,7 @@ paths:
               schema:
                 properties:
                   dep_account: {}
-                title: invalidUuid_400_Response
+                title: invalidUuid400Response
                 type: object
           description: Bad Request
           headers:
@@ -7864,7 +7864,7 @@ paths:
                     type: string
                   user_id:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -8011,7 +8011,7 @@ paths:
                     type: string
                   user_id:
                     type: string
-                title: updateUserAssignment_200_Response
+                title: updateUserAssignment200Response
                 type: object
           description: OK
           headers:
@@ -8054,7 +8054,7 @@ paths:
                   3Q12WhkYltkdsG6GeoSbwNPxMUwNiDNE1Z3z51dMfzFud/vtB2wv29AIjRMBT4mW\n
                   HA2a80rO+vlrUn8GR31yTlpazvalccuSuTpIO9VLxweB\n-----END CERTIFICATE-----"
               schema:
-                title: downloadPublicKey_200_Response
+                title: downloadPublicKey200Response
                 type: string
           description: OK
           headers:
@@ -9072,7 +9072,7 @@ paths:
                     type: string
                   previous: {}
                   results: {}
-                title: listAssociatedDevicesNullMdmDevice_200_Response
+                title: listAssociatedDevicesNullMdmDevice200Response
                 type: object
           description: OK
           headers:
@@ -9386,7 +9386,7 @@ paths:
                   next: {}
                   previous: {}
                   results: {}
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -9740,7 +9740,7 @@ paths:
                   next: {}
                   previous: {}
                   results: {}
-                title: edrStatus_200_Response
+                title: edrStatus200Response
                 type: object
           description: OK
           headers:
@@ -10106,7 +10106,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -10414,7 +10414,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -10690,7 +10690,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -10969,7 +10969,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -11177,7 +11177,7 @@ paths:
                     type: integer
                   count:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -11480,7 +11480,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -11780,7 +11780,7 @@ paths:
                     type: integer
                   total:
                     type: integer
-                title: getDevicesInABlueprintSortedBySerialNumber_200_Response
+                title: getDevicesInABlueprintSortedBySerialNumber200Response
                 type: object
           description: OK
           headers:
@@ -12005,7 +12005,7 @@ paths:
                     type: string
                   updated_at:
                     type: string
-                title: deviceInfoForAllIpads_200_Response
+                title: deviceInfoForAllIpads200Response
                 type: object
           description: OK
           headers:
@@ -12138,7 +12138,7 @@ paths:
                 properties:
                   detail:
                     type: string
-                title: badCategoryRequest_400_Response
+                title: badCategoryRequest400Response
                 type: object
           description: Bad Request
           headers:
@@ -12329,7 +12329,7 @@ paths:
                     type: string
                   updated_at:
                     type: string
-                title: exampleExportStatusCheck_200_Response
+                title: exampleExportStatusCheck200Response
                 type: object
           description: OK
           headers:
@@ -12568,7 +12568,7 @@ paths:
                     type: integer
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -12825,7 +12825,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -13749,7 +13749,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -13971,7 +13971,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: successNoKernelExtensions_200_Response
+                title: successNoKernelExtensions200Response
                 type: object
           description: OK
           headers:
@@ -14543,7 +14543,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -14801,7 +14801,7 @@ paths:
                     type: integer
                   total:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -15073,7 +15073,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: startupSettings_200_Response
+                title: startupSettings200Response
                 type: object
           description: OK
           headers:
@@ -15345,7 +15345,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: systemExtensions_200_Response
+                title: systemExtensions200Response
                 type: object
           description: OK
           headers:
@@ -15603,7 +15603,7 @@ paths:
                   offset: {}
                   total:
                     type: integer
-                title: transparencyDatabase_200_Response
+                title: transparencyDatabase200Response
                 type: object
           description: OK
           headers:
@@ -15788,7 +15788,7 @@ paths:
                     type: object
                   tenantOverLicenseLimit:
                     type: integer
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -15843,7 +15843,7 @@ paths:
                   next: {}
                   previous: {}
                   results: {}
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -15887,7 +15887,7 @@ paths:
                     type: string
                   name:
                     type: string
-                title: success_201_Response
+                title: success201Response
                 type: object
           description: Created
           headers:
@@ -15968,7 +15968,7 @@ paths:
                     type: string
                   name:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -16137,7 +16137,7 @@ paths:
                   pup_count:
                     type: integer
                   results: {}
-                title: usingTermParam_200_Response
+                title: usingTermParam200Response
                 type: object
           description: OK
           headers:
@@ -16254,7 +16254,7 @@ paths:
                     type: string
                   previous: {}
                   results: {}
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
@@ -16315,7 +16315,7 @@ paths:
                 properties:
                   detail:
                     type: string
-                title: userAssignedToDevice_400_Response
+                title: userAssignedToDevice400Response
                 type: object
           description: Bad Request
           headers:
@@ -16402,7 +16402,7 @@ paths:
                     type: string
                   updated_at:
                     type: string
-                title: success_200_Response
+                title: success200Response
                 type: object
           description: OK
           headers:
