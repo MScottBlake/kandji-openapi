@@ -72,7 +72,7 @@ class PostmanRequestBody:
                 try:
                     example = json.loads(self.raw or "{}")
                 except json.JSONDecodeError:
-                    pass
+                    example = self.raw or "{}"
 
             return RequestBody(
                 content={
