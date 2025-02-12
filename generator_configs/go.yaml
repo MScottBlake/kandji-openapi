@@ -9,8 +9,6 @@ removeOperationIdPrefix: True
 generateInterfaces: True
 returnErrIfEmpty: True
 modelPropertyNaming: PascalCase
-apiPackage: api
-modelPackage: models
 
 # Go-Specific Options
 disallowAdditionalPropertiesIfNotPresent: False
