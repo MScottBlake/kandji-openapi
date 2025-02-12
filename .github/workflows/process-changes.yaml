@@ -8,9 +8,11 @@ on:
     types: [closed]
     paths-ignore:
       - openapi.json
+      - openapi.yaml
   push:
     paths-ignore:
       - openapi.json
+      - openapi.yaml
 
 env:
   COLLECTION_URL: "https://api-docs.kandji.io/api/collections/15284493/TzCTZkBe?segregateAuth=true&versionTag=latest"
@@ -55,7 +57,7 @@ jobs:
         env:
           PYTHONPATH: src
         run: |
-          uv run src/kandji_openapi/main.py --collection "${{ env.COLLECTION_FILE }}" --output-json openapi.json
+          uv run src/kandji_openapi/main.py --collection "${{ env.COLLECTION_FILE }}" --output-json openapi.json --output-yaml openapi.yaml
 
       - name: Commit all changed files back to the repository
         id: commit-def
@@ -72,6 +74,7 @@ jobs:
           tag_name: ${{ env.VERSION }}
           files: |
             openapi.json
+            openapi.yaml
           fail_on_unmatched_files: true
           prerelease: ${{ github.ref_name != 'main' }}
           generate_release_notes: true
@@ -82,6 +85,7 @@ jobs:
           name: openapi_files
           path: |
             openapi.json
+            openapi.yaml
 
   generate-sdks:
     name: Generate updated SDKs
