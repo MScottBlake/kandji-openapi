@@ -16355,6 +16355,438 @@ paths:
       summary: Get User
       tags:
       - Users
+  /api/v1/vulnerability-management/detections:
+    get:
+      deprecated: false
+      description: This endpoint makes a request to retrieve a list of all vulnerability
+        detections across the device fleet.
+      externalDocs:
+        url: https://api-docs.kandji.io/#6ca65b6a-8792-4d01-a49b-935fff494070
+      operationId: vulnerabilities_listDetections
+      parameters:
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: Cursor token.
+        example: ''
+        in: query
+        name: after
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: A hard upper <code>limit</code> is set at 300  records returned
+          per request. If more records are expected, pagination should be used using
+          the URL value returned in the next attribute. Additionally, filters can
+          be added to a request to limit the results.
+        example: '300'
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: Can filter on any key attribute within the response.
+        example: device_serial_number
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                value:
+                  next: null
+                  previous: null
+                  results:
+                  - app_bundle_id: com.microsoft
+                    app_name: ExampleApp
+                    app_path: /path/to/app
+                    app_version: 1.0.0
+                    blueprint_id: 396cdae2-147e-4e61-8a27-2f6b6963da4f
+                    blueprint_name: Threat
+                    cve_description: description of the cve from nvd
+                    cve_id: CVE-2024-12345
+                    cve_link: https://nvd.nist.gov/vuln/detail/CVE-2024-12345
+                    cvss_score: 3.2
+                    cvss_severity: Low
+                    device_id: abcd
+                    device_model: MacBook
+                    device_name: accuhive MacBook Air
+                    device_os_version: '12.9'
+                    device_serial_number: FVFGHGK7Q6L7
+                    first_detection_date: '2023-10-13 16:15:00.000000'
+                    latest_detection_date: '2023-10-13 16:15:00.000000'
+              schema:
+                properties:
+                  next: {}
+                  previous: {}
+                  results: {}
+                type: object
+          description: OK
+          headers:
+            Content-Type:
+              deprecated: false
+              example:
+                value: application/json
+              required: false
+              schema:
+                type: string
+      security:
+      - bearer: []
+      summary: List Detections
+      tags:
+      - Vulnerabilities
+  /api/v1/vulnerability-management/vulnerabilities:
+    get:
+      deprecated: false
+      description: This endpoint makes a request to retrieve a list of all vulnerabilities
+        grouped by cve.
+      externalDocs:
+        url: https://api-docs.kandji.io/#bfa9286d-417e-43d1-8c0d-6e8c9e59df17
+      operationId: vulnerabilities_listVulnerabilities
+      parameters:
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: The page number of the response.
+        example: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: A hard upper limit is set at 50  records returned per request.
+          If more records are expected, pagination should be used using the URL value
+          returned in the next attribute. Additionally, filters can be added to a
+          request to limit the results.
+        example: '50'
+        in: query
+        name: size
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: 'Field to sort by. Example: sort_by=cve_id.'
+        example: cve_id
+        in: query
+        name: sort_by
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: "<p>Filterable columns:</p>\n<p>cve_id\napp_name\nseverity\n\
+          first_detection_date\nlatest_detection_date</p>"
+        example: device_serial_number
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                value:
+                  next: null
+                  previous: null
+                  results:
+                  - cve_description: description of the cve from nvd
+                    cve_id: CVE-2024-12345
+                    cve_link: https://nvd.nist.gov/vuln/detail/CVE-2024-12345
+                    cve_published_on: '2023-10-13 16:15:00.000000'
+                    cve_updated_on: '2023-10-13 16:15:00.000000'
+                    cvss_score: 3.2
+                    cvss_severity: Low
+                    devices_impacted: 124
+                    first_detection_date: '2023-10-13 16:15:00.000000'
+                    latest_detection_date: '2023-10-13 16:15:00.000000'
+                  total: 2
+              schema:
+                properties:
+                  next: {}
+                  previous: {}
+                  results: {}
+                  total:
+                    type: integer
+                type: object
+          description: OK
+          headers:
+            Content-Type:
+              deprecated: false
+              example:
+                value: application/json
+              required: false
+              schema:
+                type: string
+      security:
+      - bearer: []
+      summary: List Vulnerabilities
+      tags:
+      - Vulnerabilities
+  /api/v1/vulnerability-management/vulnerabilities/{cve_id}:
+    get:
+      deprecated: false
+      description: This endpoint makes a request to retrieve information about a cve
+        and summary information about detections for a tenants fleet.
+      externalDocs:
+        url: https://api-docs.kandji.io/#5ed832dc-00f7-4105-ba9d-ad29ff6ead74
+      operationId: vulnerabilities_getVulnerabilityDescription
+      parameters:
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        in: path
+        name: cve_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                value:
+                  cve_description: description of the cve from nvd
+                  cve_id: CVE-2024-12345
+                  cve_link: https://nvd.nist.gov/vuln/detail/CVE-2023-12345
+                  cve_published_on: '2023-10-13 16:15:00.000000'
+                  cve_updated_on: '2023-10-13 16:15:00.000000'
+                  cvss_score: 3.2
+                  cvss_severity: Low
+                  devices_impacted: 124
+                  first_detection_date: '2023-10-13 16:15:00.000000'
+                  kev_score: 1
+              schema:
+                properties:
+                  cve_description:
+                    type: string
+                  cve_id:
+                    type: string
+                  cve_link:
+                    type: string
+                  cve_published_on:
+                    type: string
+                  cve_updated_on:
+                    type: string
+                  cvss_score:
+                    type: number
+                  cvss_severity:
+                    type: string
+                  devices_impacted:
+                    type: integer
+                  first_detection_date:
+                    type: string
+                  kev_score:
+                    type: integer
+                type: object
+          description: OK
+          headers:
+            Content-Type:
+              deprecated: false
+              example:
+                value: application/json
+              required: false
+              schema:
+                type: string
+      security:
+      - bearer: []
+      summary: Get Vulnerability Description
+      tags:
+      - Vulnerabilities
+  /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications:
+    get:
+      deprecated: false
+      description: This endpoint makes a request to retrieve a list of applications
+        impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+      externalDocs:
+        url: https://api-docs.kandji.io/#a5d64850-8825-4a72-865c-f541936752f8
+      operationId: vulnerabilities_listAffectedApplications
+      parameters:
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        in: path
+        name: cve_id
+        required: true
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: The page number of the response.
+        example: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: A hard upper limit is set at 50  records returned per request.
+          If more records are expected, pagination should be used using the URL value
+          returned in the next attribute. Additionally, filters can be added to a
+          request to limit the results.
+        example: '50'
+        in: query
+        name: size
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: 'Field to sort by. Example: sort_by=app_name.'
+        example: cve_id
+        in: query
+        name: sort_by
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: "Filterable columns:\nblueprint_id\nupdated_at"
+        example: device_serial_number
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                value: '{  "total": 2,  "next": null,  "previous": null,  "results":
+                  [    {        "app_name": "",        "app_type": "Auto App",        "blueprints":
+                  [          {            "id": "396cdae2-147e-4e61-8a27-2f6b6963da4f"            "name":
+                  "Vuln"          }],        "version_count": 20,        "device_count":
+                  4,        "application_versions": [          {            "latest_detection_date":
+                  "2023-10-13 16:15:00.000000",            "app_version": "21.2.52",            "devices_impacted":
+                  2,            "blueprints": [              {                "id":
+                  "396cdae2-147e-4e61-8a27-2f6b6963da4f"                "name": "Vuln"              }]}]                   }]}'
+              schema:
+                type: object
+          description: OK
+          headers:
+            Content-Type:
+              deprecated: false
+              example:
+                value: application/json
+              required: false
+              schema:
+                type: string
+      security:
+      - bearer: []
+      summary: List Affected Applications
+      tags:
+      - Vulnerabilities
+  /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices:
+    get:
+      deprecated: false
+      description: This endpoint makes a request to retrieve a list of devices impacted
+        by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+      externalDocs:
+        url: https://api-docs.kandji.io/#6512fb0e-feab-497f-ac5c-fa20be1f4837
+      operationId: vulnerabilities_listAffectedDevices
+      parameters:
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        in: path
+        name: cve_id
+        required: true
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: The page number of the response.
+        example: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: A hard upper limit is set at 50  records returned per request.
+          If more records are expected, pagination should be used using the URL value
+          returned in the next attribute. Additionally, filters can be added to a
+          request to limit the results.
+        example: '50'
+        in: query
+        name: size
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: 'Field to sort by. Example: sort_by=app_name.'
+        example: cve_id
+        in: query
+        name: sort_by
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: "Filterable columns:\nblueprint_id\nupdated_at"
+        example: device_serial_number
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                value: '{  "total": 2,  "next": null,  "previous": null,  "results":
+                  [    {        "device_id": "abcd",        "device_name": "accuhive
+                  MacBook Air",        "device_serial_number": "FVFGHGK7Q6L7",        "device_model":
+                  "Macbook",        "device_os_version": "12.5"        "blueprint_id":
+                  "396cdae2-147e-4e61-8a27-2f6b6963da4f",        "blueprint_name":
+                  "Vuln",        "app_info": {          "app_name": "ExampleApp",          "app_version":
+                  "1.0.0",          "app_path": "/path/to/app"},        "detection_datetime":
+                  "2023-10-13 16:15:00.000000"}  ]}'
+              schema:
+                type: object
+          description: OK
+          headers:
+            Content-Type:
+              deprecated: false
+              example:
+                value: application/json
+              required: false
+              schema:
+                type: string
+      security:
+      - bearer: []
+      summary: List Affected Devices
+      tags:
+      - Vulnerabilities
 security:
 - bearer: []
 servers:
@@ -16518,6 +16950,11 @@ tags:
   externalDocs:
     url: https://api-docs.kandji.io/#c438c921-d7da-4137-8b37-b4ede668bcd4
   name: Threats
+- description: Kandji Vulnerability Management endpoints. These endpoints are available
+    for Vulnerability Management customers.
+  externalDocs:
+    url: https://api-docs.kandji.io/#866cbd00-48b1-4361-9097-9e3a486e2564
+  name: Vulnerabilities
 - externalDocs:
     url: https://api-docs.kandji.io/#6ca9c6ba-28b0-4e1e-9c1a-ff9981200830
   name: Users
