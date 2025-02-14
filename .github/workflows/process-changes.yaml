@@ -41,6 +41,18 @@ jobs:
         run: |
           curl -s "${{ env.COLLECTION_URL }}" -o "${{ env.COLLECTION_FILE }}"
 
+      - name: Format JSON file
+        run: |
+          python -c "
+          import json
+
+          with open('${{ env.COLLECTION_FILE }}', 'r') as file:
+              data = json.load(file)
+
+          with open('${{ env.COLLECTION_FILE }}', 'w') as file:
+              json.dump(data, file, indent=2)
+          "
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
