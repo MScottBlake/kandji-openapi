@@ -3,6 +3,7 @@ from pathlib import Path
 
 from models.postman_collection import PostmanCollection
 from openapi_pydantic import OpenAPI
+from reference_resolver import ReferenceResolver
 from ruamel.yaml import YAML
 
 
@@ -14,6 +15,7 @@ class OpenAPIGenerator:
     def _generate_openapi_spec(self) -> OpenAPI:
         """Generate OpenAPI spec with components"""
         spec = self.collection.to_openapi()
+        spec = ReferenceResolver(spec).resolve_references()
         return spec
 
     def to_json(self, file_path: Path) -> None:
