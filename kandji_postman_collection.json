@@ -3257,7 +3257,7 @@
                     }
                   }
                 },
-                "url": "https://{sub_domain}.api.kandji.io/api/v1/blueprints/{blueprint_id}/assign-library-item"
+                "url": "https://{sub_domain}.api.kandji.io/api/v1/blueprints/{blueprint_id}/remove-library-item"
               },
               "status": "OK",
               "code": 200,
@@ -3341,7 +3341,7 @@
                     }
                   }
                 },
-                "url": "https://{sub_domain}.api.kandji.io/api/v1/blueprints/{blueprint_id}/assign-library-item"
+                "url": "https://{sub_domain}.api.kandji.io/api/v1/blueprints/{blueprint_id}/remove-library-item"
               },
               "status": "OK",
               "code": 200,
