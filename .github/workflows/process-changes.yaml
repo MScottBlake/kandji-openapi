@@ -50,7 +50,7 @@ jobs:
               data = json.load(file)
 
           with open('${{ env.COLLECTION_FILE }}', 'w') as file:
-              json.dump(data, file, indent=2)
+              json.dump(data, file, sort_keys=True, indent=2)
           "
 
       - name: Set up Python
@@ -69,7 +69,7 @@ jobs:
         env:
           PYTHONPATH: src
         run: |
-          uv run src/kandji_openapi/main.py --collection "${{ env.COLLECTION_FILE }}" --output-json openapi.json --output-yaml openapi.yaml
+          uv run generator --collection "${{ env.COLLECTION_FILE }}" --output-json openapi.json --output-yaml openapi.yaml
 
       - name: Commit all changed files back to the repository
         id: commit-def

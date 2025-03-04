@@ -13,7 +13,8 @@ from openapi_pydantic import (
     Responses,
     Schema,
 )
-from strings import string_formatting
+
+from kandji_openapi.strings import string_formatting
 
 
 @dataclass

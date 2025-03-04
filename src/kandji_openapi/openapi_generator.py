@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
 
-from models.postman_collection import PostmanCollection
 from ruamel.yaml import YAML
+
+from kandji_openapi.models.postman_collection import PostmanCollection
 
 
 class OpenAPIGenerator:
@@ -18,6 +19,7 @@ class OpenAPIGenerator:
                     self.openapi_spec.model_dump_json(by_alias=True, exclude_none=True)
                 ),
                 temp,
+                sort_keys=True,
                 indent=2,
             )
 

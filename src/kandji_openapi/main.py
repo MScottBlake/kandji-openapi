@@ -1,9 +1,9 @@
 import argparse
 from pathlib import Path
 
-from models.postman_collection import PostmanCollection
-from openapi_generator import OpenAPIGenerator
-from parser import PostmanParser
+from kandji_openapi.models.postman_collection import PostmanCollection
+from kandji_openapi.openapi_generator import OpenAPIGenerator
+from kandji_openapi.parser import PostmanParser
 
 
 def parse_postman_collection(collection_path: Path) -> PostmanCollection:
@@ -23,11 +23,6 @@ def generate_openapi_spec(
         f"JSON file created: {output_json}\n"
         f"YAML file created: {output_yaml}"
     )
-
-
-def main(collection_path: Path, output_json: Path, output_yaml: Path) -> None:
-    collection = parse_postman_collection(collection_path)
-    generate_openapi_spec(collection, output_json, output_yaml)
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -55,6 +50,11 @@ def parse_arguments() -> argparse.Namespace:
     return arg_parser.parse_args()
 
 
-if __name__ == "__main__":
+def main() -> None:
     args = parse_arguments()
-    main(Path(args.collection), Path(args.output_json), Path(args.output_yaml))
+    collection = parse_postman_collection(Path(args.collection))
+    generate_openapi_spec(collection, Path(args.output_json), Path(args.output_yaml))
+
+
+if __name__ == "__main__":
+    main()

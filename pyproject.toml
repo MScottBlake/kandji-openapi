@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "kandji-openapi"
 version = "1.0.0"
@@ -8,6 +12,9 @@ dependencies = [
     "openapi-pydantic>=0.5.0",
     "ruamel-yaml>=0.18.7",
 ]
+
+[project.scripts]
+generator = "kandji_openapi.main:main"
 
 [dependency-groups]
 dev = [

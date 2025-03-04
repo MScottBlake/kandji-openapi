@@ -2,7 +2,8 @@ from dataclasses import dataclass
 from typing import Any, Optional
 
 from openapi_pydantic import Contact, Info, License
-from strings import string_formatting
+
+from kandji_openapi.strings import string_formatting
 
 
 @dataclass

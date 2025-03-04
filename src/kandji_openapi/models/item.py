@@ -2,11 +2,12 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from configurations import KANDJI_API_DOCS_URL
-from models.auth import Auth
-from models.request import PostmanRequest
 from openapi_pydantic import Operation
-from strings import string_formatting
+
+from kandji_openapi.configurations import KANDJI_API_DOCS_URL
+from kandji_openapi.models.auth import Auth
+from kandji_openapi.models.request import PostmanRequest
+from kandji_openapi.strings import string_formatting
 
 
 @dataclass

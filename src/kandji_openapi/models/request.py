@@ -1,10 +1,6 @@
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from models.auth import Auth
-from models.request_body import PostmanRequestBody
-from models.response import PostmanResponse
-from models.url import URL
 from openapi_pydantic import (
     DataType,
     ExternalDocumentation,
@@ -16,7 +12,12 @@ from openapi_pydantic import (
     Responses,
     Schema,
 )
-from strings import string_formatting, to_camel_case
+
+from kandji_openapi.models.auth import Auth
+from kandji_openapi.models.request_body import PostmanRequestBody
+from kandji_openapi.models.response import PostmanResponse
+from kandji_openapi.models.url import URL
+from kandji_openapi.strings import string_formatting, to_camel_case
 
 
 @dataclass

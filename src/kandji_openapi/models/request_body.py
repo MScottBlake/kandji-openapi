@@ -4,7 +4,8 @@ from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from openapi_pydantic import DataType, MediaType, RequestBody, Schema
-from strings import string_formatting
+
+from kandji_openapi.strings import string_formatting
 
 
 @dataclass
