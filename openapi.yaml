@@ -16616,7 +16616,7 @@ paths:
         impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
       externalDocs:
         url: https://api-docs.kandji.io/#a5d64850-8825-4a72-865c-f541936752f8
-      operationId: vulnerabilities_listAffectedApplications
+      operationId: vulnerabilities_listAffectedApps
       parameters:
       - allowEmptyValue: false
         allowReserved: false
@@ -16695,7 +16695,7 @@ paths:
                 type: string
       security:
       - bearer: []
-      summary: List Affected Applications
+      summary: List Affected Apps
       tags:
       - Vulnerabilities
   /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices:
@@ -16802,15 +16802,6 @@ tags:
 - externalDocs:
     url: https://api-docs.kandji.io/#b23ac169-70d1-4af2-9b95-61f586912968
   name: Blueprints
-- description: This section contains endpoints related to collecting information about
-    devices.
-  externalDocs:
-    url: https://api-docs.kandji.io/#ecf2a684-45f5-49ad-b3d7-2da346b2927e
-  name: Device Information
-- description: This section contains endpoints related to managing device notes.
-  externalDocs:
-    url: https://api-docs.kandji.io/#7a4e972e-c8f8-4056-bb88-d98df2e64cad
-  name: Notes
 - description: This section contains endpoints related to committing actions against
     devices.
   externalDocs:
@@ -16822,6 +16813,15 @@ tags:
   externalDocs:
     url: https://api-docs.kandji.io/#a56fb66d-efde-45c5-8b97-c8f2204c2584
   name: Lost Mode
+- description: This section contains endpoints related to collecting information about
+    devices.
+  externalDocs:
+    url: https://api-docs.kandji.io/#ecf2a684-45f5-49ad-b3d7-2da346b2927e
+  name: Device Information
+- description: This section contains endpoints related to managing device notes.
+  externalDocs:
+    url: https://api-docs.kandji.io/#7a4e972e-c8f8-4056-bb88-d98df2e64cad
+  name: Notes
 - description: "<p>This section contains endpoints related to collecting device secrets
     such as the FileVault Recovery Key.</p>\n<p>If no secrets is avaialble for the
     device, the key value will return as <code>null</code>.</p>"
@@ -16940,6 +16940,9 @@ tags:
   externalDocs:
     url: https://api-docs.kandji.io/#d538b34f-5343-416e-be53-2ba108c51dfa
   name: Prism
+- externalDocs:
+    url: https://api-docs.kandji.io/#1ff75e12-edaa-4a0a-8722-45959354a1c7
+  name: Settings
 - description: "<p>Create and manage tags within your Kandji tenant.</p>\n<p>For more
     information on tags, checkout the support article <a href=&quot;https://support.kandji.io/support/solutions/articles/72000630421-tags-for-devices&quot;>here</a></p>"
   externalDocs:
@@ -16950,14 +16953,11 @@ tags:
   externalDocs:
     url: https://api-docs.kandji.io/#c438c921-d7da-4137-8b37-b4ede668bcd4
   name: Threats
+- externalDocs:
+    url: https://api-docs.kandji.io/#6ca9c6ba-28b0-4e1e-9c1a-ff9981200830
+  name: Users
 - description: Kandji Vulnerability Management endpoints. These endpoints are available
     for Vulnerability Management customers.
   externalDocs:
     url: https://api-docs.kandji.io/#866cbd00-48b1-4361-9097-9e3a486e2564
   name: Vulnerabilities
-- externalDocs:
-    url: https://api-docs.kandji.io/#6ca9c6ba-28b0-4e1e-9c1a-ff9981200830
-  name: Users
-- externalDocs:
-    url: https://api-docs.kandji.io/#1ff75e12-edaa-4a0a-8722-45959354a1c7
-  name: Settings
