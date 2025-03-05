@@ -17,7 +17,7 @@
         "exec": [
           ""
         ],
-        "id": "764d4b66-51f4-4b5a-b584-477fdbe742cb",
+        "id": "538abe24-16a3-4873-a04d-2702e73cf031",
         "type": "text/javascript"
       }
     },
@@ -27,7 +27,7 @@
         "exec": [
           ""
         ],
-        "id": "1e30b8b4-7c2c-4fb3-bc7b-3783a0225caf",
+        "id": "ca3b188d-b98c-48e4-9eac-e2aeeeb71db6",
         "type": "text/javascript"
       }
     }
@@ -22563,97 +22563,78 @@
   ],
   "variable": [
     {
-      "id": "4d11f0dd-4c71-4417-8aef-0f947dcf301a",
       "key": "base_url",
       "value": "https://{sub_domain}.api.kandji.io"
     },
     {
-      "id": "64f3fb04-1517-48c8-ad5d-cdff2d9eac31",
       "key": "api_token",
       "value": "{api_token}"
     },
     {
-      "id": "92edb937-3ce8-4dc2-9908-61ee2b19611d",
       "key": "device_id",
       "value": "{device_id}"
     },
     {
-      "id": "c377bce7-e74d-42de-9af8-c3370f38cfa5",
       "key": "blueprint_id",
       "value": "{blueprint_id}"
     },
     {
-      "id": "7f00ffb4-9f6b-481f-be29-3f35f6882e34",
       "key": "library_item_id",
       "value": "{library_item_id}"
     },
     {
-      "id": "91dcc1c7-75c5-4ae5-9726-36ab7c3b74b9",
       "key": "assignment_node_id",
       "value": "{assignment_node_id}"
     },
     {
-      "id": "bc959d74-a1e1-4ecd-ba3b-9bcb31df6590",
       "key": "ade_token_id",
       "value": "{ade_token_id}"
     },
     {
-      "id": "2f56042d-5219-4b32-baf2-fb144a767781",
       "key": "note_id",
       "value": "{note_id}"
     },
     {
-      "id": "1b00653f-0fe0-4f42-923b-82481377a9a4",
       "key": "content_json",
       "value": "application/json"
     },
     {
-      "id": "dfa20825-5ebc-4e4a-b9b5-4cda28a3cfd3",
       "key": "content_form_data",
       "value": "multipart/form-data"
     },
     {
-      "id": "5592f347-6108-452c-ae08-afe54cf4dfaf",
       "key": "content_form_urlecode",
       "value": "application/x-www-form-urlencoded"
     },
     {
-      "id": "52088ff3-f2db-45cc-8614-853e1cddb9a5",
       "key": "post_url",
       "value": "{post_url}"
     },
     {
-      "id": "d39c97c2-2c36-4fcc-9c8c-960c58c3f665",
       "key": "file_key",
       "value": "{file_key}"
     },
     {
-      "id": "368d554e-a9c1-447b-82c2-0bc06ca287ce",
       "key": "key",
       "value": "{key}"
     },
     {
-      "id": "9118f83d-6228-4ec7-a885-8e5135133bf5",
       "key": "export_id",
       "value": "{export_id}"
     },
     {
-      "id": "27603cab-3c05-49d8-a48e-7dd7661c20f0",
       "key": "tag_id",
       "value": "{tag_id}"
     },
     {
-      "id": "a327c74d-5566-4d7c-8786-7e125de2cad2",
       "key": "user_id",
       "value": "{user_id}"
     },
     {
-      "id": "f80c1f8b-3945-44ed-aae4-e20d3bb378ee",
       "key": "pending_upload_id",
       "value": "{pending_upload_id}"
     },
     {
-      "id": "4acb33ee-20aa-4ab7-a2d4-08733d268ade",
       "key": "cve_id",
       "value": "{cve_id}"
     }
