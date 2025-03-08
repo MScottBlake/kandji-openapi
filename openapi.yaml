@@ -16383,7 +16383,7 @@ paths:
           be added to a request to limit the results.
         example: '300'
         in: query
-        name: limit
+        name: size
         required: false
         schema:
           type: string

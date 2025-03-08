@@ -21867,7 +21867,7 @@
                     "type": "text/plain"
                   },
                   "disabled": true,
-                  "key": "limit",
+                  "key": "size",
                   "value": "300"
                 },
                 {
