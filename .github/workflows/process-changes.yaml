@@ -71,12 +71,24 @@ jobs:
         run: |
           uv run generator --collection "${{ env.COLLECTION_FILE }}" --output-json openapi.json --output-yaml openapi.yaml
 
+      - name: "Import GPG key"
+        id: import-gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
       - name: Commit all changed files back to the repository
         id: commit-def
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: openapi.* ${{ env.COLLECTION_FILE }}
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          commit_user_name: ${{ steps.import-gpg.outputs.name }}
+          commit_user_email: ${{ steps.import-gpg.outputs.email }}
           commit_message: "[auto] Update openapi files"
+          file_pattern: openapi.* ${{ env.COLLECTION_FILE }}
           tagging_message: ${{ env.VERSION }}
 
       - name: Create a Github Release
@@ -152,11 +164,23 @@ jobs:
           generator: ${{ env.language }}
           generator-tag: latest-release
 
+      - name: "Import GPG key"
+        id: import-gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
       - name: Commit all changed files back to the repository
         id: commit-sdk
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           repository: ${{ env.language }}-client
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          commit_user_name: ${{ steps.import-gpg.outputs.name }}
+          commit_user_email: ${{ steps.import-gpg.outputs.email }}
           commit_message: "[auto] Updated Kandji SDK"
           tagging_message: ${{ needs.create-openapi-definition.outputs.VERSION }}
 
