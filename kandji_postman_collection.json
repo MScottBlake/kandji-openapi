@@ -10928,6 +10928,7 @@
                     },
                     "header": [
                       {
+                        "disabled": true,
                         "key": "Content-Type",
                         "value": "multipart/form-data"
                       }
@@ -12302,12 +12303,7 @@
                   "mode": "formdata"
                 },
                 "description": "<p>After calling <code>Upload In-House App</code> endpoint, then make a separate post request to this endpoint upload the file to Amazon S3.</p>\n<h3 id=\"request-parameters\">Request Parameters</h3>\n<p><code>post_url</code> (path parameter): The <code>post_url</code> value from the <code>Upload In-House App</code> response.</p>\n<h3 id=\"request-body\">Request Body</h3>\n<p>For the request body, use the contents of the <code>post_data</code> object in the <code>Upload In-House App</code> endpoint response (example response below) and supply the path to the In-House App file in the <code>file</code> request parameter.</p>\n<h4 id=\"example-post_data-object\">Example post_data object</h4>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code class=\"language-json\">\"post_data\": {\n   \"key\": \"(field to post along with file to S3 -- the key for the uploaded file)\",\n   \"x-amz-algorithm\": \"(field to post along with file to S3)\",\n   \"x-amz-credential\": \"(field to post along with file to S3)\",\n   \"x-amz-date\": \"(field to post along with file to S3)\",\n   \"x-amz-security-token\": \"(field to post along with file to S3)\",\n   \"policy\": \"(field to post along with file to S3)\",\n   \"x-amz-signature\": \"(field to post along with file to S3)\",\n}\n\n</code></pre>\n",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "multipart/form-data"
-                  }
-                ],
+                "header": [],
                 "method": "POST",
                 "url": "{post_url}",
                 "urlObject": {
@@ -12369,8 +12365,8 @@
                         },
                         {
                           "key": "file",
-                          "src": "/Users/Shared/secure/Kandji/samples/Sammy_2a450666.ipa",
-                          "type": "file"
+                          "type": "file",
+                          "value": null
                         }
                       ],
                       "mode": "formdata",
@@ -12382,8 +12378,10 @@
                     },
                     "header": [
                       {
+                        "disabled": true,
                         "key": "Content-Type",
-                        "value": "multipart/form-data"
+                        "type": "text",
+                        "value": "application/x-www-form-urlencoded"
                       }
                     ],
                     "method": "POST",
