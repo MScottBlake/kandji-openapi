@@ -10754,7 +10754,10 @@
               "id": "d803011d-d9fb-43c2-80d1-61f35bcc3bc1",
               "name": "Upload to S3",
               "protocolProfileBehavior": {
-                "disableBodyPruning": true
+                "disableBodyPruning": true,
+                "disabledSystemHeaders": {
+                  "content-type": true
+                }
               },
               "request": {
                 "auth": {
@@ -16515,6 +16518,271 @@
           ]
         },
         {
+          "_postman_id": "409341db-b2f0-484c-844c-46be4a637d16",
+          "id": "409341db-b2f0-484c-844c-46be4a637d16",
+          "name": "Cellular",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "bearer": {
+                "basicConfig": [
+                  {
+                    "key": "token",
+                    "value": "{api_token}"
+                  }
+                ]
+              },
+              "isInherited": true,
+              "source": {
+                "_postman_id": "336d6648-e062-4cbd-a70a-2a0c276cd4ad",
+                "id": "336d6648-e062-4cbd-a70a-2a0c276cd4ad",
+                "name": "Kandji API",
+                "type": "collection"
+              },
+              "type": "bearer"
+            },
+            "description": "<p>Get Cellular attributes for devices.</p>\n",
+            "header": [],
+            "method": "GET",
+            "url": "https://{sub_domain}.api.kandji.io/api/v1/prism/cellular",
+            "urlObject": {
+              "host": [
+                "https://{sub_domain}.api.kandji.io"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "prism",
+                "cellular"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "<p>Filter results by one or more blueprint IDs separated by commas.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "blueprint_ids",
+                  "value": "blueprint_id, blueprint_id,blueprint_id"
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter results by one or more device families separate by commas.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "device_families",
+                  "value": "Mac,iPhone,iPad,tvOS"
+                },
+                {
+                  "description": {
+                    "content": "<p>JSON schema object containing one or more key value pairs.\nNote: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "filter",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "sort_by",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "limit",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Specify the starting record to return.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "offset",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n\t\"offset\": 0,\n\t\"limit\": 25,\n\t\"total\": null,\n\t\"data\": [\n\t\t{\n\t\t\t\"device_id\": \"387a369d-5d12-4dfe-9ac0-d5af8780b959\",\n\t\t\t\"device__name\": \"iPhone\",\n\t\t\t\"device__family\": \"iPhone\",\n\t\t\t\"device__user_id\": \"\",\n\t\t\t\"device__user_name\": null,\n\t\t\t\"device__user_email\": null,\n\t\t\t\"blueprint_id\": \"9c2a1219-deeb-4b37-845e-b61418275ba1\",\n\t\t\t\"blueprint_name\": \"accuhive\",\n\t\t\t\"tags\": null,\n\t\t\t\"asset_tag\": \"\",\n\t\t\t\"serial_number\": \"F4GVJ4Q9JC6H\",\n\t\t\t\"model_id\": \"iPhone10,1\",\n\t\t\t\"count\": null,\n\t\t\t\"created_at\": \"2025-02-08T00:55:45.808993+00:00\",\n\t\t\t\"updated_at\": \"2025-02-12T17:33:35.626695+00:00\",\n\t\t\t\"last_changed_at\": null,\n\t\t\t\"last_collected_at\": \"2025-02-12T17:33:35.626695+00:00\",\n\t\t\t\"cellular_technology\": \"GSM and CDMA\",\n\t\t\t\"data_roaming_enabled\": false,\n\t\t\t\"voice_roaming_enabled\": false,\n\t\t\t\"modem_firmware_version\": \"6.21.01\",\n\t\t\t\"personal_hotspot_enabled\": false,\n\t\t\t\"meid\": \"35673008397160\",\n\t\t\t\"carrier_settings_version_slot_1\": null,\n\t\t\t\"current_carrier_network_slot_1\": null,\n\t\t\t\"current_mcc_slot_1\": null,\n\t\t\t\"current_mnc_slot_1\": null,\n\t\t\t\"eid_slot_1\": null,\n\t\t\t\"iccid_slot_1\": null,\n\t\t\t\"imei_slot_1\": \"35 673008 397160 8\",\n\t\t\t\"is_data_preferred_slot_1\": null,\n\t\t\t\"is_roaming_slot_1\": null,\n\t\t\t\"is_voice_preferred_slot_1\": null,\n\t\t\t\"label_slot_1\": null,\n\t\t\t\"label_id_slot_1\": null,\n\t\t\t\"phone_number_slot_1\": null,\n\t\t\t\"slot_1\": \"CTSubscriptionSlotOne\",\n\t\t\t\"subscriber_carrier_network_slot_1\": null,\n\t\t\t\"carrier_settings_version_slot_2\": null,\n\t\t\t\"current_carrier_network_slot_2\": null,\n\t\t\t\"current_mcc_slot_2\": null,\n\t\t\t\"current_mnc_slot_2\": null,\n\t\t\t\"eid_slot_2\": null,\n\t\t\t\"iccid_slot_2\": null,\n\t\t\t\"imei_slot_2\": null,\n\t\t\t\"is_data_preferred_slot_2\": null,\n\t\t\t\"is_roaming_slot_2\": null,\n\t\t\t\"is_voice_preferred_slot_2\": null,\n\t\t\t\"label_slot_2\": null,\n\t\t\t\"label_id_slot_2\": null,\n\t\t\t\"phone_number_slot_2\": null,\n\t\t\t\"slot_2\": null,\n\t\t\t\"subscriber_carrier_network_slot_2\": null\n\t\t},\n\t\t...\n\t\"cursor\": null\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "key": "Ratelimit-Limit",
+                  "value": "50"
+                },
+                {
+                  "key": "Ratelimit-Remaining",
+                  "value": "49"
+                },
+                {
+                  "key": "Ratelimit-Reset",
+                  "value": "1"
+                },
+                {
+                  "key": "Server",
+                  "value": "uvicorn"
+                },
+                {
+                  "key": "Via",
+                  "value": "kong/3.2.2, 1.1 varnish, 1.1 varnish"
+                },
+                {
+                  "key": "X-Kong-Proxy-Latency",
+                  "value": "51"
+                },
+                {
+                  "key": "X-Kong-Upstream-Latency",
+                  "value": "241"
+                },
+                {
+                  "key": "X-Ratelimit-Limit-Hour",
+                  "value": "10000"
+                },
+                {
+                  "key": "X-Ratelimit-Limit-Second",
+                  "value": "50"
+                },
+                {
+                  "key": "X-Ratelimit-Remaining-Hour",
+                  "value": "9991"
+                },
+                {
+                  "key": "X-Ratelimit-Remaining-Second",
+                  "value": "49"
+                },
+                {
+                  "key": "Accept-Ranges",
+                  "value": "bytes"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 08 Feb 2024 21:12:29 GMT"
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "cache-bfi-krnt7300088-BFI, cache-pdk-katl1840069-PDK"
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "MISS, MISS"
+                },
+                {
+                  "key": "X-Cache-Hits",
+                  "value": "0, 0"
+                },
+                {
+                  "key": "X-Timer",
+                  "value": "S1707426749.011701,VS0,VE366"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "id": "dc83a9d6-a821-432b-bc4c-cf8e5acf9149",
+              "name": "success",
+              "originalRequest": {
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {api_token}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "https://{sub_domain}.api.kandji.io"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "prism",
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Filter results by one or more blueprint IDs separated by commas.",
+                      "disabled": true,
+                      "key": "blueprint_ids",
+                      "value": "blueprint_id, blueprint_id,blueprint_id"
+                    },
+                    {
+                      "description": "Filter results by one or more device families separate by commas.",
+                      "disabled": true,
+                      "key": "device_families",
+                      "value": "Mac,iPhone,iPad,tvOS"
+                    },
+                    {
+                      "description": "JSON schema object containing one or more key value pairs.\nNote: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.",
+                      "disabled": true,
+                      "key": "filter",
+                      "value": ""
+                    },
+                    {
+                      "description": "Sort results by the name of a given key in either ascending or descending(`-`) order.",
+                      "disabled": true,
+                      "key": "sort_by",
+                      "value": ""
+                    },
+                    {
+                      "description": "A hard upper `limit` is set at 300 device records returned per request. If more device records are expected, pagination should be used using the `limit` and `offset` parameters. Additionally, parameter queries can be added to a request to limit the results.",
+                      "disabled": true,
+                      "key": "limit",
+                      "value": ""
+                    },
+                    {
+                      "description": "Specify the starting record to return.",
+                      "disabled": true,
+                      "key": "offset",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "https://{sub_domain}.api.kandji.io/api/v1/prism/certificates"
+                }
+              },
+              "responseTime": null,
+              "status": "OK"
+            }
+          ]
+        },
+        {
           "_postman_id": "a9716bc7-c267-476c-b777-239c81f1a6ba",
           "id": "a9716bc7-c267-476c-b777-239c81f1a6ba",
           "name": "Certificates",
@@ -20344,7 +20612,7 @@
                 }
               ],
               "id": "c57c08f7-8cf1-4281-841f-74bec5d67ea8",
-              "name": "Example export status check",
+              "name": "success",
               "originalRequest": {
                 "header": [
                   {
@@ -20353,7 +20621,7 @@
                   }
                 ],
                 "method": "GET",
-                "url": "https://{sub_domain}.api.kandji.io/visibility/v1/prism/export/{export_id}"
+                "url": "https://{sub_domain}.api.kandji.io/api/v1/prism/export/{export_id}"
               },
               "responseTime": null,
               "status": "OK"
@@ -20416,7 +20684,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n\t\"count\": 3,\n\t\"approximate\": false\n}",
+              "body": "{\n\t\"count\": 82,\n\t\"approximate\": false\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -20499,7 +20767,24 @@
                   }
                 ],
                 "method": "GET",
-                "url": "https://{sub_domain}.api.kandji.io/visibility/v1/prism/export/{export_id}"
+                "url": {
+                  "host": [
+                    "https://{sub_domain}.api.kandji.io"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "prism",
+                    "count"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "apps"
+                    }
+                  ],
+                  "raw": "https://{sub_domain}.api.kandji.io/api/v1/prism/count?category=apps"
+                }
               },
               "responseTime": null,
               "status": "OK"
@@ -21382,6 +21667,288 @@
                 }
               },
               "responseTime": null
+            }
+          ]
+        },
+        {
+          "_postman_id": "f376b345-8dc2-4ac6-97fd-0d81748e130f",
+          "id": "f376b345-8dc2-4ac6-97fd-0d81748e130f",
+          "name": "Get Behavioral Detections",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "bearer": {
+                "basicConfig": [
+                  {
+                    "key": "token",
+                    "value": "{api_token}"
+                  }
+                ]
+              },
+              "isInherited": true,
+              "source": {
+                "_postman_id": "336d6648-e062-4cbd-a70a-2a0c276cd4ad",
+                "id": "336d6648-e062-4cbd-a70a-2a0c276cd4ad",
+                "name": "Kandji API",
+                "type": "collection"
+              },
+              "type": "bearer"
+            },
+            "description": "<p>Get Behavioral Detections.</p>\n",
+            "header": [],
+            "method": "GET",
+            "url": "https://{sub_domain}.api.kandji.io/api/v1/behavioral-detections",
+            "urlObject": {
+              "host": [
+                "https://{sub_domain}.api.kandji.io"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "behavioral-detections"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "<p>Filter by a specific threat ID (threat_id=Kandji_BD_0096).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "threat_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter by threat classification (classification=malicious).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "classification",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter by threat status (threat_status=blocked)</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Return all records within a specified number of days (Int)</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "date_range",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>two query params detection_date_from and detection_date_to</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "detection_date",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Search for a specific device by the device id (uuid).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "device_id",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter by malware family (malware_family=TrickBot).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "malware_family",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter by parent process (parent_process_name=bash).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "parent_process_name",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter by target process (target_process_name=python).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "target_process_name",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Filter by tags (informational_tags=exploit,privilege_escalation).</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "informational_tags",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Search term to filter threat results. Device name, file hash, image path</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "term",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "<p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p>\n<ul>\n<li>threat_id</li>\n<li>classification</li>\n<li>device_name</li>\n<li>parent_process_name</li>\n<li>target_process_name</li>\n<li>detection_date</li>\n<li>status</li>\n</ul>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "sort_by",
+                  "value": "status"
+                },
+                {
+                  "description": {
+                    "content": "<p>A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. \nAdditionally, parameter queries can be added to a request to limit the results.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "limit",
+                  "value": "1000"
+                },
+                {
+                  "description": {
+                    "content": "<p>Specify the starting record to return.</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "offset",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \"total_count\": 71,\n    \"next\": null,\n    \"previous\": null,\n    \"malicious_count\": 37,\n    \"suspicious_count\": 34,\n    \"results\": [\n        {\n            \"id\": \"CC80F462-1F4D-4A04-9380-C21743DFC308\",\n            \"threat_id\": \"KTI_BD_0163\",\n            \"rule_version\": 2,\n            \"description\": \"TP2419 long descriptionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn123\",\n            \"classification\": \"malicious\",\n            \"informational_tags\": [],\n            \"malware_family\": [],\n            \"detection_date\": \"2025-03-08T17:35:30.462076+00:00\",\n            \"threat_status\": \"detected\",\n            \"device_info\": {\n                \"id\": \"ddfc3341-f319-4ef0-bf9a-80791b15a79a\",\n                \"name\": \"arm-14_7_0\",\n                \"serial_number\": \"ZMN33JFKKC\"\n            },\n            \"parent_process\": {\n                \"name\": \"zsh\",\n                \"command_line\": \"-zsh\",\n                \"image_path\": \"/bin/zsh\",\n                \"pid\": 7657,\n                \"owner\": \"root\",\n                \"sha256\": \"0ba6f44f486330453af994834aa406c8d398bfda68a54f3176bf3696ccc09c91\"\n            },\n            \"target_process\": {\n                \"name\": \"vim\",\n                \"command_line\": \"vim 123\",\n                \"image_path\": \"/usr/bin/vim\",\n                \"pid\": 7759,\n                \"owner\": \"root\",\n                \"sha256\": \"c765f827442004d59ac6bd907f16fbda645f970a3bec94c2651a9f297a0f8030\"\n            },\n            \"library_item\": {\n                \"id\": \"6d4efe51-331a-4e92-bd63-33b1f2797ae5\",\n                \"name\": \"Andreu LI\",\n                \"mal_posture_mode\": \"protect\"\n            },\n            \"blueprint\": {\n                \"id\": \"f8034d27-d566-456e-8bbe-6a4dd1848961\",\n                \"name\": \"Andreu BP\"\n            }\n        },\n        {\n            \"id\": \"B42DF93B-1610-42CF-AB12-E8BF8C7A9D13\",\n            \"threat_id\": \"KTI_BD_2796\",\n            \"rule_version\": 4,\n            \"description\": \"QA Testing Rule\",\n            \"classification\": \"malicious\",\n            \"informational_tags\": [],\n            \"malware_family\": [\n                \"3CX\",\n                \"AceDeceiver\",\n                \"Activator\",\n                \"AdvancedMacCleaner\",\n                \"Adware.Gen\",\n                \"AMCleaner\",\n                \"AnyKeylogger\"\n            ],\n            \"detection_date\": \"2025-03-08T17:35:30.462076+00:00\",\n            \"threat_status\": \"detected\",\n            \"device_info\": {\n                \"id\": \"ddfc3341-f319-4ef0-bf9a-80791b15a79a\",\n                \"name\": \"arm-14_7_0\",\n                \"serial_number\": \"ZMN33JFKKC\"\n            },\n            \"parent_process\": {\n                \"name\": \"zsh\",\n                \"command_line\": \"-zsh\",\n                \"image_path\": \"/bin/zsh\",\n                \"pid\": 7657,\n                \"owner\": \"root\",\n                \"sha256\": \"0ba6f44f486330453af994834aa406c8d398bfda68a54f3176bf3696ccc09c91\"\n            },\n            \"target_process\": {\n                \"name\": \"vim\",\n                \"command_line\": \"vim 123\",\n                \"image_path\": \"/usr/bin/vim\",\n                \"pid\": 7759,\n                \"owner\": \"root\",\n                \"sha256\": \"c765f827442004d59ac6bd907f16fbda645f970a3bec94c2651a9f297a0f8030\"\n            },\n            \"library_item\": {\n                \"id\": \"6d4efe51-331a-4e92-bd63-33b1f2797ae5\",\n                \"name\": \"Andreu LI\",\n                \"mal_posture_mode\": \"protect\"\n            },\n            \"blueprint\": {\n                \"id\": \"f8034d27-d566-456e-8bbe-6a4dd1848961\",\n                \"name\": \"Andreu BP\"\n            }\n        },\n        {\n            \"id\": \"AA97B8C8-7CBD-401A-9EC3-63A15A9936BC\",\n            \"threat_id\": \"KTI_BD_0141\",\n            \"rule_version\": 10,\n            \"description\": \"Detects removal of Little Snitch by unloading the Little Snitch Launch Daemon.\",\n            \"classification\": \"suspicious\",\n            \"informational_tags\": [\n                \"exec\",\n                \"Little Snitch\",\n                \"Disable\",\n                \"Launch Daemon\",\n                \"unload\"\n            ],\n            \"malware_family\": [],\n            \"detection_date\": \"2025-03-07T17:40:15.984091+00:00\",\n            \"threat_status\": \"informational\",\n            \"device_info\": {\n                \"id\": \"ddfc3341-f319-4ef0-bf9a-80791b15a79a\",\n                \"name\": \"arm-14_7_0\",\n                \"serial_number\": \"ZMN33JFKKC\"\n            },\n            \"parent_process\": {\n                \"name\": \"zsh\",\n                \"command_line\": \"-zsh\",\n                \"image_path\": \"/bin/zsh\",\n                \"pid\": 462,\n                \"owner\": \"root\",\n                \"sha256\": \"0ba6f44f486330453af994834aa406c8d398bfda68a54f3176bf3696ccc09c91\"\n            },\n            \"target_process\": {\n                \"name\": \"sudo\",\n                \"command_line\": \"sudo launchctl unload /Library/LaunchDaemons/at.obdev.littlesnitchd.plist\",\n                \"image_path\": \"/usr/bin/sudo\",\n                \"pid\": 5735,\n                \"owner\": \"root\",\n                \"sha256\": \"938921ccaa776ab1bf2ca538e1ba63a8f981f047f236197581bcd968cd08f99f\"\n            },\n            \"library_item\": {\n                \"id\": \"6d4efe51-331a-4e92-bd63-33b1f2797ae5\",\n                \"name\": \"Andreu LI\",\n                \"mal_posture_mode\": \"protect\"\n            },\n            \"blueprint\": {\n                \"id\": \"f8034d27-d566-456e-8bbe-6a4dd1848961\",\n                \"name\": \"Andreu BP\"\n            }\n        }\n    ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "description": "",
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "id": "45b224d3-5018-46cc-b918-b256ab8dedf6",
+              "name": "success",
+              "originalRequest": {
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {api_token}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "https://{sub_domain}.api.kandji.io"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "behavioral-detections"
+                  ],
+                  "query": [
+                    {
+                      "disabled": true,
+                      "key": "threat_id",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "classification",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "status",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "date_range",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "detection_date",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "device_id",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "malware_family",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "parent_process_name",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "target_process_name",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "informational_tags",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "term",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "sort_by",
+                      "value": "status"
+                    },
+                    {
+                      "disabled": true,
+                      "key": "limit",
+                      "value": "1000"
+                    },
+                    {
+                      "disabled": true,
+                      "key": "offset",
+                      "value": ""
+                    }
+                  ],
+                  "raw": "https://{sub_domain}.api.kandji.io/api/v1/behavioral-detections"
+                }
+              },
+              "responseTime": null,
+              "status": "OK"
             }
           ]
         }

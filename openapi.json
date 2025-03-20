@@ -28,6 +28,395 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/v1/behavioral-detections": {
+      "get": {
+        "deprecated": false,
+        "description": "Get Behavioral Detections.",
+        "externalDocs": {
+          "url": "https://api-docs.kandji.io/#f376b345-8dc2-4ac6-97fd-0d81748e130f"
+        },
+        "operationId": "threats_getBehavioralDetections",
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by a specific threat ID (threat_id=Kandji_BD_0096).",
+            "example": "",
+            "in": "query",
+            "name": "threat_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by threat classification (classification=malicious).",
+            "example": "",
+            "in": "query",
+            "name": "classification",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by threat status (threat_status=blocked)",
+            "example": "",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Return all records within a specified number of days (Int)",
+            "example": "",
+            "in": "query",
+            "name": "date_range",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "two query params detection_date_from and detection_date_to",
+            "example": "",
+            "in": "query",
+            "name": "detection_date",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Search for a specific device by the device id (uuid).",
+            "example": "",
+            "in": "query",
+            "name": "device_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by malware family (malware_family=TrickBot).",
+            "example": "",
+            "in": "query",
+            "name": "malware_family",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by parent process (parent_process_name=bash).",
+            "example": "",
+            "in": "query",
+            "name": "parent_process_name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by target process (target_process_name=python).",
+            "example": "",
+            "in": "query",
+            "name": "target_process_name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter by tags (informational_tags=exploit,privilege_escalation).",
+            "example": "",
+            "in": "query",
+            "name": "informational_tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Search term to filter threat results. Device name, file hash, image path",
+            "example": "",
+            "in": "query",
+            "name": "term",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "<p>Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by=-device_name will order the response by device_name in descending order.</p>\n<ul>\n<li>threat_id</li>\n<li>classification</li>\n<li>device_name</li>\n<li>parent_process_name</li>\n<li>target_process_name</li>\n<li>detection_date</li>\n<li>status</li>\n</ul>",
+            "example": "status",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "A hard upper <code>limit</code> is set at 1000 records returned per request. If more records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. \nAdditionally, parameter queries can be added to a request to limit the results.",
+            "example": "1000",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Specify the starting record to return.",
+            "example": "",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "value": {
+                    "malicious_count": 37,
+                    "next": null,
+                    "previous": null,
+                    "results": [
+                      {
+                        "blueprint": {
+                          "id": "f8034d27-d566-456e-8bbe-6a4dd1848961",
+                          "name": "Andreu BP"
+                        },
+                        "classification": "malicious",
+                        "description": "TP2419 long descriptionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn123",
+                        "detection_date": "2025-03-08T17:35:30.462076+00:00",
+                        "device_info": {
+                          "id": "ddfc3341-f319-4ef0-bf9a-80791b15a79a",
+                          "name": "arm-14_7_0",
+                          "serial_number": "ZMN33JFKKC"
+                        },
+                        "id": "CC80F462-1F4D-4A04-9380-C21743DFC308",
+                        "informational_tags": [],
+                        "library_item": {
+                          "id": "6d4efe51-331a-4e92-bd63-33b1f2797ae5",
+                          "mal_posture_mode": "protect",
+                          "name": "Andreu LI"
+                        },
+                        "malware_family": [],
+                        "parent_process": {
+                          "command_line": "-zsh",
+                          "image_path": "/bin/zsh",
+                          "name": "zsh",
+                          "owner": "root",
+                          "pid": 7657,
+                          "sha256": "0ba6f44f486330453af994834aa406c8d398bfda68a54f3176bf3696ccc09c91"
+                        },
+                        "rule_version": 2,
+                        "target_process": {
+                          "command_line": "vim 123",
+                          "image_path": "/usr/bin/vim",
+                          "name": "vim",
+                          "owner": "root",
+                          "pid": 7759,
+                          "sha256": "c765f827442004d59ac6bd907f16fbda645f970a3bec94c2651a9f297a0f8030"
+                        },
+                        "threat_id": "KTI_BD_0163",
+                        "threat_status": "detected"
+                      },
+                      {
+                        "blueprint": {
+                          "id": "f8034d27-d566-456e-8bbe-6a4dd1848961",
+                          "name": "Andreu BP"
+                        },
+                        "classification": "malicious",
+                        "description": "QA Testing Rule",
+                        "detection_date": "2025-03-08T17:35:30.462076+00:00",
+                        "device_info": {
+                          "id": "ddfc3341-f319-4ef0-bf9a-80791b15a79a",
+                          "name": "arm-14_7_0",
+                          "serial_number": "ZMN33JFKKC"
+                        },
+                        "id": "B42DF93B-1610-42CF-AB12-E8BF8C7A9D13",
+                        "informational_tags": [],
+                        "library_item": {
+                          "id": "6d4efe51-331a-4e92-bd63-33b1f2797ae5",
+                          "mal_posture_mode": "protect",
+                          "name": "Andreu LI"
+                        },
+                        "malware_family": [
+                          "3CX",
+                          "AceDeceiver",
+                          "Activator",
+                          "AdvancedMacCleaner",
+                          "Adware.Gen",
+                          "AMCleaner",
+                          "AnyKeylogger"
+                        ],
+                        "parent_process": {
+                          "command_line": "-zsh",
+                          "image_path": "/bin/zsh",
+                          "name": "zsh",
+                          "owner": "root",
+                          "pid": 7657,
+                          "sha256": "0ba6f44f486330453af994834aa406c8d398bfda68a54f3176bf3696ccc09c91"
+                        },
+                        "rule_version": 4,
+                        "target_process": {
+                          "command_line": "vim 123",
+                          "image_path": "/usr/bin/vim",
+                          "name": "vim",
+                          "owner": "root",
+                          "pid": 7759,
+                          "sha256": "c765f827442004d59ac6bd907f16fbda645f970a3bec94c2651a9f297a0f8030"
+                        },
+                        "threat_id": "KTI_BD_2796",
+                        "threat_status": "detected"
+                      },
+                      {
+                        "blueprint": {
+                          "id": "f8034d27-d566-456e-8bbe-6a4dd1848961",
+                          "name": "Andreu BP"
+                        },
+                        "classification": "suspicious",
+                        "description": "Detects removal of Little Snitch by unloading the Little Snitch Launch Daemon.",
+                        "detection_date": "2025-03-07T17:40:15.984091+00:00",
+                        "device_info": {
+                          "id": "ddfc3341-f319-4ef0-bf9a-80791b15a79a",
+                          "name": "arm-14_7_0",
+                          "serial_number": "ZMN33JFKKC"
+                        },
+                        "id": "AA97B8C8-7CBD-401A-9EC3-63A15A9936BC",
+                        "informational_tags": [
+                          "exec",
+                          "Little Snitch",
+                          "Disable",
+                          "Launch Daemon",
+                          "unload"
+                        ],
+                        "library_item": {
+                          "id": "6d4efe51-331a-4e92-bd63-33b1f2797ae5",
+                          "mal_posture_mode": "protect",
+                          "name": "Andreu LI"
+                        },
+                        "malware_family": [],
+                        "parent_process": {
+                          "command_line": "-zsh",
+                          "image_path": "/bin/zsh",
+                          "name": "zsh",
+                          "owner": "root",
+                          "pid": 462,
+                          "sha256": "0ba6f44f486330453af994834aa406c8d398bfda68a54f3176bf3696ccc09c91"
+                        },
+                        "rule_version": 10,
+                        "target_process": {
+                          "command_line": "sudo launchctl unload /Library/LaunchDaemons/at.obdev.littlesnitchd.plist",
+                          "image_path": "/usr/bin/sudo",
+                          "name": "sudo",
+                          "owner": "root",
+                          "pid": 5735,
+                          "sha256": "938921ccaa776ab1bf2ca538e1ba63a8f981f047f236197581bcd968cd08f99f"
+                        },
+                        "threat_id": "KTI_BD_0141",
+                        "threat_status": "informational"
+                      }
+                    ],
+                    "suspicious_count": 34,
+                    "total_count": 71
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "malicious_count": {
+                      "type": "integer"
+                    },
+                    "next": {},
+                    "previous": {},
+                    "results": {},
+                    "suspicious_count": {
+                      "type": "integer"
+                    },
+                    "total_count": {
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "deprecated": false,
+                "example": {
+                  "value": "application/json"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Get Behavioral Detections",
+        "tags": [
+          "Threats"
+        ]
+      }
+    },
     "/api/v1/blueprints": {
       "get": {
         "deprecated": false,
@@ -14094,6 +14483,352 @@
         ]
       }
     },
+    "/api/v1/prism/cellular": {
+      "get": {
+        "deprecated": false,
+        "description": "Get Cellular attributes for devices.",
+        "externalDocs": {
+          "url": "https://api-docs.kandji.io/#409341db-b2f0-484c-844c-46be4a637d16"
+        },
+        "operationId": "prism_cellular",
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter results by one or more blueprint IDs separated by commas.",
+            "example": "blueprint_id, blueprint_id,blueprint_id",
+            "in": "query",
+            "name": "blueprint_ids",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Filter results by one or more device families separate by commas.",
+            "example": "Mac,iPhone,iPad,tvOS",
+            "in": "query",
+            "name": "device_families",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "JSON schema object containing one or more key value pairs.\nNote: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.",
+            "example": "",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order.",
+            "example": "",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results.",
+            "example": "",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "Specify the starting record to return.",
+            "example": "",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "value": "{\"offset\": 0,\"limit\": 25,\"total\": null,\"data\": [{\"device_id\": \"387a369d-5d12-4dfe-9ac0-d5af8780b959\",\"device__name\": \"iPhone\",\"device__family\": \"iPhone\",\"device__user_id\": \"\",\"device__user_name\": null,\"device__user_email\": null,\"blueprint_id\": \"9c2a1219-deeb-4b37-845e-b61418275ba1\",\"blueprint_name\": \"accuhive\",\"tags\": null,\"asset_tag\": \"\",\"serial_number\": \"F4GVJ4Q9JC6H\",\"model_id\": \"iPhone10,1\",\"count\": null,\"created_at\": \"2025-02-08T00:55:45.808993+00:00\",\"updated_at\": \"2025-02-12T17:33:35.626695+00:00\",\"last_changed_at\": null,\"last_collected_at\": \"2025-02-12T17:33:35.626695+00:00\",\"cellular_technology\": \"GSM and CDMA\",\"data_roaming_enabled\": false,\"voice_roaming_enabled\": false,\"modem_firmware_version\": \"6.21.01\",\"personal_hotspot_enabled\": false,\"meid\": \"35673008397160\",\"carrier_settings_version_slot_1\": null,\"current_carrier_network_slot_1\": null,\"current_mcc_slot_1\": null,\"current_mnc_slot_1\": null,\"eid_slot_1\": null,\"iccid_slot_1\": null,\"imei_slot_1\": \"35 673008 397160 8\",\"is_data_preferred_slot_1\": null,\"is_roaming_slot_1\": null,\"is_voice_preferred_slot_1\": null,\"label_slot_1\": null,\"label_id_slot_1\": null,\"phone_number_slot_1\": null,\"slot_1\": \"CTSubscriptionSlotOne\",\"subscriber_carrier_network_slot_1\": null,\"carrier_settings_version_slot_2\": null,\"current_carrier_network_slot_2\": null,\"current_mcc_slot_2\": null,\"current_mnc_slot_2\": null,\"eid_slot_2\": null,\"iccid_slot_2\": null,\"imei_slot_2\": null,\"is_data_preferred_slot_2\": null,\"is_roaming_slot_2\": null,\"is_voice_preferred_slot_2\": null,\"label_slot_2\": null,\"label_id_slot_2\": null,\"phone_number_slot_2\": null,\"slot_2\": null,\"subscriber_carrier_network_slot_2\": null},\"cursor\": null}"
+                },
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "Accept-Ranges": {
+                "deprecated": false,
+                "example": {
+                  "value": "bytes"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "deprecated": false,
+                "example": {
+                  "value": "*"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Connection": {
+                "deprecated": false,
+                "example": {
+                  "value": "keep-alive"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Content-Encoding": {
+                "deprecated": false,
+                "example": {
+                  "value": "gzip"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Content-Type": {
+                "deprecated": false,
+                "example": {
+                  "value": "application/json"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Date": {
+                "deprecated": false,
+                "example": {
+                  "value": "Thu, 08 Feb 2024 21:12:29 GMT"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Ratelimit-Limit": {
+                "deprecated": false,
+                "example": {
+                  "value": "50"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Ratelimit-Remaining": {
+                "deprecated": false,
+                "example": {
+                  "value": "49"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Ratelimit-Reset": {
+                "deprecated": false,
+                "example": {
+                  "value": "1"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Server": {
+                "deprecated": false,
+                "example": {
+                  "value": "uvicorn"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Vary": {
+                "deprecated": false,
+                "example": {
+                  "value": "Accept-Encoding"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Via": {
+                "deprecated": false,
+                "example": {
+                  "value": "kong/3.2.2, 1.1 varnish, 1.1 varnish"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Cache": {
+                "deprecated": false,
+                "example": {
+                  "value": "MISS, MISS"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Cache-Hits": {
+                "deprecated": false,
+                "example": {
+                  "value": "0, 0"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Kong-Proxy-Latency": {
+                "deprecated": false,
+                "example": {
+                  "value": "51"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Kong-Upstream-Latency": {
+                "deprecated": false,
+                "example": {
+                  "value": "241"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ratelimit-Limit-Hour": {
+                "deprecated": false,
+                "example": {
+                  "value": "10000"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ratelimit-Limit-Second": {
+                "deprecated": false,
+                "example": {
+                  "value": "50"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ratelimit-Remaining-Hour": {
+                "deprecated": false,
+                "example": {
+                  "value": "9991"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ratelimit-Remaining-Second": {
+                "deprecated": false,
+                "example": {
+                  "value": "49"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Served-By": {
+                "deprecated": false,
+                "example": {
+                  "value": "cache-bfi-krnt7300088-BFI, cache-pdk-katl1840069-PDK"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Timer": {
+                "deprecated": false,
+                "example": {
+                  "value": "S1707426749.011701,VS0,VE366"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "transfer-encoding": {
+                "deprecated": false,
+                "example": {
+                  "value": "chunked"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Cellular",
+        "tags": [
+          "Prism"
+        ]
+      }
+    },
     "/api/v1/prism/certificates": {
       "get": {
         "deprecated": false,
@@ -14505,7 +15240,7 @@
                 "example": {
                   "value": {
                     "approximate": false,
-                    "count": 3
+                    "count": 82
                   }
                 },
                 "schema": {
