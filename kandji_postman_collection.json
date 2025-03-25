@@ -46,7 +46,7 @@
     "public": true,
     "publishDate": "2023-02-28T20:43:56.000Z",
     "publishedId": "TzCTZkBe",
-    "schema": "https://schema.postman.com/json/collection/v2.0.0/collection.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
     "toc": [
       {
         "content": "Welcome to the Kandji API Documentation",
