@@ -1110,12 +1110,12 @@
                 },
                 {
                   "description": {
-                    "content": "<p>\"exact\" match on kandji user ID number</p>\n",
+                    "content": "<p>\"exact\" match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)</p>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
                   "key": "user_id",
-                  "value": "8136"
+                  "value": "5344c996-8823-4b37-8d6e-8515fc7c3a0a"
                 },
                 {
                   "description": {
@@ -6866,7 +6866,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Return all device records with the specified OS version</p>\n",
+                    "content": "<p>Return all device records containing the specified OS version</p>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -6947,12 +6947,12 @@
                 },
                 {
                   "description": {
-                    "content": "<p>\"exact\" match on kandji user ID number</p>\n",
+                    "content": "<p>\"exact\" match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)</p>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
                   "key": "user_id",
-                  "value": "1"
+                  "value": "5344c996-8823-4b37-8d6e-8515fc7c3a0a"
                 },
                 {
                   "description": {
@@ -11059,7 +11059,7 @@
                     }
                   ]
                 },
-                "description": "<p>This request allows you to create a custom app in the Kandji library.</p>\n<p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>\n",
+                "description": "<p>This request allows you to create a custom app in the Kandji library.</p>\n<p>Must have already generated a <code>file_key</code> via <code>Upload custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>\n",
                 "header": [],
                 "method": "POST",
                 "url": "https://{sub_domain}.api.kandji.io/api/v1/library/custom-apps",
@@ -13256,7 +13256,7 @@
               "response": [
                 {
                   "_postman_previewlanguage": "json",
-                  "body": "{\n    \"id\": \"e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"name\": \"Custom Profile Test\",\n    \"active\": true,\n    \"profile\": \"(XML contents of profile)\",\n    \"mdm_identifier\": \"com.kandji.profile.custom.e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"created_at\": \"2023-10-13T17:29:57.339336Z\",\n    \"updated_at\": \"2023-10-13T17:29:57.339416Z\"\n}",
+                  "body": "{\n    \"id\": \"e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"name\": \"Custom Profile Test\",\n    \"active\": true,\n    \"profile\": \"(XML contents of profile)\",\n    \"mdm_identifier\": \"com.kandji.profile.custom.e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n\t\"runs_on_mac\": true,\n\t\"runs_on_iphone\": false,\n\t\"runs_on_ipad\": false,\n\t\"runs_on_tv\": false,\n\t\"runs_on_vision\": false,\n    \"created_at\": \"2023-10-13T17:29:57.339336Z\",\n    \"updated_at\": \"2023-10-13T17:29:57.339416Z\"\n}",
                   "code": 201,
                   "cookie": [],
                   "header": [
@@ -13458,7 +13458,7 @@
               "response": [
                 {
                   "_postman_previewlanguage": "json",
-                  "body": "{\n    \"id\": \"e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"name\": \"Custom Profile New Name\",\n    \"active\": true,\n    \"profile\": \"(XML of profile, including new name)\",\n    \"mdm_identifier\": \"com.kandji.profile.custom.e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"created_at\": \"2023-10-13T17:29:57.339336Z\",\n    \"updated_at\": \"2023-10-13T17:31:08.086441Z\"\n}",
+                  "body": "{\n    \"id\": \"e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"name\": \"Custom Profile New Name\",\n    \"active\": true,\n    \"profile\": \"(XML of profile, including new name)\",\n    \"mdm_identifier\": \"com.kandji.profile.custom.e8f93d8e-77da-45a3-b5bf-ede2cf1a330d\",\n    \"runs_on_mac\": true,\n\t\"runs_on_iphone\": false,\n\t\"runs_on_ipad\": false,\n\t\"runs_on_tv\": false,\n\t\"runs_on_vision\": false,\n\t\"created_at\": \"2023-10-13T17:29:57.339336Z\",\n    \"updated_at\": \"2023-10-13T17:31:08.086441Z\"\n}",
                   "code": 200,
                   "cookie": [],
                   "header": [
