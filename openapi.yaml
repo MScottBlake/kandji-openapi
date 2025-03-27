@@ -62,6 +62,319 @@ info:
   version: 1.0.0
 openapi: 3.1.0
 paths:
+  /api/v1/audit/events:
+    get:
+      deprecated: false
+      description: "<p>List Audit log events from the Kandji Activity module.</p>\n
+        <p>Returns events related to</p>\n<ul>\n<li><p>Blueprint CUD, Library Item
+        CUD</p>\n</li>\n<li><p>When some sensitive data is viewed (e.g., FileVault
+        keys, recovery keys)</p>\n</li>\n<li><p>Device deleted, enrolled, mdm removed,
+        changed blueprint</p>\n</li>\n<li><p>User directory events (e.g., directory
+        user deletions)</p>\n</li>\n<li><p>API actions, Kandji tenant owner updates,
+        API token CUD, Kandji admin user management CUD</p>\n</li>\n<li><p>Vulnerability
+        management customers can see events detections and remediations.</p>\n</li>\n\
+        </ul>"
+      externalDocs:
+        url: https://api-docs.kandji.io/#06022d9d-426b-4aea-826a-d7f084e4f1e3
+      operationId: auditLog_listAuditEvents
+      parameters:
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: A max upper <code>limit</code> is set at 500 records returned
+          per request. Pagination should be used using the cursor in the <code>next</code>
+          key to request more results. Additionally, parameter queries can be added
+          to a request to filter the results.
+        example: '500'
+        in: query
+        name: limit
+        required: true
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: Sort results by <code>occurred_at</code>, <code>id</code> either
+          ascending (default behavior) or descending(-) order.
+        example: -occurred_at
+        in: query
+        name: sort_by
+        required: true
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: Filter by start date in datetime or year-month-day (2024-11-26)
+          formats
+        example: '2024-11-26T22:58:26.239570Z'
+        in: query
+        name: start_date
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: Filter by start date in datetime or year-month-day (2024-12-06)
+          formats
+        example: '2024-12-06T17:48:41.784439Z'
+        in: query
+        name: end_date
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
+        description: You can pass the next cursor as a parameter or use the URL in
+          the next key to get the next page of results or to start from where you
+          left off last.
+        example: ''
+        in: query
+        name: cursor
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              example:
+                value:
+                  next: 
+                    http://accuhive.api.kandji.io/api/v1/audit/events?limit=2&sort_by=-occurred_at&cursor=PmR0OjIwMjUtMDMtMTcgMjI6Mjk6MjUuMzAxMDkyKzAwOjAw
+                  previous: null
+                  results:
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNGZW47KZKPXE1JWCFE4PHDW
+                    metadata: {}
+                    new_state:
+                      library_items_added:
+                      - id: c7a5871a-1683-432f-87d4-30bbd404eb85
+                        name: GitHub
+                      - id: 6c3c34cf-36c4-4812-bd3f-712d66458c80
+                        name: Apple Configurator
+                      library_items_removed: []
+                      library_items_scoped:
+                      - id: 6c3c34cf-36c4-4812-bd3f-712d66458c80
+                        name: Apple Configurator
+                      - id: c7a5871a-1683-432f-87d4-30bbd404eb85
+                        name: GitHub
+                      - id: 1af36ec2-111d-4ec4-bc3b-170facf1408b
+                        name: Apple Developer
+                      name: demo
+                    occurred_at: '2025-03-04T16:29:55.253454Z'
+                    target_component: library_items
+                    target_id: 449ec92a-186a-44f2-9421-d5ac6e465eb5
+                    target_type: blueprint
+                  - action: create
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNGZWQ7WAN45PVTJ3686TXHT
+                    metadata:
+                      source: null
+                      source_id: null
+                    new_state:
+                      description: ''
+                      name: audit_event_test
+                      type: map
+                    occurred_at: '2025-03-04T16:30:14.143192Z'
+                    target_component: ''
+                    target_id: 2b1fd766-3ba4-49ba-9f88-8219d468b34c
+                    target_type: blueprint
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNGZWQ7W0C1TD9MZAP6XSEGH
+                    metadata: {}
+                    new_state:
+                      name: audit_event_test
+                      parameters: []
+                    occurred_at: '2025-03-04T16:30:14.214831Z'
+                    target_component: parameters
+                    target_id: 2b1fd766-3ba4-49ba-9f88-8219d468b34c
+                    target_type: blueprint
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNGZX031XXXWS574PMJE5E52
+                    metadata: {}
+                    new_state:
+                      library_items_added:
+                      - id: d8a6b20f-9b7a-4af7-9ecb-1c7104116ca8
+                        name: homebrew
+                      library_items_removed: []
+                      library_items_scoped:
+                      - id: d8a6b20f-9b7a-4af7-9ecb-1c7104116ca8
+                        name: homebrew
+                      name: audit_event_test
+                    occurred_at: '2025-03-04T16:30:23.535596Z'
+                    target_component: library_items
+                    target_id: 2b1fd766-3ba4-49ba-9f88-8219d468b34c
+                    target_type: blueprint
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNM1393ZTW3JAPWPRTVNH1JM
+                    metadata: {}
+                    new_state:
+                      active: false
+                      label: null
+                      name: 'Pocket Casts: Podcast Player'
+                      type: vpp-app
+                    occurred_at: '2025-03-05T20:49:01.319307Z'
+                    target_component: ''
+                    target_id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                    target_type: library_item
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNM149BA16F2W42VVFP44VD0
+                    metadata: {}
+                    new_state:
+                      library_items_added:
+                      - id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                        name: 'Pocket Casts: Podcast Player'
+                      library_items_removed: []
+                      library_items_scoped:
+                      - id: c0af8f59-8d96-49e3-a66b-80639bc43eac
+                        name: accuhive_wifi
+                      - id: 4418f6fa-0761-460f-b98d-c037f44ffad0
+                        name: Kandji Self Service
+                      - id: 92a8be7b-dc71-41f5-be27-138769080850
+                        name: default skip
+                      - id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                        name: 'Pocket Casts: Podcast Player'
+                      name: _ipados_testing_2
+                    occurred_at: '2025-03-05T20:49:33.901017Z'
+                    target_component: library_items
+                    target_id: 7a488f5a-082b-4039-8e11-9b92985300c4
+                    target_type: blueprint
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNM1498JPRMZN6737HP4M2PT
+                    metadata: {}
+                    new_state:
+                      library_items_added:
+                      - id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                        name: 'Pocket Casts: Podcast Player'
+                      library_items_removed: []
+                      library_items_scoped:
+                      - id: 3e2a8bd2-45a3-43e4-a1e6-7296a83abf65
+                        name: agent_debug_logging
+                      - id: cc2e2e17-e046-4405-ba46-1c39790a69a0
+                        name: 1Password 7
+                      - id: 3eb5836a-c856-47a6-8614-0da2624e8577
+                        name: audit test
+                      - id: 07956063-476a-4c53-9fec-1686a5b9ec5b
+                        name: wb
+                      - id: 03ece026-6d91-4616-a9de-c77c23a32555
+                        name: wallpaper
+                      - id: 3ad11b1e-42fb-4405-b826-c9cdf6061e7e
+                        name: pppc_finder
+                      - id: 814351ef-d9ee-4ebe-bf3e-5fb6cc3086bc
+                        name: Microsoft Company Portal
+                      - id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                        name: 'Pocket Casts: Podcast Player'
+                      - id: 764706a2-f934-4808-85a4-7763d89327f4
+                        name: brooklyn_screensaver
+                      - id: 24eb6c93-27d7-40a0-9092-d29e9d53a0ef
+                        name: Okta Verify
+                      name: _testing_something
+                    occurred_at: '2025-03-05T20:49:34.008256Z'
+                    target_component: library_items
+                    target_id: 9b1ce867-83dd-46bb-b79a-ba2b5c3a4acc
+                    target_type: blueprint
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNM149BEX9ZK8YX7FVGARH4C
+                    metadata: {}
+                    new_state:
+                      library_items_added:
+                      - id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                        name: 'Pocket Casts: Podcast Player'
+                      library_items_removed: []
+                      library_items_scoped:
+                      - id: 92a8be7b-dc71-41f5-be27-138769080850
+                        name: default skip
+                      - id: f0c99039-355e-4793-8b6f-7b55d9e8b77c
+                        name: microsoft_sso_extension_mobile
+                      - id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                        name: 'Pocket Casts: Podcast Player'
+                      - id: c0af8f59-8d96-49e3-a66b-80639bc43eac
+                        name: accuhive_wifi
+                      - id: 4418f6fa-0761-460f-b98d-c037f44ffad0
+                        name: Kandji Self Service
+                      - id: 624cb961-0e69-4242-9cd1-3dffd3ca6830
+                        name: Microsoft Authenticator
+                      name: _ipados_testing
+                    occurred_at: '2025-03-05T20:49:34.064939Z'
+                    target_component: library_items
+                    target_id: ac4aba12-d2e5-430a-b7aa-42d25f9e6ead
+                    target_type: blueprint
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNM149BE4W1KJ3J8WNPMKTH3
+                    metadata: {}
+                    new_state:
+                      active: true
+                      label: null
+                      name: 'Pocket Casts: Podcast Player'
+                      type: vpp-app
+                    occurred_at: '2025-03-05T20:49:34.148395Z'
+                    target_component: ''
+                    target_id: 07194cf3-10c1-4b39-aa2b-763133b0347d
+                    target_type: library_item
+                  - action: update
+                    actor_id: cf40d6e7-20cb-4da9-84a1-9ad0b7003ca5
+                    actor_type: user
+                    id: 01JNM15XZVZ64S00H7BAZKHE4A
+                    metadata: {}
+                    new_state:
+                      description: null
+                      label: audit log events
+                      permissions:
+                      - http_method: PATCH
+                        path: /api/v1/devices/{device_id}
+                      - http_method: GET
+                        path: /api/v1/users
+                      - http_method: GET
+                        path: /api/v1/users/{id}
+                      - http_method: DELETE
+                        path: /api/v1/users/{id}
+                      - http_method: GET
+                        path: /api/v1/audit/events
+                    occurred_at: '2025-03-05T20:50:28.090682Z'
+                    target_component: ''
+                    target_id: a0726ca3-717d-41b9-a3af-c7d0bad8b784
+                    target_type: api_token
+              schema:
+                properties:
+                  next:
+                    type: string
+                  previous: {}
+                  results: {}
+                type: object
+          description: OK
+          headers:
+            Content-Type:
+              deprecated: false
+              example:
+                value: application/json
+              required: false
+              schema:
+                type: string
+      security:
+      - bearer: []
+      summary: List audit events
+      tags:
+      - Audit Log
   /api/v1/behavioral-detections:
     get:
       deprecated: false
@@ -16422,6 +16735,46 @@ servers:
     sub_domain:
       default: <sub_domain>
 tags:
+- description: "<p>Interact with global audit logs (Activity UI) in Kandji.</p>\n
+    <h3 id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<div class=&quot;click-to-expand-wrapper
+    is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n
+    <th><strong>Type</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n
+    </thead>\n<tbody>\n<tr>\n<td>action</td>\n<td>string</td>\n<td>What was done,
+    this is validated against a list of expected values - create, update, delete</td>\n
+    </tr>\n<tr>\n<td>actor_id</td>\n<td>string</td>\n<td>The id of the who or what
+    did the event</td>\n</tr>\n<tr>\n<td>actor_type</td>\n<td>string</td>\n<td>The
+    type of actor who did the event, admin user, api token, kandji, etc. This is validated
+    against a list of expected values</td>\n</tr>\n<tr>\n<td>target_id</td>\n<td>string(likely
+    uuid)</td>\n<td>The id of what was updated</td>\n</tr>\n<tr>\n<td>target_type</td>\n
+    <td>string</td>\n<td>The type of object that was updated - blueprint, library_item,
+    device, user, etc</td>\n</tr>\n<tr>\n<td>target_component</td>\n<td>string, nullable</td>\n
+    <td>The sub-component section of target that was updated</td>\n</tr>\n<tr>\n<td>metadata</td>\n
+    <td>json, nullable</td>\n<td>Context information about the event itself. Not validated.
+    Could hold information specific to a certain security framework or standard.</td>\n
+    </tr>\n<tr>\n<td>new_state</td>\n<td>json, nullable</td>\n<td>The data of the
+    new state. This is what will be validated by the schemas</td>\n</tr>\n<tr>\n<td>occurred_at</td>\n
+    <td>datetime</td>\n<td>When was this event created, defaults to the current UTC
+    time.  <br />  <br />ISO 8601 timestamp (e.g., &quot;2025-02-26T12:00:00Z&quot;)</td>\n
+    </tr>\n</tbody>\n</table>\n</div><h4 id=&quot;general-response-structure&quot;><em>General
+    response structure</em></h4>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code
+    class=&quot;language-json&quot;>{\n    &quot;id&quot;: &quot;string&quot;,\n \
+    \   &quot;occurred_at&quot;: &quot;string&quot;,\n    &quot;action&quot;: &quot;string&quot;,\n\
+    \    &quot;actor_id&quot;: &quot;string&quot;,\n    &quot;actor_type&quot;: &quot;string&quot;,\n\
+    \    &quot;target_id&quot;: &quot;string&quot;,          \n    &quot;target_type&quot;:
+    &quot;string&quot;,\n    &quot;target_component&quot;: &quot;string&quot;,\n \
+    \   &quot;new_state&quot;: &quot;object&quot;,          \n    &quot;metadata&quot;:
+    &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;notes&quot;>Notes</h3>\n
+    <ul>\n<li><p>Net new events (API token CUD, Admin user CUD, API actions, User
+    directory events) in the API won’t yet appear in the Activity UI—we’re working
+    to update the UI to sync with the new framework.</p>\n</li>\n<li><p>The audit
+    events API is currently focused on events in the global Activity module, so device-level
+    activity is still accessible from it's respective API endpoints.</p>\n</li>\n
+    </ul>\n<p>We’re continuously expanding and fine tuning the event list over time,
+    so if you think something’s missing, let us know! It might already be in our backlog,
+    but we always appreciate your input.</p>"
+  externalDocs:
+    url: https://api-docs.kandji.io/#c582df19-e201-4bdc-af04-d43879dfc05d
+  name: Audit Log
 - description: Use these endpoints to create and interact with ADE integrations.
   externalDocs:
     url: https://api-docs.kandji.io/#403925fb-1606-420b-b510-3ec9a22e2e9e
