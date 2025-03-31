@@ -65,7 +65,7 @@ paths:
   /api/v1/audit/events:
     get:
       deprecated: false
-      description: "<p>List Audit log events from the Kandji Activity module.</p>\n
+      description: "<p>List audit log events from the Kandji Activity module.</p>\n
         <p>Returns events related to</p>\n<ul>\n<li><p>Blueprint and Library Item
         creation, updates, and deletions (CUD)</p>\n</li>\n<li><p>Access to sensitive
         data (such as FileVault keys and recovery keys)</p>\n</li>\n<li><p>Device
