@@ -1369,7 +1369,7 @@
     "/api/v1/blueprints/{blueprint_id}": {
       "delete": {
         "deprecated": false,
-        "description": "<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>\n<p>This is a HIGHLY destructive action.</p>\n<p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>",
+        "description": "<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>\n<p>This is a HIGHLY destructive action.</p>\n<p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#c47ff0fd-82f3-4326-ace8-f8e8bcc16d39"
         },
@@ -1404,7 +1404,7 @@
       },
       "get": {
         "deprecated": false,
-        "description": "<p>This request returns information about a specific blueprint based on blueprint ID.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>",
+        "description": "This request returns information about a specific blueprint based on blueprint ID.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#c0383706-3a41-445c-998f-37a2c1c7ba4a"
         },
@@ -1642,7 +1642,7 @@
       },
       "patch": {
         "deprecated": false,
-        "description": "<p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>",
+        "description": "This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#4820ba50-291a-4857-b622-77a9ab9cc9e3"
         },
@@ -1920,11 +1920,11 @@
     "/api/v1/blueprints/{blueprint_id}/assign-library-item": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>\n<h3 id=&quot;request-body&quot;>Request Body</h3>\n<ul>\n<li><p><code>library_item_id</code> (string, required)</p>\n</li>\n<li><p><code>assignment_node_id</code> (string, required for maps)</p>\n<ul>\n<li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option \u2325 key. Each node ID remains fixed for the lifespan of the node on the map.</li>\n</ul>\n</li>\n</ul>\n<h3 id=&quot;error-responses&quot;>Error responses</h3>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Code</strong></th>\n<th><strong>Body</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>400 - Bad Request</td>\n<td>Bad Request</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library Item already exists on Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library Item already exists in Assignment Node&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "description": "<p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>\n<h3 id=&quot;request-body&quot;>Request Body</h3>\n<ul>\n<li><p><code>library_item_id</code> (string, required)</p>\n</li>\n<li><p><code>assignment_node_id</code> (string, for maps)</p>\n<ul>\n<li>NOT required for assigning to assignment maps if the map does not have conditional logic.</li>\n</ul>\n</li>\n</ul>\n<h3 id=&quot;error-responses&quot;>Error responses</h3>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Code</strong></th>\n<th><strong>Body</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>400 - Bad Request</td>\n<td>Bad Request</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library Item does not exist on Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library Item does not exist in Assignment Node&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>",
         "externalDocs": {
-          "url": "https://api-docs.kandji.io/#683ac930-5754-4203-b066-59cdb8ced781"
+          "url": "https://api-docs.kandji.io/#0d968198-fd6c-44ef-a3e0-a75e0a0adf71"
         },
-        "operationId": "blueprints_assignLibraryItem",
+        "operationId": "blueprints_removeLibraryItem",
         "parameters": [
           {
             "allowEmptyValue": false,
@@ -1960,8 +1960,7 @@
                   "value": [
                     "c0148e35-c734-4402-b2fb-1c61aab72550",
                     "a6063468-48aa-4e52-a098-fd9c7902201e",
-                    "e3d94912-d8bd-474b-9b90-c32288f84f99",
-                    "0563461d-de5d-4218-9350-43e624f607ee"
+                    "e3d94912-d8bd-474b-9b90-c32288f84f99"
                   ]
                 },
                 "schema": {
@@ -2099,7 +2098,7 @@
             "bearer": []
           }
         ],
-        "summary": "Assign Library Item",
+        "summary": "Remove Library Item",
         "tags": [
           "Blueprints"
         ]
@@ -2108,7 +2107,7 @@
     "/api/v1/blueprints/{blueprint_id}/list-library-items": {
       "get": {
         "deprecated": false,
-        "description": "<p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>\n<h3 id=&quot;response-fields&quot;>Response fields</h3>\n<ul>\n<li><p><code>count</code> (int): The total count of library items.</p>\n</li>\n<li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>\n</li>\n<li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>\n</li>\n<li><p><code>results</code> (object): An array containing objects with the following fields:</p>\n<ul>\n<li><p><code>id</code> (str): The ID of the library item.</p>\n</li>\n<li><p><code>name</code> (str): The name of the library item.</p>\n</li>\n</ul>\n</li>\n</ul>",
+        "description": "<p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>\n<h3 id=&quot;response-fields&quot;>Response fields</h3>\n<ul>\n<li><p><code>count</code> (int): The total count of library items.</p>\n</li>\n<li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>\n</li>\n<li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>\n</li>\n<li><p><code>results</code> (object): An array containing objects with the following fields:</p>\n<ul>\n<li><p><code>id</code> (str): The ID of the library item.</p>\n</li>\n<li><p><code>name</code> (str): The name of the library item.</p>\n</li>\n</ul>\n</li>\n</ul>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#34af40a5-7273-425c-9ea5-2c8a5dbbe29f"
         },
@@ -2505,7 +2504,7 @@
     "/api/v1/blueprints/{blueprint_id}/ota-enrollment-profile": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p>\n<p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p>\n<p>The enrollment profile will be returned in raw form with response headers:</p>\n<ul>\n<li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p>\n</li>\n<li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p>\n</li>\n</ul>\n<p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>",
+        "description": "<p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p>\n<p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p>\n<p>The enrollment profile will be returned in raw form with response headers:</p>\n<ul>\n<li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p>\n</li>\n<li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p>\n</li>\n</ul>\n<p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#525b0cae-7ec9-4dc9-9679-fcf47df02cb0"
         },
@@ -2879,193 +2878,6 @@
           }
         ],
         "summary": "Get Manual Enrollment Profile",
-        "tags": [
-          "Blueprints"
-        ]
-      }
-    },
-    "/api/v1/blueprints/{blueprint_id}/remove-library-item": {
-      "post": {
-        "deprecated": false,
-        "description": "<p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>\n<h3 id=&quot;request-body&quot;>Request Body</h3>\n<ul>\n<li><p><code>library_item_id</code> (string, required)</p>\n</li>\n<li><p><code>assignment_node_id</code> (string, required for maps)</p>\n</li>\n</ul>\n<h3 id=&quot;error-responses&quot;>Error responses</h3>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Code</strong></th>\n<th><strong>Body</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>400 - Bad Request</td>\n<td>Bad Request</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library Item does not exist on Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library Item does not exist in Assignment Node&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>",
-        "externalDocs": {
-          "url": "https://api-docs.kandji.io/#0d968198-fd6c-44ef-a3e0-a75e0a0adf71"
-        },
-        "operationId": "blueprints_removeLibraryItem",
-        "parameters": [
-          {
-            "allowEmptyValue": false,
-            "allowReserved": false,
-            "deprecated": false,
-            "in": "path",
-            "name": "blueprint_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "example": {
-                "assignment_node_id": "{assignment_node_id}",
-                "library_item_id": "{library_item_id}"
-              },
-              "schema": {
-                "type": "string"
-              }
-            }
-          },
-          "required": false
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "value": [
-                    "c0148e35-c734-4402-b2fb-1c61aab72550",
-                    "a6063468-48aa-4e52-a098-fd9c7902201e",
-                    "e3d94912-d8bd-474b-9b90-c32288f84f99"
-                  ]
-                },
-                "schema": {
-                  "type": "object"
-                }
-              }
-            },
-            "description": "OK",
-            "headers": {
-              "Allow": {
-                "deprecated": false,
-                "example": {
-                  "value": "GET, POST, PATCH, DELETE"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Content-Length": {
-                "deprecated": false,
-                "example": {
-                  "value": "0"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Content-Security-Policy": {
-                "deprecated": false,
-                "example": {
-                  "value": "default-src 'self'; base-uri 'none'; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' unpkg.com; style-src 'self' 'unsafe-inline' unpkg.com; form-action 'none'"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Content-Type": {
-                "deprecated": false,
-                "example": {
-                  "value": "application/json"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Cross-Origin-Opener-Policy": {
-                "deprecated": false,
-                "example": {
-                  "value": "same-origin"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Date": {
-                "deprecated": false,
-                "example": {
-                  "value": "Fri, 13 Oct 2023 17:21:48 GMT"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Feature-Policy": {
-                "deprecated": false,
-                "example": {
-                  "value": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Referrer-Policy": {
-                "deprecated": false,
-                "example": {
-                  "value": "no-referrer"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Server": {
-                "deprecated": false,
-                "example": {
-                  "value": "WSGIServer/0.2 CPython/3.9.10"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Vary": {
-                "deprecated": false,
-                "example": {
-                  "value": "Origin"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "X-Content-Type-Options": {
-                "deprecated": false,
-                "example": {
-                  "value": "nosniff"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "X-Frame-Options": {
-                "deprecated": false,
-                "example": {
-                  "value": "DENY"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "Remove Library Item",
         "tags": [
           "Blueprints"
         ]
@@ -22021,7 +21833,7 @@
   ],
   "tags": [
     {
-      "description": "<p>Interact with global audit logs (Activity UI) in Kandji.</p>\n<h3 id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Type</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>action</td>\n<td>string</td>\n<td>What was done, this is validated against a list of expected values - create, update, delete</td>\n</tr>\n<tr>\n<td>actor_id</td>\n<td>string</td>\n<td>The id of the who or what did the event</td>\n</tr>\n<tr>\n<td>actor_type</td>\n<td>string</td>\n<td>The type of actor who did the event, admin user, api token, kandji, etc. This is validated against a list of expected values</td>\n</tr>\n<tr>\n<td>target_id</td>\n<td>string(likely uuid)</td>\n<td>The id of what was updated</td>\n</tr>\n<tr>\n<td>target_type</td>\n<td>string</td>\n<td>The type of object that was updated - blueprint, library_item, device, user, etc</td>\n</tr>\n<tr>\n<td>target_component</td>\n<td>string, nullable</td>\n<td>The sub-component section of target that was updated</td>\n</tr>\n<tr>\n<td>metadata</td>\n<td>json, nullable</td>\n<td>Context information about the event itself. Not validated. Could hold information specific to a certain security framework or standard.</td>\n</tr>\n<tr>\n<td>new_state</td>\n<td>json, nullable</td>\n<td>The data of the new state. This is what will be validated by the schemas</td>\n</tr>\n<tr>\n<td>occurred_at</td>\n<td>datetime</td>\n<td>When was this event created, defaults to the current UTC time.  <br />  <br />ISO 8601 timestamp (e.g., &quot;2025-02-26T12:00:00Z&quot;)</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;general-response-structure&quot;><em>General response structure</em></h4>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;id&quot;: &quot;string&quot;,\n    &quot;occurred_at&quot;: &quot;string&quot;,\n    &quot;action&quot;: &quot;string&quot;,\n    &quot;actor_id&quot;: &quot;string&quot;,\n    &quot;actor_type&quot;: &quot;string&quot;,\n    &quot;target_id&quot;: &quot;string&quot;,          \n    &quot;target_type&quot;: &quot;string&quot;,\n    &quot;target_component&quot;: &quot;string&quot;,\n    &quot;new_state&quot;: &quot;object&quot;,          \n    &quot;metadata&quot;: &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;notes&quot;>Notes</h3>\n<ul>\n<li><p>Net new events (API token Create, Update, Delete (CUD), Admin user CUD, API actions, User directory events) in the API won\u2019t yet appear in the Activity UI\u2014we\u2019re working to update the UI to sync with the new framework.</p>\n</li>\n<li><p>The audit events API is currently focused on events in the global Activity module, so device-level activity is still accessible from it's respective API endpoints.</p>\n</li>\n</ul>\n<p>We\u2019re continuously expanding and fine tuning the event list over time, so if you think something\u2019s missing, let us know! It might already be in our backlog, but we always appreciate your input.</p>",
+      "description": "<p>APIs for the global audit logs (Activity UI) in Kandji.</p>\n<h3 id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<p>Breakdown of top-level fields in the audit log events response.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Type</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>action</td>\n<td>string</td>\n<td>What was done, this is validated against a list of expected values - create, update, delete</td>\n</tr>\n<tr>\n<td>actor_id</td>\n<td>string</td>\n<td>The id of the who or what did the event</td>\n</tr>\n<tr>\n<td>actor_type</td>\n<td>string</td>\n<td>The type of actor who did the event, admin user, api token, kandji, etc. This is validated against a list of expected values</td>\n</tr>\n<tr>\n<td>target_id</td>\n<td>string(likely uuid)</td>\n<td>The id of what was updated</td>\n</tr>\n<tr>\n<td>target_type</td>\n<td>string</td>\n<td>The type of object that was updated - blueprint, library_item, device, user, etc</td>\n</tr>\n<tr>\n<td>target_component</td>\n<td>string, nullable</td>\n<td>The sub-component section of target that was updated</td>\n</tr>\n<tr>\n<td>metadata</td>\n<td>json, nullable</td>\n<td>Context information about the event itself. Not validated. Could hold information specific to a certain security framework or standard.</td>\n</tr>\n<tr>\n<td>new_state</td>\n<td>json, nullable</td>\n<td>The data of the new state. This is what will be validated by the schemas</td>\n</tr>\n<tr>\n<td>occurred_at</td>\n<td>datetime</td>\n<td>When was this event created, defaults to the current UTC time.  <br />  <br />ISO 8601 timestamp (e.g., &quot;2025-02-26T12:00:00Z&quot;)</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;general-response-structure&quot;><em>General response structure</em></h4>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;id&quot;: &quot;string&quot;,\n    &quot;occurred_at&quot;: &quot;string&quot;,\n    &quot;action&quot;: &quot;string&quot;,\n    &quot;actor_id&quot;: &quot;string&quot;,\n    &quot;actor_type&quot;: &quot;string&quot;,\n    &quot;target_id&quot;: &quot;string&quot;,          \n    &quot;target_type&quot;: &quot;string&quot;,\n    &quot;target_component&quot;: &quot;string&quot;,\n    &quot;new_state&quot;: &quot;object&quot;,          \n    &quot;metadata&quot;: &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;notes&quot;>Notes</h3>\n<ul>\n<li><p>Net new events (API token Create, Update, Delete (CUD), Admin user CUD, API actions, User directory events) in the API won\u2019t yet appear in the Activity UI\u2014we\u2019re working to update the UI to sync with the new framework.</p>\n</li>\n<li><p>The audit events API is currently focused on events in the global Activity module, so device-level activity is still accessible from it's respective API endpoints.</p>\n</li>\n</ul>\n<p>We\u2019re continuously expanding and fine tuning the event list over time, so if you think something\u2019s missing, let us know! It might already be in our backlog, but we always appreciate your input.</p>",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#c582df19-e201-4bdc-af04-d43879dfc05d"
       },

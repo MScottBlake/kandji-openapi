@@ -1068,9 +1068,7 @@ paths:
       deprecated: false
       description: "<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>\n<p>This
         is a HIGHLY destructive action.</p>\n<p>Deleting a Blueprint will un-manage
-        ALL devices assigned to the Blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request
-        Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique
-        identifier of the blueprint.</p>"
+        ALL devices assigned to the Blueprint.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#c47ff0fd-82f3-4326-ace8-f8e8bcc16d39
       operationId: blueprints_deleteBlueprint
@@ -1093,10 +1091,8 @@ paths:
       - Blueprints
     get:
       deprecated: false
-      description: "<p>This request returns information about a specific blueprint
-        based on blueprint ID.</p>\n<h3 id=&quot;request-parameters&quot;>Request
-        Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique
-        identifier of the blueprint.</p>"
+      description: This request returns information about a specific blueprint based
+        on blueprint ID.
       externalDocs:
         url: https://api-docs.kandji.io/#c0383706-3a41-445c-998f-37a2c1c7ba4a
       operationId: blueprints_getBlueprint
@@ -1263,10 +1259,8 @@ paths:
       - Blueprints
     patch:
       deprecated: false
-      description: "<p>This requests allows updating of the name, icon, icon color,
-        description, enrollment code, and active status on an existing blueprint.</p>\n
-        <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>blueprint_id</code>
-        (path parameter): The unique identifier of the blueprint.</p>"
+      description: This requests allows updating of the name, icon, icon color, description,
+        enrollment code, and active status on an existing blueprint.
       externalDocs:
         url: https://api-docs.kandji.io/#4820ba50-291a-4857-b622-77a9ab9cc9e3
       operationId: blueprints_updateBlueprint
@@ -1463,28 +1457,25 @@ paths:
   /api/v1/blueprints/{blueprint_id}/assign-library-item:
     post:
       deprecated: false
-      description: "<p>This endpoint allows assigning a library item to a specific
+      description: "<p>This endpoint allows removing a library item from a specific
         blueprint (classic and maps). The response will include a list of library
-        item IDs assigned to the blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request
-        Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique
-        identifier of the blueprint.</p>\n<h3 id=&quot;request-body&quot;>Request
+        item IDs assigned to the blueprint.</p>\n<h3 id=&quot;request-body&quot;>Request
         Body</h3>\n<ul>\n<li><p><code>library_item_id</code> (string, required)</p>\n
-        </li>\n<li><p><code>assignment_node_id</code> (string, required for maps)</p>\n
-        <ul>\n<li>Note: To find the assignment_node_id, view the map in a browser.
-        Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains
-        fixed for the lifespan of the node on the map.</li>\n</ul>\n</li>\n</ul>\n
-        <h3 id=&quot;error-responses&quot;>Error responses</h3>\n<div class=&quot;click-to-expand-wrapper
-        is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Code</strong></th>\n
-        <th><strong>Body</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>400 -
-        Bad Request</td>\n<td>Bad Request</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library
-        Item already exists on Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Library
-        Item already exists in Assignment Node&quot;</td>\n</tr>\n<tr>\n<td></td>\n
-        <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>\n
-        </tr>\n<tr>\n<td></td>\n<td>&quot;Must provide assignment_node_id for Assignment
-        Map Blueprint&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>"
+        </li>\n<li><p><code>assignment_node_id</code> (string, for maps)</p>\n<ul>\n
+        <li>NOT required for assigning to assignment maps if the map does not have
+        conditional logic.</li>\n</ul>\n</li>\n</ul>\n<h3 id=&quot;error-responses&quot;>Error
+        responses</h3>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n
+        <thead>\n<tr>\n<th><strong>Code</strong></th>\n<th><strong>Body</strong></th>\n
+        </tr>\n</thead>\n<tbody>\n<tr>\n<td>400 - Bad Request</td>\n<td>Bad Request</td>\n
+        </tr>\n<tr>\n<td></td>\n<td>&quot;assignment_node_id cannot be provided for
+        Classic Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Must provide
+        assignment_node_id for Assignment Map Blueprint&quot;</td>\n</tr>\n<tr>\n
+        <td></td>\n<td>&quot;Library Item does not exist on Blueprint&quot;</td>\n
+        </tr>\n<tr>\n<td></td>\n<td>&quot;Library Item does not exist in Assignment
+        Node&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>"
       externalDocs:
-        url: https://api-docs.kandji.io/#683ac930-5754-4203-b066-59cdb8ced781
-      operationId: blueprints_assignLibraryItem
+        url: https://api-docs.kandji.io/#0d968198-fd6c-44ef-a3e0-a75e0a0adf71
+      operationId: blueprints_removeLibraryItem
       parameters:
       - allowEmptyValue: false
         allowReserved: false
@@ -1512,7 +1503,6 @@ paths:
                 - c0148e35-c734-4402-b2fb-1c61aab72550
                 - a6063468-48aa-4e52-a098-fd9c7902201e
                 - e3d94912-d8bd-474b-9b90-c32288f84f99
-                - 0563461d-de5d-4218-9350-43e624f607ee
               schema:
                 type: object
           description: OK
@@ -1607,7 +1597,7 @@ paths:
                 type: string
       security:
       - bearer: []
-      summary: Assign Library Item
+      summary: Remove Library Item
       tags:
       - Blueprints
   /api/v1/blueprints/{blueprint_id}/list-library-items:
@@ -1615,9 +1605,7 @@ paths:
       deprecated: false
       description: "<p>This API endpoint retrieves a list of library items associated
         with a specific blueprint. (classic and maps). Requires that the blueprint
-        ID is passed as a path parameter in the URL.</p>\n<h3 id=&quot;request-parameters&quot;>Request
-        Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique
-        identifier of the blueprint.</p>\n<h3 id=&quot;response-fields&quot;>Response
+        ID is passed as a path parameter in the URL.</p>\n<h3 id=&quot;response-fields&quot;>Response
         fields</h3>\n<ul>\n<li><p><code>count</code> (int): The total count of library
         items.</p>\n</li>\n<li><p><code>next</code> (str): The URL for the next page
         of results, if available. If not available will value will be <code>null</code>.</p>\n
@@ -1910,9 +1898,7 @@ paths:
         </ul>\n<p>An optional query parameter <code>sso=true</code> can be used to
         return a URL for SSO authentication instead. If this query parameter is used
         for a Blueprint that does not require authentication, then the enrollment
-        profile will be returned.</p>\n<h3 id=&quot;request-parameters&quot;>Request
-        Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique
-        identifier of the blueprint.</p>"
+        profile will be returned.</p>"
       externalDocs:
         url: https://api-docs.kandji.io/#525b0cae-7ec9-4dc9-9679-fcf47df02cb0
       operationId: blueprints_getManualEnrollmentProfile
@@ -2179,153 +2165,6 @@ paths:
       security:
       - bearer: []
       summary: Get Manual Enrollment Profile
-      tags:
-      - Blueprints
-  /api/v1/blueprints/{blueprint_id}/remove-library-item:
-    post:
-      deprecated: false
-      description: "<p>This endpoint allows removing a library item from a specific
-        blueprint (classic and maps). The response will include a list of library
-        item IDs assigned to the blueprint.</p>\n<h3 id=&quot;request-parameters&quot;>Request
-        Parameters</h3>\n<p><code>blueprint_id</code> (path parameter): The unique
-        identifier of the blueprint.</p>\n<h3 id=&quot;request-body&quot;>Request
-        Body</h3>\n<ul>\n<li><p><code>library_item_id</code> (string, required)</p>\n
-        </li>\n<li><p><code>assignment_node_id</code> (string, required for maps)</p>\n
-        </li>\n</ul>\n<h3 id=&quot;error-responses&quot;>Error responses</h3>\n<div
-        class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n
-        <tr>\n<th><strong>Code</strong></th>\n<th><strong>Body</strong></th>\n</tr>\n
-        </thead>\n<tbody>\n<tr>\n<td>400 - Bad Request</td>\n<td>Bad Request</td>\n
-        </tr>\n<tr>\n<td></td>\n<td>&quot;assignment_node_id cannot be provided for
-        Classic Blueprint&quot;</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Must provide
-        assignment_node_id for Assignment Map Blueprint&quot;</td>\n</tr>\n<tr>\n
-        <td></td>\n<td>&quot;Library Item does not exist on Blueprint&quot;</td>\n
-        </tr>\n<tr>\n<td></td>\n<td>&quot;Library Item does not exist in Assignment
-        Node&quot;</td>\n</tr>\n</tbody>\n</table>\n</div>"
-      externalDocs:
-        url: https://api-docs.kandji.io/#0d968198-fd6c-44ef-a3e0-a75e0a0adf71
-      operationId: blueprints_removeLibraryItem
-      parameters:
-      - allowEmptyValue: false
-        allowReserved: false
-        deprecated: false
-        in: path
-        name: blueprint_id
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            example:
-              assignment_node_id: '{assignment_node_id}'
-              library_item_id: '{library_item_id}'
-            schema:
-              type: string
-        required: false
-      responses:
-        '200':
-          content:
-            application/json:
-              example:
-                value:
-                - c0148e35-c734-4402-b2fb-1c61aab72550
-                - a6063468-48aa-4e52-a098-fd9c7902201e
-                - e3d94912-d8bd-474b-9b90-c32288f84f99
-              schema:
-                type: object
-          description: OK
-          headers:
-            Allow:
-              deprecated: false
-              example:
-                value: GET, POST, PATCH, DELETE
-              required: false
-              schema:
-                type: string
-            Content-Length:
-              deprecated: false
-              example:
-                value: '0'
-              required: false
-              schema:
-                type: string
-            Content-Security-Policy:
-              deprecated: false
-              example:
-                value: default-src 'self'; base-uri 'none'; frame-ancestors 'none';
-                  script-src 'self' 'unsafe-inline' unpkg.com; style-src 'self' 'unsafe-inline'
-                  unpkg.com; form-action 'none'
-              required: false
-              schema:
-                type: string
-            Content-Type:
-              deprecated: false
-              example:
-                value: application/json
-              required: false
-              schema:
-                type: string
-            Cross-Origin-Opener-Policy:
-              deprecated: false
-              example:
-                value: same-origin
-              required: false
-              schema:
-                type: string
-            Date:
-              deprecated: false
-              example:
-                value: Fri, 13 Oct 2023 17:21:48 GMT
-              required: false
-              schema:
-                type: string
-            Feature-Policy:
-              deprecated: false
-              example:
-                value: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope
-                  'none'; magnetometer 'none'; microphone 'none'; payment 'none';
-                  usb 'none'
-              required: false
-              schema:
-                type: string
-            Referrer-Policy:
-              deprecated: false
-              example:
-                value: no-referrer
-              required: false
-              schema:
-                type: string
-            Server:
-              deprecated: false
-              example:
-                value: WSGIServer/0.2 CPython/3.9.10
-              required: false
-              schema:
-                type: string
-            Vary:
-              deprecated: false
-              example:
-                value: Origin
-              required: false
-              schema:
-                type: string
-            X-Content-Type-Options:
-              deprecated: false
-              example:
-                value: nosniff
-              required: false
-              schema:
-                type: string
-            X-Frame-Options:
-              deprecated: false
-              example:
-                value: DENY
-              required: false
-              schema:
-                type: string
-      security:
-      - bearer: []
-      summary: Remove Library Item
       tags:
       - Blueprints
   /api/v1/devices:
@@ -16736,8 +16575,9 @@ servers:
     sub_domain:
       default: <sub_domain>
 tags:
-- description: "<p>Interact with global audit logs (Activity UI) in Kandji.</p>\n
-    <h3 id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<div class=&quot;click-to-expand-wrapper
+- description: "<p>APIs for the global audit logs (Activity UI) in Kandji.</p>\n<h3
+    id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<p>Breakdown of top-level
+    fields in the audit log events response.</p>\n<div class=&quot;click-to-expand-wrapper
     is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n
     <th><strong>Type</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n
     </thead>\n<tbody>\n<tr>\n<td>action</td>\n<td>string</td>\n<td>What was done,
