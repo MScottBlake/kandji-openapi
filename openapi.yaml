@@ -16604,15 +16604,17 @@ tags:
     \    &quot;target_id&quot;: &quot;string&quot;,          \n    &quot;target_type&quot;:
     &quot;string&quot;,\n    &quot;target_component&quot;: &quot;string&quot;,\n \
     \   &quot;new_state&quot;: &quot;object&quot;,          \n    &quot;metadata&quot;:
-    &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;notes&quot;>Notes</h3>\n
-    <ul>\n<li><p>Net new events (API token Create, Update, Delete (CUD), Admin user
-    CUD, API actions, User directory events) in the API won’t yet appear in the Activity
-    UI—we’re working to update the UI to sync with the new framework.</p>\n</li>\n
-    <li><p>The audit events API is currently focused on events in the global Activity
-    module, so device-level activity is still accessible from it's respective API
-    endpoints.</p>\n</li>\n</ul>\n<p>We’re continuously expanding and fine tuning
-    the event list over time, so if you think something’s missing, let us know! It
-    might already be in our backlog, but we always appreciate your input.</p>"
+    &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;additional-information&quot;>Additional
+    information</h3>\n<ul>\n<li><p>Net new events (API token Create, Update, Delete
+    (CUD), Admin user CUD, API actions, User directory events) in the API won’t yet
+    appear in the Activity UI—we’re working to update the UI to sync with the new
+    framework.</p>\n</li>\n<li><p>The audit events API is currently focused on events
+    in the global Activity module, so device-level activity is still accessible from
+    it's respective API endpoints.</p>\n</li>\n<li><p>Audit event history goes back
+    a year from the latest event. The history in newer tenants will not go back as
+    far.</p>\n</li>\n</ul>\n<p>We’re continuously expanding and fine tuning the event
+    list over time, so if you think something’s missing, let us know! It might already
+    be in our backlog, but we always appreciate your input.</p>"
   externalDocs:
     url: https://api-docs.kandji.io/#c582df19-e201-4bdc-af04-d43879dfc05d
   name: Audit Log
