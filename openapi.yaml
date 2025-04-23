@@ -8030,7 +8030,7 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: Mac, iPhone, iPad, AppleTV, iPod
+        description: iPad, iPhone, iPod, Mac, AppleTV, or Vision
         example: ''
         in: query
         name: device_family
@@ -8051,7 +8051,7 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: OSX, iOS, tvOS
+        description: iOS, iPadOS, OSX, tvOS, or visionOS
         example: ''
         in: query
         name: os
