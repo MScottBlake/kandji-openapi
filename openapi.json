@@ -21251,9 +21251,9 @@
     "/api/v1/vulnerability-management/detections": {
       "get": {
         "deprecated": false,
-        "description": "This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.",
+        "description": "Retrieve a list of all vulnerability detections across the device fleet.",
         "externalDocs": {
-          "url": "https://api-docs.kandji.io/#6ca65b6a-8792-4d01-a49b-935fff494070"
+          "url": "https://api-docs.kandji.io/#6a827684-404a-417d-b0b4-2c97ab5c3318"
         },
         "operationId": "vulnerabilities_listDetections",
         "parameters": [
@@ -21287,7 +21287,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "Can filter on any key attribute within the response.",
+            "description": "<p>Filter on any key attribute within the response.</p>\n<ul>\n<li>device_id</li>\n<li>device_name</li>\n<li>device_serial_number</li>\n<li>device_model</li>\n<li>device_os_version</li>\n<li>blueprint_id</li>\n<li>blueprint_name</li>\n<li>name</li>\n<li>path</li>\n<li>version</li>\n<li>bundle_id</li>\n<li>cve_id</li>\n<li>cve_description</li>\n<li>cve_link</li>\n<li>cvss_score</li>\n<li>cvss_severity</li>\n<li>detection_datetime</li>\n<li>cve_published_at</li>\n<li>cve_modified_at</li>\n</ul>",
             "example": "device_serial_number",
             "in": "query",
             "name": "filter",
@@ -21307,12 +21307,9 @@
                     "previous": null,
                     "results": [
                       {
-                        "app_bundle_id": "com.microsoft",
-                        "app_name": "ExampleApp",
-                        "app_path": "/path/to/app",
-                        "app_version": "1.0.0",
                         "blueprint_id": "396cdae2-147e-4e61-8a27-2f6b6963da4f",
                         "blueprint_name": "Threat",
+                        "bundle_id": "com.microsoft",
                         "cve_description": "description of the cve from nvd",
                         "cve_id": "CVE-2024-12345",
                         "cve_link": "https://nvd.nist.gov/vuln/detail/CVE-2024-12345",
@@ -21324,7 +21321,10 @@
                         "device_os_version": "12.9",
                         "device_serial_number": "FVFGHGK7Q6L7",
                         "first_detection_date": "2023-10-13 16:15:00.000000",
-                        "latest_detection_date": "2023-10-13 16:15:00.000000"
+                        "latest_detection_date": "2023-10-13 16:15:00.000000",
+                        "name": "Example",
+                        "path": "/path/to/app",
+                        "version": "1.0.0"
                       }
                     ]
                   }
@@ -21368,9 +21368,9 @@
     "/api/v1/vulnerability-management/vulnerabilities": {
       "get": {
         "deprecated": false,
-        "description": "This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.",
+        "description": "Retrieve a list of all vulnerabilities grouped by cve.",
         "externalDocs": {
-          "url": "https://api-docs.kandji.io/#bfa9286d-417e-43d1-8c0d-6e8c9e59df17"
+          "url": "https://api-docs.kandji.io/#f483cda1-23ab-4f7b-839f-a3f47a46529d"
         },
         "operationId": "vulnerabilities_listVulnerabilities",
         "parameters": [
@@ -21404,7 +21404,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "Field to sort by. Example: sort_by=cve_id.",
+            "description": "<p>Field to sort by.</p>\n<ul>\n<li>cve_id</li>\n<li>software (the name of the software)</li>\n<li>cvss_severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n</ul>",
             "example": "cve_id",
             "in": "query",
             "name": "sort_by",
@@ -21417,7 +21417,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "<p>Filterable columns:</p>\n<p>cve_id\napp_name\nseverity\nfirst_detection_date\nlatest_detection_date</p>",
+            "description": "<p>Filterable columns</p>\n<ul>\n<li>cve_id</li>\n<li>app_name</li>\n<li>severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n</ul>",
             "example": "device_serial_number",
             "in": "query",
             "name": "filter",
@@ -21432,35 +21432,9 @@
             "content": {
               "application/json": {
                 "example": {
-                  "value": {
-                    "next": null,
-                    "previous": null,
-                    "results": [
-                      {
-                        "cve_description": "description of the cve from nvd",
-                        "cve_id": "CVE-2024-12345",
-                        "cve_link": "https://nvd.nist.gov/vuln/detail/CVE-2024-12345",
-                        "cve_published_on": "2023-10-13 16:15:00.000000",
-                        "cve_updated_on": "2023-10-13 16:15:00.000000",
-                        "cvss_score": 3.2,
-                        "cvss_severity": "Low",
-                        "devices_impacted": 124,
-                        "first_detection_date": "2023-10-13 16:15:00.000000",
-                        "latest_detection_date": "2023-10-13 16:15:00.000000"
-                      }
-                    ],
-                    "total": 2
-                  }
+                  "value": "{\"total\": 2,\"size\": 50,\"total\": 1,\"results\": [{     \"cve_id\": \"CVE-2024-12345\",\"severity\": \"Low\",\"cvss_score\": 3.2,\"kev_score\": 0,\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\",\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\"cve_description\": \"description of the cve from nvd\",\"latest_detection_date\": \"2023-10-13 16:15:00.000000\",        \"software\": ['software_1', 'software_2', 'software_3']}]}"
                 },
                 "schema": {
-                  "properties": {
-                    "next": {},
-                    "previous": {},
-                    "results": {},
-                    "total": {
-                      "type": "integer"
-                    }
-                  },
                   "type": "object"
                 }
               }
@@ -21494,9 +21468,9 @@
     "/api/v1/vulnerability-management/vulnerabilities/{cve_id}": {
       "get": {
         "deprecated": false,
-        "description": "This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.",
+        "description": "Retrieve information about a CVE.",
         "externalDocs": {
-          "url": "https://api-docs.kandji.io/#5ed832dc-00f7-4105-ba9d-ad29ff6ead74"
+          "url": "https://api-docs.kandji.io/#173d5705-b54c-4357-9342-c566604db0e1"
         },
         "operationId": "vulnerabilities_getVulnerabilityDescription",
         "parameters": [
@@ -21518,48 +21492,60 @@
               "application/json": {
                 "example": {
                   "value": {
-                    "cve_description": "description of the cve from nvd",
                     "cve_id": "CVE-2024-12345",
                     "cve_link": "https://nvd.nist.gov/vuln/detail/CVE-2023-12345",
-                    "cve_published_on": "2023-10-13 16:15:00.000000",
-                    "cve_updated_on": "2023-10-13 16:15:00.000000",
+                    "cve_modified_at": "2023-10-13 16:15:00.000000",
+                    "cve_published_at": "2023-10-13 16:15:00.000000",
                     "cvss_score": 3.2,
-                    "cvss_severity": "Low",
-                    "devices_impacted": 124,
+                    "description": "description of the cve from nvd",
+                    "device_count": 2,
+                    "epss_score": 0.0,
                     "first_detection_date": "2023-10-13 16:15:00.000000",
-                    "kev_score": 1
+                    "kev_score": 1,
+                    "latest_detection_date": "2023-10-13 16:15:00.000000",
+                    "severity": "Low",
+                    "software_count": 3
                   }
                 },
                 "schema": {
                   "properties": {
-                    "cve_description": {
-                      "type": "string"
-                    },
                     "cve_id": {
                       "type": "string"
                     },
                     "cve_link": {
                       "type": "string"
                     },
-                    "cve_published_on": {
+                    "cve_modified_at": {
                       "type": "string"
                     },
-                    "cve_updated_on": {
+                    "cve_published_at": {
                       "type": "string"
                     },
                     "cvss_score": {
                       "type": "number"
                     },
-                    "cvss_severity": {
+                    "description": {
                       "type": "string"
                     },
-                    "devices_impacted": {
+                    "device_count": {
                       "type": "integer"
+                    },
+                    "epss_score": {
+                      "type": "number"
                     },
                     "first_detection_date": {
                       "type": "string"
                     },
                     "kev_score": {
+                      "type": "integer"
+                    },
+                    "latest_detection_date": {
+                      "type": "string"
+                    },
+                    "severity": {
+                      "type": "string"
+                    },
+                    "software_count": {
                       "type": "integer"
                     }
                   },
@@ -21598,7 +21584,7 @@
         "deprecated": false,
         "description": "This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.",
         "externalDocs": {
-          "url": "https://api-docs.kandji.io/#a5d64850-8825-4a72-865c-f541936752f8"
+          "url": "https://api-docs.kandji.io/#54c4eb6c-957f-4001-a056-cb7ecece2de7"
         },
         "operationId": "vulnerabilities_listAffectedApps",
         "parameters": [
@@ -21656,7 +21642,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "Filterable columns:\nblueprint_id\nupdated_at",
+            "description": "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>updated_at</li>\n</ul>",
             "example": "device_serial_number",
             "in": "query",
             "name": "filter",
@@ -21671,9 +21657,64 @@
             "content": {
               "application/json": {
                 "example": {
-                  "value": "{  \"total\": 2,  \"next\": null,  \"previous\": null,  \"results\": [    {        \"app_name\": \"\",        \"app_type\": \"Auto App\",        \"blueprints\": [          {            \"id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\"            \"name\": \"Vuln\"          }],        \"version_count\": 20,        \"device_count\": 4,        \"application_versions\": [          {            \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",            \"app_version\": \"21.2.52\",            \"devices_impacted\": 2,            \"blueprints\": [              {                \"id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\"                \"name\": \"Vuln\"              }]}]                   }]}"
+                  "value": {
+                    "page": 1,
+                    "results": [
+                      {
+                        "blueprints": [
+                          {
+                            "id": "blueprint",
+                            "name": "name_blueprint"
+                          }
+                        ],
+                        "bundle_id": "bundle_id",
+                        "name": "app_name",
+                        "num_devices": 2,
+                        "num_versions": 2,
+                        "software_versions": [
+                          {
+                            "blueprints": [
+                              {
+                                "id": "id_num",
+                                "name": "my_blueprint"
+                              }
+                            ],
+                            "devices_impacted": 2,
+                            "latest_detection_date": "2023-10-13 16:15:00.000000",
+                            "version": "1.2.1"
+                          },
+                          {
+                            "blueprints": [
+                              {
+                                "id": "id_num",
+                                "name": "my_blueprint"
+                              }
+                            ],
+                            "devices_impacted": 1,
+                            "latest_detection_date": "2023-10-13 16:15:00.000000",
+                            "version": "1.3.1"
+                          }
+                        ],
+                        "type": null
+                      }
+                    ],
+                    "size": 50,
+                    "total": 1
+                  }
                 },
                 "schema": {
+                  "properties": {
+                    "page": {
+                      "type": "integer"
+                    },
+                    "results": {},
+                    "size": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  },
                   "type": "object"
                 }
               }
@@ -21707,9 +21748,9 @@
     "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices": {
       "get": {
         "deprecated": false,
-        "description": "This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.",
+        "description": "Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.",
         "externalDocs": {
-          "url": "https://api-docs.kandji.io/#6512fb0e-feab-497f-ac5c-fa20be1f4837"
+          "url": "https://api-docs.kandji.io/#87484333-003d-455a-9bcc-c91bff6ced20"
         },
         "operationId": "vulnerabilities_listAffectedDevices",
         "parameters": [
@@ -21767,7 +21808,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "Filterable columns:\nblueprint_id\nupdated_at",
+            "description": "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>updated_at</li>\n</ul>",
             "example": "device_serial_number",
             "in": "query",
             "name": "filter",
@@ -21782,9 +21823,44 @@
             "content": {
               "application/json": {
                 "example": {
-                  "value": "{  \"total\": 2,  \"next\": null,  \"previous\": null,  \"results\": [    {        \"device_id\": \"abcd\",        \"device_name\": \"accuhive MacBook Air\",        \"device_serial_number\": \"FVFGHGK7Q6L7\",        \"device_model\": \"Macbook\",        \"device_os_version\": \"12.5\"        \"blueprint_id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\",        \"blueprint_name\": \"Vuln\",        \"app_info\": {          \"app_name\": \"ExampleApp\",          \"app_version\": \"1.0.0\",          \"app_path\": \"/path/to/app\"},        \"detection_datetime\": \"2023-10-13 16:15:00.000000\"}  ]}"
+                  "value": {
+                    "page": 1,
+                    "results": [
+                      {
+                        "assigned_user": "User Name",
+                        "blueprint_id": "396cdae2-147e-4e61-8a27-2f6b6963da4f",
+                        "blueprint_name": "Vuln",
+                        "device_id": "abcd",
+                        "model": "Macbook",
+                        "name": "accuhive MacBook Air",
+                        "no_of_installs": 2,
+                        "os_version": "12.5",
+                        "serial_number": "FVFGHGK7Q6L7",
+                        "software_summary": {
+                          "detection_date": "2023-10-13 16:15:00.000000",
+                          "name": "macOS 11 Catalina",
+                          "path": "/path/to/app",
+                          "version": "1.2.1"
+                        }
+                      }
+                    ],
+                    "size": 50,
+                    "total": 2
+                  }
                 },
                 "schema": {
+                  "properties": {
+                    "page": {
+                      "type": "integer"
+                    },
+                    "results": {},
+                    "size": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  },
                   "type": "object"
                 }
               }

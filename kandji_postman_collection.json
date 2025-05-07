@@ -18374,7 +18374,7 @@
                   }
                 ],
                 "method": "GET",
-                "url": "https://{sub_domain}.api.kandji.io/visibility/v1/prism/filevault/"
+                "url": "https://{sub_domain}.api.kandji.io/api/v1/prism/filevault"
               },
               "responseTime": null,
               "status": "OK"
@@ -22670,8 +22670,8 @@
       "id": "866cbd00-48b1-4361-9097-9e3a486e2564",
       "item": [
         {
-          "_postman_id": "6ca65b6a-8792-4d01-a49b-935fff494070",
-          "id": "6ca65b6a-8792-4d01-a49b-935fff494070",
+          "_postman_id": "6a827684-404a-417d-b0b4-2c97ab5c3318",
+          "id": "6a827684-404a-417d-b0b4-2c97ab5c3318",
           "name": "List Detections",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -22695,7 +22695,7 @@
               },
               "type": "bearer"
             },
-            "description": "<p>This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.</p>\n",
+            "description": "<p>Retrieve a list of all vulnerability detections across the device fleet.</p>\n",
             "header": [],
             "method": "GET",
             "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/detections",
@@ -22730,7 +22730,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Can filter on any key attribute within the response.</p>\n",
+                    "content": "<p>Filter on any key attribute within the response.</p>\n<ul>\n<li>device_id</li>\n<li>device_name</li>\n<li>device_serial_number</li>\n<li>device_model</li>\n<li>device_os_version</li>\n<li>blueprint_id</li>\n<li>blueprint_name</li>\n<li>name</li>\n<li>path</li>\n<li>version</li>\n<li>bundle_id</li>\n<li>cve_id</li>\n<li>cve_description</li>\n<li>cve_link</li>\n<li>cvss_score</li>\n<li>cvss_severity</li>\n<li>detection_datetime</li>\n<li>cve_published_at</li>\n<li>cve_modified_at</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -22744,7 +22744,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n        \"device_id\": \"abcd\",\n        \"device_name\": \"accuhive MacBook Air\",\n        \"device_serial_number\": \"FVFGHGK7Q6L7\",\n        \"device_model\": \"MacBook\",\n        \"device_os_version\": \"12.9\",\n        \"blueprint_id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\",\n        \"blueprint_name\": \"Threat\",\n        \"app_name\": \"ExampleApp\",\n        \"app_version\": \"1.0.0\",\n        \"app_path\": \"/path/to/app\",    \n        \"app_bundle_id\": \"com.microsoft\", \n        \"cve_id\": \"CVE-2024-12345\",\n        \"cve_description\": \"description of the cve from nvd\",\n        \"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\",\n        \"cvss_score\": 3.2,\n        \"cvss_severity\": \"Low\",\n        \"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n        \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n    }\n  ]\n}",
+              "body": "{\n\t\"next\": null,\n\t\"previous\": null,\n  \t\"results\": [\n    \t{\n\t\t\t\"device_id\": \"abcd\",\n\t\t\t\"device_name\": \"accuhive MacBook Air\",\n\t\t\t\"device_serial_number\": \"FVFGHGK7Q6L7\",\n\t\t\t\"device_model\": \"MacBook\",\n\t\t\t\"device_os_version\": \"12.9\",\n\t\t\t\"blueprint_id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\",\n\t\t\t\"blueprint_name\": \"Threat\",\n\t\t\t\"name\": \"Example\",\n\t\t\t\"version\": \"1.0.0\",\n\t\t\t\"path\": \"/path/to/app\",    \n\t\t\t\"bundle_id\": \"com.microsoft\", \n\t\t\t\"cve_id\": \"CVE-2024-12345\",\n\t\t\t\"cve_description\": \"description of the cve from nvd\",\n\t\t\t\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\",\n\t\t\t\"cvss_score\": 3.2,\n\t\t\t\"cvss_severity\": \"Low\",\n\t\t\t\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n\t\t\t\"latest_detection_date\": \"2023-10-13 16:15:00.000000\"\n    \t},\n    \t...\n  \t]\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -22754,7 +22754,7 @@
                   "value": "application/json"
                 }
               ],
-              "id": "83685ee6-3b75-4627-b7dd-8a257785c1b5",
+              "id": "47d1e13f-0f15-4caf-a3bc-6fca80b1645a",
               "name": "success",
               "originalRequest": {
                 "header": [
@@ -22802,8 +22802,8 @@
           ]
         },
         {
-          "_postman_id": "bfa9286d-417e-43d1-8c0d-6e8c9e59df17",
-          "id": "bfa9286d-417e-43d1-8c0d-6e8c9e59df17",
+          "_postman_id": "f483cda1-23ab-4f7b-839f-a3f47a46529d",
+          "id": "f483cda1-23ab-4f7b-839f-a3f47a46529d",
           "name": "List Vulnerabilities",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -22827,7 +22827,7 @@
               },
               "type": "bearer"
             },
-            "description": "<p>This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.</p>\n",
+            "description": "<p>Retrieve a list of all vulnerabilities grouped by cve.</p>\n",
             "header": [],
             "method": "GET",
             "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities",
@@ -22862,7 +22862,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Field to sort by. Example: sort_by=cve_id.</p>\n",
+                    "content": "<p>Field to sort by.</p>\n<ul>\n<li>cve_id</li>\n<li>software (the name of the software)</li>\n<li>cvss_severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -22871,7 +22871,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Filterable columns:</p>\n<p>cve_id\napp_name\nseverity\nfirst_detection_date\nlatest_detection_date</p>\n",
+                    "content": "<p>Filterable columns</p>\n<ul>\n<li>cve_id</li>\n<li>app_name</li>\n<li>severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -22885,7 +22885,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n  \"total\": 2,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {     \n        \"cve_id\": \"CVE-2024-12345\",\n        \"cve_description\": \"description of the cve from nvd\",\n        \"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\",\n        \"cvss_score\": 3.2,\n        \"cvss_severity\": \"Low\",\n        \"cve_published_on\": \"2023-10-13 16:15:00.000000\",\n        \"cve_updated_on\": \"2023-10-13 16:15:00.000000\",\n        \"devices_impacted\": 124,\n        \"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n        \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n    }\n  ]\n}",
+              "body": "{\n\t\"total\": 2,\n\t\"size\": 50,\n\t\"total\": 1,\n\t\"results\": [\n\t\t{     \n\t\t\t\"cve_id\": \"CVE-2024-12345\",\n\t\t\t\"severity\": \"Low\",\n\t\t\t\"cvss_score\": 3.2,\n\t\t\t\"kev_score\": 0,\n\t\t\t\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\",\n\t\t\t\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n\t\t\t\"cve_description\": \"description of the cve from nvd\",\n\t\t\t\"latest_detection_date\": \"2023-10-13 16:15:00.000000\",        \n\t\t\t\"software\": ['software_1', 'software_2', 'software_3']\n\t\t},\n    \t...\n \t ]\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -22895,7 +22895,7 @@
                   "value": "application/json"
                 }
               ],
-              "id": "16912141-21ed-4241-a5c4-bd3f9392156e",
+              "id": "c8309764-3a45-4f2c-bf06-f2d991423543",
               "name": "success",
               "originalRequest": {
                 "header": [
@@ -22946,8 +22946,8 @@
           ]
         },
         {
-          "_postman_id": "5ed832dc-00f7-4105-ba9d-ad29ff6ead74",
-          "id": "5ed832dc-00f7-4105-ba9d-ad29ff6ead74",
+          "_postman_id": "173d5705-b54c-4357-9342-c566604db0e1",
+          "id": "173d5705-b54c-4357-9342-c566604db0e1",
           "name": "Get Vulnerability Description",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -22971,7 +22971,7 @@
               },
               "type": "bearer"
             },
-            "description": "<p>This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.</p>\n",
+            "description": "<p>Retrieve information about a CVE.</p>\n",
             "header": [],
             "method": "GET",
             "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id",
@@ -22993,7 +22993,7 @@
                     "content": "<p>The CVE ID. Example \"CVE-2024-12345\"</p>\n",
                     "type": "text/plain"
                   },
-                  "id": "94a08407-1294-48ed-900f-bca712681951",
+                  "id": "73270f45-0eae-40b1-9b03-e9212568537a",
                   "key": "cve_id",
                   "type": "any",
                   "value": "{cve_id}"
@@ -23004,7 +23004,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{        \n  \"cve_id\": \"CVE-2024-12345\",\n  \"cve_description\": \"description of the cve from nvd\",\n  \"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2023-12345\",\n  \"cvss_score\": 3.2,\n  \"kev_score\": 1,\n  \"cvss_severity\": \"Low\",\n  \"cve_published_on\": \"2023-10-13 16:15:00.000000\",\n  \"cve_updated_on\": \"2023-10-13 16:15:00.000000\",\n  \"devices_impacted\": 124,\n  \"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n}",
+              "body": "{        \n\t\"cve_id\": \"CVE-2024-12345\",\n\t\"severity\": \"Low\",\n\t\"cvss_score\": 3.2,\n\t\"kev_score\": 1,\n\t\"epss_score\": 0.0,\n\t\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2023-12345\",\n\t\"description\": \"description of the cve from nvd\",\n\t\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n\t\"software_count\": 3,\n\t\"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n\t\"device_count\": 2,\n\t\"cve_published_at\": \"2023-10-13 16:15:00.000000\",\n\t\"cve_modified_at\": \"2023-10-13 16:15:00.000000\"\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -23014,7 +23014,7 @@
                   "value": "application/json"
                 }
               ],
-              "id": "ffa9be58-d766-440d-a4c4-2d1b11b41366",
+              "id": "f9886282-cb73-4c31-a7fd-d432a12a7d9c",
               "name": "success",
               "originalRequest": {
                 "header": [
@@ -23076,8 +23076,8 @@
           ]
         },
         {
-          "_postman_id": "6512fb0e-feab-497f-ac5c-fa20be1f4837",
-          "id": "6512fb0e-feab-497f-ac5c-fa20be1f4837",
+          "_postman_id": "87484333-003d-455a-9bcc-c91bff6ced20",
+          "id": "87484333-003d-455a-9bcc-c91bff6ced20",
           "name": "List Affected Devices",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -23101,7 +23101,7 @@
               },
               "type": "bearer"
             },
-            "description": "<p>This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.</p>\n",
+            "description": "<p>Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.</p>\n",
             "header": [],
             "method": "GET",
             "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/devices",
@@ -23147,7 +23147,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Filterable columns:\nblueprint_id\nupdated_at</p>\n",
+                    "content": "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>updated_at</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -23161,7 +23161,7 @@
                     "content": "<p>The CVE ID. Example \"CVE-2024-12345\"</p>\n",
                     "type": "text/plain"
                   },
-                  "id": "e02b5ad9-8c20-4706-a98f-caa5fa8b60d6",
+                  "id": "f4c8b0a9-ee15-4498-9909-a26f56f3dd10",
                   "key": "cve_id",
                   "type": "any",
                   "value": "{cve_id}"
@@ -23172,7 +23172,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n  \"total\": 2,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n        \"device_id\": \"abcd\",\n        \"device_name\": \"accuhive MacBook Air\",\n        \"device_serial_number\": \"FVFGHGK7Q6L7\",\n        \"device_model\": \"Macbook\",\n        \"device_os_version\": \"12.5\"\n        \"blueprint_id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\",\n        \"blueprint_name\": \"Vuln\",\n        \"app_info\": {\n          \"app_name\": \"ExampleApp\",\n          \"app_version\": \"1.0.0\",\n          \"app_path\": \"/path/to/app\",\n        },\n        \"detection_datetime\": \"2023-10-13 16:15:00.000000\",\n    }\n  ]\n}",
+              "body": "{\n\t\"total\": 2,\n\t\"page\": 1,\n\t\"size\": 50,\n\t\"results\": [\n\t\t{\n\t\t\t\"device_id\": \"abcd\",\n\t\t\t\"name\": \"accuhive MacBook Air\",\n\t\t\t\"serial_number\": \"FVFGHGK7Q6L7\",\n\t\t\t\"model\": \"Macbook\",\n\t\t\t\"os_version\": \"12.5\",\n\t\t\t\"blueprint_id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\",\n\t\t\t\"blueprint_name\": \"Vuln\",\n\t\t\t\"assigned_user\": \"User Name\",\n\t\t\t\"no_of_installs\": 2,\n\t\t\t\"software_summary\": {\n\t\t\t\t\"name\": \"macOS 11 Catalina\",\n\t\t\t\t\"detection_date\": \"2023-10-13 16:15:00.000000\",\n\t\t\t\t\"path\": \"/path/to/app\",\n\t\t\t\t\"version\": \"1.2.1\"\n\t\t\t}\n\t\t},\n\t\t...\n\t]\n}\t",
               "code": 200,
               "cookie": [],
               "header": [
@@ -23182,7 +23182,7 @@
                   "value": "application/json"
                 }
               ],
-              "id": "9163a722-8c33-45e5-98fb-55f0f7989e06",
+              "id": "8f04213a-74b4-4ee4-baf6-27bacaba01e8",
               "name": "success",
               "originalRequest": {
                 "header": [
@@ -23246,8 +23246,8 @@
           ]
         },
         {
-          "_postman_id": "a5d64850-8825-4a72-865c-f541936752f8",
-          "id": "a5d64850-8825-4a72-865c-f541936752f8",
+          "_postman_id": "54c4eb6c-957f-4001-a056-cb7ecece2de7",
+          "id": "54c4eb6c-957f-4001-a056-cb7ecece2de7",
           "name": "List Affected Apps",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -23317,7 +23317,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Filterable columns:\nblueprint_id\nupdated_at</p>\n",
+                    "content": "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>updated_at</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -23331,7 +23331,7 @@
                     "content": "<p>The CVE ID. Example \"CVE-2024-12345\"</p>\n",
                     "type": "text/plain"
                   },
-                  "id": "de9b8468-7435-4323-a1c0-85488aa086de",
+                  "id": "ed732bf3-b107-4d90-b018-e87a24a4e60e",
                   "key": "cve_id",
                   "type": "any",
                   "value": "{cve_id}"
@@ -23342,7 +23342,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n  \"total\": 2,\n  \"next\": null,\n  \"previous\": null,\n  \"results\": [\n    {\n        \"app_name\": \"\",\n        \"app_type\": \"Auto App\",\n        \"blueprints\": [\n          {\n            \"id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\"\n            \"name\": \"Vuln\"\n          },\n          ...\n        ],\n        \"version_count\": 20,\n        \"device_count\": 4,\n        \"application_versions\": [\n          {\n            \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n            \"app_version\": \"21.2.52\",\n            \"devices_impacted\": 2,\n            \"blueprints\": [\n              {\n                \"id\": \"396cdae2-147e-4e61-8a27-2f6b6963da4f\"\n                \"name\": \"Vuln\"\n              },\n              ...\n            ],\n          },\n          ...\n        ]               \n    },\n    ...\n  ]\n}",
+              "body": "{\n    \"total\": 1,\n    \"page\": 1,\n    \"size\": 50,\n    \"results\": [\n        {\n            \"name\": \"app_name\",\n            \"bundle_id\": \"bundle_id\",\n            \"num_versions\": 2,\n            \"type\": null,\n            \"blueprints\": [\n                {\n                    \"id\": \"blueprint\",\n                    \"name\": \"name_blueprint\"\n                }\n            ],\n            \"num_devices\": 2,\n            \"software_versions\": [\n                {\n                    \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n                    \"blueprints\": [ \n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"id\": \"id_num\", \n\t\t\t\t\t\t\t\"name\": \"my_blueprint\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n                    \"version\": \"1.2.1\",\n                    \"devices_impacted\": 2\n                },\n                {\n                    \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n                    \"blueprints\": [ {\"id\": \"id_num\", \"name\": \"my_blueprint\"}],\n                    \"version\": \"1.3.1\",\n                    \"devices_impacted\": 1\n                }\n            ]\n        }\n    ]\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -23352,7 +23352,7 @@
                   "value": "application/json"
                 }
               ],
-              "id": "67e34a87-4389-451a-bbbd-7ee79ba2a1f8",
+              "id": "6354be34-28f1-4192-843d-423f7bd8ac35",
               "name": "success",
               "originalRequest": {
                 "header": [
