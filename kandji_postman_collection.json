@@ -7369,6 +7369,15 @@
                 },
                 {
                   "description": {
+                    "content": "<p>Return results \"matching\" the specified email address</p>\n",
+                    "type": "text/plain"
+                  },
+                  "disabled": true,
+                  "key": "user_email_exact",
+                  "value": "someUser@Kandji.io"
+                },
+                {
+                  "description": {
                     "content": "<p>\"exact\" match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)</p>\n",
                     "type": "text/plain"
                   },

@@ -2371,6 +2371,16 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
+        description: Return results &quot;matching&quot; the specified email address
+        example: someUser@Kandji.io
+        in: query
+        name: user_email_exact
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: false
+        allowReserved: false
+        deprecated: false
         description: '&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)'
         example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
         in: query
