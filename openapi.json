@@ -109,7 +109,7 @@
               "application/json": {
                 "example": {
                   "value": {
-                    "next": "http://accuhive.api.kandji.io/api/v1/audit/events?limit=2&sort_by=-occurred_at&cursor=PmR0OjIwMjUtMDMtMTcgMjI6Mjk6MjUuMzAxMDkyKzAwOjAw",
+                    "next": "https://accuhive.api.kandji.io/api/v1/audit/events?limit=2&sort_by=-occurred_at&cursor=PmR0OjIwMjUtMDMtMTcgMjI6Mjk6MjUuMzAxMDkyKzAwOjAw",
                     "previous": null,
                     "results": [
                       {
