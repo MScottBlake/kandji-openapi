@@ -22349,7 +22349,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.</p>\n",
+                    "content": "<p>Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.</p>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
