@@ -16245,7 +16245,7 @@ paths:
   /api/v1/vulnerability-management/vulnerabilities:
     get:
       deprecated: false
-      description: Retrieve a list of all vulnerabilities grouped by cve.
+      description: Retrieve a list of all vulnerabilities grouped by CVE.
       externalDocs:
         url: https://api-docs.kandji.io/#f483cda1-23ab-4f7b-839f-a3f47a46529d
       operationId: vulnerabilities_listVulnerabilities
@@ -16276,9 +16276,10 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: "<p>Field to sort by.</p>\n<ul>\n<li>cve_id</li>\n<li>software
-          (the name of the software)</li>\n<li>cvss_severity</li>\n<li>first_detection_date</li>\n\
-          <li>latest_detection_date</li>\n</ul>"
+        description: "<p>Field to sort by.</p>\n<ul>\n<li><p>age</p>\n</li>\n<li><p>cve_id</p>\n
+          </li>\n<li><p>cvss_score</p>\n</li>\n<li><p>device_count</p>\n</li>\n<li><p>known_exploit</p>\n
+          </li>\n<li><p>software (software name)</p>\n</li>\n<li><p>severity</p>\n\
+          </li>\n<li><p>status</p>\n</li>\n</ul>"
         example: cve_id
         in: query
         name: sort_by
@@ -16288,9 +16289,9 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: "<p>Filterable columns</p>\n<ul>\n<li>cve_id</li>\n<li>app_name</li>\n\
-          <li>severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n\
-          </ul>"
+        description: "<p>Filter results. Similar to prism filters.\nFilterable columns</p>\n\
+          <ul>\n<li>cve_id</li>\n<li>software</li>\n<li>severity</li>\n<li>first_detection_date</li>\n\
+          <li>status</li>\n</ul>"
         example: '{"cve_id":{"in":["CVE-2024-24795"]}}'
         in: query
         name: filter
@@ -16302,14 +16303,28 @@ paths:
           content:
             application/json:
               example:
-                value: "{\"total\": 2,\"size\": 50,\"total\": 1,\"results\": [{  \
-                  \   \"cve_id\": \"CVE-2024-12345\",\"severity\": \"Low\",\"cvss_score\"\
-                  : 3.2,\"kev_score\": 0,\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\"\
-                  ,\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\"cve_description\"\
-                  : \"description of the cve from nvd\",\"latest_detection_date\"
-                  : \"2023-10-13 16:15:00.000000\",        \"software\": ['software_1',
-                  'software_2', 'software_3']}]}"
+                value:
+                  results:
+                  - cve_id: CVE-2024-24795
+                    cve_link: https://nvd.nist.gov/vuln/detail/CVE-2018-25032
+                    cvss_score: 7.5
+                    device_count: 1
+                    first_detection_date: '2025-05-23T13:21:37.792889Z'
+                    kev_score: 0
+                    latest_detection_date: '2025-05-23T13:21:37.831775Z'
+                    severity: High
+                    software:
+                    - macOS 12 Monterey
+                    status: Active
+                  size: 50
+                  total: 1
               schema:
+                properties:
+                  results: {}
+                  size:
+                    type: integer
+                  total:
+                    type: integer
                 type: object
           description: OK
           headers:
@@ -16446,8 +16461,9 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: 'Field to sort by. Example: sort_by=app_name.'
-        example: cve_id
+        description: "<p>Field to sort by.</p>\n<ul>\n<li>software (software name)</li>\n\
+          <li>detection_datetime</li>\n</ul>"
+        example: software
         in: query
         name: sort_by
         required: false
@@ -16456,9 +16472,9 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>created_at</li>\n\
-          </ul>"
-        example: '{"created_at":{"gte":"2025-05-23T17:11:31.816587Z"}}'
+        description: "<p>Filter results. Similar to prism filters.\nFilterable columns</p>\n\
+          <ul>\n<li>blueprint_id</li>\n<li>detection_datetime</li>\n</ul>"
+        example: '{"detection_datetime":{"gte":"2025-05-23T17:11:31.816587Z"}}'
         in: query
         name: filter
         required: false
@@ -16493,6 +16509,17 @@ paths:
                       latest_detection_date: '2023-10-13 16:15:00.000000'
                       version: 1.3.1
                     type: null
+                  - cve_id: CVE-2018-25032
+                    cve_link: https://nvd.nist.gov/vuln/detail/CVE-2018-25032
+                    cvss_score: 7.5
+                    device_count: 1
+                    first_detection_date: '2025-05-23T13:21:37.792889Z'
+                    kev_score: 0
+                    latest_detection_date: '2025-05-23T13:21:37.831775Z'
+                    severity: High
+                    software:
+                    - macOS 12 Monterey
+                    status: Active
                   size: 50
                   total: 1
               schema:
@@ -16562,8 +16589,9 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: 'Field to sort by. Example: sort_by=app_name.'
-        example: cve_id
+        description: "<p>Field to sort by.</p>\n<ul>\n<li>name (device name)</li>\n\
+          <li>detection_datetime</li>\n</ul>"
+        example: software_name
         in: query
         name: sort_by
         required: false
@@ -16572,7 +16600,7 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>detection_datetime</li>\n\
+        description: "<p>Filterable columns:</p>\n<ul>\n<li>name</li>\n<li>detection_datetime</li>\n\
           </ul>"
         example: '{"detection_datetime":{"gte":"2025-05-23T17:11:31.816587Z"}}'
         in: query

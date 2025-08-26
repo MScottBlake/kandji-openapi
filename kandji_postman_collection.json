@@ -22836,7 +22836,7 @@
               },
               "type": "bearer"
             },
-            "description": "<p>Retrieve a list of all vulnerabilities grouped by cve.</p>\n",
+            "description": "<p>Retrieve a list of all vulnerabilities grouped by CVE.</p>\n",
             "header": [],
             "method": "GET",
             "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities",
@@ -22871,7 +22871,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Field to sort by.</p>\n<ul>\n<li>cve_id</li>\n<li>software (the name of the software)</li>\n<li>cvss_severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n</ul>\n",
+                    "content": "<p>Field to sort by.</p>\n<ul>\n<li><p>age</p>\n</li>\n<li><p>cve_id</p>\n</li>\n<li><p>cvss_score</p>\n</li>\n<li><p>device_count</p>\n</li>\n<li><p>known_exploit</p>\n</li>\n<li><p>software (software name)</p>\n</li>\n<li><p>severity</p>\n</li>\n<li><p>status</p>\n</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -22880,7 +22880,7 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Filterable columns</p>\n<ul>\n<li>cve_id</li>\n<li>app_name</li>\n<li>severity</li>\n<li>first_detection_date</li>\n<li>latest_detection_date</li>\n</ul>\n",
+                    "content": "<p>Filter results. Similar to prism filters.\nFilterable columns</p>\n<ul>\n<li>cve_id</li>\n<li>software</li>\n<li>severity</li>\n<li>first_detection_date</li>\n<li>status</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -22894,7 +22894,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n\t\"total\": 2,\n\t\"size\": 50,\n\t\"total\": 1,\n\t\"results\": [\n\t\t{     \n\t\t\t\"cve_id\": \"CVE-2024-12345\",\n\t\t\t\"severity\": \"Low\",\n\t\t\t\"cvss_score\": 3.2,\n\t\t\t\"kev_score\": 0,\n\t\t\t\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\",\n\t\t\t\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\n\t\t\t\"cve_description\": \"description of the cve from nvd\",\n\t\t\t\"latest_detection_date\": \"2023-10-13 16:15:00.000000\",        \n\t\t\t\"software\": ['software_1', 'software_2', 'software_3']\n\t\t},\n    \t...\n \t ]\n}",
+              "body": "{\n\t\"total\": 2,\n\t\"size\": 50,\n\t\"total\": 1,\n\t\"results\": [\n\t\t{\n\t\t\t\"cve_id\": \"CVE-2024-24795\",\n\t\t\t\"severity\": \"High\",\n\t\t\t\"cvss_score\": 7.5,\n\t\t\t\"kev_score\": 0,\n\t\t\t\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2018-25032\",\n\t\t\t\"first_detection_date\": \"2025-05-23T13:21:37.792889Z\",\n\t\t\t\"latest_detection_date\": \"2025-05-23T13:21:37.831775Z\",\n\t\t\t\"device_count\": 1,\n\t\t\t\"software\": [\n\t\t\t\t\"macOS 12 Monterey\"\n\t\t\t],\n\t\t\t\"status\": \"Active\"\n\t\t},\n    \t...\n \t ]\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -22943,7 +22943,7 @@
                     {
                       "disabled": true,
                       "key": "filter",
-                      "value": "device_serial_number"
+                      "value": "{\"cve_id\":{\"in\":[\"CVE-2024-24795\"]}}"
                     }
                   ],
                   "raw": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities"
@@ -23147,16 +23147,16 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Field to sort by. Example: sort_by=app_name.</p>\n",
+                    "content": "<p>Field to sort by.</p>\n<ul>\n<li>name (device name)</li>\n<li>detection_datetime</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
                   "key": "sort_by",
-                  "value": "cve_id"
+                  "value": "software_name"
                 },
                 {
                   "description": {
-                    "content": "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>detection_datetime</li>\n</ul>\n",
+                    "content": "<p>Filterable columns:</p>\n<ul>\n<li>name</li>\n<li>detection_datetime</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
@@ -23226,16 +23226,16 @@
                       "value": "50"
                     },
                     {
-                      "description": "Field to sort by. Example: sort_by=cve_id.",
+                      "description": "Field to sort by.\n- name (device name)\n- detection_datetime",
                       "disabled": true,
                       "key": "sort_by",
-                      "value": "cve_id"
+                      "value": "name"
                     },
                     {
-                      "description": "Filterable columns:\nblueprint_id\nupdated_at",
+                      "description": "Filterable columns:\n- name\n- detection_datetime",
                       "disabled": true,
                       "key": "filter",
-                      "value": "device_serial_number"
+                      "value": "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}"
                     }
                   ],
                   "raw": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/devices",
@@ -23316,32 +23316,28 @@
                 },
                 {
                   "description": {
-                    "content": "<p>Field to sort by. Example: sort_by=app_name.</p>\n",
+                    "content": "<p>Field to sort by.</p>\n<ul>\n<li>software (software name)</li>\n<li>detection_datetime</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
                   "key": "sort_by",
-                  "value": "cve_id"
+                  "value": "software"
                 },
                 {
                   "description": {
-                    "content": "<p>Filterable columns:</p>\n<ul>\n<li>blueprint_id</li>\n<li>created_at</li>\n</ul>\n",
+                    "content": "<p>Filter results. Similar to prism filters.\nFilterable columns</p>\n<ul>\n<li>blueprint_id</li>\n<li>detection_datetime</li>\n</ul>\n",
                     "type": "text/plain"
                   },
                   "disabled": true,
                   "key": "filter",
-                  "value": "{\"created_at\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}"
+                  "value": "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}"
                 }
               ],
               "variable": [
                 {
-                  "description": {
-                    "content": "<p>The CVE ID. Example \"CVE-2024-12345\"</p>\n",
-                    "type": "text/plain"
-                  },
                   "key": "cve_id",
                   "type": "any",
-                  "value": "{cve_id}"
+                  "value": ""
                 }
               ]
             }
@@ -23349,7 +23345,7 @@
           "response": [
             {
               "_postman_previewlanguage": "json",
-              "body": "{\n    \"total\": 1,\n    \"page\": 1,\n    \"size\": 50,\n    \"results\": [\n        {\n            \"name\": \"app_name\",\n            \"bundle_id\": \"bundle_id\",\n            \"num_versions\": 2,\n            \"type\": null,\n            \"blueprints\": [\n                {\n                    \"id\": \"blueprint\",\n                    \"name\": \"name_blueprint\"\n                }\n            ],\n            \"num_devices\": 2,\n            \"software_versions\": [\n                {\n                    \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n                    \"blueprints\": [ \n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"id\": \"id_num\", \n\t\t\t\t\t\t\t\"name\": \"my_blueprint\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n                    \"version\": \"1.2.1\",\n                    \"devices_impacted\": 2\n                },\n                {\n                    \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n                    \"blueprints\": [ {\"id\": \"id_num\", \"name\": \"my_blueprint\"}],\n                    \"version\": \"1.3.1\",\n                    \"devices_impacted\": 1\n                }\n            ]\n        }\n    ]\n}",
+              "body": "{\n    \"total\": 1,\n    \"page\": 1,\n    \"size\": 50,\n    \"results\": [\n        {\n            \"name\": \"app_name\",\n            \"bundle_id\": \"bundle_id\",\n            \"num_versions\": 2,\n            \"type\": null,\n            \"blueprints\": [\n                {\n                    \"id\": \"blueprint\",\n                    \"name\": \"name_blueprint\"\n                }\n            ],\n            \"num_devices\": 2,\n            \"software_versions\": [\n                {\n                    \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n                    \"blueprints\": [ \n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"id\": \"id_num\", \n\t\t\t\t\t\t\t\"name\": \"my_blueprint\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n                    \"version\": \"1.2.1\",\n                    \"devices_impacted\": 2\n                },\n                {\n                    \"latest_detection_date\": \"2023-10-13 16:15:00.000000\",\n                    \"blueprints\": [ {\"id\": \"id_num\", \"name\": \"my_blueprint\"}],\n                    \"version\": \"1.3.1\",\n                    \"devices_impacted\": 1\n                }\n            ]\n        },\n\t\t{\n\t\t\t\"cve_id\": \"CVE-2018-25032\",\n\t\t\t\"severity\": \"High\",\n\t\t\t\"cvss_score\": 7.5,\n\t\t\t\"kev_score\": 0,\n\t\t\t\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2018-25032\",\n\t\t\t\"first_detection_date\": \"2025-05-23T13:21:37.792889Z\",\n\t\t\t\"latest_detection_date\": \"2025-05-23T13:21:37.831775Z\",\n\t\t\t\"device_count\": 1,\n\t\t\t\"software\": [\n\t\t\t\t\"macOS 12 Monterey\"\n\t\t\t],\n\t\t\t\"status\": \"Active\"\n\t\t}\n    ]\n}",
               "code": 200,
               "cookie": [],
               "header": [
@@ -23395,16 +23391,16 @@
                       "value": "50"
                     },
                     {
-                      "description": "Field to sort by. Example: sort_by=app_name.",
+                      "description": "Field to sort by.\n- software (software name)\n- detection_datetime",
                       "disabled": true,
                       "key": "sort_by",
-                      "value": "cve_id"
+                      "value": "software"
                     },
                     {
-                      "description": "Filterable columns:\nblueprint_id\nupdated_at",
+                      "description": "Filter results. Similar to prism filters.\nFilterable columns\n- blueprint_id\n- detection_datetime",
                       "disabled": true,
                       "key": "filter",
-                      "value": "device_serial_number"
+                      "value": "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}"
                     }
                   ],
                   "raw": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/applications",
