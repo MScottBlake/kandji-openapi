@@ -5463,7 +5463,9 @@
               "code": 200,
               "cookie": [
                 {
-                  "expires": "Invalid Date"
+                  "domain": "",
+                  "expires": "Invalid Date",
+                  "path": ""
                 }
               ],
               "header": null,
