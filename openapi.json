@@ -21620,14 +21620,160 @@
         ]
       }
     },
-    "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications": {
+    "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices": {
       "get": {
         "deprecated": false,
-        "description": "This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.",
+        "description": "Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.",
+        "externalDocs": {
+          "url": "https://api-docs.kandji.io/#87484333-003d-455a-9bcc-c91bff6ced20"
+        },
+        "operationId": "vulnerabilities_listAffectedDevices",
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "in": "path",
+            "name": "cve_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "The page number of the response.",
+            "example": "",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.",
+            "example": "50",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "<p>Field to sort by.</p>\n<ul>\n<li>name (device name)</li>\n<li>detection_datetime</li>\n</ul>",
+            "example": "software_name",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "description": "<p>Filterable columns:</p>\n<ul>\n<li>name</li>\n<li>detection_datetime</li>\n</ul>",
+            "example": "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "value": {
+                    "page": 1,
+                    "results": [
+                      {
+                        "assigned_user": "User Name",
+                        "blueprint_id": "396cdae2-147e-4e61-8a27-2f6b6963da4f",
+                        "blueprint_name": "Vuln",
+                        "device_id": "abcd",
+                        "model": "Macbook",
+                        "name": "accuhive MacBook Air",
+                        "no_of_installs": 2,
+                        "os_version": "12.5",
+                        "serial_number": "FVFGHGK7Q6L7",
+                        "software_summary": {
+                          "detection_date": "2023-10-13 16:15:00.000000",
+                          "name": "macOS 11 Catalina",
+                          "path": "/path/to/app",
+                          "version": "1.2.1"
+                        }
+                      }
+                    ],
+                    "size": 50,
+                    "total": 2
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "page": {
+                      "type": "integer"
+                    },
+                    "results": {},
+                    "size": {
+                      "type": "integer"
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "deprecated": false,
+                "example": {
+                  "value": "application/json"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "List Affected Devices",
+        "tags": [
+          "Vulnerabilities"
+        ]
+      }
+    },
+    "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/software": {
+      "get": {
+        "deprecated": false,
+        "description": "This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#54c4eb6c-957f-4001-a056-cb7ecece2de7"
         },
-        "operationId": "vulnerabilities_listAffectedApps",
+        "operationId": "vulnerabilities_listAffectedSoftware",
         "parameters": [
           {
             "allowEmptyValue": false,
@@ -21794,153 +21940,7 @@
             "bearer": []
           }
         ],
-        "summary": "List Affected Apps",
-        "tags": [
-          "Vulnerabilities"
-        ]
-      }
-    },
-    "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.",
-        "externalDocs": {
-          "url": "https://api-docs.kandji.io/#87484333-003d-455a-9bcc-c91bff6ced20"
-        },
-        "operationId": "vulnerabilities_listAffectedDevices",
-        "parameters": [
-          {
-            "allowEmptyValue": false,
-            "allowReserved": false,
-            "deprecated": false,
-            "in": "path",
-            "name": "cve_id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "allowEmptyValue": false,
-            "allowReserved": false,
-            "deprecated": false,
-            "description": "The page number of the response.",
-            "example": "",
-            "in": "query",
-            "name": "page",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "allowEmptyValue": false,
-            "allowReserved": false,
-            "deprecated": false,
-            "description": "A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.",
-            "example": "50",
-            "in": "query",
-            "name": "size",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "allowEmptyValue": false,
-            "allowReserved": false,
-            "deprecated": false,
-            "description": "<p>Field to sort by.</p>\n<ul>\n<li>name (device name)</li>\n<li>detection_datetime</li>\n</ul>",
-            "example": "software_name",
-            "in": "query",
-            "name": "sort_by",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "allowEmptyValue": false,
-            "allowReserved": false,
-            "deprecated": false,
-            "description": "<p>Filterable columns:</p>\n<ul>\n<li>name</li>\n<li>detection_datetime</li>\n</ul>",
-            "example": "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}",
-            "in": "query",
-            "name": "filter",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "value": {
-                    "page": 1,
-                    "results": [
-                      {
-                        "assigned_user": "User Name",
-                        "blueprint_id": "396cdae2-147e-4e61-8a27-2f6b6963da4f",
-                        "blueprint_name": "Vuln",
-                        "device_id": "abcd",
-                        "model": "Macbook",
-                        "name": "accuhive MacBook Air",
-                        "no_of_installs": 2,
-                        "os_version": "12.5",
-                        "serial_number": "FVFGHGK7Q6L7",
-                        "software_summary": {
-                          "detection_date": "2023-10-13 16:15:00.000000",
-                          "name": "macOS 11 Catalina",
-                          "path": "/path/to/app",
-                          "version": "1.2.1"
-                        }
-                      }
-                    ],
-                    "size": 50,
-                    "total": 2
-                  }
-                },
-                "schema": {
-                  "properties": {
-                    "page": {
-                      "type": "integer"
-                    },
-                    "results": {},
-                    "size": {
-                      "type": "integer"
-                    },
-                    "total": {
-                      "type": "integer"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "OK",
-            "headers": {
-              "Content-Type": {
-                "deprecated": false,
-                "example": {
-                  "value": "application/json"
-                },
-                "required": false,
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer": []
-          }
-        ],
-        "summary": "List Affected Devices",
+        "summary": "List Affected Software",
         "tags": [
           "Vulnerabilities"
         ]

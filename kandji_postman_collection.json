@@ -23258,7 +23258,7 @@
         {
           "_postman_id": "54c4eb6c-957f-4001-a056-cb7ecece2de7",
           "id": "54c4eb6c-957f-4001-a056-cb7ecece2de7",
-          "name": "List Affected Apps",
+          "name": "List Affected Software",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -23281,10 +23281,10 @@
               },
               "type": "bearer"
             },
-            "description": "<p>This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.</p>\n",
+            "description": "<p>This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.</p>\n",
             "header": [],
             "method": "GET",
-            "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/applications",
+            "url": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/software",
             "urlObject": {
               "host": [
                 "https://{sub_domain}.api.kandji.io"
@@ -23295,7 +23295,7 @@
                 "vulnerability-management",
                 "vulnerabilities",
                 ":cve_id",
-                "applications"
+                "software"
               ],
               "query": [
                 {
@@ -23377,7 +23377,7 @@
                     "vulnerability-management",
                     "vulnerabilities",
                     ":cve_id",
-                    "applications"
+                    "software"
                   ],
                   "query": [
                     {
@@ -23405,7 +23405,7 @@
                       "value": "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}"
                     }
                   ],
-                  "raw": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/applications",
+                  "raw": "https://{sub_domain}.api.kandji.io/api/v1/vulnerability-management/vulnerabilities/:cve_id/software",
                   "variable": [
                     {
                       "description": "The CVE ID. Example \"CVE-2024-12345\"",
