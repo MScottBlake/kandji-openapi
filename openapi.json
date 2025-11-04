@@ -18,12 +18,12 @@
       "name": "Scott Blake",
       "url": "https://github.com/MScottBlake/kandji-openapi"
     },
-    "description": "<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1>\n<p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p>\n<ul>\n<li><p>US - <code>https://SubDomain.api.kandji.io</code></p>\n</li>\n<li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>\n</li>\n</ul>\n<p>For information on how to obtain an API token, please refer to the following support article.</p>\n<p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>\n<h4 id=&quot;rate-limit&quot;>Rate Limit</h4>\n<p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p>\n<h4 id=&quot;request-methods&quot;>Request Methods</h4>\n<p>HTTP request methods supported by the Kandji API.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Method</th>\n<th>Definition</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET</td>\n<td>The <code>GET</code> method requests a representation of the specified resource.</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>The <code>POST</code> method submits an entity to the specified resource.</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>The <code>PATCH</code> method applies partial modifications to a resource.</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>The <code>DELETE</code> method deletes the specified resource.</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;response-codes&quot;>Response codes</h4>\n<p>Not all response codes apply to every endpoint.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Code</th>\n<th>Response</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>200</td>\n<td>OK</td>\n</tr>\n<tr>\n<td>201</td>\n<td>Created</td>\n</tr>\n<tr>\n<td>204</td>\n<td>No content</td>\n</tr>\n<tr>\n<td></td>\n<td>Typical response when sending the DELETE method.</td>\n</tr>\n<tr>\n<td>400</td>\n<td>Bad Request</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td>\n</tr>\n<tr>\n<td>401</td>\n<td>Unauthorized</td>\n</tr>\n<tr>\n<td></td>\n<td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td>\n</tr>\n<tr>\n<td>403</td>\n<td>Forbidden</td>\n</tr>\n<tr>\n<td></td>\n<td>The request was understood but cannot be authorized.</td>\n</tr>\n<tr>\n<td>404</td>\n<td>Not found</td>\n</tr>\n<tr>\n<td></td>\n<td>Unable to locate the resource in the Kandji tenant.</td>\n</tr>\n<tr>\n<td>415</td>\n<td>Unsupported Media Type</td>\n</tr>\n<tr>\n<td></td>\n<td>The request contains a media type which the server or resource does not support.</td>\n</tr>\n<tr>\n<td>500</td>\n<td>Internal server error</td>\n</tr>\n<tr>\n<td>503</td>\n<td>Service unavailable</td>\n</tr>\n<tr>\n<td></td>\n<td>This error can occur if a file upload is still being processed via the custom apps API.</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;data-structure&quot;>Data structure</h4>\n<p>The API returns all structured responses in JSON schema format.</p>\n<h4 id=&quot;examples&quot;>Examples</h4>\n<p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p>\n</body></html>",
+    "description": "<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1>\n<p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p>\n<p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p>\n<ul>\n<li><p>US - <code>https://SubDomain.api.kandji.io</code></p>\n</li>\n<li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>\n</li>\n</ul>\n<p>For information on how to obtain an API token, please refer to the following support article.</p>\n<p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>\n<h4 id=&quot;rate-limit&quot;>Rate Limit</h4>\n<p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p>\n<h4 id=&quot;request-methods&quot;>Request Methods</h4>\n<p>HTTP request methods supported by the API.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Method</th>\n<th>Definition</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>GET</td>\n<td>The <code>GET</code> method requests a representation of the specified resource.</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>The <code>POST</code> method submits an entity to the specified resource.</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>The <code>PATCH</code> method applies partial modifications to a resource.</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>The <code>DELETE</code> method deletes the specified resource.</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;response-codes&quot;>Response codes</h4>\n<p>Not all response codes apply to every endpoint.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Code</th>\n<th>Response</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>200</td>\n<td>OK</td>\n</tr>\n<tr>\n<td>201</td>\n<td>Created</td>\n</tr>\n<tr>\n<td>204</td>\n<td>No content</td>\n</tr>\n<tr>\n<td></td>\n<td>Typical response when sending the DELETE method.</td>\n</tr>\n<tr>\n<td>400</td>\n<td>Bad Request</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td>\n</tr>\n<tr>\n<td></td>\n<td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td>\n</tr>\n<tr>\n<td>401</td>\n<td>Unauthorized</td>\n</tr>\n<tr>\n<td></td>\n<td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td>\n</tr>\n<tr>\n<td>403</td>\n<td>Forbidden</td>\n</tr>\n<tr>\n<td></td>\n<td>The request was understood but cannot be authorized.</td>\n</tr>\n<tr>\n<td>404</td>\n<td>Not found</td>\n</tr>\n<tr>\n<td></td>\n<td>Unable to locate the resource in the Iru tenant.</td>\n</tr>\n<tr>\n<td>415</td>\n<td>Unsupported Media Type</td>\n</tr>\n<tr>\n<td></td>\n<td>The request contains a media type which the server or resource does not support.</td>\n</tr>\n<tr>\n<td>500</td>\n<td>Internal server error</td>\n</tr>\n<tr>\n<td>503</td>\n<td>Service unavailable</td>\n</tr>\n<tr>\n<td></td>\n<td>This error can occur if a file upload is still being processed via the custom apps API.</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;data-structure&quot;>Data structure</h4>\n<p>The API returns all structured responses in JSON schema format.</p>\n<h4 id=&quot;examples&quot;>Examples</h4>\n<p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p>\n</body></html>",
     "license": {
       "identifier": "MIT",
       "name": "MIT License"
     },
-    "title": "Kandji API",
+    "title": "Iru Endpoint Management API",
     "version": "1.0.0"
   },
   "openapi": "3.1.0",
@@ -31,7 +31,7 @@
     "/api/v1/audit/events": {
       "get": {
         "deprecated": false,
-        "description": "<p>List audit log events from the Kandji Activity module.</p>\n<p>Returns events related to</p>\n<ul>\n<li><p>Blueprint and Library Item creation, updates, and deletions (Create, Update, Delete)</p>\n</li>\n<li><p>Access to sensitive data (such as FileVault keys and recovery keys)</p>\n</li>\n<li><p>Device lifecycle events (enrollment, deletion, MDM removal, blueprint changes)</p>\n</li>\n<li><p>User directory events (including directory user deletions)</p>\n</li>\n<li><p>Administrative actions (tenant owner updates, API token management (Create, Update, Delete))</p>\n</li>\n<li><p>Admin user management activities</p>\n</li>\n<li><p>Vulnerability management events for detections and remediations (for customers with this feature)</p>\n</li>\n<li><p>Endpoint Detection and Response events for detections, remediations, and admin actions (for customers with this feature)</p>\n</li>\n</ul>",
+        "description": "<p>List audit log events from the Activity module.</p>\n<p>Returns events related to</p>\n<ul>\n<li><p>Blueprint and Library Item creation, updates, and deletions (Create, Update, Delete)</p>\n</li>\n<li><p>Access to sensitive data (such as FileVault keys and recovery keys)</p>\n</li>\n<li><p>Device lifecycle events (enrollment, deletion, MDM removal, blueprint changes)</p>\n</li>\n<li><p>User directory events (including directory user deletions)</p>\n</li>\n<li><p>Administrative actions (tenant owner updates, API token management (Create, Update, Delete))</p>\n</li>\n<li><p>Admin user management activities</p>\n</li>\n<li><p>Vulnerability management events for detections and remediations (for customers with this feature)</p>\n</li>\n<li><p>Endpoint Detection and Response events for detections, remediations, and admin actions (for customers with this feature)</p>\n</li>\n</ul>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#06022d9d-426b-4aea-826a-d7f084e4f1e3"
         },
@@ -865,7 +865,7 @@
     "/api/v1/blueprints": {
       "get": {
         "deprecated": false,
-        "description": "This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.",
+        "description": "This request returns a list of a Blueprints. Optional query parameters can be specified to filter the results.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#44d3765c-ef17-4226-9104-47e5cef1d370"
         },
@@ -1148,7 +1148,7 @@
       },
       "post": {
         "deprecated": false,
-        "description": "<p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p>\n<p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>\n<p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>",
+        "description": "<p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the tenant.</p>\n<p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>\n<p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#8ee421a2-c1f8-41ba-9285-8db1b33e092d"
         },
@@ -2886,7 +2886,7 @@
     "/api/v1/devices": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>\n<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>",
+        "description": "<p>This request returns a list of devices in an Iru Endpoint Management tenant. Optionally, query parameters can be used to filter results.</p>\n<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Iru support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>\n<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#78209960-31a7-4e3b-a2c0-95c7e65bb5f9"
         },
@@ -3013,7 +3013,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>",
+            "description": "Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>, <code>Android</code>, <code>Windows</code>",
             "example": "iPad",
             "in": "query",
             "name": "platform",
@@ -3130,7 +3130,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "&quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)",
+            "description": "&quot;exact&quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)",
             "example": "5344c996-8823-4b37-8d6e-8515fc7c3a0a",
             "in": "query",
             "name": "user_id",
@@ -3245,7 +3245,7 @@
     "/api/v1/devices/{device_id}": {
       "delete": {
         "deprecated": false,
-        "description": "This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.",
+        "description": "<p>This endpoint deletes a device, which will remove the device record and unenroll the device from MDM.</p>\n<p>For macOS and Windows devices, the agent will automatically uninstall on the next agent checkin.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#97deb582-d86c-444a-aa3b-3528b9a8478f"
         },
@@ -3280,7 +3280,7 @@
       },
       "get": {
         "deprecated": false,
-        "description": "This request returns the high-level information for a specified Device ID.",
+        "description": "<p>This request returns the high-level information for a specified Device ID.</p>\n<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#10a56208-b230-455a-a835-32b6cfb2803d"
         },
@@ -3304,24 +3304,28 @@
               "application/json": {
                 "example": {
                   "value": {
-                    "agent_installed": true,
+                    "agent_installed": false,
                     "agent_version": "",
+                    "api_level": "",
                     "asset_tag": "",
-                    "blueprint_id": "bde5a8fa-4722-490a-a50b-e6a287835604",
-                    "blueprint_name": "Example Blueprint",
-                    "device_id": "9b534c11-a7e3-4f34-bceb-c674941622d7",
-                    "device_name": "iPad",
-                    "first_enrollment": "2021-04-06 19:45:27.100221+00:00",
+                    "blueprint_id": "0e4b1c2f-7a8d-4e23-9c5f-2a6d92f4d1b7",
+                    "blueprint_name": "Main Blueprint",
+                    "device_id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5",
+                    "device_name": "Pixel 9 03AN",
+                    "first_enrollment": "2025-10-09 23:17:20.037000+00:00",
+                    "full_software_version": "",
                     "is_missing": false,
                     "is_removed": false,
-                    "last_check_in": "",
-                    "last_enrollment": "2021-04-06 19:45:27.100221+00:00",
+                    "last_check_in": "2025-10-09T23:36:34.108000Z",
+                    "last_enrollment": "2025-10-09 23:17:20.037000+00:00",
+                    "lost_mode_status": "",
                     "mdm_enabled": true,
-                    "model": "iPad Air (4th generation) Wi-Fi + Cellular",
-                    "os_version": "14.1",
-                    "platform": "iPad",
-                    "serial_number": "AAAAAAAAAAAA",
-                    "supplemental_build_version": "22F66",
+                    "model": "Pixel 9",
+                    "os_version": "15",
+                    "platform": "Android",
+                    "security_patch_level": "2024-12-05",
+                    "serial_number": "51190BMRQ003AN",
+                    "supplemental_build_version": "",
                     "supplemental_os_version_extra": "",
                     "tags": [
                       "accuhive_02"
@@ -3342,6 +3346,9 @@
                     "agent_version": {
                       "type": "string"
                     },
+                    "api_level": {
+                      "type": "string"
+                    },
                     "asset_tag": {
                       "type": "string"
                     },
@@ -3360,6 +3367,9 @@
                     "first_enrollment": {
                       "type": "string"
                     },
+                    "full_software_version": {
+                      "type": "string"
+                    },
                     "is_missing": {
                       "type": "integer"
                     },
@@ -3372,6 +3382,9 @@
                     "last_enrollment": {
                       "type": "string"
                     },
+                    "lost_mode_status": {
+                      "type": "string"
+                    },
                     "mdm_enabled": {
                       "type": "integer"
                     },
@@ -3382,6 +3395,9 @@
                       "type": "string"
                     },
                     "platform": {
+                      "type": "string"
+                    },
+                    "security_patch_level": {
                       "type": "string"
                     },
                     "serial_number": {
@@ -3441,7 +3457,7 @@
               "Content-Length": {
                 "deprecated": false,
                 "example": {
-                  "value": "536"
+                  "value": "637"
                 },
                 "required": false,
                 "schema": {
@@ -3451,7 +3467,7 @@
               "Content-Security-Policy": {
                 "deprecated": false,
                 "example": {
-                  "value": "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
+                  "value": "form-action 'none'; base-uri 'none'; frame-ancestors 'none'; default-src 'none'"
                 },
                 "required": false,
                 "schema": {
@@ -3471,7 +3487,7 @@
               "Date": {
                 "deprecated": false,
                 "example": {
-                  "value": "Wed, 07 Apr 2021 19:47:26 GMT"
+                  "value": "Fri, 09 Apr 2021 02:01:01 GMT"
                 },
                 "required": false,
                 "schema": {
@@ -3735,7 +3751,7 @@
     "/api/v1/devices/{device_id}/action/blankpush": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint sends an MDM command to initiate a blank push.</p>\n<p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>",
+        "description": "<p>This endpoint sends an MDM command to initiate a blank push for an Apple device.</p>\n<p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#cfe0481e-1c02-4682-b4bc-cdcd409f99b4"
         },
@@ -4070,6 +4086,175 @@
         ]
       }
     },
+    "/api/v1/devices/{device_id}/action/dailycheckin": {
+      "post": {
+        "deprecated": false,
+        "description": "This endpoint runs the daily MDM commands and MDM logic for Apple devices and initiates a full daily CSP sync for Windows devices.",
+        "externalDocs": {
+          "url": "https://api-docs.kandji.io/#46d99c83-3310-4105-8135-fbb3bfb51e09"
+        },
+        "operationId": "deviceActions_performDailyCheckin",
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "allowReserved": false,
+            "deprecated": false,
+            "in": "path",
+            "name": "device_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Allow": {
+                "deprecated": false,
+                "example": {
+                  "value": "POST"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Connection": {
+                "deprecated": false,
+                "example": {
+                  "value": "keep-alive"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Content-Length": {
+                "deprecated": false,
+                "example": {
+                  "value": "0"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Content-Security-Policy": {
+                "deprecated": false,
+                "example": {
+                  "value": "form-action 'none'; base-uri 'none'; default-src 'none'; frame-ancestors 'none'"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Date": {
+                "deprecated": false,
+                "example": {
+                  "value": "Wed, 07 Apr 2021 16:52:53 GMT"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Feature-Policy": {
+                "deprecated": false,
+                "example": {
+                  "value": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Referrer-Policy": {
+                "deprecated": false,
+                "example": {
+                  "value": "no-referrer"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Server": {
+                "deprecated": false,
+                "example": {
+                  "value": "gunicorn/20.0.4"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Strict-Transport-Security": {
+                "deprecated": false,
+                "example": {
+                  "value": "max-age=31536000; includeSubDomains; preload"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Vary": {
+                "deprecated": false,
+                "example": {
+                  "value": "Origin"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Content-Type-Options": {
+                "deprecated": false,
+                "example": {
+                  "value": "nosniff"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Frame-Options": {
+                "deprecated": false,
+                "example": {
+                  "value": "DENY"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-XSS-Protection": {
+                "deprecated": false,
+                "example": {
+                  "value": "1; mode=block"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Perform Daily Check-in",
+        "tags": [
+          "Device Actions"
+        ]
+      }
+    },
     "/api/v1/devices/{device_id}/action/deleteuser": {
       "post": {
         "deprecated": false,
@@ -4125,7 +4310,7 @@
     "/api/v1/devices/{device_id}/action/erase": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint sends an MDM command to erase the device.</p>\n<p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>\n<p><strong>Request Body Parameters: application/json</strong></p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Key</th>\n<th>Type</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>PIN</code></td>\n<td><code>string</code></td>\n<td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.  <br />  <br />Note: This value will be ignored for iOS, iPadOS, and tvOS devices.</td>\n</tr>\n<tr>\n<td><code>PreserveDataPlan</code></td>\n<td><code>boolean</code></td>\n<td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td>\n</tr>\n<tr>\n<td><code>DisallowProximitySetup</code></td>\n<td><code>boolean</code></td>\n<td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don\u2019t use this option with any other option.  <br />  <br />Default: false</td>\n</tr>\n<tr>\n<td><code>ReturnToService</code></td>\n<td><code>object</code></td>\n<td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td>\n</tr>\n<tr>\n<td>- <code>Enabled</code></td>\n<td><code>boolean</code></td>\n<td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td>\n</tr>\n<tr>\n<td>- <code>ProfileId</code></td>\n<td><code>string</code></td>\n<td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn\u2019t have ethernet access.</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "description": "<p>This endpoint sends an MDM command to erase a device.</p>\n<p><strong>Request Body Parameters: application/json</strong></p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Key</th>\n<th>Type</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>PIN</code></td>\n<td><code>string</code></td>\n<td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.  <br />  <br />Note: This value will be ignored for iOS, iPadOS, and tvOS devices.</td>\n</tr>\n<tr>\n<td><code>PreserveDataPlan</code></td>\n<td><code>boolean</code></td>\n<td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td>\n</tr>\n<tr>\n<td><code>DisallowProximitySetup</code></td>\n<td><code>boolean</code></td>\n<td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don\u2019t use this option with any other option.  <br />  <br />Default: false</td>\n</tr>\n<tr>\n<td><code>ReturnToService</code></td>\n<td><code>object</code></td>\n<td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td>\n</tr>\n<tr>\n<td>- <code>Enabled</code></td>\n<td><code>boolean</code></td>\n<td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td>\n</tr>\n<tr>\n<td>- <code>ProfileId</code></td>\n<td><code>string</code></td>\n<td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn\u2019t have ethernet access.</td>\n</tr>\n<tr>\n<td><code>erase_mode</code></td>\n<td><code>string</code></td>\n<td>For Windows devices, the following modes are supported:  <br />  <br /><code>WIPE</code> - Equivalent to running Reset this PC &gt; Remove everything from the Settings app, with Clean Data set to No and Delete Files set to Yes.  <br />  <br /><code>WIPE_CLOUD</code> - Perform a cloud-based remote wipe on the device.  <br />  <br /><code>WIPE_PROTECTED</code> - Performs a remote wipe on the device and fully cleans the internal drive. In some device configurations, this command may leave the device unable to boot. This is similar to WIPE but cannot be circumvented by power cycling the device.</td>\n</tr>\n<tr>\n<td><code>erase_flags</code></td>\n<td><code>string</code></td>\n<td>Optional erase options for Android devices, provided as a single comma separated list of the following strings:  <br />  <br /><code>WIPE_EXTERNAL_STORAGE</code> - Additionally wipe the device's external storage (such as SD cards).  <br />  <br /><code>WIPE_ESIMS</code> - For company-owned devices, this removes all eSIMs from the device when the device is wiped.  <br />  <br />Example value:  <br /><code>WIPE_EXTERNAL_STORAGE,WIPE_ESIMS</code></td>\n</tr>\n</tbody>\n</table>\n</div>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#149ae2cc-fb7f-42ce-8379-187878685303"
         },
@@ -4206,7 +4391,7 @@
     "/api/v1/devices/{device_id}/action/lock": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint sends an MDM command to remotely lock a device.</p>\n<p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>\n<blockquote>\n<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p>\n</blockquote>\n<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p>\n<p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>\n<h4 id=&quot;response-properties&quot;>Response properties</h4>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>PIN</td>\n<td>Six digit pin code used to unlock a Mac.</td>\n<td>String</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "description": "<p>This endpoint sends an MDM command to remotely lock an Apple or Android device.</p>\n<p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>\n<blockquote>\n<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em> </p>\n</blockquote>\n<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target Mac.</p>\n<p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>\n<h4 id=&quot;response-properties&quot;>Response properties</h4>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n<th>Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>PIN</td>\n<td>Six digit pin code used to unlock a Mac.</td>\n<td>String</td>\n</tr>\n</tbody>\n</table>\n</div>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#f2fc0e99-c758-4eb8-bb3d-0ea72d0c0213"
         },
@@ -4571,7 +4756,7 @@
     "/api/v1/devices/{device_id}/action/reinstallagent": {
       "post": {
         "deprecated": false,
-        "description": "This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.",
+        "description": "This endpoint sends an MDM command reinstall the Kandji Agent on macOS devices.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#63848e72-0fc2-4cb1-b17f-4249eb981cf5"
         },
@@ -4790,7 +4975,7 @@
     "/api/v1/devices/{device_id}/action/renewmdmprofile": {
       "post": {
         "deprecated": false,
-        "description": "This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.",
+        "description": "This endpoint sends an MDM command to re-install the existing root MDM profile for a given Apple device. This command will not impact any existing configurations, apps, or profiles.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#b8e073ab-bd4e-42e1-b63a-fb982b01b799"
         },
@@ -4827,7 +5012,7 @@
     "/api/v1/devices/{device_id}/action/restart": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint sends an MDM command to remotely restart a device.</p>\n<ul>\n<li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>\n</li>\n<li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p>\n</li>\n</ul>",
+        "description": "<p>This endpoint sends an MDM command to remotely restart an iPhone, iPad, Apple TV, or Mac.</p>\n<ul>\n<li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>\n</li>\n<li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p>\n</li>\n</ul>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#38c26673-97d2-42d5-bd74-7a2b7843bb94"
         },
@@ -5010,7 +5195,7 @@
     "/api/v1/devices/{device_id}/action/setname": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint sends an MDM command to set the device name.</p>\n<p><strong>Request Body Parameters</strong>: application/json</p>\n<hr />\n<p><code>DeviceName</code> - <code>string</code></p>",
+        "description": "<p>This endpoint sends an MDM command to set the device name for an Apple device.</p>\n<p><strong>Request Body Parameters</strong>: application/json</p>\n<hr />\n<p><code>DeviceName</code> - <code>string</code></p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#df855247-b2d3-4054-a1d0-01d26372d79b"
         },
@@ -5192,7 +5377,7 @@
     "/api/v1/devices/{device_id}/action/shutdown": {
       "post": {
         "deprecated": false,
-        "description": "This endpoint sends an MDM command to shutdown a device.",
+        "description": "This endpoint sends an MDM command to shutdown an iPhone, iPad, or Mac.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#69663b17-6c9c-487b-9d84-a7727b2cbe5d"
         },
@@ -5361,7 +5546,7 @@
     "/api/v1/devices/{device_id}/action/unlockaccount": {
       "post": {
         "deprecated": false,
-        "description": "<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>\n<p><strong>Request Body Parameters</strong>: application/json</p>\n<hr />\n<p><code>UserName</code> - <code>string</code></p>",
+        "description": "<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for Mac.</p>\n<p><strong>Request Body Parameters</strong>: application/json</p>\n<hr />\n<p><code>UserName</code> - <code>string</code></p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#beb682a7-fc73-4ab3-a0e1-25bee748467e"
         },
@@ -5543,7 +5728,7 @@
     "/api/v1/devices/{device_id}/action/updateinventory": {
       "post": {
         "deprecated": false,
-        "description": "This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.",
+        "description": "<p>This endpoint runs the daily MDM commands and MDM logic for Apple devices.</p>\n<p><strong>Note:</strong> The newer <code>dailycheckin</code> endpoint can be used instead and also supports Windows devices.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#7c66d410-2b2e-4c25-88b6-1385de73a7e5"
         },
@@ -5712,7 +5897,7 @@
     "/api/v1/devices/{device_id}/activity": {
       "get": {
         "deprecated": false,
-        "description": "This request returns the device activity for a specified Device ID.",
+        "description": "<p>This request returns the device activity for a specified Device ID.</p>\n<p>If Windows or Android management is turned on, additonal keys may be present in activity entries.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#80710108-fbdb-4dfd-af84-50adf15c5a23"
         },
@@ -5763,1552 +5948,112 @@
                 "example": {
                   "value": {
                     "activity": {
-                      "count": 46,
+                      "count": 3,
                       "next": null,
                       "previous": null,
                       "results": [
                         {
                           "action_type": "enrollment",
                           "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
+                            "id": "0e4b1c2f-7a8d-4e23-9c5f-2a6d92f4d1b7",
                             "is_removed": false,
-                            "name": "NewEnrollment"
+                            "name": "Main Blueprint"
                           },
                           "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
+                            "id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5",
                             "is_removed": false,
-                            "name": "iPad"
+                            "name": "Pixel 9 03AN"
                           },
-                          "created_at": "2021-04-19T18:09:06.865152Z",
+                          "created_at": "2025-10-09T23:17:27.029274Z",
                           "details": {
-                            "blueprint_name": "NewEnrollment",
-                            "enrollment_type": "DEP"
+                            "blueprint_name": "Main Blueprint",
+                            "enrollment_type": "MDM"
                           },
-                          "id": 6361,
+                          "external_token": null,
+                          "id": 44577,
                           "user": null
                         },
                         {
-                          "action_type": "name_changed",
-                          "blueprint": null,
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:07.135278Z",
-                          "details": {
-                            "from": "iPad",
-                            "to": "No name"
-                          },
-                          "id": 6363,
-                          "user": null
-                        },
-                        {
-                          "action_type": "name_changed",
-                          "blueprint": null,
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:34.061554Z",
-                          "details": {
-                            "from": "iPad",
-                            "to": "No name"
-                          },
-                          "id": 6389,
-                          "user": null
-                        },
-                        {
-                          "action_type": "enrollment",
+                          "action_type": "amapi_policy_update_success",
                           "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
+                            "id": "0e4b1c2f-7a8d-4e23-9c5f-2a6d92f4d1b7",
                             "is_removed": false,
-                            "name": "NewEnrollment"
+                            "name": "Main Blueprint"
                           },
                           "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
+                            "id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5",
                             "is_removed": false,
-                            "name": "iPad"
+                            "name": "Pixel 9 03AN"
                           },
-                          "created_at": "2021-03-30T18:07:25.717406Z",
+                          "created_at": "2025-10-09T23:31:41.070230Z",
                           "details": {
-                            "blueprint_name": "NewEnrollment",
-                            "enrollment_type": "DEP"
+                            "last_policy_update": "2025-10-09T23:31:40.039646+00:00",
+                            "library_item_details": {
+                              "deleted": false,
+                              "display_name": "Android Restrictions",
+                              "identifier": "restrictions",
+                              "type": "android-config"
+                            },
+                            "library_item_id": "b7f2a8c1-3d4e-4f9a-92b6-1c8e4a7fd3e2",
+                            "policy_fragment_json": {
+                              "advancedSecurityOverrides": {
+                                "developerSettings": "DEVELOPER_SETTINGS_DISABLED",
+                                "untrustedAppsPolicy": "DISALLOW_INSTALL"
+                              },
+                              "cameraAccess": "CAMERA_ACCESS_USER_CHOICE",
+                              "defaultPermissionPolicy": "PROMPT",
+                              "personalUsagePolicies": {
+                                "cameraDisabled": false,
+                                "privateSpacePolicy": "PRIVATE_SPACE_ALLOWED",
+                                "screenCaptureDisabled": true
+                              },
+                              "screenCaptureDisabled": false
+                            }
                           },
-                          "id": 5973,
+                          "external_token": null,
+                          "id": 44581,
                           "user": null
                         },
                         {
-                          "action_type": "mdm_command_completed",
+                          "action_type": "amapi_policy_update_success",
                           "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
+                            "id": "0e4b1c2f-7a8d-4e23-9c5f-2a6d92f4d1b7",
                             "is_removed": false,
-                            "name": "NewEnrollment"
+                            "name": "Main Blueprint"
                           },
                           "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
+                            "id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5",
                             "is_removed": false,
-                            "name": "iPad"
+                            "name": "Pixel 9 03AN"
                           },
-                          "created_at": "2021-03-30T18:07:28.195017Z",
+                          "created_at": "2025-10-09T23:35:56.398092Z",
                           "details": {
-                            "attempts": 1,
-                            "command_type": "ActivationLockBypassCode",
-                            "date_completed": "2021-03-30T18:07:28.186776Z",
-                            "date_requested": "2021-03-30T18:07:27.804250Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:27.869132Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ActivationLockBypassCode",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "7f3b07eb-6de5-4fde-9942-d02ae1a0513d"
-                          },
-                          "id": 5975,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:28.616944Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SetInitialConfiguration",
-                            "date_completed": "2021-03-30T18:07:28.609114Z",
-                            "date_requested": "2021-03-30T18:07:27.823122Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:28.215228Z",
-                            "metadata": {
-                              "Items": [
-                                "MDMOptions"
+                            "last_policy_update": "2025-10-09T23:35:55.996641+00:00",
+                            "library_item_details": {
+                              "deleted": false,
+                              "display_name": "Slack",
+                              "identifier": "com.Slack",
+                              "type": "google-play-app"
+                            },
+                            "library_item_id": "e3b49c7f-6a12-4fd0-97b2-1c5e8a4d2f93",
+                            "policy_fragment_json": {
+                              "applications": [
+                                {
+                                  "autoUpdateMode": "AUTO_UPDATE_DEFAULT",
+                                  "defaultPermissionPolicy": "PERMISSION_POLICY_UNSPECIFIED",
+                                  "installType": "FORCE_INSTALLED",
+                                  "packageName": "com.Slack"
+                                }
                               ]
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "7e677dc1-550c-49f2-90b2-4825f2ae3f79"
+                            }
                           },
-                          "id": 5976,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:28.969436Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceConfigured",
-                            "date_completed": "2021-03-30T18:07:28.962094Z",
-                            "date_requested": "2021-03-30T18:07:27.841671Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:28.637185Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceConfigured",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "498d01e5-f4d3-4eb8-8c4f-c15fe29f8190"
-                          },
-                          "id": 5977,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:41.722973Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceInformation",
-                            "date_completed": "2021-03-30T18:07:41.715109Z",
-                            "date_requested": "2021-03-30T18:07:41.065813Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:41.363998Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceInformation",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "1a231ea7-9f92-4c62-b56e-d422c092bddf"
-                          },
-                          "id": 5978,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:42.186834Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "AvailableOSUpdates",
-                            "date_completed": "2021-03-30T18:07:42.179027Z",
-                            "date_requested": "2021-03-30T18:07:41.096045Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:41.732682Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "AvailableOSUpdates",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "35d2078c-13f3-42a2-889e-8fc90609f9d4"
-                          },
-                          "id": 5979,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:42.548608Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "CertificateList",
-                            "date_completed": "2021-03-30T18:07:42.541505Z",
-                            "date_requested": "2021-03-30T18:07:41.115379Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:42.197706Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "CertificateList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "34635ea9-d9cf-4684-ab8b-6e95752584c6"
-                          },
-                          "id": 5980,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:42.912740Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SecurityInfo",
-                            "date_completed": "2021-03-30T18:07:42.904447Z",
-                            "date_requested": "2021-03-30T18:07:41.138287Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:42.558635Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "SecurityInfo",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "7162a4f2-780a-4031-9417-76d9da080880"
-                          },
-                          "id": 5981,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:43.267503Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ProfileList",
-                            "date_completed": "2021-03-30T18:07:43.258979Z",
-                            "date_requested": "2021-03-30T18:07:41.186337Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:42.922462Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ProfileList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "a297a98f-74ab-460a-b7a4-b01ef7ba8e0d"
-                          },
-                          "id": 5982,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-03-30T18:07:43.723105Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "InstalledApplicationList",
-                            "date_completed": "2021-03-30T18:07:43.715321Z",
-                            "date_requested": "2021-03-30T18:07:41.590898Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-03-30T18:07:43.277496Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "InstalledApplicationList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "a1626e84-c496-4900-b4fd-b32e3a1a562d"
-                          },
-                          "id": 5983,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_failed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:08.925704Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ActivationLockBypassCode",
-                            "date_completed": "2021-04-19T18:09:08.918306Z",
-                            "date_requested": "2021-04-19T18:09:08.534803Z",
-                            "error_chain": [
-                              {
-                                "code": 12021,
-                                "domain": "MCMDMErrorDomain",
-                                "localized_description": "'ActivationLockBypassCode' is not a valid request type.",
-                                "us_english_description": "'ActivationLockBypassCode' is not a valid request type."
-                              }
-                            ],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:08.631369Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ActivationLockBypassCode",
-                            "status": 4,
-                            "user": null,
-                            "username": null,
-                            "uuid": "b48b7da0-9a2b-40b9-9ded-4e3a95310e7f"
-                          },
-                          "id": 6364,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:09.281529Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SetInitialConfiguration",
-                            "date_completed": "2021-04-19T18:09:09.274604Z",
-                            "date_requested": "2021-04-19T18:09:08.566561Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:08.933652Z",
-                            "metadata": {
-                              "Items": [
-                                "MDMOptions",
-                                "SharedDeviceConfiguration"
-                              ]
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "37213033-5c07-407c-92a0-e3c29e4bf6fb"
-                          },
-                          "id": 6365,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:09.624498Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceConfigured",
-                            "date_completed": "2021-04-19T18:09:09.617146Z",
-                            "date_requested": "2021-04-19T18:09:08.591847Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:09.292711Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceConfigured",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "043bb907-c914-4a25-bfa2-7ec384095037"
-                          },
-                          "id": 6366,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:21.873645Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceInformation",
-                            "date_completed": "2021-04-19T18:09:21.867942Z",
-                            "date_requested": "2021-04-19T18:09:11.928261Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:18.999928Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceInformation",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "2e6233b7-84e8-4f7a-9375-c95009be10dd"
-                          },
-                          "id": 6367,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:23.162151Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "AvailableOSUpdates",
-                            "date_completed": "2021-04-19T18:09:23.155317Z",
-                            "date_requested": "2021-04-19T18:09:11.961863Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:21.880775Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "AvailableOSUpdates",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "7946e11f-eba9-4bc9-9533-761fe9526931"
-                          },
-                          "id": 6368,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:23.476951Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "CertificateList",
-                            "date_completed": "2021-04-19T18:09:23.471023Z",
-                            "date_requested": "2021-04-19T18:09:11.988118Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:23.169619Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "CertificateList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "cbcdd2d3-d56a-4293-a521-7eca743cf499"
-                          },
-                          "id": 6369,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:23.792486Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SecurityInfo",
-                            "date_completed": "2021-04-19T18:09:23.785834Z",
-                            "date_requested": "2021-04-19T18:09:12.010806Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:23.490562Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "SecurityInfo",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "e776b938-781a-419b-8cd9-bcd98bd9a9c1"
-                          },
-                          "id": 6370,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:24.120121Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ProfileList",
-                            "date_completed": "2021-04-19T18:09:24.112750Z",
-                            "date_requested": "2021-04-19T18:09:12.064613Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:23.802034Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ProfileList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "bef660f1-08ef-4e3c-bbcb-13e20794d8ef"
-                          },
-                          "id": 6371,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:24.467448Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "InstalledApplicationList",
-                            "date_completed": "2021-04-19T18:09:24.459467Z",
-                            "date_requested": "2021-04-19T18:09:12.567187Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:24.129840Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "InstalledApplicationList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "f4aecf33-14ba-480e-a892-597b5bdf9872"
-                          },
-                          "id": 6372,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:09:46.358090Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeveloperCustomCommand",
-                            "date_completed": "2021-04-19T18:09:46.352281Z",
-                            "date_requested": "2021-04-19T18:09:45.323246Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:09:46.035918Z",
-                            "metadata": {
-                              "request": "'<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\\n<plist version=\"1.0\">\\n<dict>\\n<key>Command</key>\\n<dict>\\n<key>RequestType</key>\\n<string>Settings</string>\\n<key>Settings</key>\\n<array>\\n<dict>\\n<key>Item</key>\\n<string>SharedDeviceConfiguration</string>\\n<key>TemporarySessionTimeout</key>\\n<integer>30</integer>\\n</dict>\\n</array>\\n</dict>\\n<key>CommandUUID</key>\\n<string>will-be-changed</string>\\n</dict>\\n</plist>'"
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "a1caae28-8608-4c31-a9b0-a3e5d520a5df"
-                          },
-                          "id": 6373,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_failed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:36.471936Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ActivationLockBypassCode",
-                            "date_completed": "2021-04-19T20:00:36.461599Z",
-                            "date_requested": "2021-04-19T20:00:36.039100Z",
-                            "error_chain": [
-                              {
-                                "code": 12021,
-                                "domain": "MCMDMErrorDomain",
-                                "localized_description": "'ActivationLockBypassCode' is not a valid request type.",
-                                "us_english_description": "'ActivationLockBypassCode' is not a valid request type."
-                              }
-                            ],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:36.117200Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ActivationLockBypassCode",
-                            "status": 4,
-                            "user": null,
-                            "username": null,
-                            "uuid": "318f74ec-3bd5-4286-9c79-59f548f6f93e"
-                          },
-                          "id": 6390,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T18:13:39.102708Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeveloperCustomCommand",
-                            "date_completed": "2021-04-19T18:13:39.095812Z",
-                            "date_requested": "2021-04-19T18:13:37.908670Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T18:13:38.766762Z",
-                            "metadata": {
-                              "request": "'<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\\n<plist version=\"1.0\">\\n<dict>\\n<key>Command</key>\\n<dict>\\n<key>RequestType</key>\\n<string>Settings</string>\\n<key>Settings</key>\\n<array>\\n<dict>\\n<key>Item</key>\\n<string>SharedDeviceConfiguration</string>\\n<key>TemporarySessionTimeout</key>\\n<integer>30</integer>\\n</dict>\\n</array>\\n</dict>\\n<key>CommandUUID</key>\\n<string>will-be-changed</string>\\n</dict>\\n</plist>'"
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "65d9342e-dd45-4928-bb1a-0ce0bf8a036a"
-                          },
-                          "id": 6374,
-                          "user": null
-                        },
-                        {
-                          "action_type": "enrollment",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:10.193630Z",
-                          "details": {
-                            "blueprint_name": "NewEnrollment",
-                            "enrollment_type": "DEP"
-                          },
-                          "id": 6375,
-                          "user": null
-                        },
-                        {
-                          "action_type": "name_changed",
-                          "blueprint": null,
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:10.518165Z",
-                          "details": {
-                            "from": "iPad",
-                            "to": "No name"
-                          },
-                          "id": 6377,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_failed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:12.754227Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ActivationLockBypassCode",
-                            "date_completed": "2021-04-19T19:57:12.745386Z",
-                            "date_requested": "2021-04-19T19:57:12.091036Z",
-                            "error_chain": [
-                              {
-                                "code": 12021,
-                                "domain": "MCMDMErrorDomain",
-                                "localized_description": "'ActivationLockBypassCode' is not a valid request type.",
-                                "us_english_description": "'ActivationLockBypassCode' is not a valid request type."
-                              }
-                            ],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:12.410977Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ActivationLockBypassCode",
-                            "status": 4,
-                            "user": null,
-                            "username": null,
-                            "uuid": "de121f7e-4b5b-4896-b151-6697ab49516f"
-                          },
-                          "id": 6378,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:13.109205Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SetInitialConfiguration",
-                            "date_completed": "2021-04-19T19:57:13.100251Z",
-                            "date_requested": "2021-04-19T19:57:12.359723Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:12.763863Z",
-                            "metadata": {
-                              "Items": [
-                                "MDMOptions",
-                                "SharedDeviceConfiguration"
-                              ]
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "bbdabcc4-4849-4801-af31-4d9d21d486a2"
-                          },
-                          "id": 6379,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:13.438439Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceConfigured",
-                            "date_completed": "2021-04-19T19:57:13.431462Z",
-                            "date_requested": "2021-04-19T19:57:12.382582Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:13.119505Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceConfigured",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "98702232-a826-48d7-acc3-983628d18100"
-                          },
-                          "id": 6380,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:25.821757Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceInformation",
-                            "date_completed": "2021-04-19T19:57:25.812174Z",
-                            "date_requested": "2021-04-19T19:57:15.682921Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:22.665806Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceInformation",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "cee43b29-19bd-41b9-8b25-20c5b598a3d5"
-                          },
-                          "id": 6381,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:26.920393Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "AvailableOSUpdates",
-                            "date_completed": "2021-04-19T19:57:26.909327Z",
-                            "date_requested": "2021-04-19T19:57:15.702621Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:25.833448Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "AvailableOSUpdates",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "1410e124-7b01-4b08-bed3-d17805a7f91b"
-                          },
-                          "id": 6382,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:27.388310Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "CertificateList",
-                            "date_completed": "2021-04-19T19:57:27.375605Z",
-                            "date_requested": "2021-04-19T19:57:15.716198Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:26.936713Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "CertificateList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "3384ade9-140a-4bca-ac72-e72729fe9da5"
-                          },
-                          "id": 6383,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:27.704612Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SecurityInfo",
-                            "date_completed": "2021-04-19T19:57:27.696659Z",
-                            "date_requested": "2021-04-19T19:57:15.731508Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:27.398171Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "SecurityInfo",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "8e015b3d-1a51-4c9f-8c01-8b29b72abf52"
-                          },
-                          "id": 6384,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:27.989064Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ProfileList",
-                            "date_completed": "2021-04-19T19:57:27.983476Z",
-                            "date_requested": "2021-04-19T19:57:15.766025Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:27.711417Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ProfileList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "3b4668bc-c925-4b25-a838-8483180350b4"
-                          },
-                          "id": 6385,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T19:57:28.313299Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "InstalledApplicationList",
-                            "date_completed": "2021-04-19T19:57:28.307171Z",
-                            "date_requested": "2021-04-19T19:57:16.135218Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T19:57:27.995398Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "InstalledApplicationList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "6900f511-b3c3-4a9f-90f8-4dcf3f34dd0f"
-                          },
-                          "id": 6386,
-                          "user": null
-                        },
-                        {
-                          "action_type": "enrollment",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:33.788794Z",
-                          "details": {
-                            "blueprint_name": "NewEnrollment",
-                            "enrollment_type": "DEP"
-                          },
-                          "id": 6387,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:36.809282Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SetInitialConfiguration",
-                            "date_completed": "2021-04-19T20:00:36.800503Z",
-                            "date_requested": "2021-04-19T20:00:36.069502Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:36.482120Z",
-                            "metadata": {
-                              "Items": [
-                                "MDMOptions",
-                                "SharedDeviceConfiguration"
-                              ]
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "99ba9521-4873-402f-a143-66ef8a1daeac"
-                          },
-                          "id": 6391,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:37.167181Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceConfigured",
-                            "date_completed": "2021-04-19T20:00:37.160875Z",
-                            "date_requested": "2021-04-19T20:00:36.091346Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:36.819036Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceConfigured",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "d4e69629-0fcb-4724-9c49-ac65eac61534"
-                          },
-                          "id": 6392,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:46.024064Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeveloperCustomCommand",
-                            "date_completed": "2021-04-19T20:00:46.017324Z",
-                            "date_requested": "2021-04-19T20:00:37.438733Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:37.511888Z",
-                            "metadata": {
-                              "request": "'<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\\n<plist version=\"1.0\">\\n<dict>\\n<key>Command</key>\\n<dict>\\n<key>RequestType</key>\\n<string>Settings</string>\\n<key>Settings</key>\\n<array>\\n<dict>\\n<key>Item</key>\\n<string>SharedDeviceConfiguration</string>\\n<key>TemporarySessionTimeout</key>\\n<integer>30</integer>\\n</dict>\\n</array>\\n</dict>\\n<key>CommandUUID</key>\\n<string>will-be-changed</string>\\n</dict>\\n</plist>'"
-                            },
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "Settings",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "b10b0d06-6866-4ac7-a729-e8f139fa581e"
-                          },
-                          "id": 6393,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:53.024422Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "DeviceInformation",
-                            "date_completed": "2021-04-19T20:00:53.017565Z",
-                            "date_requested": "2021-04-19T20:00:39.297026Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:46.036906Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "DeviceInformation",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "fd922d7d-da83-4507-ba1a-1b272a7c690a"
-                          },
-                          "id": 6394,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:54.924227Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "AvailableOSUpdates",
-                            "date_completed": "2021-04-19T20:00:54.918635Z",
-                            "date_requested": "2021-04-19T20:00:39.337038Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:53.033987Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "AvailableOSUpdates",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "5de58bae-ac69-4ff4-a83d-64a2b9d922b6"
-                          },
-                          "id": 6395,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:55.259870Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "CertificateList",
-                            "date_completed": "2021-04-19T20:00:55.252769Z",
-                            "date_requested": "2021-04-19T20:00:39.359373Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:54.930565Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "CertificateList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "dd0dd5d1-244e-4ef0-86f5-23fe68134038"
-                          },
-                          "id": 6396,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:55.624451Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "SecurityInfo",
-                            "date_completed": "2021-04-19T20:00:55.616124Z",
-                            "date_requested": "2021-04-19T20:00:39.391303Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:55.269212Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "SecurityInfo",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "2616627a-d5d6-4cc2-b776-9f756e1e17d9"
-                          },
-                          "id": 6397,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:55.952184Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "ProfileList",
-                            "date_completed": "2021-04-19T20:00:55.947010Z",
-                            "date_requested": "2021-04-19T20:00:39.503698Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:55.634775Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "ProfileList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "6d7c44fc-c0d4-4aab-96ad-51cf27f752f8"
-                          },
-                          "id": 6398,
-                          "user": null
-                        },
-                        {
-                          "action_type": "mdm_command_completed",
-                          "blueprint": {
-                            "id": "8c7e0b97-54e4-4ea0-8cf9-184ddb47de4b",
-                            "is_removed": false,
-                            "name": "NewEnrollment"
-                          },
-                          "computer": {
-                            "id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6",
-                            "is_removed": false,
-                            "name": "iPad"
-                          },
-                          "created_at": "2021-04-19T20:00:56.312728Z",
-                          "details": {
-                            "attempts": 1,
-                            "command_type": "InstalledApplicationList",
-                            "date_completed": "2021-04-19T20:00:56.303598Z",
-                            "date_requested": "2021-04-19T20:00:40.017581Z",
-                            "error_chain": [],
-                            "is_silent": false,
-                            "last_pushed": "2021-04-19T20:00:55.961876Z",
-                            "metadata": {},
-                            "priority": 0,
-                            "profile_name": null,
-                            "profile_uuid": null,
-                            "request_requires_network_tether": false,
-                            "request_type": "InstalledApplicationList",
-                            "status": 3,
-                            "user": null,
-                            "username": null,
-                            "uuid": "b02bcaf8-2195-4da3-9c90-2fcfb871696e"
-                          },
-                          "id": 6399,
+                          "external_token": null,
+                          "id": 44585,
                           "user": null
                         }
                       ]
                     },
-                    "device_id": "9d6eda80-6058-40bb-94f0-3c7ba4a63eb6"
+                    "device_id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5"
                   }
                 },
                 "schema": {
@@ -7491,7 +6236,7 @@
     "/api/v1/devices/{device_id}/apps": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request returns a list of all installed apps for a specified Device ID.</p>\n<p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>",
+        "description": "<p>This request returns a list of all installed apps for a specified Device ID.</p>\n<p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>\n<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#f8cd9733-89b6-40f0-a7ca-76829c6974df"
         },
@@ -7517,22 +6262,51 @@
                   "value": {
                     "apps": [
                       {
-                        "app_id": "f7333eb1-421e-4088-8690-a358169c0421",
-                        "app_name": "Okta Verify",
-                        "app_store_vendable": "False",
-                        "bundle_id": "com.okta.mobile",
-                        "bundle_size": "68390912",
-                        "creation_date": "",
-                        "device_based_vpp": "True",
-                        "modification_date": "",
-                        "path": "",
-                        "process": "",
-                        "signature": "",
-                        "source": "",
-                        "version": "47"
+                        "application_source": "SYSTEM_APP_FACTORY_VERSION",
+                        "display_name": "Google Play Store",
+                        "installer_package_name": "",
+                        "package_name": "com.android.vending",
+                        "sha1_hashes": [
+                          "38918a453d07199354f8b19af05ec6562ced5788"
+                        ],
+                        "sha256_hash": "eb02b5d091e20144befdca0ec75545b407b93c3a1e43051b98b9b56200fe5a9f",
+                        "version_name": "48.2.19-31 [0] [PR] 813001354"
+                      },
+                      {
+                        "application_source": "SYSTEM_APP_FACTORY_VERSION",
+                        "display_name": "Files by Google",
+                        "installer_package_name": "",
+                        "package_name": "com.google.android.apps.nbu.files",
+                        "sha1_hashes": [
+                          "9f591218c092ce2ae72aeb71c2ea00a7cbf20030"
+                        ],
+                        "sha256_hash": "b5d34fdc66de5ef10069defef8c68eb0e50a5f36e9e29408fe29eb6a7580060e",
+                        "version_name": "1.3209.622592511.0-release"
+                      },
+                      {
+                        "application_source": "SYSTEM_APP_FACTORY_VERSION",
+                        "display_name": "Contacts",
+                        "installer_package_name": "",
+                        "package_name": "com.google.android.contacts",
+                        "sha1_hashes": [
+                          "ee3e2b5d95365c5a1ccc2d8dfe48d94eb33b3ebe"
+                        ],
+                        "sha256_hash": "8d67b5dce4b63888008d184d940a0bf826a2a3419131b6c32b2520f9e1608c18",
+                        "version_name": "4.38.51.662676845"
+                      },
+                      {
+                        "application_source": "INSTALLED_FROM_PLAY_STORE",
+                        "display_name": "Slack",
+                        "installer_package_name": "com.android.vending",
+                        "package_name": "com.Slack",
+                        "sha1_hashes": [
+                          "c2a4e59ef0ab8081c671b28d89a8586647b5bf3e"
+                        ],
+                        "sha256_hash": "85c584497eff3011c33b481fbf9dbfb8f8c329182b901fcdd660254da409b777",
+                        "version_name": "25.10.10.0"
                       }
                     ],
-                    "device_id": "4820db3b-dec7-40b2-9c8f-eb771ac1a250"
+                    "device_id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5"
                   }
                 },
                 "schema": {
@@ -7735,7 +6509,7 @@
     "/api/v1/devices/{device_id}/commands": {
       "get": {
         "deprecated": false,
-        "description": "<p>This endpoint sends a request to get information about the commands sent to a given device ID.</p>\n<h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>\n<ul>\n<li>1 : Command is Pending</li>\n<li>2 : Command is running</li>\n<li>3 : Command completed</li>\n<li>4 : Command failed</li>\n<li>5 : Command received &quot;Not Now&quot; response</li>\n</ul>",
+        "description": "<p>This endpoint sends a request to get information about the commands sent to a given Apple device.</p>\n<h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>\n<ul>\n<li><p>1 : Command is Pending</p>\n</li>\n<li><p>2 : Command is running</p>\n</li>\n<li><p>3 : Command completed</p>\n</li>\n<li><p>4 : Command failed</p>\n</li>\n<li><p>5 : Command received &quot;Not Now&quot; response</p>\n</li>\n</ul>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#740d515c-218d-48db-b452-959c3c73aaeb"
         },
@@ -7770,6 +6544,7 @@
             "allowReserved": false,
             "deprecated": false,
             "description": "Specify the starting record to return",
+            "example": "",
             "in": "query",
             "name": "offset",
             "required": false,
@@ -7939,7 +6714,7 @@
     "/api/v1/devices/{device_id}/details": {
       "get": {
         "deprecated": false,
-        "description": "This request returns the device details for a specified Device ID.",
+        "description": "<p>This request returns the device details for a specified Device ID.</p>\n<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#efa2170d-e5f7-4b97-8f4c-da6f84ba58b5"
         },
@@ -7963,236 +6738,81 @@
               "application/json": {
                 "example": {
                   "value": {
-                    "activation_lock": {
-                      "activation_lock_allowed_while_supervised": false,
-                      "activation_lock_supported": true,
-                      "bypass_code_failed": false,
-                      "device_activation_lock_enabled": false,
-                      "user_activation_lock_enabled": false
-                    },
-                    "apple_business_manager": {
-                      "color": "SILVER",
-                      "description": "IPAD WI-FI 128GB SILVER-USA",
-                      "device_assigned_by": "matt.wilson@regularity.io",
-                      "device_assigned_date": "2022-12-13 18:53:46+00:00",
-                      "device_family": "iPad",
-                      "model": "iPad (8th Generation)",
-                      "os": "iOS",
-                      "serial_number": "GG7FF8QSQ1GH"
-                    },
-                    "automated_device_enrollment": {
-                      "auto_enroll_eligible": true,
-                      "auto_enrolled": true
-                    },
                     "cellular": {
-                      "cellular_technology": 0,
-                      "data_roaming": false,
-                      "subscriptions": null,
-                      "voice_roaming": false
-                    },
-                    "filevault": {
-                      "filevault_enabled": null,
-                      "filevault_next_rotation": "",
-                      "filevault_prk_escrowed": false,
-                      "filevault_recoverykey_type": "",
-                      "filevault_regen_required": false
+                      "imei": "355624192947256",
+                      "meid": ""
                     },
                     "general": {
+                      "api_level": "35",
                       "asset_tag": "",
-                      "assigned_user": "",
-                      "blueprint_name": "_testing_ipados",
-                      "blueprint_uuid": "dccade80-bddd-43ac-a9b7-e322b17cd7d9",
-                      "boot_volume": "",
-                      "device_id": "4820db3b-dec7-40b2-9c8f-eb771ac1a250",
-                      "device_name": "iPad",
-                      "first_enrollment": "2022-12-13 19:14:20.455640+00:00",
-                      "last_enrollment": "2022-12-13 19:14:20.455640+00:00",
-                      "last_user": "",
-                      "model": "iPad (8th generation) (Wi-Fi)",
-                      "os_version": "16.1.1",
-                      "platform": "iPad",
-                      "supplemental_build_version": "22F66",
-                      "supplemental_os_version_extra": "",
-                      "system_version": "",
-                      "time_since_boot": ""
+                      "assigned_user": null,
+                      "blueprint_name": "Main Blueprint",
+                      "blueprint_uuid": "0e4b1c2f-7a8d-4e23-9c5f-2a6d92f4d1b7",
+                      "device_id": "f3d1c9a7-8b6b-4e64-9c2e-2af1c028b4e5",
+                      "device_name": "Pixel 9 03AN",
+                      "enterprise_device_id": "3fa02cb7596bd5rd",
+                      "enterprise_id": "LC0187hrje",
+                      "first_enrollment": "2025-10-09 23:17:20.037000+00:00",
+                      "last_enrollment": "2025-10-09 23:17:20.037000+00:00",
+                      "manufacturer": "Google",
+                      "model_name": "Pixel 9",
+                      "os_build": "AP4A.241205.013",
+                      "os_version": "15",
+                      "platform": "Android",
+                      "security_patch_level": "2024-12-05",
+                      "serial_number": "51190BMRQ003AN"
                     },
-                    "hardware_overview": {
-                      "model_identifier": "iPad11,6",
-                      "serial_number": "GG7FF8QSQ1GH",
-                      "uuid": "00008020-0015308c11a1402e"
+                    "hardware": {
+                      "available_capacity": "105.93",
+                      "total_capacity": "110.28",
+                      "total_ram": "11.28",
+                      "wifi_mac_address": "98:98:fb:12:44:68"
                     },
-                    "installed_profiles": [],
-                    "kandji_agent": {
-                      "agent_installed": "False",
-                      "agent_version": "",
-                      "install_date": "",
-                      "last_check_in": "2022-12-13T20:21:38.903804Z"
+                    "management": {
+                      "management_mode": "PROFILE_OWNER",
+                      "ownership": "COMPANY_OWNED"
                     },
-                    "lost_mode": {
-                      "disable_status": "",
-                      "disable_status_at": "",
-                      "disabled_by": "",
-                      "enable_status_at": "2022-12-13T20:19:08.116096Z",
-                      "enabled_by": "Accuhive admin",
-                      "last_location": {
-                        "latitude": "3.93410519355257",
-                        "longitude": "-84.47411387632086"
-                      },
-                      "last_location_at": "2022-12-13T20:20:10.093380Z",
-                      "last_location_status": "SUCCESS",
-                      "last_location_status_at": "2022-12-13T20:20:10.103693Z",
-                      "lock_screen_footnote": "This is an example footnote.",
-                      "lock_screen_message": "Hey i just did this from the enable lost mode API",
-                      "lock_screen_phone_number": "1234567890",
-                      "lost_mode_status": "ENABLED",
-                      "sound_status": "SUCCESS",
-                      "sound_status_at": "2022-12-13T20:21:38.992261Z"
+                    "security": {
+                      "android_debug_bridge_enabled": null,
+                      "developer_mode_enabled": null,
+                      "device_posture": "SECURE",
+                      "encryption_status": "ACTIVE_PER_USER",
+                      "has_google_play_protect": true,
+                      "has_passcode": true,
+                      "is_encrypted": true,
+                      "unknown_app_sources_enabled": null
                     },
-                    "mdm": {
-                      "install_date": "2022-12-13 19:14:20.335010+00:00",
-                      "last_check_in": "2022-12-13 20:21:38.903789+00:00",
-                      "mdm_enabled": "True",
-                      "mdm_enabled_user": [],
-                      "supervised": "True"
-                    },
-                    "network": {},
-                    "recovery_information": {
-                      "firmware_password_exist": false,
-                      "firmware_password_pending": false,
-                      "password_rotation_scheduled": null,
-                      "recovery_lock_enabled": false
-                    },
-                    "security_information": {
-                      "remote_desktop_enabled": null
-                    },
-                    "tags": [],
-                    "users": {
-                      "regular_users": [],
-                      "system_users": []
-                    },
-                    "volumes": [
-                      {
-                        "available": "117.35 GB",
-                        "capacity": "128.0 GB",
-                        "encrypted": "",
-                        "format": "",
-                        "identifier": "",
-                        "name": "",
-                        "percent_used": "8%"
-                      }
+                    "tags": [
+                      "accuhive_02"
                     ]
                   }
                 },
                 "schema": {
                   "properties": {
-                    "activation_lock": {
-                      "properties": {
-                        "activation_lock_allowed_while_supervised": {
-                          "type": "integer"
-                        },
-                        "activation_lock_supported": {
-                          "type": "integer"
-                        },
-                        "bypass_code_failed": {
-                          "type": "integer"
-                        },
-                        "device_activation_lock_enabled": {
-                          "type": "integer"
-                        },
-                        "user_activation_lock_enabled": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "apple_business_manager": {
-                      "properties": {
-                        "color": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "device_assigned_by": {
-                          "type": "string"
-                        },
-                        "device_assigned_date": {
-                          "type": "string"
-                        },
-                        "device_family": {
-                          "type": "string"
-                        },
-                        "model": {
-                          "type": "string"
-                        },
-                        "os": {
-                          "type": "string"
-                        },
-                        "serial_number": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "automated_device_enrollment": {
-                      "properties": {
-                        "auto_enroll_eligible": {
-                          "type": "integer"
-                        },
-                        "auto_enrolled": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    },
                     "cellular": {
                       "properties": {
-                        "cellular_technology": {
-                          "type": "integer"
-                        },
-                        "data_roaming": {
-                          "type": "integer"
-                        },
-                        "subscriptions": {},
-                        "voice_roaming": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "filevault": {
-                      "properties": {
-                        "filevault_enabled": {},
-                        "filevault_next_rotation": {
+                        "imei": {
                           "type": "string"
                         },
-                        "filevault_prk_escrowed": {
-                          "type": "integer"
-                        },
-                        "filevault_recoverykey_type": {
+                        "meid": {
                           "type": "string"
-                        },
-                        "filevault_regen_required": {
-                          "type": "integer"
                         }
                       },
                       "type": "object"
                     },
                     "general": {
                       "properties": {
+                        "api_level": {
+                          "type": "string"
+                        },
                         "asset_tag": {
                           "type": "string"
                         },
-                        "assigned_user": {
-                          "type": "string"
-                        },
+                        "assigned_user": {},
                         "blueprint_name": {
                           "type": "string"
                         },
                         "blueprint_uuid": {
-                          "type": "string"
-                        },
-                        "boot_volume": {
                           "type": "string"
                         },
                         "device_id": {
@@ -8201,16 +6821,25 @@
                         "device_name": {
                           "type": "string"
                         },
+                        "enterprise_device_id": {
+                          "type": "string"
+                        },
+                        "enterprise_id": {
+                          "type": "string"
+                        },
                         "first_enrollment": {
                           "type": "string"
                         },
                         "last_enrollment": {
                           "type": "string"
                         },
-                        "last_user": {
+                        "manufacturer": {
                           "type": "string"
                         },
-                        "model": {
+                        "model_name": {
+                          "type": "string"
+                        },
+                        "os_build": {
                           "type": "string"
                         },
                         "os_version": {
@@ -8219,163 +6848,67 @@
                         "platform": {
                           "type": "string"
                         },
-                        "supplemental_build_version": {
-                          "type": "string"
-                        },
-                        "supplemental_os_version_extra": {
-                          "type": "string"
-                        },
-                        "system_version": {
-                          "type": "string"
-                        },
-                        "time_since_boot": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "hardware_overview": {
-                      "properties": {
-                        "model_identifier": {
+                        "security_patch_level": {
                           "type": "string"
                         },
                         "serial_number": {
                           "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "hardware": {
+                      "properties": {
+                        "available_capacity": {
+                          "type": "string"
                         },
-                        "uuid": {
+                        "total_capacity": {
+                          "type": "string"
+                        },
+                        "total_ram": {
+                          "type": "string"
+                        },
+                        "wifi_mac_address": {
                           "type": "string"
                         }
                       },
                       "type": "object"
                     },
-                    "installed_profiles": {},
-                    "kandji_agent": {
+                    "management": {
                       "properties": {
-                        "agent_installed": {
+                        "management_mode": {
                           "type": "string"
                         },
-                        "agent_version": {
-                          "type": "string"
-                        },
-                        "install_date": {
-                          "type": "string"
-                        },
-                        "last_check_in": {
+                        "ownership": {
                           "type": "string"
                         }
                       },
                       "type": "object"
                     },
-                    "lost_mode": {
+                    "security": {
                       "properties": {
-                        "disable_status": {
+                        "android_debug_bridge_enabled": {},
+                        "developer_mode_enabled": {},
+                        "device_posture": {
                           "type": "string"
                         },
-                        "disable_status_at": {
+                        "encryption_status": {
                           "type": "string"
                         },
-                        "disabled_by": {
-                          "type": "string"
-                        },
-                        "enable_status_at": {
-                          "type": "string"
-                        },
-                        "enabled_by": {
-                          "type": "string"
-                        },
-                        "last_location": {
-                          "properties": {
-                            "latitude": {
-                              "type": "string"
-                            },
-                            "longitude": {
-                              "type": "string"
-                            }
-                          },
-                          "type": "object"
-                        },
-                        "last_location_at": {
-                          "type": "string"
-                        },
-                        "last_location_status": {
-                          "type": "string"
-                        },
-                        "last_location_status_at": {
-                          "type": "string"
-                        },
-                        "lock_screen_footnote": {
-                          "type": "string"
-                        },
-                        "lock_screen_message": {
-                          "type": "string"
-                        },
-                        "lock_screen_phone_number": {
-                          "type": "string"
-                        },
-                        "lost_mode_status": {
-                          "type": "string"
-                        },
-                        "sound_status": {
-                          "type": "string"
-                        },
-                        "sound_status_at": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "mdm": {
-                      "properties": {
-                        "install_date": {
-                          "type": "string"
-                        },
-                        "last_check_in": {
-                          "type": "string"
-                        },
-                        "mdm_enabled": {
-                          "type": "string"
-                        },
-                        "mdm_enabled_user": {},
-                        "supervised": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    },
-                    "network": {
-                      "properties": {},
-                      "type": "object"
-                    },
-                    "recovery_information": {
-                      "properties": {
-                        "firmware_password_exist": {
+                        "has_google_play_protect": {
                           "type": "integer"
                         },
-                        "firmware_password_pending": {
+                        "has_passcode": {
                           "type": "integer"
                         },
-                        "password_rotation_scheduled": {},
-                        "recovery_lock_enabled": {
+                        "is_encrypted": {
                           "type": "integer"
-                        }
+                        },
+                        "unknown_app_sources_enabled": {}
                       },
                       "type": "object"
                     },
-                    "security_information": {
-                      "properties": {
-                        "remote_desktop_enabled": {}
-                      },
-                      "type": "object"
-                    },
-                    "tags": {},
-                    "users": {
-                      "properties": {
-                        "regular_users": {},
-                        "system_users": {}
-                      },
-                      "type": "object"
-                    },
-                    "volumes": {}
+                    "tags": {}
                   },
                   "type": "object"
                 }
@@ -8383,10 +6916,140 @@
             },
             "description": "OK",
             "headers": {
+              "Allow": {
+                "deprecated": false,
+                "example": {
+                  "value": "GET"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Connection": {
+                "deprecated": false,
+                "example": {
+                  "value": "keep-alive"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Content-Length": {
+                "deprecated": false,
+                "example": {
+                  "value": "10224"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Content-Security-Policy": {
+                "deprecated": false,
+                "example": {
+                  "value": "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
               "Content-Type": {
                 "deprecated": false,
                 "example": {
                   "value": "application/json"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Date": {
+                "deprecated": false,
+                "example": {
+                  "value": "Wed, 19 May 2021 00:52:15 GMT"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Feature-Policy": {
+                "deprecated": false,
+                "example": {
+                  "value": "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Referrer-Policy": {
+                "deprecated": false,
+                "example": {
+                  "value": "no-referrer"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Server": {
+                "deprecated": false,
+                "example": {
+                  "value": "gunicorn/20.0.4"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Strict-Transport-Security": {
+                "deprecated": false,
+                "example": {
+                  "value": "max-age=31536000; includeSubDomains; preload"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Vary": {
+                "deprecated": false,
+                "example": {
+                  "value": "Origin"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Content-Type-Options": {
+                "deprecated": false,
+                "example": {
+                  "value": "nosniff"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Frame-Options": {
+                "deprecated": false,
+                "example": {
+                  "value": "DENY"
+                },
+                "required": false,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-XSS-Protection": {
+                "deprecated": false,
+                "example": {
+                  "value": "1; mode=block"
                 },
                 "required": false,
                 "schema": {
@@ -8821,7 +7484,7 @@
     "/api/v1/devices/{device_id}/parameters": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request returns the parameters and their statuses for a specified Device ID</p>\n<p>This endpoint is only applicable to macOS clients.</p>\n<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>\n<p><strong>Possible parameter status values</strong></p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Value</strong></th>\n<th><strong>Type</strong></th>\n<th><strong>Additional Info</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ERROR</td>\n<td>string</td>\n<td>Audit failure</td>\n</tr>\n<tr>\n<td>INCOMPATIBLE</td>\n<td>string</td>\n<td>Not compatible with device or OS version</td>\n</tr>\n<tr>\n<td>PASS</td>\n<td>string</td>\n<td>Device meets requirements</td>\n</tr>\n<tr>\n<td>PENDING</td>\n<td>string</td>\n<td>Waiting on device. Not yet run.</td>\n</tr>\n<tr>\n<td>REMEDIATED</td>\n<td>string</td>\n<td>Parameter remediated</td>\n</tr>\n<tr>\n<td>WARNING</td>\n<td>string</td>\n<td>Muted alert</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "description": "<p>This request returns the parameters and their statuses for a specified Device ID, and is only applicable to Mac.</p>\n<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>\n<p><strong>Possible parameter status values</strong></p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Value</strong></th>\n<th><strong>Type</strong></th>\n<th><strong>Additional Info</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>ERROR</td>\n<td>string</td>\n<td>Audit failure</td>\n</tr>\n<tr>\n<td>INCOMPATIBLE</td>\n<td>string</td>\n<td>Not compatible with device or OS version</td>\n</tr>\n<tr>\n<td>PASS</td>\n<td>string</td>\n<td>Device meets requirements</td>\n</tr>\n<tr>\n<td>PENDING</td>\n<td>string</td>\n<td>Waiting on device. Not yet run.</td>\n</tr>\n<tr>\n<td>REMEDIATED</td>\n<td>string</td>\n<td>Parameter remediated</td>\n</tr>\n<tr>\n<td>WARNING</td>\n<td>string</td>\n<td>Muted alert</td>\n</tr>\n</tbody>\n</table>\n</div>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#8ca8c0e9-654e-40c1-8d8c-c9a8a6e262c6"
         },
@@ -9027,7 +7690,7 @@
     "/api/v1/devices/{device_id}/secrets/bypasscode": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request allows you to retrieve the Activation Lock Bypass code.</p>\n<p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p>\n<p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>",
+        "description": "<p>This request allows you to retrieve the Activation Lock Bypass code for Apple devices.</p>\n<p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p>\n<p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#f593744e-eedc-4d4d-ac0d-45d54860bbc5"
         },
@@ -9227,7 +7890,7 @@
     "/api/v1/devices/{device_id}/secrets/filevaultkey": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>",
+        "description": "<p>This request allows you to retrieve the FileVault Recovery key for a Mac.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#1577d0da-7b69-4c2b-a322-32bf1cfffee2"
         },
@@ -9619,7 +8282,7 @@
     "/api/v1/devices/{device_id}/secrets/unlockpin": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request allows you to retrieve the device unlock pin for a macOS device.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>",
+        "description": "<p>This request allows you to retrieve the device unlock pin for a Mac.</p>\n<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>\n<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#437a27bf-5245-486f-91b5-dc4c9b5f7973"
         },
@@ -10472,7 +9135,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "&quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)",
+            "description": "&quot;exact&quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)",
             "example": "5344c996-8823-4b37-8d6e-8515fc7c3a0a",
             "in": "query",
             "name": "user_id",
@@ -11278,7 +9941,7 @@
     "/api/v1/integrations/apple/ade/{ade_token_id}": {
       "delete": {
         "deprecated": false,
-        "description": "<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>\n<p>This is a HIGHLY destructive action.</p>\n<p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p>\n<p>If applicable, be sure to reassign the device records in ABM.</p>",
+        "description": "<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>\n<p>This is a HIGHLY destructive action.</p>\n<p>Deleting an ADE token will unassign the associated device records. For currently enrolled devices that were assigned via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p>\n<p>If applicable, be sure to reassign the device records in ABM.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#53084811-3e1c-4e71-aa59-71472468c26b"
         },
@@ -11543,7 +10206,7 @@
     "/api/v1/integrations/apple/ade/{ade_token_id}/devices": {
       "get": {
         "deprecated": false,
-        "description": "<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p>\n<p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>\n<p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>",
+        "description": "<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p>\n<p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment.</p>\n<p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#3e2d4aaf-7cc5-44b0-9ca8-4d26a4d63b78"
         },
@@ -20321,7 +18984,7 @@
     "/api/v1/settings/licensing": {
       "get": {
         "deprecated": false,
-        "description": "Returns Kandji tenant licensing and utilization information.",
+        "description": "Returns tenant licensing and utilization information.",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#34c35449-8d94-4741-8395-8965c0316fec"
         },
@@ -20947,7 +19610,7 @@
             "allowEmptyValue": false,
             "allowReserved": false,
             "deprecated": false,
-            "description": "Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.",
+            "description": "Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Users module under the Archived tab.",
             "example": "false",
             "in": "query",
             "name": "archived",
@@ -20961,6 +19624,7 @@
             "allowReserved": false,
             "deprecated": false,
             "description": "Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.",
+            "example": "",
             "in": "query",
             "name": "cursor",
             "required": false,
@@ -21060,7 +19724,7 @@
     "/api/v1/users/{user_id}": {
       "delete": {
         "deprecated": false,
-        "description": "<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>\n<h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>\n<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;\n}\n\n</code></pre>",
+        "description": "<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>\n<h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>\n<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices. The user will need to be unassigned from the device either manually through the UI in the web app or programatically using the Update device API endpoint.</p>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;\n}\n\n</code></pre>",
         "externalDocs": {
           "url": "https://api-docs.kandji.io/#6bca946f-07be-4dd4-a00a-7081e8d2fbfb"
         },
@@ -21964,7 +20628,7 @@
   ],
   "tags": [
     {
-      "description": "<p>APIs for the global audit logs (Activity UI) in Kandji.</p>\n<h3 id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<p>Breakdown of top-level fields in the audit log events response.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Type</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>action</td>\n<td>string</td>\n<td>What was done, this is validated against a list of expected values - create, update, delete</td>\n</tr>\n<tr>\n<td>actor_id</td>\n<td>string</td>\n<td>The id of the who or what did the event</td>\n</tr>\n<tr>\n<td>actor_type</td>\n<td>string</td>\n<td>The type of actor who did the event, admin user, api token, kandji, etc. This is validated against a list of expected values</td>\n</tr>\n<tr>\n<td>target_id</td>\n<td>string(likely uuid)</td>\n<td>The id of what was updated</td>\n</tr>\n<tr>\n<td>target_type</td>\n<td>string</td>\n<td>The type of object that was updated - blueprint, library_item, device, user, etc</td>\n</tr>\n<tr>\n<td>target_component</td>\n<td>string, nullable</td>\n<td>The sub-component section of target that was updated</td>\n</tr>\n<tr>\n<td>metadata</td>\n<td>json, nullable</td>\n<td>Context information about the event itself. Not validated. Could hold information specific to a certain security framework or standard.</td>\n</tr>\n<tr>\n<td>new_state</td>\n<td>json, nullable</td>\n<td>The data of the new state. This is what will be validated by the schemas</td>\n</tr>\n<tr>\n<td>occurred_at</td>\n<td>datetime</td>\n<td>When was this event created, defaults to the current UTC time.  <br />  <br />ISO 8601 timestamp (e.g., &quot;2025-02-26T12:00:00Z&quot;)</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;general-response-structure&quot;><em>General response structure</em></h4>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;id&quot;: &quot;string&quot;,\n    &quot;occurred_at&quot;: &quot;string&quot;,\n    &quot;action&quot;: &quot;string&quot;,\n    &quot;actor_id&quot;: &quot;string&quot;,\n    &quot;actor_type&quot;: &quot;string&quot;,\n    &quot;target_id&quot;: &quot;string&quot;,          \n    &quot;target_type&quot;: &quot;string&quot;,\n    &quot;target_component&quot;: &quot;string&quot;,\n    &quot;new_state&quot;: &quot;object&quot;,          \n    &quot;metadata&quot;: &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;additional-information&quot;>Additional information</h3>\n<ul>\n<li><p>Net new events (API token Create, Update, Delete (CUD), Admin user CUD, API actions, User directory events) in the API won\u2019t yet appear in the Activity UI\u2014we\u2019re working to update the UI to sync with the new framework.</p>\n</li>\n<li><p>The audit events API is currently focused on events in the global Activity module, so device-level activity is still accessible from it's respective API endpoints.</p>\n</li>\n<li><p>Audit event history goes back a year from the latest event. The history in newer tenants will not go back as far.</p>\n</li>\n</ul>\n<p>We\u2019re continuously expanding and fine tuning the event list over time, so if you think something\u2019s missing, let us know! It might already be in our backlog, but we always appreciate your input.</p>",
+      "description": "<p>APIs for the global audit logs (Activity UI) in Iru Endpoint Management.</p>\n<h3 id=&quot;audit-event-fields&quot;>Audit event fields</h3>\n<p>Breakdown of top-level fields in the audit log events response.</p>\n<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Type</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>action</td>\n<td>string</td>\n<td>What was done, this is validated against a list of expected values - create, update, delete</td>\n</tr>\n<tr>\n<td>actor_id</td>\n<td>string</td>\n<td>The id of the who or what did the event</td>\n</tr>\n<tr>\n<td>actor_type</td>\n<td>string</td>\n<td>The type of actor who did the event, admin user, api token, etc. This is validated against a list of expected values</td>\n</tr>\n<tr>\n<td>target_id</td>\n<td>string(likely uuid)</td>\n<td>The id of what was updated</td>\n</tr>\n<tr>\n<td>target_type</td>\n<td>string</td>\n<td>The type of object that was updated - blueprint, library_item, device, user, etc</td>\n</tr>\n<tr>\n<td>target_component</td>\n<td>string, nullable</td>\n<td>The sub-component section of target that was updated</td>\n</tr>\n<tr>\n<td>metadata</td>\n<td>json, nullable</td>\n<td>Context information about the event itself. Not validated. Could hold information specific to a certain security framework or standard.</td>\n</tr>\n<tr>\n<td>new_state</td>\n<td>json, nullable</td>\n<td>The data of the new state. This is what will be validated by the schemas</td>\n</tr>\n<tr>\n<td>occurred_at</td>\n<td>datetime</td>\n<td>When was this event created, defaults to the current UTC time.  <br />  <br />ISO 8601 timestamp (e.g., &quot;2025-02-26T12:00:00Z&quot;)</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=&quot;general-response-structure&quot;><em>General response structure</em></h4>\n<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{\n    &quot;id&quot;: &quot;string&quot;,\n    &quot;occurred_at&quot;: &quot;string&quot;,\n    &quot;action&quot;: &quot;string&quot;,\n    &quot;actor_id&quot;: &quot;string&quot;,\n    &quot;actor_type&quot;: &quot;string&quot;,\n    &quot;target_id&quot;: &quot;string&quot;,          \n    &quot;target_type&quot;: &quot;string&quot;,\n    &quot;target_component&quot;: &quot;string&quot;,\n    &quot;new_state&quot;: &quot;object&quot;,          \n    &quot;metadata&quot;: &quot;object&quot;             \n}\n\n</code></pre>\n<h3 id=&quot;additional-information&quot;>Additional information</h3>\n<ul>\n<li><p>Net new events (API token Create, Update, Delete (CUD), Admin user CUD, API actions, User directory events) in the API won\u2019t yet appear in the Activity UI\u2014we\u2019re working to update the UI to sync with the new framework.</p>\n</li>\n<li><p>The audit events API is currently focused on events in the global Activity module, so device-level activity is still accessible from it's respective API endpoints.</p>\n</li>\n<li><p>Audit event history goes back a year from the latest event. The history in newer tenants will not go back as far.</p>\n</li>\n</ul>\n<p>We\u2019re continuously expanding and fine tuning the event list over time, so if you think something\u2019s missing, let us know! It might already be in our backlog, but we always appreciate your input.</p>",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#c582df19-e201-4bdc-af04-d43879dfc05d"
       },
@@ -21998,7 +20662,7 @@
       "name": "Lost Mode"
     },
     {
-      "description": "This section contains endpoints related to collecting information about devices.",
+      "description": "<p>This section contains endpoints related to collecting information about devices.</p>\n<p>For customers managing multiple platforms in Iru Endpoint Management, many of these API responses will become <strong>polymorphic</strong> once an additional platform is turned on, meaning the responses may vary depending on the device family of the device being queried. Endpoints that are polymorphic are noted as such in each endpoint description.</p>",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#ecf2a684-45f5-49ad-b3d7-2da346b2927e"
       },
@@ -22012,7 +20676,7 @@
       "name": "Notes"
     },
     {
-      "description": "<p>This section contains endpoints related to collecting device secrets such as the FileVault Recovery Key.</p>\n<p>If no secrets is avaialble for the device, the key value will return as <code>null</code>.</p>",
+      "description": "<p>This section contains endpoints related to collecting Apple device secrets such as the FileVault Recovery Key.</p>\n<p>If no secrets is avaialble for the device, the key value will return as <code>null</code>.</p>",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#98cc68f2-8138-40fb-8509-6bad86058e66"
       },
@@ -22032,7 +20696,7 @@
       "name": "Custom Apps"
     },
     {
-      "description": "<p>This section contains endpoints related to managing In-House Apps in the Kandji Library.</p>\n<h2 id=&quot;in-house-app-library-item-creation-overview&quot;>In-House App Library item creation overview</h2>\n<ol>\n<li><p>Make a request to the <code>Upload In-House App</code> endpoint to retrieve the S3 upload details needed for uploading the app to Amazon S3.</p>\n<ol>\n<li><p>Store the <code>post_url</code> and contents of the <code>post_data</code> object for use in the <code>Upload In-House App to S3</code> endpoint in step 2.</p>\n</li>\n<li><p>Store the <code>id</code> value for use in the <code>Upload In-House App Status</code> endpoint in step 3.</p>\n</li>\n<li><p>Store the <code>file_key</code> value for use in the <code>Create In-House App</code> endpoint in step 4.</p>\n</li>\n</ol>\n</li>\n<li><p>To upload the In-House App .ipa file to S3, make a request to the <code>Upload In-House App to S3</code> endpoint.</p>\n<ol>\n<li><p>The <code>post_url</code> is used to create the S3 request URL - <code>https://{post_url}.s3.amazonaws.com/</code></p>\n</li>\n<li><p>For the request body, use the contents of the <code>post_data</code> object from the previous step and supply the local filepath to the In-House App .ipa file in the <code>file</code> request parameter.</p>\n</li>\n</ol>\n</li>\n<li><p>Verify the status of the upload by making a request to the <code>Upload In-House App Status</code> endpoint, using the <code>id</code> returned in the <code>Upload In-House App</code> endpoint response in step 1</p>\n<ol>\n<li><p>Before moving to Step 4, ensure the <code>status</code> returned is <code>VALIDATED</code></p>\n</li>\n<li><p>If the <code>status</code> returned is <code>UPLOADING</code> or <code>VALIDATING</code>, the upload is still being processed. Retry after 1 second</p>\n</li>\n<li><p>If the <code>status</code> returned is <code>UPLOAD_FAILED</code> or <code>VALIDATE_FAILED</code> then re-attempt step 2.</p>\n</li>\n</ol>\n</li>\n<li><p>Finally, to create the In-House App Library item, make a request to the <code>Create In-House App</code> endpoint.</p>\n<ol>\n<li><p>The <code>file_key</code> key from step 1 will be needed in the in the request body.</p>\n</li>\n<li><p>The <code>name</code> key should define the name of the Library Item as it will appear in Kandji.</p>\n</li>\n</ol>\n</li>\n</ol>\n<p>Note: the same process is used when updating an existing In-House App library item, but for step 4 you will use the <code>Update In-House App</code> endpoint.</p>",
+      "description": "<p>This section contains endpoints related to managing In-House Apps in the Iru Endpoint Management Library.</p>\n<h2 id=&quot;in-house-app-library-item-creation-overview&quot;>In-House App Library item creation overview</h2>\n<ol>\n<li><p>Make a request to the <code>Upload In-House App</code> endpoint to retrieve the S3 upload details needed for uploading the app to Amazon S3.</p>\n<ol>\n<li><p>Store the <code>post_url</code> and contents of the <code>post_data</code> object for use in the <code>Upload In-House App to S3</code> endpoint in step 2.</p>\n</li>\n<li><p>Store the <code>id</code> value for use in the <code>Upload In-House App Status</code> endpoint in step 3.</p>\n</li>\n<li><p>Store the <code>file_key</code> value for use in the <code>Create In-House App</code> endpoint in step 4.</p>\n</li>\n</ol>\n</li>\n<li><p>To upload the In-House App .ipa file to S3, make a request to the <code>Upload In-House App to S3</code> endpoint.</p>\n<ol>\n<li><p>The <code>post_url</code> is used to create the S3 request URL - <code>https://{post_url}.s3.amazonaws.com/</code></p>\n</li>\n<li><p>For the request body, use the contents of the <code>post_data</code> object from the previous step and supply the local filepath to the In-House App .ipa file in the <code>file</code> request parameter.</p>\n</li>\n</ol>\n</li>\n<li><p>Verify the status of the upload by making a request to the <code>Upload In-House App Status</code> endpoint, using the <code>id</code> returned in the <code>Upload In-House App</code> endpoint response in step 1</p>\n<ol>\n<li><p>Before moving to Step 4, ensure the <code>status</code> returned is <code>VALIDATED</code></p>\n</li>\n<li><p>If the <code>status</code> returned is <code>UPLOADING</code> or <code>VALIDATING</code>, the upload is still being processed. Retry after 1 second</p>\n</li>\n<li><p>If the <code>status</code> returned is <code>UPLOAD_FAILED</code> or <code>VALIDATE_FAILED</code> then re-attempt step 2.</p>\n</li>\n</ol>\n</li>\n<li><p>Finally, to create the In-House App Library item, make a request to the <code>Create In-House App</code> endpoint.</p>\n<ol>\n<li><p>The <code>file_key</code> key from step 1 will be needed in the in the request body.</p>\n</li>\n<li><p>The <code>name</code> key should define the name of the Library Item as it will appear in Iru.</p>\n</li>\n</ol>\n</li>\n</ol>\n<p>Note: the same process is used when updating an existing In-House App library item, but for step 4 you will use the <code>Update In-House App</code> endpoint.</p>",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#7468c0a8-7369-45cf-8f4b-0ef5725efc46"
       },
@@ -22073,14 +20737,14 @@
       "name": "Settings"
     },
     {
-      "description": "<p>Create and manage tags within your Kandji tenant.</p>\n<p>For more information on tags, checkout the support article <a href=&quot;https://support.kandji.io/support/solutions/articles/72000630421-tags-for-devices&quot;>here</a></p>",
+      "description": "<p>Create and manage tags within your Iru Endpoint Management tenant.</p>\n<p>For more information on tags, checkout the support article <a href=&quot;https://support.kandji.io/support/solutions/articles/72000630421-tags-for-devices&quot;>here</a></p>",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#a9c6fb2d-aabb-4bbe-bf51-d85546b8a181"
       },
       "name": "Tags"
     },
     {
-      "description": "Kandji Endpoint Detection and Response (EDR) endpoints. These endpoints are available for EDR customers.",
+      "description": "Iru Endpoint Detection and Response (EDR) endpoints. These endpoints are available for EDR customers.",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#c438c921-d7da-4137-8b37-b4ede668bcd4"
       },
@@ -22093,7 +20757,7 @@
       "name": "Users"
     },
     {
-      "description": "Kandji Vulnerability Management endpoints. These endpoints are available for Vulnerability Management customers.",
+      "description": "Iru Vulnerability Management endpoints. These endpoints are available for Vulnerability Management customers.",
       "externalDocs": {
         "url": "https://api-docs.kandji.io/#866cbd00-48b1-4361-9097-9e3a486e2564"
       },
